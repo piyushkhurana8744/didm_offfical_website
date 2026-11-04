@@ -42,7 +42,7 @@ export default function RootLayout({
     name: "Delhi Institute of Digital Marketing",
     alternateName: "DIDM",
     url: "https://www.didm.in",
-    logo: "https://www.didm.in/logo.png",
+    logo: "https://res.cloudinary.com/dnfz4jwam/image/upload/v1793791834/didm-logo-reg_m1wbe9.png",
     telephone: "+91-8800505151",
     email: "info@didm.in",
     address: {
@@ -60,21 +60,22 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white">
+      <body className="min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
         <Suspense fallback={null}>
           <PlanBar />
         </Suspense>
         <Suspense fallback={<div className="h-[68px]" />}>
           <Navbar />
         </Suspense>
-        <main id="main" className="flex-1">
+        <main id="main" className="flex-1 pb-16 xl:pb-0">
           {children}
         </main>
         <Footer />
@@ -83,3 +84,4 @@ export default function RootLayout({
     </html>
   );
 }
+

@@ -130,22 +130,22 @@ export function Advisor() {
   const rec = getRecommendation();
 
   return (
-    <div className="w-full bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 rounded-3xl p-5 sm:p-7 shadow-advisor relative overflow-hidden transition-all">
+    <div className="w-full bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 rounded-3xl p-4 sm:p-7 shadow-advisor relative overflow-hidden transition-all">
       {/* Decorative top orb */}
       <div className="absolute top-0 right-0 -mt-6 -mr-6 w-32 h-32 bg-ai/10 dark:bg-ai/20 rounded-full blur-2xl pointer-events-none advisor-orb" />
 
       {/* Header bar */}
-      <div className="flex items-center justify-between pb-5 border-b border-neutral-100 dark:border-neutral-800">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-full bg-ai-soft dark:bg-ai/20 flex items-center justify-center text-ai dark:text-ai-dark">
+      <div className="flex items-center justify-between pb-4 sm:pb-5 border-b border-neutral-100 dark:border-neutral-800 gap-2">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="w-8 h-8 rounded-full bg-ai-soft dark:bg-ai/20 flex items-center justify-center text-ai dark:text-ai-dark shrink-0">
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <div className="text-xs font-mono uppercase tracking-wider text-ai dark:text-ai-dark font-semibold flex items-center gap-1.5">
+            <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-ai dark:text-ai-dark font-semibold flex items-center gap-1.5">
               <span>AI Course Advisor</span>
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             </div>
-            <div className="text-sm font-bold text-neutral-900 dark:text-white">
+            <div className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white">
               Find your ideal marketing career track in 3 taps
             </div>
           </div>
@@ -154,22 +154,22 @@ export function Advisor() {
         {step > 1 && (
           <button
             onClick={resetAdvisor}
-            className="text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-white flex items-center gap-1 font-medium transition"
+            className="text-[11px] sm:text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-white flex items-center gap-1 font-medium transition shrink-0"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>Start Over</span>
+            <span>Restart</span>
           </button>
         )}
       </div>
 
       {/* Interactive Step Content */}
-      <div className="py-6">
+      <div className="py-4 sm:py-6">
         {step === 1 && (
-          <div className="space-y-4 animate-in fade-in">
-            <div className="text-xs font-semibold text-neutral-500 uppercase tracking-wider font-mono">
+          <div className="space-y-3 sm:space-y-4 animate-in fade-in">
+            <div className="text-[11px] sm:text-xs font-semibold text-neutral-500 uppercase tracking-wider font-mono">
               Step 1 of 3: What is your primary career goal?
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
               {[
                 "Start my career",
                 "Switch careers",
@@ -184,7 +184,7 @@ export function Advisor() {
                     setGoal(opt);
                     setStep(2);
                   }}
-                  className="p-3.5 rounded-2xl text-left border border-neutral-200 dark:border-neutral-800 hover:border-ai dark:hover:border-ai hover:bg-ai-soft/50 dark:hover:bg-ai/10 text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                  className="p-3 sm:p-3.5 rounded-2xl text-left border border-neutral-200 dark:border-neutral-800 hover:border-ai dark:hover:border-ai hover:bg-ai-soft/50 dark:hover:bg-ai/10 text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200 transition-all hover:scale-[1.02] active:scale-[0.98] min-h-[46px] flex items-center"
                 >
                   {opt}
                 </button>
@@ -292,25 +292,25 @@ export function Advisor() {
               </div>
 
               {/* Recommendation CTAs */}
-              <div className="mt-5 flex flex-wrap items-center gap-2.5">
+              <div className="mt-5 flex flex-wrap items-center gap-2">
                 <Link
                   href={`/program?p=${rec.program.id}`}
-                  className="btn-primary text-xs py-2 px-4"
+                  className="btn-primary text-xs py-2 px-3.5 flex-1 sm:flex-initial text-center justify-center"
                 >
-                  View Full Syllabus <ArrowRight className="w-3.5 h-3.5" />
+                  <span>View Details</span> <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
                 <button
                   onClick={() => handleSavePlan(rec.program)}
-                  className="btn-ghost text-xs py-2 px-3.5 flex items-center gap-1.5"
+                  className="btn-ghost text-xs py-2 px-3 flex items-center justify-center gap-1.5 flex-1 sm:flex-initial"
                 >
                   <Bookmark className="w-3.5 h-3.5 text-ai" />
-                  <span>{savedNotification ? "Saved to Header!" : "Save to My Plan"}</span>
+                  <span>{savedNotification ? "Saved!" : "Save Plan"}</span>
                 </button>
 
                 <Link
                   href={`/enquire?p=${rec.program.id}`}
-                  className="btn-red text-xs py-2 px-4"
+                  className="btn-red text-xs py-2 px-3.5 w-full sm:w-auto text-center justify-center"
                 >
                   Book Free Demo
                 </Link>
@@ -321,7 +321,7 @@ export function Advisor() {
       </div>
 
       {/* Interactive Chat Query Bar */}
-      <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800">
+      <div className="pt-3 sm:pt-4 border-t border-neutral-100 dark:border-neutral-800">
         <form onSubmit={handleAskQuestion} className="flex items-center gap-2">
           <div className="relative flex-1">
             <Bot className="w-4 h-4 text-ai absolute left-3 top-1/2 -translate-y-1/2" />
@@ -329,13 +329,13 @@ export function Advisor() {
               type="text"
               value={userQuery}
               onChange={(e) => setUserQuery(e.target.value)}
-              placeholder="Or ask me: 'What are the fees?', 'Do you provide placement?', 'Dwarka batch timings?'..."
-              className="w-full pl-9 pr-4 py-2.5 rounded-xl text-xs sm:text-sm bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 focus:outline-none focus:border-ai text-neutral-900 dark:text-white"
+              placeholder="Ask: 'Fees?', 'Placements?', 'Nearest Centre?'..."
+              className="w-full pl-9 pr-3 py-2.5 rounded-xl text-xs sm:text-sm bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 focus:outline-none focus:border-ai text-neutral-900 dark:text-white"
             />
           </div>
           <button
             type="submit"
-            className="p-2.5 rounded-xl bg-ai text-white hover:bg-ai-ink active:scale-95 transition"
+            className="p-2.5 rounded-xl bg-ai text-white hover:bg-ai-ink active:scale-95 transition shrink-0"
             aria-label="Submit question"
           >
             <Send className="w-4 h-4" />
@@ -366,3 +366,4 @@ export function Advisor() {
     </div>
   );
 }
+

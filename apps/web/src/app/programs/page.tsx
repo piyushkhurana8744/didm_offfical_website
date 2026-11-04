@@ -36,36 +36,36 @@ export default function ProgramsPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red-soft dark:bg-brand-red/10 text-brand-red text-xs font-mono font-semibold">
             PROGRAMS DIRECTORY
           </div>
-          <h1 className="text-4xl sm:text-6xl font-normal text-neutral-900 dark:text-white leading-[1.05]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-normal text-neutral-900 dark:text-white leading-[1.1] break-words">
             Career programs engineered for <em>practical digital mastery</em>.
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
             Choose between comprehensive career accelerators, full 1-year agency diplomas, and
             focused executive tracks. All courses include live campaign ad spend and 100% placement support.
           </p>
         </div>
 
         {/* 4 Flagship Career Programs */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
             Flagship Career Certifications
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {SITE_DATA.programs.map((prog) => (
               <div
                 key={prog.id}
-                className="rounded-3xl p-7 sm:p-9 bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between card-hover relative"
+                className="rounded-3xl p-5 sm:p-7 md:p-9 bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between card-hover relative"
               >
                 {prog.badge && (
-                  <span className="absolute top-6 right-6 text-[10px] font-mono uppercase px-3 py-1 rounded-full bg-brand-red text-white font-bold tracking-wider">
+                  <span className="absolute top-5 right-5 sm:top-6 sm:right-6 text-[10px] font-mono uppercase px-2.5 sm:px-3 py-1 rounded-full bg-brand-red text-white font-bold tracking-wider">
                     {prog.badge}
                   </span>
                 )}
 
-                <div className="space-y-5">
-                  <div>
-                    <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+                <div className="space-y-4 sm:space-y-5">
+                  <div className="pr-16 sm:pr-0">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">
                       {prog.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1 leading-relaxed">
@@ -74,21 +74,21 @@ export default function ProgramsPage() {
                   </div>
 
                   {/* Fee Bar */}
-                  <div className="py-3 px-4 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+                  <div className="py-2.5 sm:py-3 px-3.5 sm:px-4 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
                     <div>
                       <div className="text-[10px] font-mono uppercase text-neutral-400">Tuition Fee</div>
-                      <div className="font-serif text-2xl text-neutral-900 dark:text-white font-normal">
+                      <div className="font-serif text-xl sm:text-2xl text-neutral-900 dark:text-white font-normal">
                         {prog.fee}
                       </div>
                     </div>
                     {prog.feeInstalment && (
-                      <div className="text-right text-[11px] text-neutral-500 max-w-[150px]">
+                      <div className="text-right text-[10px] sm:text-[11px] text-neutral-500 max-w-[130px] sm:max-w-[150px]">
                         {prog.feeInstalment}
                       </div>
                     )}
                   </div>
 
-                  <dl className="grid grid-cols-2 gap-3 text-xs text-neutral-600 dark:text-neutral-300">
+                  <dl className="grid grid-cols-2 gap-2.5 sm:gap-3 text-xs text-neutral-600 dark:text-neutral-300">
                     <div>
                       <dt className="text-neutral-400 font-mono text-[10px] uppercase">Duration</dt>
                       <dd className="font-semibold text-neutral-900 dark:text-white mt-0.5">{prog.duration}</dd>
@@ -113,7 +113,7 @@ export default function ProgramsPage() {
                       Core Modules Include:
                     </div>
                     {prog.keyModules.slice(0, 4).map((m, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400">
+                      <div key={i} className="flex items-center gap-2 text-[11px] sm:text-xs text-neutral-600 dark:text-neutral-400">
                         <CheckCircle2 className="w-3.5 h-3.5 text-brand-red shrink-0" />
                         <span>{m}</span>
                       </div>
@@ -121,17 +121,17 @@ export default function ProgramsPage() {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between gap-3">
+                <div className="pt-5 mt-5 sm:pt-6 sm:mt-6 border-t border-neutral-100 dark:border-neutral-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-3">
                   <Link
                     href={`/program?p=${prog.id}`}
-                    className="btn-ghost text-xs py-2.5 px-4 font-semibold"
+                    className="btn-ghost text-xs py-2.5 px-4 font-semibold text-center justify-center flex-1"
                   >
                     View Curriculum
                   </Link>
 
                   <Link
                     href={`/enquire?p=${prog.id}`}
-                    className="btn-red text-xs py-2.5 px-4 font-semibold"
+                    className="btn-red text-xs py-2.5 px-4 font-semibold text-center justify-center flex-1"
                   >
                     Book Demo Class
                   </Link>
@@ -233,3 +233,4 @@ export default function ProgramsPage() {
     </div>
   );
 }
+

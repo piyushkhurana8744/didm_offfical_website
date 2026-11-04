@@ -72,8 +72,14 @@ export default function OutcomesPage() {
             </h2>
           </div>
 
-          <div className="rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#131319] overflow-hidden">
-            <table className="w-full text-left border-collapse">
+          {/* Mobile Swipe Hint */}
+          <div className="md:hidden flex items-center justify-between text-[11px] font-mono text-brand-red bg-brand-red-soft dark:bg-brand-red/10 px-3.5 py-2 rounded-xl border border-brand-red/20">
+            <span>👉 Swipe table to view all salaries</span>
+            <span className="font-bold">Swipe ↔</span>
+          </div>
+
+          <div className="rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#131319] overflow-x-auto touch-scroll shadow-sm">
+            <table className="w-full text-left border-collapse min-w-[620px]">
               <thead>
                 <tr className="border-b border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-[#1A1A22] text-xs font-mono uppercase text-neutral-500">
                   <th className="p-4 sm:p-5">Student</th>
@@ -152,3 +158,4 @@ export default function OutcomesPage() {
     </div>
   );
 }
+

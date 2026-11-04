@@ -131,7 +131,7 @@ export function EnquiryForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-6 sm:p-9 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-xl space-y-5"
+      className="p-5 sm:p-8 md:p-9 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-xl space-y-4 sm:space-y-5"
     >
       <div>
         <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-900 dark:text-white">
@@ -309,3 +309,4 @@ export function EnquiryForm() {
     </form>
   );
 }
+

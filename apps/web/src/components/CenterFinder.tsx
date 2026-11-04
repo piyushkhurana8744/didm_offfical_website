@@ -28,10 +28,10 @@ export function CenterFinder() {
   }, [searchQuery, selectedRegion]);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       {/* Search & Region Filters Header */}
-      <div className="p-6 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-5">
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+      <div className="p-4 sm:p-6 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-4 sm:space-y-5">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 sm:gap-4">
           {/* Live Search Input */}
           <div className="relative flex-1">
             <Search className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -39,27 +39,27 @@ export function CenterFinder() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by area, metro station, or city (e.g., Dwarka, Noida, Metro)..."
+              placeholder="Search by area, metro station, or city (e.g. Dwarka, Noida)..."
               className="w-full pl-10 pr-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
             />
           </div>
 
           {/* Result Count Indicator */}
-          <div className="text-xs font-mono font-medium text-neutral-500 whitespace-nowrap self-center">
+          <div className="text-xs font-mono font-medium text-neutral-500 whitespace-nowrap self-start md:self-center">
             Showing <strong className="text-neutral-900 dark:text-white">{filteredCentres.length}</strong> of{" "}
             {SITE_DATA.centres.length} Centres
           </div>
         </div>
 
         {/* Region Chips */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 scrollbar-none">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 pt-1 touch-scroll">
           {regions.map((region) => {
             const isSelected = selectedRegion === region;
             return (
               <button
                 key={region}
                 onClick={() => setSelectedRegion(region)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
+                className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
                   isSelected
                     ? "bg-brand-red text-white shadow-sm"
                     : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
@@ -73,11 +73,11 @@ export function CenterFinder() {
       </div>
 
       {/* Centre Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {filteredCentres.map((centre) => (
           <div
             key={centre.id}
-            className="rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 p-6 flex flex-col justify-between card-hover relative"
+            className="rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 p-5 sm:p-6 flex flex-col justify-between card-hover relative"
           >
             {centre.isHeadOffice && (
               <span className="absolute top-5 right-5 text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-brand-red text-white font-bold">
@@ -178,3 +178,4 @@ export function CenterFinder() {
     </div>
   );
 }
+

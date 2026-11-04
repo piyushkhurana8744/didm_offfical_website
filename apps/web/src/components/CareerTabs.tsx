@@ -83,9 +83,9 @@ export function CareerTabs() {
   const current = pathways[activeTab];
 
   return (
-    <div className="space-y-6">
-      {/* Tabs navigation */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-neutral-200 dark:border-neutral-800">
+    <div className="space-y-4 sm:space-y-6">
+      {/* Tabs navigation with touch scroll */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-neutral-200 dark:border-neutral-800 touch-scroll">
         {pathways.map((pathway, idx) => {
           const Icon = pathway.icon;
           const isActive = activeTab === idx;
@@ -93,7 +93,7 @@ export function CareerTabs() {
             <button
               key={pathway.id}
               onClick={() => setActiveTab(idx)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
+              className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
                 isActive
                   ? "bg-brand-red text-white shadow-sm"
                   : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
@@ -107,16 +107,16 @@ export function CareerTabs() {
       </div>
 
       {/* Pathway Detail Card */}
-      <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-sm animate-in fade-in">
+      <div className="p-5 sm:p-8 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-sm animate-in fade-in">
         <div className="max-w-3xl space-y-4">
           <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">
             {current.title}
           </h3>
-          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          <p className="text-xs sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
             {current.lead}
           </p>
 
-          <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
             {current.outcomes.map((outcome, i) => (
               <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
@@ -125,23 +125,23 @@ export function CareerTabs() {
             ))}
           </div>
 
-          <div className="pt-6 border-t border-neutral-100 dark:border-neutral-800 flex flex-wrap items-center justify-between gap-4">
+          <div className="pt-5 sm:pt-6 border-t border-neutral-100 dark:border-neutral-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
             <div className="text-xs">
               <span className="text-neutral-500">Recommended Track: </span>
               <strong className="text-brand-red font-semibold">{current.recommended}</strong>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5 sm:gap-3">
               <Link
                 href={current.recommendedLink}
-                className="btn-primary text-xs py-2 px-4"
+                className="btn-primary text-xs py-2 px-4 flex-1 sm:flex-initial text-center justify-center"
               >
                 <span>Explore Track</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
               <Link
                 href="/enquire"
-                className="btn-red text-xs py-2 px-4"
+                className="btn-red text-xs py-2 px-4 flex-1 sm:flex-initial text-center justify-center"
               >
                 Book Counseling
               </Link>
@@ -152,3 +152,4 @@ export function CareerTabs() {
     </div>
   );
 }
+

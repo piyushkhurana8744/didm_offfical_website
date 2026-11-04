@@ -107,3 +107,4 @@ export function SyllabusAccordion({ modules }: { modules: SyllabusModule[] }) {
     </div>
   );
 }
+

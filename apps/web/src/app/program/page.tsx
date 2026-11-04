@@ -175,7 +175,7 @@ export default function ProgramDetailPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="text-xs font-mono text-neutral-500 flex items-center gap-2">
+        <nav aria-label="Breadcrumb" className="text-xs font-mono text-neutral-500 flex items-center gap-2 overflow-x-auto whitespace-nowrap touch-scroll pb-1">
           <Link href="/" className="hover:text-brand-red">Home</Link>
           <span>/</span>
           <Link href="/programs" className="hover:text-brand-red">Programs</Link>
@@ -184,28 +184,28 @@ export default function ProgramDetailPage() {
         </nav>
 
         {/* Hero & Key Facts Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-8 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          <div className="lg:col-span-8 space-y-4 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red-soft dark:bg-brand-red/10 text-brand-red text-xs font-mono font-semibold">
               ⭐ MOST POPULAR CAREER PROGRAM
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-normal text-neutral-900 dark:text-white leading-[1.08]">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-normal text-neutral-900 dark:text-white leading-[1.1] break-words">
               Master in Digital Marketing (MIDM) with <em>Live Ad Budgets</em>.
             </h1>
 
-            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl">
               The industry-standard curriculum covering full-stack digital marketing from core search
               and programmatic advertising to modern generative AI tools and 2 months of verified agency internship.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Link href="/enquire?p=midm" className="btn-red py-3 px-6 text-sm font-bold">
-                Book a Free Trial Class <ArrowRight className="w-4 h-4" />
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <Link href="/enquire?p=midm" className="btn-red py-3 px-6 text-xs sm:text-sm font-bold text-center justify-center">
+                Book a Free Trial Class <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
               <a
                 href="#syllabus"
-                className="btn-ghost py-3 px-5 text-sm font-semibold flex items-center gap-2"
+                className="btn-ghost py-3 px-5 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2"
               >
                 <Download className="w-4 h-4 text-brand-red" />
                 <span>Explore 50-Module Syllabus</span>
@@ -419,3 +419,4 @@ export default function ProgramDetailPage() {
     </div>
   );
 }
+

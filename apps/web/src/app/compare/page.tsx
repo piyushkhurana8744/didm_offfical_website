@@ -93,12 +93,18 @@ export default function ComparePage() {
           </p>
         </div>
 
+        {/* Mobile Swipe Hint */}
+        <div className="md:hidden flex items-center justify-between text-[11px] font-mono text-brand-red bg-brand-red-soft dark:bg-brand-red/10 px-3.5 py-2 rounded-xl border border-brand-red/20 -mb-10">
+          <span>👉 Swipe horizontally to compare courses</span>
+          <span className="font-bold">Swipe ↔</span>
+        </div>
+
         {/* Comparison Table */}
         <div
           role="region"
           aria-label="DIDM Course Comparison Table"
           tabIndex={0}
-          className="rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#131319] overflow-x-auto shadow-sm focus:outline-none focus:ring-2 focus:ring-ai"
+          className="rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#131319] overflow-x-auto shadow-sm focus:outline-none focus:ring-2 focus:ring-ai touch-scroll"
         >
           <table className="w-full text-left border-collapse min-w-[760px]">
             <caption className="sr-only">Detailed comparison of DIDM courses</caption>
@@ -236,3 +242,4 @@ export default function ComparePage() {
     </div>
   );
 }
+

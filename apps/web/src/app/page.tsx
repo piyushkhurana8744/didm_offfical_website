@@ -12,43 +12,43 @@ export default function HomePage() {
       <div className="aurora-glow" />
 
       {/* 1. Hero Section */}
-      <section className="relative pt-12 pb-20 md:pt-20 md:pb-28">
+      <section className="relative pt-6 sm:pt-12 pb-12 sm:pb-20 md:pt-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Heading, Subhead, Verified Stats */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-red-soft dark:bg-brand-red/10 border border-brand-red/20 text-brand-red text-xs font-mono font-semibold">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-red-soft dark:bg-brand-red/10 border border-brand-red/20 text-brand-red text-[11px] sm:text-xs font-mono font-semibold">
                 <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
-                <span>ADMISSIONS OPEN FOR 2026–2027 COHORTS</span>
+                <span className="truncate">ADMISSIONS OPEN FOR 2026–2027 COHORTS</span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl xl:text-7xl font-normal tracking-tight text-neutral-900 dark:text-white leading-[1.05]">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-normal tracking-tight text-neutral-900 dark:text-white leading-[1.1] sm:leading-[1.05] break-words">
                 Master modern marketing with <em>practical AI skills</em> & guaranteed careers.
               </h1>
 
-              <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-xl leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-xl leading-relaxed">
                 Delhi Institute of Digital Marketing (DIDM) blends high-impact performance marketing,
                 SEO, and enterprise AI workflows with live ad budgets and 650+ placement partners.
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Link href="/enquire" className="btn-red py-3.5 px-6 text-sm font-bold">
-                  Book a Free Demo Class <ArrowRight className="w-4 h-4" />
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2">
+                <Link href="/enquire" className="btn-red py-3 sm:py-3.5 px-6 text-xs sm:text-sm font-bold text-center justify-center">
+                  Book a Free Demo Class <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
-                <Link href="/programs" className="btn-ghost py-3.5 px-6 text-sm font-semibold">
+                <Link href="/programs" className="btn-ghost py-3 sm:py-3.5 px-6 text-xs sm:text-sm font-semibold text-center justify-center">
                   Explore All Programs
                 </Link>
               </div>
 
               {/* Verified Trust Strip */}
-              <div className="pt-6 border-t border-neutral-200/80 dark:border-neutral-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="pt-4 sm:pt-6 border-t border-neutral-200/80 dark:border-neutral-800/80 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                 {SITE_DATA.brand.stats.map((s, idx) => (
                   <div key={idx} className="space-y-0.5">
                     <div className="font-serif text-2xl sm:text-3xl font-normal text-neutral-900 dark:text-white">
                       {s.value}
                     </div>
-                    <div className="text-[11px] text-neutral-500 uppercase font-mono tracking-tight">
+                    <div className="text-[10px] sm:text-[11px] text-neutral-500 uppercase font-mono tracking-tight">
                       {s.label}
                     </div>
                   </div>
@@ -57,7 +57,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: Interactive Course Advisor */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 w-full">
               <Advisor />
             </div>
           </div>
@@ -146,25 +146,25 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {SITE_DATA.programs.map((prog) => (
               <div
                 key={prog.id}
-                className={`rounded-3xl p-7 sm:p-9 bg-white dark:bg-[#131319] border flex flex-col justify-between card-hover relative ${
+                className={`rounded-3xl p-5 sm:p-7 md:p-9 bg-white dark:bg-[#131319] border flex flex-col justify-between card-hover relative ${
                   prog.popular
                     ? "border-brand-red shadow-lg ring-1 ring-brand-red/20"
                     : "border-neutral-200 dark:border-neutral-800"
                 }`}
               >
                 {prog.badge && (
-                  <span className="absolute top-6 right-6 text-[10px] font-mono uppercase px-3 py-1 rounded-full bg-brand-red text-white font-bold tracking-wider">
+                  <span className="absolute top-5 right-5 sm:top-6 sm:right-6 text-[10px] font-mono uppercase px-2.5 sm:px-3 py-1 rounded-full bg-brand-red text-white font-bold tracking-wider">
                     {prog.badge}
                   </span>
                 )}
 
-                <div className="space-y-5">
-                  <div>
-                    <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+                <div className="space-y-4 sm:space-y-5">
+                  <div className="pr-16 sm:pr-0">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">
                       {prog.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1 leading-relaxed">
@@ -173,22 +173,22 @@ export default function HomePage() {
                   </div>
 
                   {/* Price Block */}
-                  <div className="py-3 px-4 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+                  <div className="py-2.5 sm:py-3 px-3.5 sm:px-4 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
                     <div>
                       <div className="text-[10px] font-mono uppercase text-neutral-400">Tuition Fee</div>
-                      <div className="font-serif text-2xl sm:text-3xl text-neutral-900 dark:text-white font-normal">
+                      <div className="font-serif text-xl sm:text-2xl md:text-3xl text-neutral-900 dark:text-white font-normal">
                         {prog.fee}
                       </div>
                     </div>
                     {prog.feeInstalment && (
-                      <div className="text-right text-[11px] text-neutral-500 max-w-[140px]">
+                      <div className="text-right text-[10px] sm:text-[11px] text-neutral-500 max-w-[130px] sm:max-w-[140px]">
                         {prog.feeInstalment}
                       </div>
                     )}
                   </div>
 
                   {/* Key facts list */}
-                  <dl className="grid grid-cols-2 gap-3 text-xs text-neutral-600 dark:text-neutral-300">
+                  <dl className="grid grid-cols-2 gap-2.5 sm:gap-3 text-xs text-neutral-600 dark:text-neutral-300">
                     <div>
                       <dt className="text-neutral-400 font-mono text-[10px] uppercase">Duration</dt>
                       <dd className="font-semibold text-neutral-900 dark:text-white mt-0.5">{prog.duration}</dd>
@@ -210,7 +210,7 @@ export default function HomePage() {
                   {/* Highlights */}
                   <div className="space-y-1.5 pt-2 border-t border-neutral-100 dark:border-neutral-800">
                     {prog.features.slice(0, 3).map((f, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-neutral-700 dark:text-neutral-300">
+                      <div key={i} className="flex items-center gap-2 text-[11px] sm:text-xs text-neutral-700 dark:text-neutral-300">
                         <CheckCircle2 className="w-3.5 h-3.5 text-brand-red shrink-0" />
                         <span>{f}</span>
                       </div>
@@ -219,17 +219,17 @@ export default function HomePage() {
                 </div>
 
                 {/* Bottom Card Actions */}
-                <div className="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between gap-3">
+                <div className="pt-5 mt-5 sm:pt-6 sm:mt-6 border-t border-neutral-100 dark:border-neutral-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-3">
                   <Link
                     href={`/program?p=${prog.id}`}
-                    className="btn-ghost text-xs py-2.5 px-4 font-semibold"
+                    className="btn-ghost text-xs py-2.5 px-4 font-semibold text-center justify-center flex-1"
                   >
                     View Full Details
                   </Link>
 
                   <Link
                     href={`/enquire?p=${prog.id}`}
-                    className="btn-red text-xs py-2.5 px-4 font-semibold"
+                    className="btn-red text-xs py-2.5 px-4 font-semibold text-center justify-center flex-1"
                   >
                     Get Free Demo
                   </Link>
@@ -487,3 +487,4 @@ export default function HomePage() {
     </div>
   );
 }
+

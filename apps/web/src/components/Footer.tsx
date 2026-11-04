@@ -1,10 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Award, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
 import { SITE_DATA } from "@/data/site-data";
 
 export function Footer() {
+  const LOGO_URL =
+    "https://res.cloudinary.com/dnfz4jwam/image/upload/v1793791834/didm-logo-reg_m1wbe9.png";
+
   return (
-    <footer className="bg-white dark:bg-[#131319] border-t border-neutral-200 dark:border-neutral-800 pt-16 pb-24 md:pb-16 text-sm text-neutral-600 dark:text-neutral-400 transition-colors">
+    <footer className="bg-white dark:bg-[#131319] border-t border-neutral-200 dark:border-neutral-800 pt-16 pb-28 md:pb-16 text-sm text-neutral-600 dark:text-neutral-400 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Accreditations Badge Row */}
         <div className="p-6 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800/80 mb-14 grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -51,12 +55,16 @@ export function Footer() {
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-brand-red flex items-center justify-center text-white font-extrabold text-base">
-                D
+              <div className="relative py-1 px-2.5 rounded-xl bg-white shadow-sm border border-neutral-200/80">
+                <Image
+                  src={LOGO_URL}
+                  alt="DIDM - Delhi Institute of Digital Marketing"
+                  width={140}
+                  height={44}
+                  className="h-9 w-auto object-contain"
+                  unoptimized
+                />
               </div>
-              <span className="font-extrabold text-xl tracking-tight text-neutral-900 dark:text-white">
-                DIDM
-              </span>
             </Link>
             <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-sm">
               Delhi Institute of Digital Marketing (DIDM) is India’s foremost AI-powered digital
@@ -230,3 +238,4 @@ export function Footer() {
     </footer>
   );
 }
+
