@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Geast:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FBFAF7;
+  --surface: #FFFFFF;
+  --surface-2: #F8F7F4;
+  --ink: #0E0E12;
+  --ink-2: #2B2B33;
+  --muted: #5A5A66;
+  --line: #E6E3DC;
+  --line-2: #D6D2C8;
+  --red: #C8102E;
+  --red-ink: #A50D26;
+  --red-soft: #FDF0F2;
+  --ai: #4F46E5;
+  --ai-ink: #4338CA;
+  --ai-soft: #EEF0FF;
+  --ok: #0F7B4B;
+  --radius: 14px;
+  --radius-sm: 10px;
+}
+
+[data-theme="dark"] {
+  --bg: #0A0A0E;
+  --surface: #131319;
+  --surface-2: #1A1A22;
+  --ink: #F3F2EE;
+  --ink-2: #D9D8D3;
+  --muted: #A4A4B0;
+  --line: #26262F;
+  --line-2: #34343F;
+  --red: #FF4A65;
+  --red-ink: #FF6B82;
+  --red-soft: #2A1218;
+  --ai: #818CF8;
+  --ai-ink: #A5B4FC;
+  --ai-soft: #1B1C35;
+  --ok: #4ADE80;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-mono {
+  font-family: 'Geist Mono', monospace;
+}
+
+/* Red brand signature italic emphasis */
+h1 em, h2 em, .serif-italic-red em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  color: var(--red);
+  font-weight: 400;
+}
+
+/* Aurora Hero Glow effect */
+.aurora-glow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 480px;
+  background: radial-gradient(circle at 50% 40%, rgba(200, 16, 46, 0.12) 0%, rgba(79, 70, 229, 0.08) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] .aurora-glow {
+  background: radial-gradient(circle at 50% 40%, rgba(255, 74, 101, 0.22) 0%, rgba(129, 140, 248, 0.16) 45%, transparent 70%);
+}
+
+/* Advisor Orb Animation */
+@keyframes orbRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.advisor-orb {
+  animation: orbRotate 10s linear infinite;
+}
+
+/* Custom interactive classes */
+.btn-primary {
+  background-color: var(--ink);
+  color: var(--surface);
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-red {
+  background-color: var(--red);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-red:hover {
+  background-color: var(--red-ink);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(200, 16, 46, 0.25);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-2);
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.btn-ai {
+  background-color: var(--ai);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-ai:hover {
+  background-color: var(--ai-ink);
+  transform: translateY(-1px);
+}
+
+/* Arrow Slide */
+.link-arrow span {
+  display: inline-block;
+  transition: transform 0.15s ease-in-out;
+}
+
+.link-arrow:hover span {
+  transform: translateX(4px);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.08);
+  border-color: var(--line-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
