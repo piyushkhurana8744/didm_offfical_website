@@ -1,0 +1,3 @@
+import { NextResponse } from "next/server";import { z } from "zod";import { assertSafeOrigin,requireApiPermission } from "@/lib/cms/auth";import { saveHomepageDraft } from "@/lib/mongodb/pages";
+const Schema=z.object({heroHeading:z.string().trim().min(10).max(180),heroMediaId:z.string().max(120).optional()});
+export async function PUT(request:Request){try{assertSafeOrigin(request);const user=await requireApiPermission("pages.write"),body=Schema.parse(await request.json()),page=await saveHomepageDraft(body.heroHeading,body.heroMediaId,user.id);return NextResponse.json({ok:true,id:page._id});}catch(error){return NextResponse.json({error:error instanceof Error?error.message:"Unable to save draft"},{status:Number((error as {status?:number}).status)||400});}}

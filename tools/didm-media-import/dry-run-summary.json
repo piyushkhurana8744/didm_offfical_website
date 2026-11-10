@@ -1,0 +1,24 @@
+{
+  "mode": "offline-dry-run",
+  "network_requests_made": 0,
+  "unique_image_urls_discovered": 375,
+  "status_counts": {
+    "eligible": 355,
+    "pending_authorization": 20
+  },
+  "host_counts": {
+    "cdn-icons-png.flaticon.com": 17,
+    "didm.in": 69,
+    "q.quora.com": 2,
+    "www.didm.in": 286,
+    "www.gstatic.com": 1
+  },
+  "eligible_hosts": [
+    "didm.in",
+    "www.didm.in"
+  ],
+  "expected_media_get_requests": 355,
+  "expected_robots_get_requests": 2,
+  "expected_minimum_total_get_requests": 357,
+  "note": "Minimum total includes one robots.txt GET per eligible host; redirects and policy-compliant retries cannot be known offline."
+}

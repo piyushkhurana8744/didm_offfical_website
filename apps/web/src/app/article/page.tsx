@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Clock, Calendar, ArrowLeft, Bookmark, Share2, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
+import { DIDM_MEDIA } from "@/data/didm-media";
 
 export const metadata: Metadata = {
   title: "The 2026 Modern Performance Marketing Architecture | DIDM Guide",
@@ -21,7 +22,7 @@ export default function ArticlePage() {
     publisher: {
       "@type": "Organization",
       name: "Delhi Institute of Digital Marketing",
-      logo: "https://www.didm.in/logo.png",
+      logo: `https://www.didm.in${DIDM_MEDIA.officialLogo.path}`,
     },
     datePublished: "2026-01-15",
   };

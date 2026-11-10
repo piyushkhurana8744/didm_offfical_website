@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-11-04T13:35:19.025118+00:00",
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/news-and-events"
+  ],
+  "migration_readiness": {
+    "ready_for_migration": false,
+    "captured_pages": 2,
+    "pending_urls": 65,
+    "missing_content_categories": [
+      "blog",
+      "faq",
+      "legal",
+      "testimonial"
+    ],
+    "reason": "Controlled crawl coverage is incomplete; migration requires reviewed source-to-target mappings."
+  }
+}

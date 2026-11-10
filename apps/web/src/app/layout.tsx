@@ -1,13 +1,22 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/Navbar";
 import { PlanBar } from "@/components/PlanBar";
 import { Footer } from "@/components/Footer";
 import { StickyMobileBar } from "@/components/StickyMobileBar";
-import { Suspense } from "react";
+import { DIDMCourseCounsellor } from "@/components/counsellor/DIDMCourseCounsellor";
+import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
+import { DIDM_MEDIA } from "@/data/didm-media";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
-  title: "DIDM: Delhi Institute of Digital Marketing | Premium AI & Growth Marketing",
+  metadataBase: new URL("https://www.didm.in"),
+  title: "DIDM | Delhi Institute of Digital Marketing",
   description:
     "India's premier AI-powered digital marketing institute. 50,000+ alumni, 650+ hiring partners, 13 physical centres & live online campus. Master MIDM, DMI Diploma & modern AI tools.",
   keywords: [
@@ -20,13 +29,16 @@ export const metadata: Metadata = {
     "SEO training",
   ],
   authors: [{ name: "Delhi Institute of Digital Marketing" }],
+  alternates: { canonical: "/" },
   openGraph: {
     title: "DIDM: Delhi Institute of Digital Marketing",
-    description: "Master digital marketing & generative AI tools with guaranteed 100% placement support.",
+    description: "Learn digital marketing and practical AI workflows with classroom options and dedicated placement support.",
     type: "website",
     locale: "en_IN",
     siteName: "DIDM",
+    images: [{ url: DIDM_MEDIA.officialLogo.path, width: DIDM_MEDIA.officialLogo.width, height: DIDM_MEDIA.officialLogo.height, alt: DIDM_MEDIA.officialLogo.alt }],
   },
+  twitter: { card: "summary_large_image", title: "DIDM | Delhi Institute of Digital Marketing", description: "Explore DIDM digital marketing programs, learning centres and admissions guidance.", images: [DIDM_MEDIA.officialLogo.path] },
 };
 
 export default function RootLayout({
@@ -42,7 +54,7 @@ export default function RootLayout({
     name: "Delhi Institute of Digital Marketing",
     alternateName: "DIDM",
     url: "https://www.didm.in",
-    logo: "https://res.cloudinary.com/dnfz4jwam/image/upload/v1793791834/didm-logo-reg_m1wbe9.png",
+    logo: `https://www.didm.in${DIDM_MEDIA.officialLogo.path}`,
     telephone: "+91-8800505151",
     email: "info@didm.in",
     address: {
@@ -61,25 +73,21 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      <body suppressHydrationWarning className="min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
-      </head>
-      <body className="min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
-        <Suspense fallback={null}>
+        <SmoothScrollProvider>
           <PlanBar />
-        </Suspense>
-        <Suspense fallback={<div className="h-[68px]" />}>
           <Navbar />
-        </Suspense>
-        <main id="main" className="flex-1 pb-16 xl:pb-0">
-          {children}
-        </main>
-        <Footer />
-        <StickyMobileBar />
+          <main id="main" className="flex-1 pb-16 xl:pb-0">
+            {children}
+          </main>
+          <Footer />
+          <StickyMobileBar />
+          <DIDMCourseCounsellor />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

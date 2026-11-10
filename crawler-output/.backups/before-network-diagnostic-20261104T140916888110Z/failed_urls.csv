@@ -1,0 +1,4 @@
+url,stage,status,reason,timestamp
+https://www.blog.didm.in/robots.txt,robots,,robots_status_0,2026-11-04T12:45:52.228998+00:00
+https://www.didm.in/sitemap.xml,sitemap,200,not_xml,2026-11-04T12:45:54.220196+00:00
+https://www.blog.didm.in/,page,,blocked_by_robots,2026-11-04T12:45:57.720580+00:00

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "asset-noida-conclave-main",
+    "originalUrl": "https://didm.in/assets/uploads/images/Noida%20Education%20Conclave%20Award%202026......webp",
+    "targetAwardId": "award-noida-conclave-2026",
+    "role": "hero_photograph",
+    "alt": "Noida Education Conclave Award 2026 presentation ceremony",
+    "caption": "Shri Yogendra Upadhyay presenting award to DIDM leadership",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-noida-conclave-citation",
+    "originalUrl": "https://didm.in/assets/uploads/images/Noida%20Education%20Conclave%20Award%202026..webp",
+    "targetAwardId": "award-noida-conclave-2026",
+    "role": "gallery_item",
+    "alt": "DIDM Founders holding the golden citation plaque at Noida Conclave",
+    "caption": "DIDM Founders with the golden citation plaque",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-assocham-3rd-hero",
+    "originalUrl": "https://didm.in/assets/upload/images/new/Assocham%20award%203rd%20time.webp",
+    "targetAwardId": "award-assocham-9th-msme-2023",
+    "role": "hero_photograph",
+    "alt": "DIDM receives ASSOCHAM Award for 3rd time",
+    "caption": "ASSOCHAM Award 3rd Time Felicitation Ceremony",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-assocham-cert",
+    "originalUrl": "https://didm.in/assets/upload/images/DIDM%20Assocham%20Certificate.webp",
+    "targetAwardId": "award-assocham-9th-msme-2023",
+    "role": "certificate",
+    "alt": "DIDM ASSOCHAM Official Certificate of Excellence",
+    "caption": "Official ASSOCHAM Certificate of Excellence",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-assocham-8th-hero",
+    "originalUrl": "https://didm.in/assets/upload/images/new/MSMEs%20Excellence%20Award%202022%20DIDM.jpg",
+    "targetAwardId": "award-assocham-8th-msme-2022",
+    "role": "hero_photograph",
+    "alt": "8th MSME Excellence Awards 2022 presentation ceremony",
+    "caption": "Union Minister presenting the Fair Business Practices Award",
+    "fileType": "jpg",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-ifa-sonu-sood",
+    "originalUrl": "https://didm.in/assets/upload/images/IFA%20AWARD%20SONU%20SOOD%202021.jpg",
+    "targetAwardId": "award-ifa-2021",
+    "role": "hero_photograph",
+    "alt": "Sonu Sood presenting International Fame Award 2021 to DIDM",
+    "caption": "Sonu Sood felicitating DIDM as Best Digital Marketing Training Company",
+    "fileType": "jpg",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-wasme-hero",
+    "originalUrl": "https://didm.in/assets/upload/images/DIDM%20WASME%20SEME%20EXCELLENCE%20AWARD%202021.jpg",
+    "targetAwardId": "award-wasme-2021",
+    "role": "hero_photograph",
+    "alt": "WASME SME Excellence Award 2021 presentation",
+    "caption": "WASME SME Excellence Award presentation at SCOPE Complex",
+    "fileType": "jpg",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-assocham-2018-hero",
+    "originalUrl": "https://didm.in/assets/upload/images/new/6th%20SME%20awards%202018.webp",
+    "targetAwardId": "award-assocham-6th-sme-2018",
+    "role": "hero_photograph",
+    "alt": "6th SME awards 2018 ASSOCHAM",
+    "caption": "6th SMEs Excellence Awards 2018 by ASSOCHAM",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-justdial-award",
+    "originalUrl": "https://didm.in/assets/upload/images/new/JUST%20DIAL%20AWARD%20-%20DIDM.webp",
+    "targetAwardId": "award-justdial-searched-brand",
+    "role": "recognition_badge",
+    "alt": "Justdial Award DIDM",
+    "caption": "Most Searched Digital Marketing Institute across Delhi NCR by Justdial",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-franchise-batao",
+    "originalUrl": "https://didm.in/assets/upload/images/new/Franchise%20Batao%20Award.webp",
+    "targetAwardId": "award-franchise-batao-2022",
+    "role": "recognition_badge",
+    "alt": "Franchise Batao Award DIDM",
+    "caption": "Franchise Batao Award for Excellence in Digital Marketing",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-jims-certificate",
+    "originalUrl": "https://didm.in/assets/upload/images/new/DIDM%20JIMS%20CERTIFICATE.webp",
+    "targetAwardId": null,
+    "role": "certificate",
+    "alt": "JIMS Certificate of Appreciation to DIDM",
+    "caption": "JIMS Academic Partnership Certificate of Appreciation",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-ssb-news",
+    "originalUrl": "https://didm.in/assets/upload/images/new/SSB%20News.webp",
+    "targetAwardId": null,
+    "role": "certificate",
+    "alt": "SSB News Certificate of Appreciation to DIDM",
+    "caption": "SSB News Broadcast Recognition",
+    "fileType": "webp",
+    "approvalStatus": "approved_manifest"
+  },
+  {
+    "id": "asset-media-news-banner",
+    "originalUrl": "https://didm.in/assets/upload/images/imges/MEDIA%20NEWS.png",
+    "targetAwardId": null,
+    "role": "header_banner",
+    "alt": "DIDM Media Coverage & News Banner",
+    "caption": "DIDM Media News Visual Composite",
+    "fileType": "png",
+    "approvalStatus": "approved_local_reuse",
+    "localPath": "/images/didm/blog/media-news-d13077c0380c.png"
+  }
+]
+

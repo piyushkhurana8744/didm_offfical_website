@@ -1,0 +1,149 @@
+{
+  "faqs": [
+    {
+      "id": "faq-01",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: What if I missed some classes? How to cover the missed classes? What are the charges for the same? | A: The missed classes can be covered by attending any of the upcoming batches, which can be considered as back-up classes. DIDM does not charge any extra fee for the same. However, this has to be pre-informed to the support team.",
+      "normalized_content": {
+        "question": "What if I missed some classes? How to cover the missed classes? What are the charges for the same?",
+        "answer": "The missed classes can be covered by attending any of the upcoming batches, which can be considered as back-up classes. DIDM does not charge any extra fee for the same. However, this has to be pre-informed to the support team.",
+        "category": "Admissions & Academics"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    },
+    {
+      "id": "faq-02",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: I did not understand some topics of the program. Is it possible to cover the topics once again? If yes, then is there any extra charge for it? | A: Yes, you can get access to the upcoming batches to form and have a better understanding. DIDM never charges any extra fee for doubt clearing session.",
+      "normalized_content": {
+        "question": "I did not understand some topics of the program. Is it possible to cover the topics once again? If yes, then is there any extra charge for it?",
+        "answer": "Yes, you can get access to the upcoming batches to form and have a better understanding. DIDM never charges any extra fee for doubt clearing session.",
+        "category": "Career & Placements"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    },
+    {
+      "id": "faq-03",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: What is the salary that I will get after completing the Digital Marketing program? | A: You can get a salary from Rs. 10000 to Rs. 50,000 monthly depending on your skill and calibre",
+      "normalized_content": {
+        "question": "What is the salary that I will get after completing the Digital Marketing program?",
+        "answer": "You can get a salary from Rs. 10000 to Rs. 50,000 monthly depending on your skill and calibre",
+        "category": "Career & Placements"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    },
+    {
+      "id": "faq-04",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: Do you provide training material? | A: Yes, DIDM provides training material in the form of E-notes and tools.",
+      "normalized_content": {
+        "question": "Do you provide training material?",
+        "answer": "Yes, DIDM provides training material in the form of E-notes and tools.",
+        "category": "Admissions & Academics"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    },
+    {
+      "id": "faq-05",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: What are the criteria to get a confirmed status? | A: We have an evaluation system that judges trainees based on elective subject and practical knowledge. We provide the certification once you satisfy the criteria and complete the course program.",
+      "normalized_content": {
+        "question": "What are the criteria to get a confirmed status?",
+        "answer": "We have an evaluation system that judges trainees based on elective subject and practical knowledge. We provide the certification once you satisfy the criteria and complete the course program.",
+        "category": "Career & Placements"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    },
+    {
+      "id": "faq-06",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: What are the chances of working from home after completing the course? Is there any chance to get projects that I can complete from home? | A: Once you complete the course, you have the option to work as a freelancer, for which we\u2019ve a complete module of freelancer push-ups. With this, you earn a handsome amount from the comfort of your home.",
+      "normalized_content": {
+        "question": "What are the chances of working from home after completing the course? Is there any chance to get projects that I can complete from home?",
+        "answer": "Once you complete the course, you have the option to work as a freelancer, for which we\u2019ve a complete module of freelancer push-ups. With this, you earn a handsome amount from the comfort of your home.",
+        "category": "Career & Placements"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    },
+    {
+      "id": "faq-07",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: Will DIDM help find a job after the completion of training? | A: Yes, DIDM assures 100% job assistance to all its trainees.",
+      "normalized_content": {
+        "question": "Will DIDM help find a job after the completion of training?",
+        "answer": "Yes, DIDM assures 100% job assistance to all its trainees.",
+        "category": "Career & Placements"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    },
+    {
+      "id": "faq-08",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: How flexible is the schedule? When do you conduct classes? | A: DIDM conduct classes on weekends, weekdays along with online classes at  evening and night. We also entertain trainees requests, especially the employed ones.",
+      "normalized_content": {
+        "question": "How flexible is the schedule? When do you conduct classes?",
+        "answer": "DIDM conduct classes on weekends, weekdays along with online classes at  evening and night. We also entertain trainees requests, especially the employed ones.",
+        "category": "Admissions & Academics"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    },
+    {
+      "id": "faq-09",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "FAQ'S",
+      "original_source_wording": "Q: Is there any chance to find job opportunities offshore after the course? | A: Indeed,one will have ample opportunities to choose from. After our Melbourne branch we have join hands with more companies off-shore.",
+      "normalized_content": {
+        "question": "Is there any chance to find job opportunities offshore after the course?",
+        "answer": "Indeed,one will have ample opportunities to choose from. After our Melbourne branch we have join hands with more companies off-shore.",
+        "category": "Career & Placements"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Salary and 100% placement statements reflect institute's published FAQ text; framed responsibly as assistance rather than an unconditional employment guarantee."
+    }
+  ],
+  "total": 9
+}

@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-11-04T14:06:57.525680+00:00",
+  "network_attempted": false,
+  "network_permission_acknowledged": false,
+  "request_policy": {
+    "method": "GET",
+    "maximum_requests_per_host": 1,
+    "targets": [
+      "https://www.didm.in/robots.txt",
+      "https://www.blog.didm.in/robots.txt"
+    ],
+    "redirects_followed": false,
+    "authentication": false,
+    "proxy_bypass": false,
+    "minimum_per_host_delay_seconds": 3,
+    "concurrency_per_host": 1
+  },
+  "environment": {
+    "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "python_version": "3.13.5",
+    "working_directory": "/Users/piyushkhurana/didm_official_website/tools/didm-crawler",
+    "stdin_is_tty": false,
+    "stdout_is_tty": false,
+    "dockerenv_present": false,
+    "cgroup_container_markers": [],
+    "codex_environment_signal_names": [
+      "CODEX_APPLY_PATCH_PRESERVE_LINE_ENDINGS",
+      "CODEX_CI",
+      "CODEX_INTERNAL_ORIGINATOR_OVERRIDE",
+      "CODEX_PERMISSION_PROFILE",
+      "CODEX_SANDBOX",
+      "CODEX_SANDBOX_NETWORK_DISABLED",
+      "CODEX_SESSION_ID",
+      "CODEX_THREAD_ID",
+      "CODEX_TOOL_CALL_ID",
+      "CODEX_VERSION"
+    ],
+    "codex_sandbox_network_disabled_signal_present": true,
+    "proxy_variable_names_present": [],
+    "note": "Only environment-variable names are reported; values are intentionally excluded."
+  },
+  "results": [],
+  "protected_state_before": {
+    "state_files": {
+      "checkpoint.json": "228676a09f9cedb0b16d5b4a6a32bb1128f979d186bcbdab03f04c0c9605cbf3",
+      "url_inventory.csv": "87183411d01b6c145b2960ee255b6240829ecf989ce514fba338136688a03fa0",
+      "pages.jsonl": "d1c7609d972af7fd76c1dc06ce51b5bdec306b8b1c0053505cf51782be7ce115"
+    },
+    "raw_snapshots": {
+      "raw_html/index--f5067221f54f1c23.html": "dddca36074efc741538913e78c84e792d74ccb24451ba4ee809c0527b322bcc2",
+      "raw_html/news-and-events--29840d3ca97de6b8.html": "fd0711659fb73e9bfde4534b6e7b4b553234242b905a73900a6b56dc8fec9759"
+    }
+  },
+  "protected_state_after": {
+    "state_files": {
+      "checkpoint.json": "228676a09f9cedb0b16d5b4a6a32bb1128f979d186bcbdab03f04c0c9605cbf3",
+      "url_inventory.csv": "87183411d01b6c145b2960ee255b6240829ecf989ce514fba338136688a03fa0",
+      "pages.jsonl": "d1c7609d972af7fd76c1dc06ce51b5bdec306b8b1c0053505cf51782be7ce115"
+    },
+    "raw_snapshots": {
+      "raw_html/index--f5067221f54f1c23.html": "dddca36074efc741538913e78c84e792d74ccb24451ba4ee809c0527b322bcc2",
+      "raw_html/news-and-events--29840d3ca97de6b8.html": "fd0711659fb73e9bfde4534b6e7b4b553234242b905a73900a6b56dc8fec9759"
+    }
+  },
+  "protected_state_unchanged": true,
+  "offline_alternative": "Run without --live to record environment and state-hash evidence only. No DNS or connectivity conclusion can be made without approved network access.",
+  "status": "approval_required_no_network_attempted"
+}

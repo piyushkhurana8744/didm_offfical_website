@@ -61,6 +61,25 @@ body {
   position: relative;
 }
 
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--red) 70%, white);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--red);
+  color: #fff;
+}
+
+@media (hover: none) {
+  .card-hover:hover,
+  .btn-primary:hover,
+  .btn-red:hover,
+  .btn-ghost:hover {
+    transform: none;
+  }
+}
+
 .font-serif {
   font-family: 'Instrument Serif', Georgia, serif;
 }

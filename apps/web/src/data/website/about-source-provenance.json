@@ -1,0 +1,23 @@
+{
+  "retrieved_at": "2026-11-05T18:29:00Z",
+  "sources": [
+    {
+      "id": "primary_about_us",
+      "url": "https://www.didm.in/about-us",
+      "content_type": "text/html; charset=utf-8",
+      "byte_size": 72885,
+      "sha256": "da51038765d70c60c9fd8c53695bebfb397c44f5445cbf27ffd9aad9699018fb",
+      "title": "About Delhi Institute of Digital Marketing - DIDM",
+      "verification_status": "verified_live_source"
+    },
+    {
+      "id": "supporting_150_reasons",
+      "url": "https://www.didm.in/150-reasons-to-join-digital-marketing-course-didm",
+      "content_type": "text/html; charset=utf-8",
+      "byte_size": 130834,
+      "sha256": "86d589349d0cb47eae12b339cd35024986f532538f4f8027f11f28ab0c9864e6",
+      "title": "150 Reasons to Join Digital Marketing Course DIDM",
+      "verification_status": "verified_live_source"
+    }
+  ]
+}

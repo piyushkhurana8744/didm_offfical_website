@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Sparkles, Check, ArrowRight, RotateCcw, Bookmark, Send, Bot, HelpCircle } from "lucide-react";
-import { SITE_DATA, Program } from "@/data/site-data";
+import { getAllCourses, getAllCentres, SITE_BRAND } from "@/lib/content";
+import type { Course } from "@/types/content";
 
 export function Advisor() {
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
@@ -14,16 +15,18 @@ export function Advisor() {
   const [aiAnswer, setAiAnswer] = useState<string | null>(null);
   const [savedNotification, setSavedNotification] = useState(false);
 
+  const courses = getAllCourses();
+
   // Recommendation engine logic
   const getRecommendation = (): {
-    program: Program;
+    course: Course;
     reasons: string[];
     alternative?: string;
   } => {
     if (time === "A full year, in depth") {
-      const dmi = SITE_DATA.programs.find((p) => p.id === "dmi")!;
+      const dmi = courses.find((c) => c.id === "dmi") || courses[0];
       return {
-        program: dmi,
+        course: dmi,
         reasons: [
           "You selected a full year deep immersion: DMI provides 12 months with 3 months actual agency floor residency.",
           "Includes 6 structured growth phases and eligible candidates receive a paid internship with Pre-Placement Offer (PPO) potential.",
@@ -34,51 +37,51 @@ export function Advisor() {
     }
 
     if (goal === "Grow my business") {
-      const prof = SITE_DATA.programs.find((p) => p.id === "professional")!;
+      const prof = courses.find((c) => c.id === "professional") || courses[0];
       return {
-        program: prof,
+        course: prof,
         reasons: [
           "Tailored specifically for founders: focus on direct lead generation ROI, local Google Maps ranking, and high-conversion ad funnels.",
           "Work directly on your actual business campaigns in class with mentor review.",
-          "Learn how to audit agencies and stop wasting retainer capital.",
+          "Learn how to audit agencies and optimize customer acquisition costs.",
         ],
         alternative: "MIDM",
       };
     }
 
     if (goal === "Grow in my job") {
-      const adv = SITE_DATA.programs.find((p) => p.id === "advanced")!;
+      const adv = courses.find((c) => c.id === "advanced") || courses[0];
       return {
-        program: adv,
+        course: adv,
         reasons: [
-          "Fast-track 2.5 months focused on Google Ads, Meta Ads and SEO performance.",
-          "Flexible weekend batches to balance your existing work commitments.",
-          "Immediate certifications to showcase for your next appraisal.",
+          "Fast-track focused curriculum covering Google Ads, Meta Ads and SEO performance.",
+          "Flexible weekend and evening batches to balance your existing work commitments.",
+          "Industry-recognized certifications to showcase for your next appraisal.",
         ],
         alternative: "MIDM (Comprehensive)",
       };
     }
 
     // Default top recommendation: MIDM
-    const midm = SITE_DATA.programs.find((p) => p.id === "midm")!;
+    const midm = courses.find((c) => c.id === "midm") || courses[0];
     return {
-      program: midm,
+      course: midm,
       reasons: [
         `Ideal match for "${goal || "Career growth"}": 500+ hours covering full-stack digital marketing & modern AI tools.`,
-        "Includes 2 months live practical internship with guaranteed interviews across 650+ hiring partners.",
+        "Includes 2 months live practical agency training with interview drives across 650+ hiring partners.",
         "Hands-on budget provided to run live PPC ads on Google and Meta.",
       ],
       alternative: "DMI 1-Year Diploma",
     };
   };
 
-  const handleSavePlan = (prog: Program) => {
+  const handleSavePlan = (course: Course) => {
     try {
       const plan = {
-        id: prog.id,
-        name: prog.shortName,
-        fullName: prog.name,
-        fee: prog.fee,
+        id: course.id,
+        name: course.shortName,
+        fullName: course.name,
+        slug: course.slug,
         ts: Date.now(),
       };
       localStorage.setItem("didm-plan", JSON.stringify(plan));
@@ -97,23 +100,23 @@ export function Advisor() {
     const q = userQuery.toLowerCase();
     if (q.includes("fee") || q.includes("cost") || q.includes("price") || q.includes("paisa") || q.includes("kitna")) {
       setAiAnswer(
-        "Tuition for MIDM is ₹68,661 (or ₹72,201 in 2 instalments). The 1-Year DMI Diploma is ₹1,67,518 with 0% EMI options. Short courses start with customized modular pricing. Free counseling is available at all centres!"
+        "DIDM offers transparent pricing with flexible 0% interest EMI options and merit scholarships. Detailed fee schedules depend on the specific track (MIDM vs 1-Year DMI) and batch mode. Speak to an advisor or download the syllabus for exact fee breakups."
       );
     } else if (q.includes("placement") || q.includes("job") || q.includes("salary") || q.includes("guarantee")) {
       setAiAnswer(
-        "DIDM has a network of 650+ verified hiring partners including Dentsu, Ogilvy, Zomato, and Swiggy. We provide dedicated 100% placement assistance, resume prep, and continuous interview drives until you secure a role."
+        "DIDM operates an active corporate placement cell with 650+ verified hiring partners including agencies, tech startups, and multinationals. We provide dedicated interview prep, live portfolio building, and unlimited placement drives until placed."
       );
     } else if (q.includes("centre") || q.includes("branch") || q.includes("location") || q.includes("delhi") || q.includes("noida") || q.includes("gurgaon") || q.includes("dwarka")) {
       setAiAnswer(
-        "DIDM has 13 physical centres across Delhi NCR (Dwarka, South Ex, Pitampura, Satya Niketan, Kalkaji, Preet Vihar), Noida, Gurgaon, Faridabad, Chandigarh, Dehradun, and a Live Interactive Online Campus."
+        "DIDM has 14 campuses across Delhi NCR (Dwarka, Satya Niketan HO, Kalkaji, Pitampura, Preet Vihar, Rajouri Garden), Noida, Gurgaon, Dehradun, Meerut, Jaipur, Mumbai, Haldwani, plus a Live Interactive Online Campus."
       );
     } else if (q.includes("duration") || q.includes("time") || q.includes("batch") || q.includes("weekend")) {
       setAiAnswer(
-        "Programs offer weekday morning (10 AM), afternoon (2 PM), evening (5 PM), and weekend (Sat-Sun) batches. MIDM takes 3 months (weekday) or 6 months (weekend). DMI is a comprehensive 12-month diploma."
+        "Programs offer weekday morning (10 AM), afternoon, evening, and weekend (Sat-Sun) batches. MIDM takes 3-5 months, Advanced is 2.5 months, and the DMI Diploma is an extensive 12-month program."
       );
     } else {
       setAiAnswer(
-        `Great question regarding "${userQuery}". Our senior academic advisors can clarify batch schedules, syllabus depths, and free trial demos for you. Call toll-free: +91 88005 05151 or book a callback.`
+        `Great question regarding "${userQuery}". Our senior academic advisors can clarify batch schedules, syllabus depths, and free trial demos. Call toll-free: +91 88005 05151 or book a callback.`
       );
     }
   };
@@ -198,24 +201,24 @@ export function Advisor() {
             <div className="text-xs font-semibold text-neutral-500 uppercase tracking-wider font-mono">
               Step 2 of 3: How much time can you commit each week?
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
               {[
-                { label: "Weekdays, finish fast", desc: "Mon–Fri classes (3 Months)" },
-                { label: "Weekends only", desc: "Sat & Sun intensive (6 Months)" },
-                { label: "A full year, in depth", desc: "Flagship Diploma with 3M Agency Floor" },
-              ].map((opt) => (
+                { title: "Part-time (6-8 hrs)", desc: "Weekend or Evening batches" },
+                { title: "Standard (15-20 hrs)", desc: "Weekday 3-5 month fast track" },
+                { title: "A full year, in depth", desc: "12-month agency residency (DMI)" },
+              ].map((t) => (
                 <button
-                  key={opt.label}
+                  key={t.title}
                   onClick={() => {
-                    setTime(opt.label);
+                    setTime(t.title);
                     setStep(3);
                   }}
-                  className="p-4 rounded-2xl text-left border border-neutral-200 dark:border-neutral-800 hover:border-ai dark:hover:border-ai hover:bg-ai-soft/50 dark:hover:bg-ai/10 transition-all hover:scale-[1.02]"
+                  className="p-3.5 sm:p-4 rounded-2xl text-left border border-neutral-200 dark:border-neutral-800 hover:border-ai hover:bg-ai-soft/50 dark:hover:bg-ai/10 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <div className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white">
-                    {opt.label}
+                    {t.title}
                   </div>
-                  <div className="text-xs text-neutral-500 mt-1">{opt.desc}</div>
+                  <div className="text-[11px] text-neutral-500 mt-1">{t.desc}</div>
                 </button>
               ))}
             </div>
@@ -225,56 +228,50 @@ export function Advisor() {
         {step === 3 && (
           <div className="space-y-4 animate-in fade-in">
             <div className="text-xs font-semibold text-neutral-500 uppercase tracking-wider font-mono">
-              Step 3 of 3: How do you prefer to attend?
+              Step 3 of 3: Preferred Learning Mode?
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
               {[
-                { label: "At a centre", desc: "13 centres across Delhi, NCR, PB, UK" },
-                { label: "Live online", desc: "2-way interactive live Zoom classes" },
-                { label: "Not sure yet", desc: "Show me hybrid & flex options" },
-              ].map((opt) => (
+                { title: "Classroom in Delhi NCR", desc: "14 branches with computer labs" },
+                { title: "Live Interactive Online", desc: "Two-way live faculty sessions" },
+                { title: "Hybrid Flexible", desc: "Attend in person or online anytime" },
+              ].map((loc) => (
                 <button
-                  key={opt.label}
+                  key={loc.title}
                   onClick={() => {
-                    setLocation(opt.label);
+                    setLocation(loc.title);
                     setStep(4);
                   }}
-                  className="p-4 rounded-2xl text-left border border-neutral-200 dark:border-neutral-800 hover:border-ai dark:hover:border-ai hover:bg-ai-soft/50 dark:hover:bg-ai/10 transition-all hover:scale-[1.02]"
+                  className="p-3.5 sm:p-4 rounded-2xl text-left border border-neutral-200 dark:border-neutral-800 hover:border-ai hover:bg-ai-soft/50 dark:hover:bg-ai/10 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <div className="text-xs sm:text-sm font-bold text-neutral-900 dark:text-white">
-                    {opt.label}
+                    {loc.title}
                   </div>
-                  <div className="text-xs text-neutral-500 mt-1">{opt.desc}</div>
+                  <div className="text-[11px] text-neutral-500 mt-1">{loc.desc}</div>
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {/* Step 4: AI Smart Recommendation Output */}
         {step === 4 && (
-          <div className="space-y-5 animate-in fade-in zoom-in-95">
-            <div className="p-5 rounded-2xl bg-[#EEF0FF]/60 dark:bg-ai-soft-dark border border-ai/20">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-ai text-white font-bold">
-                    Smart Match
-                  </span>
-                  <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                    Based on: {goal} · {time}
-                  </span>
-                </div>
-                <div className="text-xs font-bold font-mono text-brand-red">
-                  {rec.program.fee}
-                </div>
+          <div className="space-y-4 animate-in zoom-in-95">
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-ai-soft/60 via-white to-white dark:from-ai/10 dark:via-[#131319] dark:to-[#131319] border border-ai/20">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-ai text-white font-bold">
+                  Recommended For You
+                </span>
+                <span className="text-xs font-mono text-neutral-500 font-semibold">
+                  {rec.course.duration} · {rec.course.hours}
+                </span>
               </div>
 
               <div className="mt-2.5">
                 <h4 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white">
-                  {rec.program.name}
+                  {rec.course.name}
                 </h4>
                 <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 mt-1">
-                  {rec.program.tagline}
+                  {rec.course.tagline}
                 </p>
               </div>
 
@@ -294,14 +291,14 @@ export function Advisor() {
               {/* Recommendation CTAs */}
               <div className="mt-5 flex flex-wrap items-center gap-2">
                 <Link
-                  href={`/program?p=${rec.program.id}`}
+                  href={`/programs/${rec.course.slug}`}
                   className="btn-primary text-xs py-2 px-3.5 flex-1 sm:flex-initial text-center justify-center"
                 >
                   <span>View Details</span> <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
                 <button
-                  onClick={() => handleSavePlan(rec.program)}
+                  onClick={() => handleSavePlan(rec.course)}
                   className="btn-ghost text-xs py-2 px-3 flex items-center justify-center gap-1.5 flex-1 sm:flex-initial"
                 >
                   <Bookmark className="w-3.5 h-3.5 text-ai" />
@@ -309,7 +306,7 @@ export function Advisor() {
                 </button>
 
                 <Link
-                  href={`/enquire?p=${rec.program.id}`}
+                  href={`/enquire?p=${rec.course.id}`}
                   className="btn-red text-xs py-2 px-3.5 w-full sm:w-auto text-center justify-center"
                 >
                   Book Free Demo
@@ -342,28 +339,13 @@ export function Advisor() {
           </button>
         </form>
 
-        {/* AI Answer Output */}
         {aiAnswer && (
-          <div className="mt-3 p-3.5 rounded-xl bg-neutral-100 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 text-xs text-neutral-700 dark:text-neutral-200 flex items-start gap-2 animate-in fade-in">
-            <Sparkles className="w-4 h-4 text-ai shrink-0 mt-0.5" />
-            <div className="space-y-1.5 flex-1">
-              <div>{aiAnswer}</div>
-              <div className="flex items-center gap-3 pt-1">
-                <Link href="/enquire" className="font-semibold text-brand-red hover:underline">
-                  Talk to Senior Counselor →
-                </Link>
-                <button
-                  onClick={() => setAiAnswer(null)}
-                  className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 text-[11px]"
-                >
-                  Dismiss
-                </button>
-              </div>
-            </div>
+          <div className="mt-3 p-3 rounded-xl bg-ai-soft/50 dark:bg-ai/10 border border-ai/20 text-xs text-neutral-800 dark:text-neutral-200 animate-in fade-in leading-relaxed">
+            <strong className="text-ai dark:text-ai-dark block mb-1">DIDM AI Advisor:</strong>
+            {aiAnswer}
           </div>
         )}
       </div>
     </div>
   );
 }
-

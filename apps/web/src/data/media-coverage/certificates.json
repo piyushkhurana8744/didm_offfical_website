@@ -1,0 +1,43 @@
+[
+  {
+    "id": "cert-assocham-official",
+    "title": "ASSOCHAM Certificate of Excellence",
+    "issuingBody": "Associated Chambers of Commerce and Industry of India (ASSOCHAM)",
+    "year": 2023,
+    "description": "Official institutional certificate awarded to Delhi Institute of Digital Marketing for exemplary adherence to Fair Business Practices and industry upskilling.",
+    "imageUrl": "https://didm.in/assets/upload/images/DIDM%20Assocham%20Certificate.webp",
+    "alt": "Official ASSOCHAM Certificate of Excellence awarded to DIDM",
+    "verificationNote": "Presented at 9th MSME Excellence Summit"
+  },
+  {
+    "id": "cert-jims-academic",
+    "title": "JIMS Certificate of Academic Partnership & Appreciation",
+    "issuingBody": "Jagan Institute of Management Studies (JIMS)",
+    "year": 2022,
+    "description": "Certificate of Appreciation recognizing DIDM for imparting specialized digital marketing, performance advertising, and analytics workshops to postgraduate management cohorts.",
+    "imageUrl": "https://didm.in/assets/upload/images/new/DIDM%20JIMS%20CERTIFICATE.webp",
+    "alt": "JIMS Certificate of Appreciation to DIDM",
+    "verificationNote": "Institutional higher education partnership"
+  },
+  {
+    "id": "cert-ssb-news",
+    "title": "SSB News Media Recognition Certificate",
+    "issuingBody": "SSB National News Network",
+    "year": 2022,
+    "description": "Recognition certificate awarded to DIDM for empowering students with broadcast-ready digital communication and media marketing capabilities.",
+    "imageUrl": "https://didm.in/assets/upload/images/new/SSB%20News.webp",
+    "alt": "SSB News Certificate of Appreciation to DIDM",
+    "verificationNote": "Broadcast media network honor"
+  },
+  {
+    "id": "cert-iso-9001-2015",
+    "title": "ISO 9001:2015 Certified Quality Management System",
+    "issuingBody": "International Organization for Standardization (ISO Accredited Body)",
+    "year": 2018,
+    "description": "Certified for maintaining international quality management standards in digital marketing course curriculum, practical lab sessions, and student placement assistance.",
+    "imageUrl": "https://didm.in/assets/upload/images/new/DIDM%20has%20won%20the%20ASSOCHAM%20Award!.webp",
+    "alt": "ISO 9001:2015 Quality Management Standard DIDM",
+    "verificationNote": "Institutional standard renewal verified"
+  }
+]
+

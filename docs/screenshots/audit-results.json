@@ -1,0 +1,222 @@
+{
+  "viewports": [
+    {
+      "name": "desktop-1440",
+      "width": 1440,
+      "height": 900,
+      "isMobile": false,
+      "screenshot": "/Users/piyushkhurana/didm_official_website/docs/screenshots/midm-desktop-1440-full.png"
+    },
+    {
+      "name": "desktop-1280",
+      "width": 1280,
+      "height": 800,
+      "isMobile": false,
+      "screenshot": "/Users/piyushkhurana/didm_official_website/docs/screenshots/midm-desktop-1280-full.png"
+    },
+    {
+      "name": "tablet-landscape-1024",
+      "width": 1024,
+      "height": 768,
+      "isMobile": false,
+      "screenshot": "/Users/piyushkhurana/didm_official_website/docs/screenshots/midm-tablet-landscape-1024-full.png"
+    },
+    {
+      "name": "tablet-portrait-768",
+      "width": 768,
+      "height": 1024,
+      "isMobile": false,
+      "screenshot": "/Users/piyushkhurana/didm_official_website/docs/screenshots/midm-tablet-portrait-768-full.png"
+    },
+    {
+      "name": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "screenshot": "/Users/piyushkhurana/didm_official_website/docs/screenshots/midm-mobile-390-full.png"
+    },
+    {
+      "name": "mobile-375",
+      "width": 375,
+      "height": 812,
+      "isMobile": true,
+      "screenshot": "/Users/piyushkhurana/didm_official_website/docs/screenshots/midm-mobile-375-full.png"
+    }
+  ],
+  "animationTests": [
+    {
+      "from": 1,
+      "to": 2,
+      "midPosition": "left: 19.33%; top: 18.1647%; transform: translate(-50%, -96%);",
+      "endPosition": "left: 19.33%; top: 18.1647%; transform: translate(-50%, -96%);"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "midPosition": "left: 19.33%; top: 18.1647%; transform: translate(-50%, -96%);",
+      "endPosition": "left: 19.33%; top: 18.1647%; transform: translate(-50%, -96%);"
+    },
+    {
+      "from": 3,
+      "to": 15,
+      "midPosition": "left: 28.4961%; top: 17.4475%; transform: translate(-50%, -96%);",
+      "endPosition": "left: 88.8404%; top: 22.7445%; transform: translate(-50%, -96%);"
+    },
+    {
+      "from": 15,
+      "to": 52,
+      "midPosition": "left: 87.3949%; top: 49.1835%; transform: translate(-50%, -96%);",
+      "endPosition": "left: 81.2797%; top: 91.122%; transform: translate(-50%, -96%);"
+    },
+    {
+      "from": 52,
+      "to": 1,
+      "midPosition": "left: 81.2797%; top: 91.122%; transform: translate(-50%, -96%);",
+      "endPosition": "left: 81.2797%; top: 91.122%; transform: translate(-50%, -96%);"
+    }
+  ],
+  "rapidNavigation": {
+    "targetExpected": 4,
+    "finalModuleTitle": "Affiliate Marketing"
+  },
+  "reducedMotion": {
+    "settledImmediately": true,
+    "style": "left: 85.4184%; top: 49.741%; transform: translate(-50%, -96%);"
+  },
+  "programTests": [
+    {
+      "slug": "master-in-digital-marketing-course",
+      "name": "Master in Digital Marketing (MIDM)",
+      "pageTitle": "Master in Digital Marketing (MIDM)",
+      "hasStudio": true,
+      "checkpointCount": 52,
+      "activeModule": "Introduction to Digital Marketing"
+    },
+    {
+      "slug": "advanced-digital-marketing-course",
+      "name": "Advanced Course in Digital Marketing",
+      "pageTitle": "Advanced Digital Marketing Course",
+      "hasStudio": true,
+      "checkpointCount": 4,
+      "activeModule": "Search Engine Optimization & Google Search Console"
+    },
+    {
+      "slug": "digital-marketing-artificial-intelligence",
+      "name": "Diploma in Digital Marketing & AI (DMI)",
+      "pageTitle": "Diploma in Digital Marketing & AI (DMI)",
+      "hasStudio": true,
+      "checkpointCount": 6,
+      "activeModule": "Phase 1: Digital Architect (Foundation & Web UX)"
+    }
+  ],
+  "aiQuestions": [
+    {
+      "query": "What are all 52 Master course topics?",
+      "ok": true,
+      "source": "brochure_retrieval",
+      "citations": [
+        {
+          "label": "DIDM brochure — course comparison",
+          "page": 14
+        },
+        {
+          "label": "DIDM brochure — course comparison",
+          "page": 15
+        },
+        {
+          "label": "DIDM brochure — course comparison",
+          "page": 16
+        }
+      ],
+      "answer": "The brochure compares three tracks:\n\n• **Master Course in Digital Marketing (MIDM):** 500 total hours (140 in-class + 360 onboard)\n• **Advanced Course in Digital Marketing:** 140 total hours (140 in-class + 0 onboard)\n• **Customized Course in Digital Marketing:** Customized based on cohort total hours (Customized in-class + 0 onboard)\n\nUse the comparison page for the complete source matrix."
+    },
+    {
+      "query": "Does the course include Google Analytics?",
+      "ok": true,
+      "source": "brochure_retrieval",
+      "citations": [
+        {
+          "label": "DIDM brochure — Master curriculum",
+          "page": 12
+        }
+      ],
+      "answer": "The Master brochure lists these relevant checkpoints:\n\n• **14. Google Analytics** — Search Engine Mastery & Technical SEO\n• **12. Google Search Console** — Search Engine Mastery & Technical SEO\n• **18. Google Adwords** — Performance Advertising & Paid Media\n• **25. Google Tag Manager** — Performance Advertising & Paid Media\n• **37. Google Adsense** — E-Commerce, Monetization & Scale\n\nPage 12 confirms these labels, but does not provide lesson-level descriptions. Ask admissions for the current lesson plan."
+    },
+    {
+      "query": "What is the difference between Master and Advanced?",
+      "ok": true,
+      "source": "brochure_retrieval",
+      "citations": [
+        {
+          "label": "DIDM brochure — course comparison",
+          "page": 14
+        },
+        {
+          "label": "DIDM brochure — course comparison",
+          "page": 15
+        },
+        {
+          "label": "DIDM brochure — course comparison",
+          "page": 16
+        }
+      ],
+      "answer": "The brochure compares three tracks:\n\n• **Master Course in Digital Marketing (MIDM):** 500 total hours (140 in-class + 360 onboard)\n• **Advanced Course in Digital Marketing:** 140 total hours (140 in-class + 0 onboard)\n• **Customized Course in Digital Marketing:** Customized based on cohort total hours (Customized in-class + 0 onboard)\n\nUse the comparison page for the complete source matrix."
+    },
+    {
+      "query": "Which tools are listed in the brochure?",
+      "ok": true,
+      "source": "brochure_retrieval",
+      "citations": [
+        {
+          "label": "DIDM brochure — Master curriculum",
+          "page": 12
+        }
+      ],
+      "answer": "The Master brochure lists these relevant checkpoints:\n\n• **38. Tools of Digital Marketing** — E-Commerce, Monetization & Scale\n\nPage 12 confirms these labels, but does not provide lesson-level descriptions. Ask admissions for the current lesson plan."
+    },
+    {
+      "query": "What are the training hours?",
+      "ok": true,
+      "source": "brochure_retrieval",
+      "citations": [
+        {
+          "label": "DIDM brochure — FAQ",
+          "page": 11
+        }
+      ],
+      "answer": "The DIDM Master Course comprises 500+ total training hours. This includes 140 hours of core in-class conceptual instruction plus 360 hours of on-board practical internship training with partner agency Online Strikers spanning 2 full months."
+    },
+    {
+      "query": "What are the current fees?",
+      "ok": true,
+      "source": "counselling_referral",
+      "answer": "I could not find that fact in the structured brochure or verified catalog, so I won’t guess. Ask about a numbered Master checkpoint, course comparison, tools, certifications, methodology, careers, workshops, or centres."
+    },
+    {
+      "query": "Does DIDM guarantee placement?",
+      "ok": true,
+      "source": "brochure_retrieval",
+      "citations": [
+        {
+          "label": "DIDM brochure — Master curriculum",
+          "page": 12
+        }
+      ],
+      "answer": "The Master brochure lists these relevant checkpoints:\n\n• **51. Placement Session** — Industry Capstone & Career Launchpad\n\nPage 12 confirms these labels, but does not provide lesson-level descriptions. Ask admissions for the current lesson plan."
+    },
+    {
+      "query": "What is the detailed syllabus for topic 52?",
+      "ok": true,
+      "source": "brochure_retrieval",
+      "citations": [
+        {
+          "label": "DIDM brochure — Master curriculum",
+          "page": 12
+        }
+      ],
+      "answer": "The Master brochure lists these relevant checkpoints:\n\n• **52. Assignment Session** — Industry Capstone & Career Launchpad\n\nPage 12 confirms these labels, but does not provide lesson-level descriptions. Ask admissions for the current lesson plan."
+    }
+  ],
+  "consoleErrors": [],
+  "performanceMetrics": {}
+}

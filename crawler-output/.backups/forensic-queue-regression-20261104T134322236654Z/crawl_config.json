@@ -1,0 +1,18 @@
+{
+  "allowed_hosts": [
+    "www.didm.in",
+    "www.blog.didm.in"
+  ],
+  "seeds": [
+    "https://www.didm.in/",
+    "https://www.blog.didm.in/"
+  ],
+  "user_agent": "DIDMContentMigrationCrawler/1.0 (+read-only; contact: info@didm.in)",
+  "page_limit_per_host": 25,
+  "minimum_delay_seconds": 3.0,
+  "methods": [
+    "GET"
+  ],
+  "media_downloads": false,
+  "started_or_resumed_at": "2026-11-04T13:41:25.650622+00:00"
+}

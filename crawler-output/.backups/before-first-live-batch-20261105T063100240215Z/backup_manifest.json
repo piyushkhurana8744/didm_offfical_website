@@ -1,0 +1,112 @@
+{
+  "created_at": "2026-11-05T06:31:00.251312+00:00",
+  "source": "/Users/piyushkhurana/didm_official_website/crawler-output",
+  "file_count": 21,
+  "files": [
+    {
+      "path": "DIDM_QUEUE_STATE_COMPARISON.md",
+      "size": 820,
+      "sha256": "ae7ae4cf5d2e4e8bef7774f42fdc59a622fc5ee5f593565136c23909cd008473"
+    },
+    {
+      "path": "checkpoint.json",
+      "size": 5095,
+      "sha256": "228676a09f9cedb0b16d5b4a6a32bb1128f979d186bcbdab03f04c0c9605cbf3"
+    },
+    {
+      "path": "crawl_config.json",
+      "size": 429,
+      "sha256": "b5fe312e4f83f9694ea998d5701edbee3351ae6de037d4f8b56dc9f31bc7b373"
+    },
+    {
+      "path": "crawl_coverage_report.md",
+      "size": 887,
+      "sha256": "b1d5912b3a368ddf2ec3c11f26c2f35a3ac6316ac5d0b666b6b714bc3527f4c1"
+    },
+    {
+      "path": "crawl_summary.md",
+      "size": 547,
+      "sha256": "4b6b4f8bebc04e8a7417a400eb859a41fff83e4d7d425da2a50bf0ebe99105ea"
+    },
+    {
+      "path": "extraction_comparison.md",
+      "size": 1002,
+      "sha256": "3df52298dd79d6fc93b97b7e1cff885eb7dd6ab4a6f8b4a296f9d77996739ff2"
+    },
+    {
+      "path": "extraction_quality_report.md",
+      "size": 384,
+      "sha256": "4be074a9284c0160d3abe725aa49b8a95b4fef5ca340478cf02acfcf0ebfa523"
+    },
+    {
+      "path": "failed_urls.csv",
+      "size": 299,
+      "sha256": "dd61bf586232b7c261e9a9a90ce2f397e92ca02e5da92c20062155a6d50ea758"
+    },
+    {
+      "path": "media_manifest.csv",
+      "size": 7309,
+      "sha256": "a351e6d0a4cce56dd93e8d8d29f3f79cf50ce624a57df96726885d5b0602cd92"
+    },
+    {
+      "path": "network_diagnostic_report.json",
+      "size": 3428,
+      "sha256": "70217edc088590884a3fcd247aabb992590a20d351bf8a14d98e449b9044895d"
+    },
+    {
+      "path": "page_content.json",
+      "size": 268558,
+      "sha256": "5f59f241908e8f7173ed102420ef43f7eb4e73fb0e668f0caa7c77b131ccdf8f"
+    },
+    {
+      "path": "pages.jsonl",
+      "size": 319166,
+      "sha256": "d1c7609d972af7fd76c1dc06ce51b5bdec306b8b1c0053505cf51782be7ce115"
+    },
+    {
+      "path": "queue_restore_audit.json",
+      "size": 921,
+      "sha256": "4f1ef0312670131c1f55d1f86eb150a146f0da18a873337176a1c72cb416c240"
+    },
+    {
+      "path": "raw_html/index--f5067221f54f1c23.html",
+      "size": 156001,
+      "sha256": "dddca36074efc741538913e78c84e792d74ccb24451ba4ee809c0527b322bcc2"
+    },
+    {
+      "path": "raw_html/news-and-events--29840d3ca97de6b8.html",
+      "size": 80259,
+      "sha256": "fd0711659fb73e9bfde4534b6e7b4b553234242b905a73900a6b56dc8fec9759"
+    },
+    {
+      "path": "redirects.csv",
+      "size": 54,
+      "sha256": "04c20fb0543c71e081558edad6d842e2a4a2e10656e3f5d28a480573e4932435"
+    },
+    {
+      "path": "resume_verification_report.md",
+      "size": 2384,
+      "sha256": "d96080bed982fbdf07a5f2b2ca2a7e7e8ba0712d944ba7072731c109152a097a"
+    },
+    {
+      "path": "seo_metadata.csv",
+      "size": 1134,
+      "sha256": "5044e134be8b7a223c77c43e4e6cd626a0e96b848b07ba79e6451acff759818e"
+    },
+    {
+      "path": "source_to_target_mapping_draft.csv",
+      "size": 363,
+      "sha256": "09860a28163d839b2febf53169950b9dbcb53172aeb4bcff56385b45f47e19d3"
+    },
+    {
+      "path": "url_inventory.csv",
+      "size": 8774,
+      "sha256": "87183411d01b6c145b2960ee255b6240829ecf989ce514fba338136688a03fa0"
+    },
+    {
+      "path": "validation_report.json",
+      "size": 595,
+      "sha256": "1c720971e1d01de2351bd941d276efa903c43b89519042e7f5713f7e68d3ef3e"
+    }
+  ]
+}

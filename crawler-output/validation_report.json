@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-11-05T06:36:31.182312+00:00",
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/news-and-events",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-artificial-intelligence",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/master-in-digital-marketing-course",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/advanced-digital-marketing-course",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/customized-digital-marketing-course",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/online-digital-marketing-course",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/gen-ai-knowledge-camp",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course",
+    "Incomplete SEO (og_image, twitter_card): http://www.didm.in/digital-marketing-course-in-noida",
+    "Incomplete SEO (og_image, twitter_card): http://www.didm.in/master-in-digital-marketing-course",
+    "Incomplete SEO (og_image, twitter_card): http://www.didm.in/online-digital-marketing-course",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-dehradun",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-dwarka",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-gurgaon",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-haldwani-rudarpur",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-jaipur",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-kalkaji",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-meerut",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-mumbai",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-noida",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-pitampura",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-preet-vihar",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-satya-niketan",
+    "Incomplete SEO (og_image, twitter_card): https://www.didm.in/digital-marketing-course-in-rajouri-garden"
+  ],
+  "migration_readiness": {
+    "ready_for_migration": false,
+    "captured_pages": 25,
+    "pending_urls": 69,
+    "missing_content_categories": [
+      "legal"
+    ],
+    "reason": "Controlled crawl coverage is incomplete; migration requires reviewed source-to-target mappings."
+  }
+}

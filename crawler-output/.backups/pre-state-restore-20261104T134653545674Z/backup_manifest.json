@@ -1,0 +1,97 @@
+{
+  "created_at": "2026-11-04T13:46:53.552276+00:00",
+  "source": "/Users/piyushkhurana/didm_official_website/crawler-output",
+  "file_count": 18,
+  "files": [
+    {
+      "path": "checkpoint.json",
+      "size": 20920,
+      "sha256": "578a3b3dec4de3887c0e5407ff60c3c786c924e31c72a33ad03016a126a5816d"
+    },
+    {
+      "path": "crawl_config.json",
+      "size": 418,
+      "sha256": "7a60f0568c5bdcb7e3e2aa7208ac3009f55b43d4821e3adf1a21b9091d9726b0"
+    },
+    {
+      "path": "crawl_coverage_report.md",
+      "size": 836,
+      "sha256": "3abea7bcdc2e3ff10cbee8fed6aecacb64794182baa2a69f28829d0f154bf115"
+    },
+    {
+      "path": "crawl_summary.md",
+      "size": 549,
+      "sha256": "8a0cc90cf13b629502cd0e55a6ae61ed9a52521e9dff584638a8c0915700432c"
+    },
+    {
+      "path": "extraction_comparison.md",
+      "size": 1002,
+      "sha256": "3df52298dd79d6fc93b97b7e1cff885eb7dd6ab4a6f8b4a296f9d77996739ff2"
+    },
+    {
+      "path": "extraction_quality_report.md",
+      "size": 384,
+      "sha256": "4be074a9284c0160d3abe725aa49b8a95b4fef5ca340478cf02acfcf0ebfa523"
+    },
+    {
+      "path": "failed_urls.csv",
+      "size": 8866,
+      "sha256": "a6165d7a57824f846208817cccd5cf68f6a52f24b1e5440201ead58a6b70078c"
+    },
+    {
+      "path": "media_manifest.csv",
+      "size": 7309,
+      "sha256": "a351e6d0a4cce56dd93e8d8d29f3f79cf50ce624a57df96726885d5b0602cd92"
+    },
+    {
+      "path": "page_content.json",
+      "size": 268558,
+      "sha256": "5f59f241908e8f7173ed102420ef43f7eb4e73fb0e668f0caa7c77b131ccdf8f"
+    },
+    {
+      "path": "pages.jsonl",
+      "size": 319166,
+      "sha256": "d1c7609d972af7fd76c1dc06ce51b5bdec306b8b1c0053505cf51782be7ce115"
+    },
+    {
+      "path": "raw_html/index--f5067221f54f1c23.html",
+      "size": 156001,
+      "sha256": "dddca36074efc741538913e78c84e792d74ccb24451ba4ee809c0527b322bcc2"
+    },
+    {
+      "path": "raw_html/news-and-events--29840d3ca97de6b8.html",
+      "size": 80259,
+      "sha256": "fd0711659fb73e9bfde4534b6e7b4b553234242b905a73900a6b56dc8fec9759"
+    },
+    {
+      "path": "redirects.csv",
+      "size": 54,
+      "sha256": "04c20fb0543c71e081558edad6d842e2a4a2e10656e3f5d28a480573e4932435"
+    },
+    {
+      "path": "resume_verification_report.md",
+      "size": 2384,
+      "sha256": "d96080bed982fbdf07a5f2b2ca2a7e7e8ba0712d944ba7072731c109152a097a"
+    },
+    {
+      "path": "seo_metadata.csv",
+      "size": 1134,
+      "sha256": "5044e134be8b7a223c77c43e4e6cd626a0e96b848b07ba79e6451acff759818e"
+    },
+    {
+      "path": "source_to_target_mapping_draft.csv",
+      "size": 363,
+      "sha256": "09860a28163d839b2febf53169950b9dbcb53172aeb4bcff56385b45f47e19d3"
+    },
+    {
+      "path": "url_inventory.csv",
+      "size": 9774,
+      "sha256": "1a50222983103ed9ca76309e51139c8f42b69341698a4f3b1d26176cda9cba99"
+    },
+    {
+      "path": "validation_report.json",
+      "size": 594,
+      "sha256": "edd1577169bc2ce012ea44c338a4ad1e175c4bdc74108e3bfdf4d885ed6ed866"
+    }
+  ]
+}

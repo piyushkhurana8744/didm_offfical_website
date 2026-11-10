@@ -147,7 +147,7 @@ export default function ComparePage() {
               <tr>
                 <td className="p-4 sm:p-5 text-xs font-mono uppercase text-neutral-400">Next Step</td>
                 <td className="p-4 sm:p-5 bg-brand-red-soft/20 dark:bg-brand-red/5">
-                  <Link href="/program?p=midm" className="btn-red text-xs py-2 px-3 block text-center">
+                  <Link href="/programs/master-in-digital-marketing" className="btn-red text-xs py-2 px-3 block text-center">
                     View MIDM
                   </Link>
                 </td>

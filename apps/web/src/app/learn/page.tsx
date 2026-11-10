@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { BookOpen, Sparkles, FileText, ArrowRight, Download, CheckCircle2, Mail, Send } from "lucide-react";
+import { DIDM_MEDIA } from "@/data/didm-media";
 
 export default function LearnPage() {
   const [activeTab, setActiveTab] = useState<"guides" | "prompts" | "lessons">("guides");
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
 
   const guides = [
     {
@@ -64,12 +64,6 @@ export default function LearnPage() {
     },
   ];
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !email.includes("@")) return;
-    setSubscribed(true);
-  };
-
   return (
     <div className="py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -85,6 +79,17 @@ export default function LearnPage() {
             Free high-utility resources authored by DIDM senior mentors. No generic fluff — genuine
             agency workflows, prompt engineering systems, and campaign blueprints.
           </p>
+        </div>
+
+        <div className="relative aspect-[1796/250] overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">
+          <Image
+            src={DIDM_MEDIA.mediaNews.path}
+            alt={DIDM_MEDIA.mediaNews.alt}
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-cover"
+          />
         </div>
 
         {/* Featured Guide Banner */}
@@ -238,31 +243,10 @@ export default function LearnPage() {
             Get Weekly Marketing & AI Playbooks in Your Inbox
           </h3>
           <p className="text-xs text-neutral-500">
-            Join 22,000+ marketers receiving our Sunday breakdown of real algorithm shifts, ad creatives, and AI automations.
+            Newsletter registration is not currently connected. Browse the published resources above or contact DIDM for learning updates.
           </p>
 
-          {subscribed ? (
-            <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-xs font-semibold border border-emerald-200 dark:border-emerald-800 flex items-center justify-center gap-2">
-              <CheckCircle2 className="w-4 h-4" />
-              <span>Thank you! You are subscribed to Sunday Playbooks.</span>
-            </div>
-          ) : (
-            <form onSubmit={handleSubscribe} className="flex items-center gap-2 max-w-md mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your work or personal email..."
-                className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-700 text-xs focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
-              />
-              <button
-                type="submit"
-                className="btn-red text-xs py-2.5 px-4 font-bold shrink-0"
-              >
-                Subscribe
-              </button>
-            </form>
-          )}
+          <Link href="/enquire" className="btn-ghost text-xs py-2.5 px-4 font-bold">Request learning updates</Link>
         </div>
       </div>
     </div>

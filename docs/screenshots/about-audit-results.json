@@ -1,0 +1,54 @@
+{
+  "viewports": [
+    {
+      "viewport": "about-desktop-1440",
+      "width": 1440,
+      "height": 900,
+      "sections": {
+        "h1": "Educating India's next generation of growth architects.",
+        "teamCardsCount": 11,
+        "faqCardsCount": 9,
+        "hasPillars": true,
+        "hasEnquiryForm": true
+      }
+    },
+    {
+      "viewport": "about-tablet-1024",
+      "width": 1024,
+      "height": 768,
+      "sections": {
+        "h1": "Educating India's next generation of growth architects.",
+        "teamCardsCount": 11,
+        "faqCardsCount": 9,
+        "hasPillars": true,
+        "hasEnquiryForm": true
+      }
+    },
+    {
+      "viewport": "about-tablet-768",
+      "width": 768,
+      "height": 1024,
+      "sections": {
+        "h1": "Educating India's next generation of growth architects.",
+        "teamCardsCount": 11,
+        "faqCardsCount": 9,
+        "hasPillars": true,
+        "hasEnquiryForm": true
+      }
+    },
+    {
+      "viewport": "about-mobile-375",
+      "width": 375,
+      "height": 812,
+      "sections": {
+        "h1": "Educating India's next generation of growth architects.",
+        "teamCardsCount": 11,
+        "faqCardsCount": 9,
+        "hasPillars": true,
+        "hasEnquiryForm": true
+      }
+    }
+  ],
+  "interactions": [],
+  "consoleErrors": []
+}

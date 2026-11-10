@@ -1,0 +1,26 @@
+{
+  "restored_at": "2026-11-04T13:46:53.554266+00:00",
+  "source_backup": "/Users/piyushkhurana/didm_official_website/crawler-output/.backups/preflight-25-page-20261104T133519106583Z",
+  "restored_files": [
+    "checkpoint.json",
+    "url_inventory.csv",
+    "failed_urls.csv",
+    "crawl_config.json",
+    "crawl_summary.md"
+  ],
+  "raw_snapshots_modified": false,
+  "before": {
+    "queued": 0,
+    "visited": 68,
+    "inventory_sha256": "1a50222983103ed9ca76309e51139c8f42b69341698a4f3b1d26176cda9cba99"
+  },
+  "after": {
+    "queued": 65,
+    "visited": 3,
+    "inventory_sha256": "87183411d01b6c145b2960ee255b6240829ecf989ce514fba338136688a03fa0"
+  },
+  "snapshot_sha256": {
+    "raw_html/index--f5067221f54f1c23.html": "dddca36074efc741538913e78c84e792d74ccb24451ba4ee809c0527b322bcc2",
+    "raw_html/news-and-events--29840d3ca97de6b8.html": "fd0711659fb73e9bfde4534b6e7b4b553234242b905a73900a6b56dc8fec9759"
+  }
+}

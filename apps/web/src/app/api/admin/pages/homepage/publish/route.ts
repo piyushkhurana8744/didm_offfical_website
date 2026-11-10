@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server";import { assertSafeOrigin,requireApiPermission } from "@/lib/cms/auth";import { publishHomepage } from "@/lib/mongodb/pages";
+export async function POST(request:Request){try{assertSafeOrigin(request);const user=await requireApiPermission("pages.publish"),result=await publishHomepage(user.id);return NextResponse.json({ok:true,...result});}catch(error){return NextResponse.json({error:error instanceof Error?error.message:"Unable to publish"},{status:Number((error as {status?:number}).status)||400});}}

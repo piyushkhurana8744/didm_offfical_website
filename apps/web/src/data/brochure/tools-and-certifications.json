@@ -1,0 +1,223 @@
+{
+  "sourcePages": [
+    17,
+    18
+  ],
+  "sourceDocument": "DELHI_INSTITUTE_OF_DIGITAL_MARKETING_DOWNLOAD_BROCHURE.pdf",
+  "practicalTools": [
+    {
+      "name": "WordPress Theme",
+      "category": "CMS & Web Development",
+      "subtext": "Theme customization & design"
+    },
+    {
+      "name": "Kart Rocket",
+      "category": "E-Commerce",
+      "subtext": "E-commerce website builder"
+    },
+    {
+      "name": "WooRank",
+      "category": "SEO Software",
+      "subtext": "Website review & SEO audits"
+    },
+    {
+      "name": "GetResponse",
+      "category": "Email & Automation",
+      "subtext": "Email marketing & social software"
+    },
+    {
+      "name": "Unbounce",
+      "category": "Landing Page Builder",
+      "subtext": "High-converting landing page creator"
+    },
+    {
+      "name": "Mailchimp",
+      "category": "Email Marketing",
+      "subtext": "Email newsletter & campaign automation"
+    },
+    {
+      "name": "Spinbot",
+      "category": "Content Software",
+      "subtext": "Text rewriting & content experimentation"
+    },
+    {
+      "name": "Semrush",
+      "category": "SEO & Competitive Research",
+      "subtext": "Keyword research, backlinks & audits"
+    },
+    {
+      "name": "Moz Open Site",
+      "category": "SEO & Domain Authority",
+      "subtext": "Link explorer & domain ranking"
+    },
+    {
+      "name": "Canva",
+      "category": "Design & Visuals",
+      "subtext": "Social post & banner creation"
+    },
+    {
+      "name": "BuzzSumo",
+      "category": "Content Discovery",
+      "subtext": "Viral content analysis & influencer lookup"
+    },
+    {
+      "name": "SpyFu",
+      "category": "Competitor PPC & SEO",
+      "subtext": "Competitor keyword & ad research"
+    },
+    {
+      "name": "Animoto",
+      "category": "Video Creation",
+      "subtext": "Video slideshow & social video editor"
+    },
+    {
+      "name": "PicMonkey",
+      "category": "Photo Editing",
+      "subtext": "Graphic design & photo retouching"
+    },
+    {
+      "name": "WordAI",
+      "category": "AI Copywriting",
+      "subtext": "Advanced artificial intelligence content"
+    },
+    {
+      "name": "KWFinder",
+      "category": "Keyword Research",
+      "subtext": "Long-tail keyword search & volume"
+    },
+    {
+      "name": "Treehouse",
+      "category": "Learning Platform",
+      "subtext": "Technical coding & web development"
+    },
+    {
+      "name": "Skillshare",
+      "category": "Creative Skills",
+      "subtext": "Creative and entrepreneurial classes"
+    },
+    {
+      "name": "LinkedIn Learning",
+      "category": "Professional Development",
+      "subtext": "Business and marketing masterclasses"
+    },
+    {
+      "name": "Semscoop",
+      "category": "Keyword Intelligence",
+      "subtext": "Keyword difficulty & ranking tool"
+    },
+    {
+      "name": "Crello",
+      "category": "Visual Design",
+      "subtext": "Animated design & social graphics"
+    },
+    {
+      "name": "Grammarly",
+      "category": "Copywriting Quality",
+      "subtext": "Grammar, clarity & tone analysis"
+    }
+  ],
+  "veblikaAutomationTools": {
+    "title": "Digital Marketing Automation Tools (Worth Rs. 1,00,000/-)",
+    "provider": "Veblika",
+    "valuation": "Rs. 1,00,000/-",
+    "sourcePage": 18,
+    "tools": [
+      {
+        "name": "Veblika Email Marketing",
+        "benefit": "Automated high-volume email campaign deliverability"
+      },
+      {
+        "name": "Veblika Connect",
+        "benefit": "Unified multi-channel CRM customer communication"
+      },
+      {
+        "name": "Veblika Google Map Extractor",
+        "benefit": "B2B local leads harvesting directly from Google Maps"
+      },
+      {
+        "name": "Veblika WhatsApp Marketing Via Chrome Extension",
+        "benefit": "Browser-based bulk WhatsApp messaging & customer outreach"
+      },
+      {
+        "name": "Veblika WhatsApp Marketing Via Desktop",
+        "benefit": "Desktop software application for structured WhatsApp campaigns"
+      },
+      {
+        "name": "Veblika WhatsApp Marketing Cloud Based",
+        "benefit": "Cloud-hosted 24/7 automated WhatsApp bot workflows"
+      },
+      {
+        "name": "Veblika Digital Visiting Card",
+        "benefit": "Smart interactive NFC & web-based visiting card for networking"
+      },
+      {
+        "name": "Veblika Appointment Scheduler",
+        "benefit": "Automated calendar booking and appointment management"
+      }
+    ]
+  },
+  "certifications": {
+    "totalCount": "30+",
+    "sourcePages": [
+      1,
+      14,
+      15,
+      16
+    ],
+    "categories": [
+      {
+        "group": "Google Certifications",
+        "count": 9,
+        "items": [
+          "Google Ads Search Certification",
+          "Google Ads Display Certification",
+          "Google Ads Video Certification",
+          "Google Shopping Ads Certification",
+          "Google Ads Apps Certification",
+          "Google Ads Measurement Certification",
+          "Google Analytics Individual Qualification (GA4 IQ)",
+          "Google Creative Certification",
+          "Google Search Console & Web Fundamentals"
+        ]
+      },
+      {
+        "group": "Meta (Facebook & Instagram) Certifications",
+        "count": 3,
+        "items": [
+          "Meta Certified Digital Marketing Associate",
+          "Meta Certified Marketing Science Professional",
+          "Meta Certified Media Planning Professional"
+        ]
+      },
+      {
+        "group": "HubSpot & Inbound Certifications",
+        "count": 4,
+        "items": [
+          "HubSpot Inbound Marketing Certification",
+          "HubSpot Content Marketing Certification",
+          "HubSpot Email Marketing Certification",
+          "HubSpot Social Media Marketing Certification"
+        ]
+      },
+      {
+        "group": "Semrush Certifications",
+        "count": 3,
+        "items": [
+          "Semrush SEO Toolkit Certification",
+          "Semrush Content Marketing Principles",
+          "Semrush PPC Fundamentals"
+        ]
+      },
+      {
+        "group": "Institutional & Experience Certifications",
+        "count": 4,
+        "items": [
+          "DIDM Master Course Completion Certificate",
+          "DIDM Project Capstone Excellence Award",
+          "Online Strikers Agency 2-Month Live Experience Letter",
+          "Skill Shiksha Accredited Digital Marketing Diploma"
+        ]
+      }
+    ]
+  }
+}

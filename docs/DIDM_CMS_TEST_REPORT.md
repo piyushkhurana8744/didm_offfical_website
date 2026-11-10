@@ -1,0 +1,7 @@
+# DIDM CMS test report
+
+Validated offline on 2026-11-05: five migration mapping/validation regression tests passed, including `collectionName`, identity preservation, invalid JSON/date and explicit boolean rejection. A read-only dry-run against a temporary database created from the actual `schema.sql` covered all 18 supported collections with zero schema errors and zero writes. TypeScript passed. The production build passed with 65 routes/pages, including the editor, preview and mutation APIs. Active routes use Mongoose rather than SQLite and existing public routes remain buildable.
+
+Blocked live checks: `MONGODB_URI` is configured, while `TEST_MONGODB_URI` remains empty. The development identity can ping Atlas but cannot read collection metadata in `didm_cms`. Index inspection, bootstrap, login/logout, expiry/revocation, RBAC, transaction rollback, enquiry/rate-limit/duplicate/audit integration, migration idempotency and homepage publish/restore read-back remain unverified. Tests must use a distinct test identity and delete only suite-created IDs. Importer regression tests were not rerun.
+
+Latest Atlas evidence: the development URI connected and pinged `didm_cms`; the subsequent read-only intended-scope check was denied with code 8000. `TEST_MONGODB_URI` remains empty. Consequently physical indexes, transactions, authentication integration, homepage/media persistence and cleanup are still not claimed as passed.

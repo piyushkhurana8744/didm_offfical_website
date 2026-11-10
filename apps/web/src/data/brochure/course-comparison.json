@@ -1,0 +1,151 @@
+{
+  "sourcePages": [
+    14,
+    15,
+    16
+  ],
+  "sourceDocument": "DELHI_INSTITUTE_OF_DIGITAL_MARKETING_DOWNLOAD_BROCHURE.pdf",
+  "programs": [
+    {
+      "id": "master-in-digital-marketing",
+      "name": "Master Course in Digital Marketing (MIDM)",
+      "subtitle": "Most Popular & Comprehensive Professional Track",
+      "totalHours": 500,
+      "inClassHours": 140,
+      "onBoardHours": 360,
+      "brochurePage": 14
+    },
+    {
+      "id": "advanced-course-in-digital-marketing",
+      "name": "Advanced Course in Digital Marketing",
+      "subtitle": "Fast-Track Practical Skill Development",
+      "totalHours": 140,
+      "inClassHours": 140,
+      "onBoardHours": 0,
+      "brochurePage": 15
+    },
+    {
+      "id": "customized-course-in-digital-marketing",
+      "name": "Customized Course in Digital Marketing",
+      "subtitle": "Specialized Tracks for Business Owners & Entrepreneurs",
+      "totalHours": "Customized based on cohort",
+      "inClassHours": "Customized",
+      "onBoardHours": 0,
+      "brochurePage": 16
+    }
+  ],
+  "features": [
+    {
+      "feature": "Modules & Hours",
+      "description": "Depth of curriculum modules and total instruction/practical training hours",
+      "master": "50+ Modules (500+ Hrs Training: 140 In-Class + 360 On-Board)",
+      "advanced": "50+ Modules (140 Hrs Training)",
+      "customized": "Customized Modules (Selected track)"
+    },
+    {
+      "feature": "E-Notes",
+      "description": "Comprehensive digital study material and lecture notes",
+      "master": true,
+      "advanced": true,
+      "customized": true
+    },
+    {
+      "feature": "Internship / Placement",
+      "description": "100% placement support and agency internship opportunities",
+      "master": true,
+      "advanced": true,
+      "customized": true
+    },
+    {
+      "feature": "Capstone Projects",
+      "description": "Real-world end-to-end practical project submissions",
+      "master": true,
+      "advanced": true,
+      "customized": true
+    },
+    {
+      "feature": "Certifications",
+      "description": "Number of recognized industry certifications provided",
+      "master": "30+ Certifications (Globally Certified)",
+      "advanced": "30+ Certifications (Globally Certified)",
+      "customized": "Google + DIDM (Certification)"
+    },
+    {
+      "feature": "Experience Certification",
+      "description": "Formal agency work experience letter from digital marketing agency",
+      "master": true,
+      "advanced": false,
+      "customized": false
+    },
+    {
+      "feature": "On Board Training (2 Months)",
+      "description": "Live floor internship training with partner agency Online Strikers (360 Hours)",
+      "master": true,
+      "advanced": false,
+      "customized": false
+    },
+    {
+      "feature": "Hykoon Themes Membership",
+      "description": "Premium WordPress themes and templates access",
+      "master": true,
+      "advanced": false,
+      "customized": false
+    },
+    {
+      "feature": "Tools & Software",
+      "description": "Access to 22 premium industry marketing tools & software",
+      "master": true,
+      "advanced": true,
+      "customized": false
+    },
+    {
+      "feature": "LMS Recorded Content",
+      "description": "Access to recorded sessions and portal materials",
+      "master": "LMS Recorded (Advance)",
+      "advanced": "LMS Recorded (Basic)",
+      "customized": false
+    },
+    {
+      "feature": "Digital Marketing Automation Tools",
+      "description": "8 Veblika automation tools suite worth Rs. 1,00,000/-",
+      "master": true,
+      "advanced": true,
+      "customized": false
+    },
+    {
+      "feature": "E-Book",
+      "description": "Exclusive digital marketing guides and books",
+      "master": true,
+      "advanced": false,
+      "customized": false
+    },
+    {
+      "feature": "Case Studies",
+      "description": "Dissection of actual breakout brand marketing campaigns",
+      "master": true,
+      "advanced": true,
+      "customized": true
+    },
+    {
+      "feature": "Skill Shiksha Certification",
+      "description": "Accredited certification in partnership with Skill Shiksha",
+      "master": true,
+      "advanced": false,
+      "customized": false
+    },
+    {
+      "feature": "Creative Content Writing Elementary Module",
+      "description": "Recorded or live elementary module on professional copywriting",
+      "master": true,
+      "advanced": false,
+      "customized": false
+    },
+    {
+      "feature": "Graphic Design Course Elementary Module",
+      "description": "Recorded or live elementary module on visual graphic design",
+      "master": true,
+      "advanced": false,
+      "customized": false
+    }
+  ]
+}

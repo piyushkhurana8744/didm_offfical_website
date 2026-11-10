@@ -1,0 +1,126 @@
+{
+  "mode": "live-download",
+  "scope": "pilot",
+  "batch_size": 12,
+  "counts": {
+    "selected": 10,
+    "downloaded": 10,
+    "skipped": 2,
+    "failed": 0,
+    "blocked": 0,
+    "resume_invalid": 0
+  },
+  "invalid_resume_entries": [],
+  "results": [
+    {
+      "source_url": "https://didm.in/assets/upload/images/Master_in_digital_marketing_course_MIDM_DIDM.webp",
+      "final_url": "https://www.didm.in/assets/upload/images/Master_in_digital_marketing_course_MIDM_DIDM.webp",
+      "referring_page": "https://www.didm.in/",
+      "sha256": "0e3cbe9c3dd3ccd3abd8c1a7a90cf87ecda8626359032cb4f55a94d23a3ca32c",
+      "file_size": 27278,
+      "mime_type": "image/webp",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/courses/master-in-digital-marketing-course-midm-didm-0e3cbe9c3dd3.webp",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/AI-Powered-Digital-Marketing-Course-Noida-DIDM-Branch.webp",
+      "final_url": "https://www.didm.in/assets/upload/images/AI-Powered-Digital-Marketing-Course-Noida-DIDM-Branch.webp",
+      "referring_page": "https://www.didm.in/digital-marketing-course-in-noida",
+      "sha256": "9e326f9f636cd4c9ed7417cdbc157eb6b22c471e87c384fad0461a16261a32dc",
+      "file_size": 194572,
+      "mime_type": "image/webp",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/centres/ai-powered-digital-marketing-course-noida-didm-branch-9e326f9f636c.webp",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/Advanced_in_digital_marketing_course_AIMTP_Course_DIDM.webp",
+      "final_url": "https://www.didm.in/assets/upload/images/Advanced_in_digital_marketing_course_AIMTP_Course_DIDM.webp",
+      "referring_page": "https://www.didm.in/",
+      "sha256": "1cdd1ada7c96d77ce5fe9bafafb16f918559c80463b1160b3b6288fe7abd5a1d",
+      "file_size": 30958,
+      "mime_type": "image/webp",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/courses/advanced-in-digital-marketing-course-aimtp-course-didm-1cdd1ada7c96.webp",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/uploads/images/AI-Powered-Advanced-digital-marketing-course.png",
+      "final_url": "https://www.didm.in/assets/uploads/images/AI-Powered-Advanced-digital-marketing-course.png",
+      "referring_page": "https://www.didm.in/advanced-digital-marketing-course",
+      "sha256": "f9f127558aac0cc3dc60d1cf35ee1ce3ec52496b1cda1ca0cdc1065a58e455df",
+      "file_size": 1052577,
+      "mime_type": "image/png",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/courses/ai-powered-advanced-digital-marketing-course-f9f127558aac.png",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/Digital%20Marketing%20Course%20in%20Meerut%20Garden%20Branch%20by%20DIDM.jpg",
+      "final_url": "https://www.didm.in/assets/upload/images/Digital%20Marketing%20Course%20in%20Meerut%20Garden%20Branch%20by%20DIDM.jpg",
+      "referring_page": "https://www.didm.in/digital-marketing-course-in-meerut",
+      "sha256": "cdf90dffffbc5b7fc03b362eca2a47752ac331b91f4bd0c4736efbe030922f5a",
+      "file_size": 206596,
+      "mime_type": "image/jpeg",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/centres/digital-marketing-course-in-meerut-garden-branch-by-didm-cdf90dffffbc.jpg",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/college%20program%20by%20didm.jpg",
+      "final_url": "https://www.didm.in/assets/upload/images/college%20program%20by%20didm.jpg",
+      "referring_page": "https://www.didm.in/",
+      "sha256": "b67088073004e32fa344a8b4ae1139843e97777ab9024fa54445bd76de9b0556",
+      "file_size": 388408,
+      "mime_type": "image/jpeg",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/courses/college-program-by-didm-b67088073004.jpg",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/corporate%20training%20program.jpg",
+      "final_url": "https://www.didm.in/assets/upload/images/corporate%20training%20program.jpg",
+      "referring_page": "https://www.didm.in/",
+      "sha256": "b2b28b0d9008174f8e25f054430448edb0e0c5510a1584b97eff05067b6ef32c",
+      "file_size": 565506,
+      "mime_type": "image/jpeg",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/courses/corporate-training-program-b2b28b0d9008.jpg",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/new/DIDM%20in%20Haldwani%20Branch.webp",
+      "final_url": "https://www.didm.in/assets/upload/images/new/DIDM%20in%20Haldwani%20Branch.webp",
+      "referring_page": "https://www.didm.in/digital-marketing-course-in-haldwani-rudarpur",
+      "sha256": "a78266e244a3ef8d84faa69bbe67488f68b62b55514d10fbc79ca885519b779c",
+      "file_size": 191630,
+      "mime_type": "image/webp",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/centres/didm-in-haldwani-branch-a78266e244a3.webp",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/imges/MEDIA%20NEWS.png",
+      "final_url": "https://www.didm.in/assets/upload/images/imges/MEDIA%20NEWS.png",
+      "referring_page": "https://www.didm.in/",
+      "sha256": "d13077c0380c1998c2a8047de16e3ef4cef7e768c993824b17b028d2911c10bc",
+      "file_size": 87082,
+      "mime_type": "image/png",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/blog/media-news-d13077c0380c.png",
+      "status": "downloaded"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/didm%20online%20advanced%20course%20fees.webp",
+      "final_url": "https://www.didm.in/assets/upload/images/didm%20online%20advanced%20course%20fees.webp",
+      "referring_page": "https://www.didm.in/online-digital-marketing-course",
+      "sha256": "bc5606fa52ddc410c9fec92389b608dec4cb85cb08777e04aa6cbd071e01b2a8",
+      "file_size": 37756,
+      "mime_type": "image/webp",
+      "license_authorization_status": "user_confirmed_didm_reuse_authorization",
+      "local_destination": "apps/web/public/images/didm/courses/didm-online-advanced-course-fees-bc5606fa52dd.webp",
+      "status": "downloaded"
+    }
+  ]
+}

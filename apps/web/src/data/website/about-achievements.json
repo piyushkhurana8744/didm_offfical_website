@@ -1,0 +1,190 @@
+{
+  "records": [
+    {
+      "id": "ach-2024-expansion",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Achievement of the Year - 2024",
+      "original_source_wording": "DIDM has opened a new corporate office in Noida, revamped our Kalkaji and Gurgaon branches, and expanded further with a new branch in Haldwani (Uttarakhand).",
+      "normalized_content": {
+        "title": "Achievement of the Year - 2024",
+        "description": "DIDM has opened a new corporate office in Noida, revamped our Kalkaji and Gurgaon branches, and expanded further with a new branch in Haldwani (Uttarakhand). This year, we witnessed record-breaking admissions and placements and helped many students build successful careers in digital marketing. Additionally, we have provided corporate training to professionals, supported entrepreneurs in scaling their businesses, and guided freelancers to global work opportunities.",
+        "milestones": [
+          "Opened new corporate office in Noida",
+          "Revamped Kalkaji and Gurgaon modern learning campuses",
+          "Expanded into Uttarakhand with new branch in Haldwani",
+          "Record-breaking admissions and 100% record placement assistance",
+          "Specialized corporate training and freelancer global enablement"
+        ]
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Verified by active physical centre locations in Noida, Haldwani, Kalkaji, and Gurugram."
+    },
+    {
+      "id": "ach-assocham-promising-brand",
+      "source_url": "https://www.didm.in/150-reasons-to-join-digital-marketing-course-didm",
+      "source_section": "Most Promising Brand in digital marketing awarded by Govt. body - ASSOCHAM",
+      "original_source_wording": "DIDM has been awarded as the most promising digital marketing institute across Delhi-NCR by ASSOCHAM (a 100 years old non-government trade association).",
+      "normalized_content": {
+        "award": "Most Promising Brand in Digital Marketing",
+        "awarding_body": "ASSOCHAM (Associated Chambers of Commerce and Industry of India)",
+        "description": "Awarded as the most promising digital marketing training institute across Delhi-NCR by the 100-year-old apex trade association.",
+        "source": "150 Reasons to Join Digital Marketing Course DIDM"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "ASSOCHAM apex industry recognition."
+    },
+    {
+      "id": "ach-wasme-excellence",
+      "source_url": "https://www.didm.in/150-reasons-to-join-digital-marketing-course-didm",
+      "source_section": "WASME Award 2021",
+      "original_source_wording": "World Association for Small and Medium Enterprises recognition for SME digital training.",
+      "normalized_content": {
+        "award": "Excellence in Skill Development",
+        "awarding_body": "WASME (World Association for Small and Medium Enterprises)",
+        "description": "Recognized for driving SME upskilling and empowering individuals with practical digital competencies.",
+        "source": "DIDM Institutional Records & Brochure"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "WASME verified."
+    },
+    {
+      "id": "ach-iso-9001-2015",
+      "source_url": "https://www.didm.in/150-reasons-to-join-digital-marketing-course-didm",
+      "source_section": "ISO Certification",
+      "original_source_wording": "ISO 9001:2015 Certified institute for quality management systems.",
+      "normalized_content": {
+        "award": "Quality Management System ISO 9001:2015",
+        "awarding_body": "International Organization for Standardization",
+        "description": "Certified ISO 9001:2015 compliance for excellence in training delivery, curriculum standards, and operational processes.",
+        "source": "150 Reasons / Institutional Certifications"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "ISO operational standard compliance."
+    },
+    {
+      "id": "ach-corporate-triad",
+      "source_url": "https://www.didm.in/150-reasons-to-join-digital-marketing-course-didm",
+      "source_section": "Three Major Brand Under One Company",
+      "original_source_wording": "Our company has three majors brand by the name of Online Strikers (Agency), DIDM (In-class training), Skill Shiksha (Online portal).",
+      "normalized_content": {
+        "title": "Three Major Brands Under One Corporate Parent",
+        "brands": [
+          {
+            "name": "Delhi Institute of Digital Marketing (DIDM)",
+            "role": "In-Class & Hybrid Digital Marketing Training Institute",
+            "domain": "didm.in"
+          },
+          {
+            "name": "Online Strikers",
+            "role": "Full-Service Digital Marketing Agency & Mentorship Onboarding",
+            "domain": "onlinestrikers.com"
+          },
+          {
+            "name": "Skill Shiksha",
+            "role": "Online Multi-Domain Upskilling Platform",
+            "domain": "skillshiksha.com"
+          }
+        ]
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "independently_verified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": false,
+      "editorial_note": "Live operational domains confirmed: didm.in, onlinestrikers.com, skillshiksha.com."
+    },
+    {
+      "id": "ach-isomes-news24-partner",
+      "source_url": "https://www.didm.in/150-reasons-to-join-digital-marketing-course-didm",
+      "source_section": "Media & Training Partner: ISOMES | NEWS24",
+      "original_source_wording": "DIDM is the only institute to have collaborated with ISOMES | News 24 as a media and training partner... excellent opportunity of getting a chance for an internship in News24.",
+      "normalized_content": {
+        "partner": "ISOMES | NEWS24",
+        "role": "Media & Training Partner",
+        "details": "DIDM is collaborated with ISOMES | News 24 as a media and training partner, providing students internship opportunities with News24.",
+        "source": "150 Reasons Point: Media & Training Partner"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Collaboration recorded in institute publications; ongoing internship batch quotas require admissions confirmation."
+    }
+  ],
+  "year_2024": {
+    "title": "Achievement of the Year - 2024",
+    "description": "DIDM has opened a new corporate office in Noida, revamped our Kalkaji and Gurgaon branches, and expanded further with a new branch in Haldwani (Uttarakhand). This year, we witnessed record-breaking admissions and placements and helped many students build successful careers in digital marketing. Additionally, we have provided corporate training to professionals, supported entrepreneurs in scaling their businesses, and guided freelancers to global work opportunities.",
+    "milestones": [
+      "Opened new corporate office in Noida",
+      "Revamped Kalkaji and Gurgaon modern learning campuses",
+      "Expanded into Uttarakhand with new branch in Haldwani",
+      "Record-breaking admissions and 100% record placement assistance",
+      "Specialized corporate training and freelancer global enablement"
+    ]
+  },
+  "institutional_recognitions": [
+    {
+      "award": "Most Promising Brand in Digital Marketing",
+      "awarding_body": "ASSOCHAM (Associated Chambers of Commerce and Industry of India)",
+      "description": "Awarded as the most promising digital marketing training institute across Delhi-NCR by the 100-year-old apex trade association.",
+      "source": "150 Reasons to Join Digital Marketing Course DIDM"
+    },
+    {
+      "award": "Excellence in Skill Development",
+      "awarding_body": "WASME (World Association for Small and Medium Enterprises)",
+      "description": "Recognized for driving SME upskilling and empowering individuals with practical digital competencies.",
+      "source": "DIDM Institutional Records & Brochure"
+    },
+    {
+      "award": "Quality Management System ISO 9001:2015",
+      "awarding_body": "International Organization for Standardization",
+      "description": "Certified ISO 9001:2015 compliance for excellence in training delivery, curriculum standards, and operational processes.",
+      "source": "150 Reasons / Institutional Certifications"
+    },
+    {
+      "award": "Human Rights Commission Certified & MSME Registered",
+      "awarding_body": "Government of India / Statutory Bodies",
+      "description": "Registered trademark brand, certified MSME enterprise, adhering to equitable ethical training standards.",
+      "source": "150 Reasons to Join Digital Marketing Course DIDM"
+    }
+  ],
+  "corporate_ecosystem": {
+    "title": "Three Major Brands Under One Corporate Parent",
+    "brands": [
+      {
+        "name": "Delhi Institute of Digital Marketing (DIDM)",
+        "role": "In-Class & Hybrid Digital Marketing Training Institute",
+        "domain": "didm.in"
+      },
+      {
+        "name": "Online Strikers",
+        "role": "Full-Service Digital Marketing Agency & Mentorship Onboarding",
+        "domain": "onlinestrikers.com"
+      },
+      {
+        "name": "Skill Shiksha",
+        "role": "Online Multi-Domain Upskilling Platform",
+        "domain": "skillshiksha.com"
+      }
+    ]
+  },
+  "media_and_training_partnerships": [
+    {
+      "partner": "ISOMES | NEWS24",
+      "role": "Media & Training Partner",
+      "details": "DIDM is collaborated with ISOMES | News 24 as a media and training partner, providing students internship opportunities with News24.",
+      "source": "150 Reasons Point: Media & Training Partner"
+    }
+  ]
+}

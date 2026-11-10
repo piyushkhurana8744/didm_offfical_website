@@ -1,25 +1,33 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Sparkles, BookOpen, Clock, Award, Layers } from "lucide-react";
-import { SITE_DATA } from "@/data/site-data";
+import Image from "next/image";
+import { ArrowRight, CheckCircle2, Sparkles, BookOpen, Clock, Award, Layers, ShieldCheck, Compass } from "lucide-react";
+import { getAllCourses, SITE_BRAND } from "@/lib/content";
 import type { Metadata } from "next";
+import { COURSE_CARD_MEDIA, DIDM_MEDIA } from "@/data/didm-media";
+import { RevealOnScroll } from "@/components/motion/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "All Digital Marketing Courses & Certifications | DIDM",
   description:
-    "Explore DIDM's 4 career programs and 3 short-term skill courses. From the flagship MIDM to 1-Year DMI Diploma and Gen AI tool bootcamps.",
+    "Explore DIDM's accredited digital marketing career programs: Master in Digital Marketing (MIDM), 1-Year DMI Agency Diploma, Advanced Digital Marketing, and Specialized AI Bootcamps.",
+  alternates: {
+    canonical: "https://www.didm.in/programs",
+  },
 };
 
 export default function ProgramsPage() {
+  const courses = getAllCourses();
+
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "DIDM Digital Marketing Programs",
-    itemListElement: SITE_DATA.programs.map((p, index) => ({
+    itemListElement: courses.map((c, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: p.name,
-      description: p.summary,
-      url: `https://www.didm.in/program?p=${p.id}`,
+      name: c.name,
+      description: c.tagline,
+      url: `https://www.didm.in/programs/${c.slug}`,
     })),
   };
 
@@ -34,203 +42,204 @@ export default function ProgramsPage() {
         {/* Header */}
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red-soft dark:bg-brand-red/10 text-brand-red text-xs font-mono font-semibold">
-            PROGRAMS DIRECTORY
+            ACCREDITED PROGRAM DIRECTORY
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-normal text-neutral-900 dark:text-white leading-[1.1] break-words">
             Career programs engineered for <em>practical digital mastery</em>.
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Choose between comprehensive career accelerators, full 1-year agency diplomas, and
-            focused executive tracks. All courses include live campaign ad spend and 100% placement support.
+            Choose between comprehensive career accelerators, full 1-year agency diplomas, and focused executive tracks. All programs include live campaign budgets, tool access, and dedicated placement support.
           </p>
         </div>
 
-        {/* 4 Flagship Career Programs */}
+        <div className="relative min-h-[220px] sm:min-h-[280px] overflow-hidden rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-[#641f33] shadow-xl">
+          <Image
+            src={DIDM_MEDIA.digitalMarketingCourseBanner.path}
+            alt={DIDM_MEDIA.digitalMarketingCourseBanner.alt}
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
+          <div className="relative z-10 flex min-h-[220px] sm:min-h-[280px] max-w-xl flex-col justify-end p-6 sm:p-10 text-white">
+            <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-red-200">
+              Original DIDM course media
+            </div>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-normal text-white">
+              Learn the systems behind modern digital growth.
+            </h2>
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed text-neutral-200">
+              Compare practical programs spanning performance marketing, SEO, analytics, automation and AI.
+            </p>
+          </div>
+        </div>
+
+        {/* Flagship Career Programs Grid */}
         <div className="space-y-6 sm:space-y-8">
-          <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-            Flagship Career Certifications
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
+              Flagship Career Certifications
+            </span>
+            <Link
+              href="/compare"
+              className="text-xs font-bold text-neutral-700 dark:text-neutral-300 hover:text-brand-red flex items-center gap-1"
+            >
+              <span>Side-by-Side Comparison</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {SITE_DATA.programs.map((prog) => (
-              <div
-                key={prog.id}
-                className="rounded-3xl p-5 sm:p-7 md:p-9 bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between card-hover relative"
-              >
-                {prog.badge && (
-                  <span className="absolute top-5 right-5 sm:top-6 sm:right-6 text-[10px] font-mono uppercase px-2.5 sm:px-3 py-1 rounded-full bg-brand-red text-white font-bold tracking-wider">
-                    {prog.badge}
-                  </span>
-                )}
+            {courses.map((prog, idx) => (
+              <RevealOnScroll key={prog.id} direction="up" delayMs={idx * 80}>
+                <div
+                  className="rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between card-hover relative group h-full"
+                >
+                  {prog.badge && (
+                    <span className="absolute top-5 right-5 sm:top-6 sm:right-6 text-[10px] font-mono uppercase px-2.5 sm:px-3 py-1 rounded-full bg-brand-red text-white font-bold tracking-wider">
+                      {prog.badge}
+                    </span>
+                  )}
 
-                <div className="space-y-4 sm:space-y-5">
-                  <div className="pr-16 sm:pr-0">
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white">
-                      {prog.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1 leading-relaxed">
-                      {prog.tagline}
-                    </p>
-                  </div>
+                  <div className="space-y-4 sm:space-y-5">
+                    {COURSE_CARD_MEDIA[prog.slug] && (
+                      <div className="relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900 aspect-[5/4]">
+                        <Image
+                          src={COURSE_CARD_MEDIA[prog.slug]!.path}
+                          alt={COURSE_CARD_MEDIA[prog.slug]!.alt}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="pr-16 sm:pr-0">
+                      <span className="text-xs font-mono uppercase text-neutral-400 font-semibold">
+                        {prog.format} · {prog.internship}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white mt-1 group-hover:text-brand-red transition">
+                        <Link href={`/programs/${prog.slug}`}>
+                          {prog.name}
+                        </Link>
+                      </h3>
+                      <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1 leading-relaxed">
+                        {prog.tagline}
+                      </p>
+                    </div>
 
-                  {/* Fee Bar */}
-                  <div className="py-2.5 sm:py-3 px-3.5 sm:px-4 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
-                    <div>
-                      <div className="text-[10px] font-mono uppercase text-neutral-400">Tuition Fee</div>
-                      <div className="font-serif text-xl sm:text-2xl text-neutral-900 dark:text-white font-normal">
-                        {prog.fee}
+                    {/* Highlights Bar */}
+                    <div className="py-3 px-4 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+                      <div>
+                        <div className="text-[10px] font-mono uppercase text-neutral-400">Duration</div>
+                        <div className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white">
+                          {prog.duration}
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-[10px] font-mono uppercase text-neutral-400">Instruction Hours</div>
+                        <div className="text-base sm:text-lg font-bold text-brand-red">
+                          {prog.hours}
+                        </div>
                       </div>
                     </div>
-                    {prog.feeInstalment && (
-                      <div className="text-right text-[10px] sm:text-[11px] text-neutral-500 max-w-[130px] sm:max-w-[150px]">
-                        {prog.feeInstalment}
+
+                    {/* Program Features / Tools */}
+                    <div className="space-y-2 pt-2">
+                      <div className="text-xs font-semibold text-neutral-800 dark:text-neutral-200">
+                        Core Modules & Agency Tools:
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-neutral-600 dark:text-neutral-400">
+                        {prog.features.slice(0, 4).map((f, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                            <span className="truncate">{f}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Practical Project Notice */}
+                    {prog.syllabus.length > 0 && (
+                      <div className="text-[11px] font-mono text-neutral-500 bg-neutral-100/60 dark:bg-neutral-800/60 px-3 py-1.5 rounded-xl">
+                        Live Exposure: {prog.syllabus[0]?.practicalProject}
                       </div>
                     )}
                   </div>
 
-                  <dl className="grid grid-cols-2 gap-2.5 sm:gap-3 text-xs text-neutral-600 dark:text-neutral-300">
-                    <div>
-                      <dt className="text-neutral-400 font-mono text-[10px] uppercase">Duration</dt>
-                      <dd className="font-semibold text-neutral-900 dark:text-white mt-0.5">{prog.duration}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-neutral-400 font-mono text-[10px] uppercase">Hours</dt>
-                      <dd className="font-semibold text-neutral-900 dark:text-white mt-0.5">{prog.hours}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-neutral-400 font-mono text-[10px] uppercase">Modules</dt>
-                      <dd className="font-semibold text-neutral-900 dark:text-white mt-0.5">{prog.modulesCount}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-neutral-400 font-mono text-[10px] uppercase">Internship</dt>
-                      <dd className="font-semibold text-neutral-900 dark:text-white mt-0.5">{prog.internship}</dd>
-                    </div>
-                  </dl>
+                  <div className="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                    <Link
+                      href={`/programs/${prog.slug}#course-roadmap`}
+                      className="btn-secondary text-xs py-2.5 px-4 font-bold text-center justify-center flex-1 flex items-center gap-1.5 border border-neutral-300 dark:border-neutral-700 hover:border-brand-red"
+                    >
+                      <Compass className="w-3.5 h-3.5 text-brand-red" />
+                      <span>Explore Roadmap</span>
+                    </Link>
 
-                  {/* Key Syllabus Modules Preview */}
-                  <div className="space-y-1.5 pt-3 border-t border-neutral-100 dark:border-neutral-800">
-                    <div className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">
-                      Core Modules Include:
-                    </div>
-                    {prog.keyModules.slice(0, 4).map((m, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[11px] sm:text-xs text-neutral-600 dark:text-neutral-400">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-red shrink-0" />
-                        <span>{m}</span>
-                      </div>
-                    ))}
+                    <Link
+                      href={`/enquire?p=${prog.id}`}
+                      className="btn-red text-xs py-2.5 px-4 font-semibold text-center justify-center flex-1"
+                    >
+                      Book Demo Class
+                    </Link>
                   </div>
                 </div>
-
-                <div className="pt-5 mt-5 sm:pt-6 sm:mt-6 border-t border-neutral-100 dark:border-neutral-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-3">
-                  <Link
-                    href={`/program?p=${prog.id}`}
-                    className="btn-ghost text-xs py-2.5 px-4 font-semibold text-center justify-center flex-1"
-                  >
-                    View Curriculum
-                  </Link>
-
-                  <Link
-                    href={`/enquire?p=${prog.id}`}
-                    className="btn-red text-xs py-2.5 px-4 font-semibold text-center justify-center flex-1"
-                  >
-                    Book Demo Class
-                  </Link>
-                </div>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
 
-        {/* 3 Short-Term Skill Courses */}
-        <div className="space-y-8 pt-8 border-t border-neutral-200 dark:border-neutral-800">
-          <div>
-            <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-              Short-Term Skill Bootcamps
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-normal text-neutral-900 dark:text-white mt-1">
-              Focused 4-week modular mastery.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {SITE_DATA.shortCourses.map((sc) => (
-              <div
-                key={sc.id}
-                className="p-6 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between card-hover"
-              >
-                <div className="space-y-3">
-                  <span className="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-ai-soft dark:bg-ai-soft-dark text-ai dark:text-ai-dark font-bold">
-                    {sc.duration} · {sc.hours}
-                  </span>
-                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white">
-                    {sc.title}
-                  </h3>
-                  <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                    {sc.description}
-                  </p>
-
-                  <div className="pt-2 text-xs text-neutral-500">
-                    <strong className="text-neutral-700 dark:text-neutral-300 block mb-1">Tools Practiced:</strong>
-                    {sc.tools.join(" · ")}
-                  </div>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800">
-                  <Link
-                    href={`/enquire?p=${sc.id}`}
-                    className="btn-ghost text-xs py-2 w-full text-center block font-semibold hover:border-brand-red"
-                  >
-                    Enquire About Next Batch
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* How to Choose Steps */}
+        {/* Decision Guide Banner */}
         <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900 text-white space-y-8">
           <div className="max-w-2xl space-y-2">
             <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-              Decision Guide
+              Counseling Matrix
             </div>
             <h2 className="text-2xl sm:text-4xl font-normal text-white">
-              How to choose the right program for you.
+              Unsure which syllabus fits your career timeline?
             </h2>
+            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+              Our academic counselors assess your current background (student, job-seeker, entrepreneur, or working professional) and align you with the right cohort.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs sm:text-sm text-neutral-300">
-            <div className="space-y-2">
-              <div className="font-serif text-3xl text-brand-red">01</div>
-              <h4 className="font-bold text-white text-base">Assess Your Timeline</h4>
-              <p className="leading-relaxed">
-                If you have 10-12 weeks, MIDM gives you the highest ROI. If you want full-time immersion with 3 months of agency residency, pick the 1-Year DMI.
+            <div className="space-y-2 p-4 rounded-2xl bg-neutral-800/60 border border-neutral-700/60">
+              <div className="font-mono text-xs text-brand-red font-bold uppercase">Fresh Graduates</div>
+              <h4 className="font-bold text-white text-sm">Master in Digital Marketing (MIDM)</h4>
+              <p className="text-xs text-neutral-400 leading-relaxed">
+                Career-focused learning with practical exercises, mock interviews, and placement support.
               </p>
             </div>
-            <div className="space-y-2">
-              <div className="font-serif text-3xl text-brand-red">02</div>
-              <h4 className="font-bold text-white text-base">Identify End Goal</h4>
-              <p className="leading-relaxed">
-                Job seekers need certified live campaign proof (MIDM). Business owners need customer lead funnels and agency auditing (Professional).
+            <div className="space-y-2 p-4 rounded-2xl bg-neutral-800/60 border border-neutral-700/60">
+              <div className="font-mono text-xs text-brand-red font-bold uppercase">Deep Agency Career</div>
+              <h4 className="font-bold text-white text-sm">1-Year Diploma in Digital Marketing</h4>
+              <p className="text-xs text-neutral-400 leading-relaxed">
+                Full-stack digital residency with 3 months embedded in an agency environment.
               </p>
             </div>
-            <div className="space-y-2">
-              <div className="font-serif text-3xl text-brand-red">03</div>
-              <h4 className="font-bold text-white text-base">Attend a Free Demo</h4>
-              <p className="leading-relaxed">
-                Sit in a live class, speak with mentors, and inspect our LMS before making any financial commitment.
+            <div className="space-y-2 p-4 rounded-2xl bg-neutral-800/60 border border-neutral-700/60">
+              <div className="font-mono text-xs text-brand-red font-bold uppercase">Entrepreneurs</div>
+              <h4 className="font-bold text-white text-sm">Customized Professional Track</h4>
+              <p className="text-xs text-neutral-400 leading-relaxed">
+                Focus on customer acquisition funnels, ROI measurement, agency auditing, and AI tools.
               </p>
             </div>
           </div>
 
-          <div className="pt-4 flex items-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
             <Link href="/enquire" className="btn-red text-xs py-3 px-6 font-bold">
               Schedule Free 1-on-1 Counseling Call
             </Link>
+            <a
+              href={`tel:${SITE_BRAND.phoneClean}`}
+              className="btn-ghost text-xs py-3 px-5 text-white border-neutral-700 hover:bg-neutral-800"
+            >
+              Call Central Desk: {SITE_BRAND.phone}
+            </a>
           </div>
         </div>
       </div>
     </div>
   );
 }
-

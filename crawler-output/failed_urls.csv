@@ -1,0 +1,7 @@
+url,stage,status,reason,failure_type,retry_count,retry_eligible,next_retry_at,transport_category,exception_type,diagnostic_detail,diagnostic_action,timestamp
+https://www.blog.didm.in/robots.txt,robots,,robots_status_0,,,,,,,,,2026-11-04T12:45:52.228998+00:00
+https://www.didm.in/sitemap.xml,sitemap,200,not_xml,,,,,,,,,2026-11-04T12:45:54.220196+00:00
+https://www.blog.didm.in/,page,,blocked_by_robots,,,,,,,,,2026-11-04T12:45:57.720580+00:00
+https://www.blog.didm.in/robots.txt,robots,,robots_status_0,,,,,tls_certificate_failure,SSLError,TLS negotiation failed.,"Verify system trust roots, hostname, certificate validity, and TLS interception policy.",2026-11-05T06:35:02.532905+00:00
+https://www.didm.in/sitemap.xml,sitemap,200,not_xml,,,,,,,,,2026-11-05T06:35:05.181419+00:00
+https://www.didm.in/digital-marketing-course-in-rajouri-garden,page,429,http_status_429,transient,1,true,2026-11-05T06:36:26.736500+00:00,http_response_failure,HTTPError,HTTP response status 429.,Review the HTTP status and Retry-After header without bypassing robots or rate limits.,2026-11-05T06:36:23.736534+00:00

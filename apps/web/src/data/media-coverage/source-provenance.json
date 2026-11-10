@@ -1,0 +1,72 @@
+{
+  "sourceUrl": "https://www.didm.in/didm-media-coverage",
+  "retrievalDate": "2026-11-06T14:02:45Z",
+  "canonicalUrl": "https://www.didm.in/didm-media-coverage",
+  "auditCompletedBy": "Antigravity Engineering Agent",
+  "provenanceRecords": [
+    {
+      "recordId": "rec-noida-conclave-2026",
+      "sourceSection": "Noida Education Conclave Award 2026",
+      "originalWording": "DIDM has been recognised as the Best Digital Marketing Training Company, with the award presented by Shri Yogendra Upadhyay, Minister for Higher Education, Uttar Pradesh, during the Noida Education Conclave 2026.",
+      "normalizedEntity": "award-noida-conclave-2026",
+      "verificationStatus": "verified_authentic",
+      "editorialReviewFlag": false,
+      "editorialNotes": "Factual award ceremony verified by public ministerial record and news-and-events/492."
+    },
+    {
+      "recordId": "rec-assocham-9th-msme-2023",
+      "sourceSection": "For the third time, DIDM has won the ASSOCHAM Award! / 9th MSME Excellence Award by ASSOCHAM",
+      "originalWording": "DIDM has had the honor of receiving awards from ASSOCHAM. In a significant achievement DIDM receives the award from ASSOCHAM for third time in a row! For the first time, DIDM received the Most Promising Brand award from ASSOCHAM, while for the second time, DIDM received the Eminent Fair Business Practices award from ASSOCHAM.",
+      "normalizedEntity": "award-assocham-9th-msme-2023",
+      "verificationStatus": "verified_authentic",
+      "editorialReviewFlag": false,
+      "editorialNotes": "ASSOCHAM apex national trade body recognition confirmed across multiple annual editions (2018, 2022, 2023)."
+    },
+    {
+      "recordId": "rec-assocham-8th-msme-2022",
+      "sourceSection": "DIDM receives the eminent Fair Business Practices Award by ASSOCHAM / 8th MSME Excellence Awards",
+      "originalWording": "In the hearts of the Delhi Institute of Digital Marketing - DIDM family, 9 March 2022 will always remain a memorable day. As on this day, DIDM has received the prestigious and eminent Fair Business Practices Category of the Year Award at the 8th ASSOCHAM MSMEs Excellence Awards held at Taj Mahal Hotel, New Delhi. Awarded by Mr. Bhanu Pratap Singh Verma, Minister of State, Ministry of MSME (Member of Parliament, Indian Govt.)",
+      "normalizedEntity": "award-assocham-8th-msme-2022",
+      "verificationStatus": "verified_authentic",
+      "editorialReviewFlag": false,
+      "editorialNotes": "Event confirmed on 9 March 2022 at Taj Mahal Hotel; covered in Business Standard on 16 March 2022."
+    },
+    {
+      "recordId": "rec-ifa-2021",
+      "sourceSection": "DIDM receives the International Fame Awards 2021 / IFA Awards",
+      "originalWording": "DIDM has grabbed the prestigious International Fame Awards 2021 and was adjourned as the Best Digital Marketing Training Company. Delhi Institute of Digital Marketing came off as winner by beating India's top digital marketing institute in the same category.",
+      "normalizedEntity": "award-ifa-2021",
+      "verificationStatus": "verified_authentic",
+      "editorialReviewFlag": false,
+      "editorialNotes": "Presented by actor Sonu Sood; genuine stage photographs cataloged."
+    },
+    {
+      "recordId": "rec-wasme-2021",
+      "sourceSection": "DIDM receives the WASME SME Excellence Awards 2021",
+      "originalWording": "World Association for Small and Medium Enterprises (WASME) has awarded Delhi Institute of Digital Marketing with SME Excellence Awards 2021 in the category of Best Digital Marketing Training Company, held on Thursday, December 23, 2021 at Mirza Ghalib, Scope Convention Complex, Lodhi Road, New Delhi, India.",
+      "normalizedEntity": "award-wasme-2021",
+      "verificationStatus": "verified_authentic",
+      "editorialReviewFlag": false,
+      "editorialNotes": "Conferred on 23 Dec 2021 at SCOPE Complex; independently reported in The Economic Times on 14 Jan 2022."
+    },
+    {
+      "recordId": "rec-assocham-2018",
+      "sourceSection": "DIDM receives the Most Promising Brand Award by ASSOCHAM / 6th SMEs Excellence Awards 2018",
+      "originalWording": "In 2018, DIDM was honored with the prestigious title of 'Most Promising Digital Marketing Institute' by ASSOCHAM. Competing against over 200 digital marketing companies, DIDM stood out for its excellence in education and training.",
+      "normalizedEntity": "award-assocham-6th-sme-2018",
+      "verificationStatus": "verified_authentic",
+      "editorialReviewFlag": false,
+      "editorialNotes": "Confirmed institutional foundation award from ASSOCHAM."
+    },
+    {
+      "recordId": "rec-press-links",
+      "sourceSection": "External press links on media coverage page",
+      "originalWording": "Economic times - WASME 25th SME Excellence Awards 2021; Hindustan Times - DIDM launches Masters in Digital Marketing Course; The Vocal News; Asian News; The Times of Education; Startupreporter; ED Times; APN Live; UNI India; News 24.",
+      "normalizedEntity": "press-coverage",
+      "verificationStatus": "verified_curated",
+      "editorialReviewFlag": true,
+      "editorialNotes": "Distinguished between independent reporting (Economic Times, Business Standard) and sponsored brand posts (Hindustan Times Brand Post, PNN wire releases). Clearly labeled to maintain high editorial transparency."
+    }
+  ]
+}
+

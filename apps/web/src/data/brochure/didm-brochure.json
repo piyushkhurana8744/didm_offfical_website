@@ -1,0 +1,33 @@
+{
+  "title": "Delhi Institute of Digital Marketing - Official Master Brochure",
+  "filename": "DELHI_INSTITUTE_OF_DIGITAL_MARKETING_DOWNLOAD_BROCHURE.pdf",
+  "totalPages": 44,
+  "lastVerified": "2026-11-05",
+  "extractedDatasets": {
+    "masterModules52": "master-52-modules.json",
+    "courseComparison": "course-comparison.json",
+    "toolsAndCertifications": "tools-and-certifications.json",
+    "instituteInformation": "institute-information.json",
+    "faqKnowledge": "faq-knowledge.json"
+  },
+  "structureOverview": {
+    "pages1_5": "Institute Profile, Co-Founder Message, Milestones Timeline (2009-2023), Mission & Vision",
+    "pages6_9": "Student Testimonials & Placement Case Studies",
+    "page10": "Top 10 Benefits of Training at DIDM",
+    "page11": "Master in Digital Marketing (500 Hrs Breakdown: 140 In-Class + 360 On-Board)",
+    "page12": "Official 52 Modules Matrix Grid",
+    "page13": "Customized Modules (Money Making, Lead Gen, Freelancing)",
+    "pages14_16": "Comparative Matrix across Master, Advanced, and Customized Programs",
+    "page17": "16 Pillars & 150+ Reasons to Choose DIDM",
+    "page18": "22 Practical Tools & 8 Veblika Automation Tools (Rs 1,00,000/- Value)",
+    "page19": "Interactive Trainee-Centered Training Methodology",
+    "page20": "18 High-Demand Career Pathways",
+    "page22": "6 National & Industry Awards (ASSOCHAM, JustDial, International Fame Award with Sonu Sood, WASME, MSME)",
+    "pages24_28": "Convocation & Batch Certification Ceremonies",
+    "pages29_33": "Collegiate Workshops & Seminars (MERI, Lakshmibai, JMC, GL Bajaj, JIMS, AIMT)",
+    "pages34_36": "Student Convocations & Celebrations",
+    "pages37_39": "Student Verified Google Reviews",
+    "pages40_41": "Hiring Partner Brand Directory (32 Companies)",
+    "page44": "16 Training Centres & South Campus Head Office Directory"
+  }
+}

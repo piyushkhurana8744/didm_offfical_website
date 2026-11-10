@@ -2,33 +2,55 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { CheckCircle2, ShieldCheck, Phone, MessageSquare, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
-import { SITE_DATA } from "@/data/site-data";
+import {
+  CheckCircle2,
+  ShieldCheck,
+  Phone,
+  MessageSquare,
+  ArrowRight,
+  AlertCircle,
+  Loader2,
+  Calendar,
+  Sparkles,
+  MapPin,
+  GraduationCap,
+} from "lucide-react";
+import { getAllCourses, getAllCentres, SITE_BRAND } from "@/lib/content";
+import type { EnquiryResponse } from "@/types/backend";
 
 export function EnquiryForm() {
   const searchParams = useSearchParams();
-  const initialProgram = searchParams.get("p") || "midm";
-  const initialCentre = searchParams.get("c") || "dwarka";
+  const courses = getAllCourses();
+  const centres = getAllCentres();
+
+  const initialProgram = searchParams.get("p") || courses[0]?.id || "midm";
+  const initialCentre = searchParams.get("c") || centres[0]?.id || "dwarka";
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [selectedProgram, setSelectedProgram] = useState(initialProgram);
   const [selectedCentre, setSelectedCentre] = useState(initialCentre);
-  const [preferredBatch, setPreferredBatch] = useState("Weekday Morning");
+  const [preferredBatch, setPreferredBatch] = useState("Weekday Morning (10 AM - 1 PM)");
   const [consent, setConsent] = useState(true);
   const [errors, setErrors] = useState<{ name?: string; phone?: string; consent?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submissionResult, setSubmissionResult] = useState<EnquiryResponse | null>(null);
 
   useEffect(() => {
     const p = searchParams.get("p");
     const c = searchParams.get("c");
-    if (p) setSelectedProgram(p);
-    if (c) setSelectedCentre(c);
-  }, [searchParams]);
+    if (p) {
+      const match = courses.find((crs) => crs.id === p || crs.slug === p);
+      if (match) setSelectedProgram(match.id);
+    }
+    if (c) {
+      const match = centres.find((ctr) => ctr.id === c || ctr.slug === c);
+      if (match) setSelectedCentre(match.id);
+    }
+  }, [searchParams, courses, centres]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: { name?: string; phone?: string; consent?: string } = {};
 
@@ -49,35 +71,47 @@ export function EnquiryForm() {
     if (Object.keys(newErrors).length > 0) return;
 
     setIsSubmitting(true);
-    // Simulate CRM submission & save plan
-    setTimeout(() => {
+
+    const payload = {
+      name: name.trim(),
+      phone: cleanPhone,
+      email: email.trim() || undefined,
+      courseId: selectedProgram,
+      centreId: selectedCentre,
+      preferredBatch,
+      consent,
+      sourceUrl: typeof window !== "undefined" ? window.location.href : undefined,
+    };
+
+    try {
+      const res = await fetch("/api/enquire", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data: EnquiryResponse = await res.json();
+      setSubmissionResult(data);
+    } catch (err) {
+      setSubmissionResult({
+        success: false,
+        mode: "direct_assisted",
+        message: "We could not save your enquiry. Please contact admissions directly.",
+        counselorContact: {
+          phone: SITE_BRAND.phone,
+          whatsappUrl: SITE_BRAND.whatsapp,
+        },
+      });
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      try {
-        const prog = SITE_DATA.programs.find((p) => p.id === selectedProgram);
-        if (prog) {
-          localStorage.setItem(
-            "didm-plan",
-            JSON.stringify({
-              id: prog.id,
-              name: prog.shortName,
-              fullName: prog.name,
-              fee: prog.fee,
-              ts: Date.now(),
-            })
-          );
-          window.dispatchEvent(new Event("didm-plan-updated"));
-        }
-      } catch {
-        // ignore
-      }
-    }, 600);
+    }
   };
 
-  if (isSubmitted) {
+  const selectedCourseObj = courses.find((c) => c.id === selectedProgram) || courses[0];
+  const selectedCentreObj = centres.find((c) => c.id === selectedCentre) || centres[0];
+
+  if (submissionResult) {
     const firstName = name.trim().split(" ")[0];
-    const programObj = SITE_DATA.programs.find((p) => p.id === selectedProgram);
-    const centreObj = SITE_DATA.centres.find((c) => c.id === selectedCentre);
 
     return (
       <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-xl text-center space-y-6 animate-in zoom-in-95">
@@ -86,44 +120,58 @@ export function EnquiryForm() {
         </div>
 
         <div className="space-y-2">
-          <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-200 dark:border-emerald-800">
-            Booking Received
-          </span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-mono text-xs font-semibold border border-emerald-200 dark:border-emerald-800">
+            <span>Reference ID: {submissionResult.enquiryId || "DIDM-ONLINE"}</span>
+          </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white pt-1">
-            Thank you, {firstName}!
+            Demo Request Registered, {firstName}!
           </h3>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 max-w-md mx-auto">
-            Your free 1-on-1 counseling demo request has been prioritized for{" "}
-            <strong className="text-neutral-900 dark:text-white">{programObj?.shortName || "Digital Marketing"}</strong> at our{" "}
-            <strong className="text-neutral-900 dark:text-white">{centreObj?.name || "Campus"}</strong>.
+          <p className="text-sm text-neutral-600 dark:text-neutral-400 max-w-md mx-auto leading-relaxed">
+            Your preference for <strong className="text-neutral-900 dark:text-white">{selectedCourseObj.name}</strong> at our{" "}
+            <strong className="text-neutral-900 dark:text-white">{selectedCentreObj.name}</strong> has been logged.
           </p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-100 dark:border-neutral-800 max-w-md mx-auto text-left text-xs space-y-1.5 text-neutral-600 dark:text-neutral-300">
-          <div><strong className="text-neutral-900 dark:text-white">Registered Mobile:</strong> {phone}</div>
-          <div><strong className="text-neutral-900 dark:text-white">Preferred Timing:</strong> {preferredBatch}</div>
-          <div><strong className="text-neutral-900 dark:text-white">Assigned Support Desk:</strong> Dwarka & Satya Niketan Academic Wing</div>
+        {/* Transparent Lead Status Notice */}
+        <div className="p-4 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-left text-xs space-y-2 max-w-lg mx-auto">
+          <div className="font-semibold text-neutral-800 dark:text-neutral-200 flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-brand-red shrink-0" />
+            <span>Admissions Priority Hotline</span>
+          </div>
+          <p className="text-neutral-500 leading-relaxed">
+            For fastest slot confirmation, immediate seat reservation, or special fee waivers, connect directly with our senior counseling desk:
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row gap-2">
+            <a
+              href={`tel:${SITE_BRAND.phoneClean}`}
+              className="flex-1 btn-red text-xs py-2.5 px-4 font-bold flex items-center justify-center gap-1.5"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>Call {SITE_BRAND.phone}</span>
+            </a>
+            <a
+              href={submissionResult.counselorContact.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 btn-secondary text-xs py-2.5 px-4 font-bold flex items-center justify-center gap-1.5 text-emerald-700 dark:text-emerald-400 border-emerald-500/30"
+            >
+              <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
+              <span>WhatsApp Counselor</span>
+            </a>
+          </div>
         </div>
 
-        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href={`tel:${SITE_DATA.brand.phoneClean}`}
-            className="btn-primary text-xs py-3 px-5 w-full sm:w-auto"
-          >
-            <Phone className="w-4 h-4 text-brand-red" />
-            <span>Call Counselor Directly</span>
-          </a>
-
-          <a
-            href={`https://wa.me/918800505151?text=Hi%20DIDM%2C%20I%20just%20booked%20a%20demo%20for%20${encodeURIComponent(programObj?.shortName || "MIDM")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-ghost text-xs py-3 px-5 w-full sm:w-auto text-emerald-600 dark:text-emerald-400"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>Connect on WhatsApp</span>
-          </a>
-        </div>
+        <button
+          onClick={() => {
+            setSubmissionResult(null);
+            setName("");
+            setPhone("");
+            setEmail("");
+          }}
+          className="text-xs font-semibold text-neutral-500 hover:text-brand-red transition"
+        >
+          ← Book another demo session or inquire for a colleague
+        </button>
       </div>
     );
   }
@@ -131,155 +179,171 @@ export function EnquiryForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-5 sm:p-8 md:p-9 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-xl space-y-4 sm:space-y-5"
+      className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-xl space-y-5"
     >
-      <div>
-        <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-900 dark:text-white">
-          Book a Free 1-on-1 Demo Session
+      <div className="space-y-1">
+        <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
+          Book Free 1-on-1 Demo & Career Guidance
         </h3>
-        <p className="text-xs sm:text-sm text-neutral-500 mt-1">
-          Sit with our senior trainers, inspect live ad campaigns, and review placement portfolios.
+        <p className="text-xs text-neutral-500">
+          No charges. No spam. Experience live classroom sessions before you enroll.
         </p>
       </div>
 
-      {/* Program Selection Radio Pills */}
-      <div className="space-y-2">
-        <label className="text-xs font-semibold text-neutral-700 dark:text-neutral-300 font-mono uppercase tracking-wider">
-          Select Course Program:
+      {/* Name Input */}
+      <div className="space-y-1.5">
+        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
+          Full Name <span className="text-brand-red">*</span>
         </label>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-          {SITE_DATA.programs.map((p) => {
-            const isSelected = selectedProgram === p.id;
-            return (
-              <button
-                type="button"
-                key={p.id}
-                onClick={() => setSelectedProgram(p.id)}
-                className={`p-2.5 rounded-xl text-left border text-xs font-semibold transition ${
-                  isSelected
-                    ? "border-brand-red bg-brand-red-soft/70 dark:bg-brand-red/20 text-brand-red"
-                    : "border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400"
-                }`}
-              >
-                <div className="truncate">{p.shortName}</div>
-                <div className="text-[10px] text-neutral-500 font-normal mt-0.5">{p.duration.split("(")[0]}</div>
-              </button>
-            );
-          })}
-        </div>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+            if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
+          }}
+          placeholder="e.g. Rahul Sharma"
+          className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
+        />
+        {errors.name && (
+          <p className="text-xs text-brand-red flex items-center gap-1">
+            <AlertCircle className="w-3.5 h-3.5" />
+            <span>{errors.name}</span>
+          </p>
+        )}
       </div>
 
-      {/* Centre Dropdown */}
+      {/* Phone Number Input */}
       <div className="space-y-1.5">
-        <label className="text-xs font-semibold text-neutral-700 dark:text-neutral-300 font-mono uppercase tracking-wider">
-          Preferred Learning Centre:
+        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
+          Mobile Number (WhatsApp) <span className="text-brand-red">*</span>
+        </label>
+        <div className="relative">
+          <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-mono font-bold text-neutral-400">
+            +91
+          </span>
+          <input
+            type="tel"
+            maxLength={10}
+            value={phone}
+            onChange={(e) => {
+              setPhone(e.target.value);
+              if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
+            }}
+            placeholder="98765 43210"
+            className="w-full pl-12 pr-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
+          />
+        </div>
+        {errors.phone && (
+          <p className="text-xs text-brand-red flex items-center gap-1">
+            <AlertCircle className="w-3.5 h-3.5" />
+            <span>{errors.phone}</span>
+          </p>
+        )}
+      </div>
+
+      {/* Email (Optional) */}
+      <div className="space-y-1.5">
+        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
+          Email Address <span className="text-neutral-400 font-normal">(Optional for syllabus PDF)</span>
+        </label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="rahul@gmail.com"
+          className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
+        />
+      </div>
+
+      {/* Program Selector */}
+      <div className="space-y-1.5">
+        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
+          <GraduationCap className="w-3.5 h-3.5 text-brand-red" />
+          <span>Select Program</span>
+        </label>
+        <select
+          value={selectedProgram}
+          onChange={(e) => setSelectedProgram(e.target.value)}
+          className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
+        >
+          {courses.map((c) => (
+            <option key={c.id} value={c.id}>
+              {c.name} ({c.duration})
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Centre Selector */}
+      <div className="space-y-1.5">
+        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
+          <MapPin className="w-3.5 h-3.5 text-brand-red" />
+          <span>Select Preferred Centre / Online</span>
         </label>
         <select
           value={selectedCentre}
           onChange={(e) => setSelectedCentre(e.target.value)}
           className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
         >
-          {SITE_DATA.centres.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.name} ({c.city})
+          {centres.map((ctr) => (
+            <option key={ctr.id} value={ctr.id}>
+              {ctr.name} ({ctr.city}) {ctr.isHeadOffice ? "★ HO" : ""}
             </option>
           ))}
         </select>
       </div>
 
-      {/* Name & Phone Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="space-y-1.5">
-          <label className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">
-            Full Name *
-          </label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="e.g. Rahul Sharma"
-            className={`w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border text-xs sm:text-sm focus:outline-none text-neutral-900 dark:text-white ${
-              errors.name ? "border-brand-red" : "border-neutral-200 dark:border-neutral-800 focus:border-brand-red"
-            }`}
-          />
-          {errors.name && (
-            <div className="text-[11px] text-brand-red flex items-center gap-1">
-              <AlertCircle className="w-3 h-3" />
-              <span>{errors.name}</span>
-            </div>
-          )}
-        </div>
-
-        <div className="space-y-1.5">
-          <label className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">
-            Mobile Number (WhatsApp) *
-          </label>
-          <input
-            type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="e.g. 98765 43210"
-            className={`w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border text-xs sm:text-sm focus:outline-none text-neutral-900 dark:text-white ${
-              errors.phone ? "border-brand-red" : "border-neutral-200 dark:border-neutral-800 focus:border-brand-red"
-            }`}
-          />
-          {errors.phone && (
-            <div className="text-[11px] text-brand-red flex items-center gap-1">
-              <AlertCircle className="w-3 h-3" />
-              <span>{errors.phone}</span>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Email & Preferred Batch */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="space-y-1.5">
-          <label className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">
-            Email Address (Optional)
-          </label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="rahul@example.com"
-            className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
-          />
-        </div>
-
-        <div className="space-y-1.5">
-          <label className="text-xs font-semibold text-neutral-700 dark:text-neutral-300">
-            Preferred Batch Timing
-          </label>
-          <select
-            value={preferredBatch}
-            onChange={(e) => setPreferredBatch(e.target.value)}
-            className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
-          >
-            <option value="Weekday Morning">Weekday Morning (10:00 AM)</option>
-            <option value="Weekday Afternoon">Weekday Afternoon (2:00 PM)</option>
-            <option value="Weekday Evening">Weekday Evening (5:00 PM)</option>
-            <option value="Weekend Special">Weekend Special (Sat & Sun)</option>
-            <option value="Online Flexible">Online Flexible Timings</option>
-          </select>
+      {/* Preferred Batch Timing */}
+      <div className="space-y-1.5">
+        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
+          <Calendar className="w-3.5 h-3.5 text-brand-red" />
+          <span>Preferred Batch Timing</span>
+        </label>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+          {[
+            "Weekday Morning (10 AM - 1 PM)",
+            "Weekday Evening (4 PM - 7 PM)",
+            "Weekend Saturday & Sunday",
+            "Fast-Track 1-Month Boot",
+          ].map((batch) => (
+            <button
+              type="button"
+              key={batch}
+              onClick={() => setPreferredBatch(batch)}
+              className={`p-2.5 rounded-xl border text-left transition font-medium ${
+                preferredBatch === batch
+                  ? "border-brand-red bg-brand-red-soft dark:bg-brand-red/10 text-brand-red font-bold"
+                  : "border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-[#1A1A22] text-neutral-600 dark:text-neutral-400"
+              }`}
+            >
+              {batch}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Consent Checkbox */}
-      <div className="pt-2">
-        <label className="flex items-start gap-2.5 cursor-pointer">
+      <div className="space-y-1 pt-1">
+        <label className="flex items-start gap-2.5 text-[11px] text-neutral-600 dark:text-neutral-400 cursor-pointer">
           <input
             type="checkbox"
             checked={consent}
-            onChange={(e) => setConsent(e.target.checked)}
-            className="mt-0.5 rounded border-neutral-300 text-brand-red focus:ring-brand-red"
+            onChange={(e) => {
+              setConsent(e.target.checked);
+              if (errors.consent) setErrors((prev) => ({ ...prev, consent: undefined }));
+            }}
+            className="mt-0.5 rounded text-brand-red focus:ring-brand-red"
           />
-          <span className="text-[11px] text-neutral-500 leading-tight">
-            I agree to receive course syllabus, fee breakdown, and counseling updates from DIDM via Call, SMS, and WhatsApp under DPDP Act 2023. We never spam.
+          <span>
+            I authorize DIDM and its academic counselors to call, SMS, or WhatsApp me regarding course batches, fees, and syllabus details.
           </span>
         </label>
         {errors.consent && (
-          <div className="text-[11px] text-brand-red mt-1">{errors.consent}</div>
+          <p className="text-xs text-brand-red flex items-center gap-1">
+            <AlertCircle className="w-3.5 h-3.5" />
+            <span>{errors.consent}</span>
+          </p>
         )}
       </div>
 
@@ -287,26 +351,25 @@ export function EnquiryForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="btn-red w-full py-3.5 text-sm font-bold flex items-center justify-center gap-2"
+        className="w-full btn-red py-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-brand-red/25 disabled:opacity-70"
       >
         {isSubmitting ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin" />
-            <span>Connecting with Academic Counselor...</span>
+            <span>Registering Your Slot...</span>
           </>
         ) : (
           <>
-            <span>Confirm & Reserve Free Demo Seat</span>
+            <span>Reserve My Free Demo Seat</span>
             <ArrowRight className="w-4 h-4" />
           </>
         )}
       </button>
 
-      <div className="flex items-center justify-center gap-2 text-[11px] text-neutral-400 text-center pt-1">
-        <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-        <span>100% Privacy Protected · Zero Cost Commitment</span>
+      <div className="flex items-center justify-center gap-2 text-[11px] text-neutral-500 pt-1">
+        <ShieldCheck className="w-4 h-4 text-emerald-500" />
+        <span>Your details are used to respond to this course enquiry.</span>
       </div>
     </form>
   );
 }
-

@@ -1,0 +1,112 @@
+{
+  "team_photos": [
+    {
+      "name": "Sushil Sisodia",
+      "role": "HR Head",
+      "remote_url": "https://didm.in/assets/upload/images/SUSHIL%20HR%20Head%20DIDM.jpg",
+      "alt": "Sushil Sisodia DIDM HR Head",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Medha Virdi",
+      "role": "HR Manager",
+      "remote_url": "https://didm.in/assets/upload/images/Medha%20Virdi%20HR%20Manager.jpg",
+      "alt": "Medha Virdi HR Manager DIDM",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Anil Chander",
+      "role": "Accounts Head",
+      "remote_url": "https://didm.in/assets/upload/images/ANIL%20CHANDER%20ACCOUNTS%20DEPARTMENT.jpg",
+      "alt": "Anil Chander Account and Admin Coordinator in DIDM",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Rahul Sharma",
+      "role": "Logistic Head",
+      "remote_url": "https://didm.in/assets/upload/images/Rahul%20Logistic%20Department.jpg",
+      "alt": "DIDM Rahul Logistic Department",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Chirag Singhal",
+      "role": "Operation Head",
+      "remote_url": "https://didm.in/assets/upload/images/Operation%20Head%20Chirag%20Singhal.jpg",
+      "alt": "Chirag Singhal Operation Manager DIDM Support and Services",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Shivir Wadhawan",
+      "role": "Operation Manager",
+      "remote_url": "https://didm.in/assets/upload/images/Shivir%20Wadhwan%20Operation%20Manager%20DIDM.jpg",
+      "alt": "Shivir Wadhwan Operation Manager DIDM",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Syed Shakir Rasul",
+      "role": "Team Leader",
+      "remote_url": "https://didm.in/assets/upload/images/Syed%20Shakir%20Rasul%20TL%20DIDM.jpg",
+      "alt": "Syed Shakir Rasul Team Leader DIDM",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Vaibhav Sharma",
+      "role": "Trainer Head",
+      "remote_url": "https://didm.in/assets/upload/images/Vaibhav%20Trainer%20Head%20DIDM.jpg",
+      "alt": "Vaibhav Sharma Trainer Head in DIDM",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Siddhartha Jain",
+      "role": "Project Head",
+      "remote_url": "https://didm.in/assets/upload/images/Siddhartha%20Project%20Head%20Online%20Strikers.jpg",
+      "alt": "Siddhartha Jain Project Head Online Strikers",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Manish Sharma",
+      "role": "Marketing Head",
+      "remote_url": "https://didm.in/assets/upload/images/Manish%20Marketing%20Head%20Online%20Strikers.jpg",
+      "alt": "Manish Sharma Marketing Head in DIDM and Online Strikers",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    },
+    {
+      "name": "Manish Kumar",
+      "role": "Head DM | IT",
+      "remote_url": "https://didm.in/assets/upload/images/Manish%20Head%20IT.jpg",
+      "alt": "Manish Kumar DIDM Marketing Department",
+      "status": "remote_verified_source",
+      "local_fallback": "/images/leadership/avatar-placeholder.svg"
+    }
+  ],
+  "institutional_assets": [
+    {
+      "id": "didm_official_logo",
+      "path": "/images/brand/didm-logo.png",
+      "alt": "Delhi Institute of Digital Marketing - Registered Logo",
+      "source": "Local verified repository asset"
+    },
+    {
+      "id": "didm_media_news",
+      "path": "/images/brand/media-news.jpg",
+      "alt": "DIDM Media coverage and press recognition",
+      "source": "Local verified repository asset"
+    },
+    {
+      "id": "didm_hall_of_fame",
+      "path": "/images/brand/hall-of-fame.jpg",
+      "alt": "DIDM Convocation and Hall of Fame ceremonies",
+      "source": "Local verified repository asset"
+    }
+  ]
+}

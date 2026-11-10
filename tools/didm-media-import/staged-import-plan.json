@@ -1,0 +1,102 @@
+{
+  "mode": "offline-stage-plan",
+  "network_requests_made": 0,
+  "scope": "pilot",
+  "batch_size": 12,
+  "reuse_authorization_status": "pending_explicit_user_confirmation",
+  "already_verified": 0,
+  "invalid_resume_entries": [],
+  "selected_count": 12,
+  "pilot_coverage": [
+    "branding",
+    "homepage",
+    "courses",
+    "centres"
+  ],
+  "selected": [
+    {
+      "source_url": "https://www.didm.in/assets/all/images/didm-logo-reg.png",
+      "host": "www.didm.in",
+      "category": "logo",
+      "referring_pages": "https://www.didm.in/ | https://www.didm.in/advanced-digital-marketing-course | https://www.didm.in/customized-digital-marketing-course | https://www.didm.in/digital-marketing-artificial-intelligence | https://www.didm.in/digital-marketing-course | https://www.didm.in/digital-marketing-course-in-dehradun | https://www.didm.in/digital-marketing-course-in-dwarka | https://www.didm.in/digital-marketing-course-in-gurgaon | https://www.didm.in/digital-marketing-course-in-haldwani-rudarpur | https://www.didm.in/digital-marketing-course-in-jaipur | https://www.didm.in/digital-marketing-course-in-kalkaji | https://www.didm.in/digital-marketing-course-in-meerut | https://www.didm.in/digital-marketing-course-in-mumbai | https://www.didm.in/digital-marketing-course-in-noida | https://www.didm.in/digital-marketing-course-in-pitampura | https://www.didm.in/digital-marketing-course-in-preet-vihar | https://www.didm.in/digital-marketing-course-in-rajouri-garden | https://www.didm.in/digital-marketing-course-in-satya-niketan | https://www.didm.in/gen-ai-knowledge-camp | https://www.didm.in/master-in-digital-marketing-course | https://www.didm.in/news-and-events | https://www.didm.in/online-digital-marketing-course",
+      "local_destination": "apps/web/public/images/didm/logo/didm-logo-reg-ea34b1d23d.png"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/Master_in_digital_marketing_course_MIDM_DIDM.webp",
+      "host": "didm.in",
+      "category": "courses",
+      "referring_pages": "https://www.didm.in/",
+      "local_destination": "apps/web/public/images/didm/courses/master-in-digital-marketing-course-midm-didm-94bf002e54.webp"
+    },
+    {
+      "source_url": "https://www.didm.in/assets/uploads/banner/DIGITAL_MARKETING_BANNER_2.jpg",
+      "host": "www.didm.in",
+      "category": "courses",
+      "referring_pages": "https://www.didm.in/digital-marketing-course",
+      "local_destination": "apps/web/public/images/didm/courses/digital-marketing-banner-2-3a121725f8.jpg"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/AI-Powered-Digital-Marketing-Course-Noida-DIDM-Branch.webp",
+      "host": "didm.in",
+      "category": "centres",
+      "referring_pages": "https://www.didm.in/digital-marketing-course-in-noida",
+      "local_destination": "apps/web/public/images/didm/centres/ai-powered-digital-marketing-course-noida-didm-branch-a11b962e31.webp"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/Advanced_in_digital_marketing_course_AIMTP_Course_DIDM.webp",
+      "host": "didm.in",
+      "category": "courses",
+      "referring_pages": "https://www.didm.in/",
+      "local_destination": "apps/web/public/images/didm/courses/advanced-in-digital-marketing-course-aimtp-course-didm-f74e94c225.webp"
+    },
+    {
+      "source_url": "https://didm.in/assets/uploads/images/AI-Powered-Advanced-digital-marketing-course.png",
+      "host": "didm.in",
+      "category": "courses",
+      "referring_pages": "https://www.didm.in/advanced-digital-marketing-course",
+      "local_destination": "apps/web/public/images/didm/courses/ai-powered-advanced-digital-marketing-course-3021c9543c.png"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/Digital%20Marketing%20Course%20in%20Meerut%20Garden%20Branch%20by%20DIDM.jpg",
+      "host": "didm.in",
+      "category": "centres",
+      "referring_pages": "https://www.didm.in/digital-marketing-course-in-meerut",
+      "local_destination": "apps/web/public/images/didm/centres/digital-marketing-course-in-meerut-garden-branch-by-didm-7999c71b6b.jpg"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/college%20program%20by%20didm.jpg",
+      "host": "didm.in",
+      "category": "courses",
+      "referring_pages": "https://www.didm.in/",
+      "local_destination": "apps/web/public/images/didm/courses/college-program-by-didm-217166f428.jpg"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/corporate%20training%20program.jpg",
+      "host": "didm.in",
+      "category": "courses",
+      "referring_pages": "https://www.didm.in/",
+      "local_destination": "apps/web/public/images/didm/courses/corporate-training-program-52ba49546b.jpg"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/new/DIDM%20in%20Haldwani%20Branch.webp",
+      "host": "didm.in",
+      "category": "centres",
+      "referring_pages": "https://www.didm.in/digital-marketing-course-in-haldwani-rudarpur",
+      "local_destination": "apps/web/public/images/didm/centres/didm-in-haldwani-branch-59d696b8d5.webp"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/imges/MEDIA%20NEWS.png",
+      "host": "didm.in",
+      "category": "blog",
+      "referring_pages": "https://www.didm.in/",
+      "local_destination": "apps/web/public/images/didm/blog/media-news-c91390c641.png"
+    },
+    {
+      "source_url": "https://didm.in/assets/upload/images/didm%20online%20advanced%20course%20fees.webp",
+      "host": "didm.in",
+      "category": "courses",
+      "referring_pages": "https://www.didm.in/online-digital-marketing-course",
+      "local_destination": "apps/web/public/images/didm/courses/didm-online-advanced-course-fees-e8267adb1b.webp"
+    }
+  ]
+}

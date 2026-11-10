@@ -3,7 +3,11 @@ node_modules
 dist
 .turbo
 *.log
+*.pyc
+*.tsbuildinfo
+__pycache__/
 .DS_Store
 .env*.local
+.data/
 
 node_modules

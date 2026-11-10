@@ -1,0 +1,214 @@
+{
+  "team_members": [
+    {
+      "id": "sushil-sisodia",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Sushil Sisodia - HR Head - Human Resources Dept.",
+      "normalized_content": {
+        "name": "Sushil Sisodia",
+        "role": "HR Head",
+        "department": "Human Resources Dept.",
+        "original_image_url": "https://didm.in/assets/upload/images/SUSHIL%20HR%20Head%20DIDM.jpg",
+        "image_alt": "Sushil Sisodia DIDM HR Head",
+        "avatar_initials": "SS"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "medha-virdi",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Medha Virdi - HR Manager - Human Resources Dept.",
+      "normalized_content": {
+        "name": "Medha Virdi",
+        "role": "HR Manager",
+        "department": "Human Resources Dept.",
+        "original_image_url": "https://didm.in/assets/upload/images/Medha%20Virdi%20HR%20Manager.jpg",
+        "image_alt": "Medha Virdi HR Manager DIDM",
+        "avatar_initials": "MV"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "anil-chander",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Anil Chander - Accounts Head - IT | Accounts Department",
+      "normalized_content": {
+        "name": "Anil Chander",
+        "role": "Accounts Head",
+        "department": "IT | Accounts Department",
+        "original_image_url": "https://didm.in/assets/upload/images/ANIL%20CHANDER%20ACCOUNTS%20DEPARTMENT.jpg",
+        "image_alt": "Anil Chander Account and Admin Coordinator in DIDM",
+        "avatar_initials": "AC"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "rahul-sharma",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Rahul Sharma - Logistic Head - Logistic Department",
+      "normalized_content": {
+        "name": "Rahul Sharma",
+        "role": "Logistic Head",
+        "department": "Logistic Department",
+        "original_image_url": "https://didm.in/assets/upload/images/Rahul%20Logistic%20Department.jpg",
+        "image_alt": "DIDM Rahul Logistic Department",
+        "avatar_initials": "RS"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "chirag-singhal",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Chirag Singhal - Operation Head - Support | Services",
+      "normalized_content": {
+        "name": "Chirag Singhal",
+        "role": "Operation Head",
+        "department": "Support | Services",
+        "original_image_url": "https://didm.in/assets/upload/images/Operation%20Head%20Chirag%20Singhal.jpg",
+        "image_alt": "Chirag Singhal Operation Manager DIDM Support and Services",
+        "avatar_initials": "CS"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "shivir-wadhawan",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Shivir Wadhawan - Operation Manager - Support | Services",
+      "normalized_content": {
+        "name": "Shivir Wadhawan",
+        "role": "Operation Manager",
+        "department": "Support | Services",
+        "original_image_url": "https://didm.in/assets/upload/images/Shivir%20Wadhwan%20Operation%20Manager%20DIDM.jpg",
+        "image_alt": "Shivir Wadhwan Operation Manager DIDM",
+        "avatar_initials": "SW"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "syed-shakir-rasul",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Syed Shakir Rasul - Team Leader - Support | Services",
+      "normalized_content": {
+        "name": "Syed Shakir Rasul",
+        "role": "Team Leader",
+        "department": "Support | Services",
+        "original_image_url": "https://didm.in/assets/upload/images/Syed%20Shakir%20Rasul%20TL%20DIDM.jpg",
+        "image_alt": "Syed Shakir Rasul Team Leader DIDM",
+        "avatar_initials": "SS"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "vaibhav-sharma",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Vaibhav Sharma - Trainer Head - Training | Placement",
+      "normalized_content": {
+        "name": "Vaibhav Sharma",
+        "role": "Trainer Head",
+        "department": "Training | Placement",
+        "original_image_url": "https://didm.in/assets/upload/images/Vaibhav%20Trainer%20Head%20DIDM.jpg",
+        "image_alt": "Vaibhav Sharma Trainer Head in DIDM",
+        "avatar_initials": "VS"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "siddhartha-jain",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Siddhartha Jain - Project Head - Online Strikers | Project Unnati",
+      "normalized_content": {
+        "name": "Siddhartha Jain",
+        "role": "Project Head",
+        "department": "Online Strikers | Project Unnati",
+        "original_image_url": "https://didm.in/assets/upload/images/Siddhartha%20Project%20Head%20Online%20Strikers.jpg",
+        "image_alt": "Siddhartha Jain Project Head Online Strikers",
+        "avatar_initials": "SJ"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "manish-sharma",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Manish Sharma - Marketing Head - Online Strikers",
+      "normalized_content": {
+        "name": "Manish Sharma",
+        "role": "Marketing Head",
+        "department": "Online Strikers",
+        "original_image_url": "https://didm.in/assets/upload/images/Manish%20Marketing%20Head%20Online%20Strikers.jpg",
+        "image_alt": "Manish Sharma Marketing Head in DIDM and Online Strikers",
+        "avatar_initials": "MS"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    },
+    {
+      "id": "manish-kumar",
+      "source_url": "https://www.didm.in/about-us",
+      "source_section": "Meet the Visionaries Behind DIDM",
+      "original_source_wording": "Manish Kumar - Head DM | IT - Online Strikers",
+      "normalized_content": {
+        "name": "Manish Kumar",
+        "role": "Head DM | IT",
+        "department": "Online Strikers",
+        "original_image_url": "https://didm.in/assets/upload/images/Manish%20Head%20IT.jpg",
+        "image_alt": "Manish Kumar DIDM Marketing Department",
+        "avatar_initials": "MK"
+      },
+      "retrieval_date": "2026-11-05T18:29:00Z",
+      "verification_status": "source_listed_unverified",
+      "last_verified_date": "2026-11-05",
+      "editorial_review_flag": true,
+      "editorial_note": "Listed on live website; roles reflect published public profile and are preserved without synthetic biographical enhancement."
+    }
+  ],
+  "total": 11
+}
