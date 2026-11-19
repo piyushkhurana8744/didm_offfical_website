@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Award, CheckCircle2, ShieldCheck, ArrowRight, Clock } from "lucide-react";
 import { getAllCourses, getAllCentres, SITE_BRAND } from "@/lib/content";
 import { DIDM_MEDIA } from "@/data/didm-media";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Footer() {
   const courses = getAllCourses();
@@ -268,6 +269,8 @@ export function Footer() {
             </Link>
             <span>·</span>
             <span>{SITE_BRAND.hours}</span>
+            <span>·</span>
+            <ThemeToggle />
           </div>
         </div>
       </div>

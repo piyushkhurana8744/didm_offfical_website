@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { StudentJourneyAvatar } from "../roadmap/StudentJourneyAvatar";
 import type { Course, SyllabusTopic } from "@/types/content";
+import { MotionSection } from "@/components/motion/MotionSection";
 
 interface CourseLearningStudioProps {
   course: Course;
@@ -71,7 +72,9 @@ export function CourseLearningStudio({
   useEffect(() => {
     if (scrubberRef.current && scrubberRef.current.children[targetIndex]) {
       const activeBtn = scrubberRef.current.children[targetIndex] as HTMLElement;
-      activeBtn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      const strip = scrubberRef.current;
+      const left = strip.scrollLeft + activeBtn.getBoundingClientRect().left - strip.getBoundingClientRect().left - strip.clientWidth / 2 + activeBtn.clientWidth / 2;
+      strip.scrollTo({ left, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     }
   }, [targetIndex]);
 
@@ -277,13 +280,25 @@ export function CourseLearningStudio({
     };
   }, []);
 
+  useEffect(() => {
+    const media = matchMedia("(prefers-reduced-motion: reduce)");
+    const stop = () => {
+      if (!media.matches) return;
+      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
+      animFrameRef.current = null;
+      const checkpoint = checkpoints[targetIndexRef.current];
+      if (checkpoint) { currentDistRef.current = checkpoint.distance; setCurrentDistance(checkpoint.distance); setAvatarPos({x:checkpoint.x,y:checkpoint.y}); }
+      setIsWalking(false);
+    };
+    media.addEventListener("change", stop);
+    return () => media.removeEventListener("change", stop);
+  }, [checkpoints]);
+
   // Keyboard Navigation: Arrow Left / Arrow Right
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (
-        document.activeElement?.tagName === "INPUT" ||
-        document.activeElement?.tagName === "TEXTAREA"
-      ) {
+      const target = e.target instanceof HTMLElement ? e.target : null;
+      if (!target?.closest("#learning-studio") || !target.closest("button") || target.closest("input, textarea, select, [contenteditable=true]")) {
         return;
       }
 
@@ -303,8 +318,10 @@ export function CourseLearningStudio({
   }, [count, targetIndex, walkToDestination]);
 
   return (
-    <section
+    <MotionSection
+      as="section"
       id="learning-studio"
+      preset="editorial"
       className={`scroll-mt-24 space-y-4 sm:space-y-6 relative ${className}`}
       aria-label={`${course.name} Interactive Learning Studio`}
     >
@@ -317,18 +334,18 @@ export function CourseLearningStudio({
           <div className="flex items-center gap-2 text-xs font-mono font-bold text-brand-red">
             <Compass className="w-4 h-4 text-brand-red" />
             <span className="uppercase tracking-wider">
-              INTERACTIVE ADVENTURE ROADMAP
+              INTERACTIVE CURRICULUM
             </span>
             <span className="text-neutral-500">·</span>
             <span className="text-neutral-300 font-normal hidden sm:inline">
-              Walking Student Engine
+              Explore · Practise · Build
             </span>
           </div>
           <h2 className="text-lg sm:text-2xl font-bold tracking-tight text-white">
-            {course.shortName} Curriculum World Map
+            {course.shortName} learning path
           </h2>
           <p className="text-xs text-neutral-400">
-            Click any checkpoint or pill to see our student character physically walk along the winding syllabus road.
+            Explore each module, its concepts and suggested practical work. Use the numbered selectors or previous and next controls.
           </p>
         </div>
 
@@ -392,15 +409,15 @@ export function CourseLearningStudio({
             <div className="flex items-center justify-between px-1 text-xs font-mono text-neutral-500">
               <span className="font-bold text-neutral-700 dark:text-neutral-300 uppercase flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
-                <span>Adventure Path</span>
+                <span>Curriculum path</span>
               </span>
               <span className="text-[11px] hidden sm:inline text-neutral-400">
-                Click any milestone to walk character
+                Choose a checkpoint to explore
               </span>
             </div>
 
             {/* Adventure Map Canvas with Responsive Aspect Ratio */}
-            <div className="relative w-full aspect-[800/480] rounded-2xl bg-gradient-to-br from-[#12131D] to-[#0A0A10] border border-neutral-800 overflow-hidden select-none shadow-inner">
+            <div className="curriculum-map-viewport" role="region" aria-label="Interactive curriculum map. Scroll horizontally to explore checkpoints." tabIndex={0}><div className="curriculum-map-canvas relative w-full aspect-[800/480] rounded-2xl bg-gradient-to-br from-[#12131D] to-[#0A0A10] border border-neutral-800 overflow-hidden select-none shadow-inner">
               {/* Subtle Map Topographic Decor Grid */}
               <div
                 className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -536,7 +553,7 @@ export function CourseLearningStudio({
                     <button
                       type="button"
                       onClick={() => walkToDestination(cp.index)}
-                      className={`group relative flex items-center justify-center transition-all duration-300 focus:outline-none ${
+                      className={`curriculum-map-node group relative flex items-center justify-center transition-all duration-300 focus:outline-none ${
                         isActive
                           ? "w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-red text-white font-mono font-bold text-[9px] ring-2 ring-brand-red/40 scale-110 shadow-xl shadow-brand-red/50 z-30"
                           : isLargeSet && !isMajorMilestone
@@ -548,7 +565,7 @@ export function CourseLearningStudio({
                           : "w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#1C1E2B] text-neutral-300 border border-neutral-600 font-mono font-bold text-[8px] hover:border-brand-red hover:text-white hover:scale-125 shadow-sm"
                       }`}
                       title={`Walk to Module ${cp.index + 1}: ${cp.module.title}`}
-                      aria-label={`Select Module ${cp.index + 1}: ${cp.module.title}`}
+                      aria-label={`${String(cp.index + 1).padStart(2, "0")}. Module ${cp.index + 1}: ${cp.module.title}`}
                     >
                       {isActive ? (
                         <span>{cp.index + 1 < 10 ? `0${cp.index + 1}` : cp.index + 1}</span>
@@ -588,17 +605,19 @@ export function CourseLearningStudio({
               </div>
             </div>
 
+            </div>
             {/* Quick Milestone Scrubber Pills (Clean, Non-Squished Responsive Grid) */}
             <div className="space-y-1.5 pt-0.5">
               <div className="text-[11px] font-mono text-neutral-400 font-semibold uppercase flex items-center justify-between">
                 <span>Direct Checkpoint Selector:</span>
                 <span className="text-[10px] lowercase text-neutral-500 hidden sm:inline">
-                  (character walks to selection)
+                  (all curriculum modules)
                 </span>
               </div>
               <div
                 ref={scrubberRef}
-                className="flex gap-1.5 overflow-x-auto pb-2 snap-x scroll-smooth"
+                className="curriculum-module-strip flex gap-1.5 overflow-x-auto pb-2 snap-x scroll-smooth"
+                role="group"
                 aria-label="All curriculum checkpoints"
               >
                 {syllabus.map((mod, i) => {
@@ -607,6 +626,8 @@ export function CourseLearningStudio({
                     <button
                       key={i}
                       type="button"
+                      aria-label={`${String(i + 1).padStart(2,"0")}. ${mod.title}`}
+                      aria-pressed={isActive}
                       onClick={() => walkToDestination(i)}
                       className={`shrink-0 snap-start w-10 h-9 rounded-lg text-[10px] font-mono transition flex items-center justify-center border ${
                         isActive
@@ -761,6 +782,6 @@ export function CourseLearningStudio({
           </div>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }

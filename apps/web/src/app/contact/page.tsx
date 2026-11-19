@@ -1,271 +1,365 @@
+"use client";
+
+import { useEnquirySubmission, EnquiryFeedback } from "@/components/creative/EnquirySubmission";
+import { EditorialHero } from "@/components/creative/EditorialHero";
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
-import type { Metadata } from "next";
 import {
-  MapPin,
+  ChevronRight,
   Phone,
   Mail,
-  Clock,
-  Train,
-  MessageCircle,
-  Building2,
+  MapPin,
+  ExternalLink,
+  Presentation,
+  GraduationCap,
+  Lightbulb,
   CheckCircle2,
-  ArrowRight,
+  Send,
+  Loader2,
+  Building,
+  User,
   ShieldCheck,
-  HelpCircle,
 } from "lucide-react";
-import { getAllCentres, SITE_BRAND } from "@/lib/content";
-import { EnquiryForm } from "@/components/EnquiryForm";
+import CAMPUSES from "@/data/didm-campuses-contact.json";
+import { MotionSection } from "@/components/motion/MotionSection";
+import { MotionHeading } from "@/components/motion/MotionHeading";
+import { StaggeredCardGrid } from "@/components/motion/StaggeredCardGrid";
+import { SplitContentReveal } from "@/components/motion/SplitContentReveal";
 
-export const metadata: Metadata = {
-  title: "Contact Us & Campus Helplines | DIDM Official",
-  description:
-    "Contact Delhi Institute of Digital Marketing (DIDM). Central toll-free helpline +91 88005 05151, head office in Satya Niketan, and phone numbers for all 14 campus branches.",
-  alternates: {
-    canonical: "https://www.didm.in/contact",
-  },
-  openGraph: {
-    title: "Contact DIDM | Central Helpline & 14 Campus Directory",
-    description:
-      "Reach DIDM's admissions counselors, visit our Satya Niketan national head office, or connect with any branch in Delhi NCR, Noida, Gurgaon, Dehradun, Meerut, Jaipur, and Mumbai.",
-    url: "https://www.didm.in/contact",
-    type: "website",
-  },
-};
+export default function ContactUsPage() {
+  const enquiry = useEnquirySubmission();
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    center: "Satya Niketan",
+    agree: false,
+  });
+  const isSubmitting = enquiry.pending;
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-export default function ContactPage() {
-  const centres = getAllCentres();
-
-  const contactJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    name: "Contact Delhi Institute of Digital Marketing",
-    url: "https://www.didm.in/contact",
-    mainEntity: {
-      "@type": "EducationalOrganization",
-      name: SITE_BRAND.fullName,
-      telephone: SITE_BRAND.phone,
-      email: SITE_BRAND.email,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: SITE_BRAND.headOffice,
-        addressCountry: "IN",
-      },
-    },
-  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => enquiry.submit(e, {name:formData.name, phone:formData.phone, email:formData.email, centreId:formData.center}, () => setIsSubmitted(true));
 
   return (
-    <div className="py-12 md:py-20">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* Header */}
-        <div className="max-w-3xl space-y-4">
-          <nav aria-label="Breadcrumb" className="text-xs font-mono text-neutral-500 flex items-center gap-2">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <span className="text-neutral-900 dark:text-white font-semibold">Contact & Campus Directory</span>
+    <div className="creative-page min-h-screen bg-[#fafbfc] text-[#222222]">
+      {/* 1. TOP BREADCRUMB BAR */}
+      <section className="bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm">
+          <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-neutral-500">
+            <Link href="/" className="hover:text-[#c0392b] transition">
+              Home
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-neutral-400" />
+            <span className="font-semibold text-[#c0392b]">Contact Us</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red-soft dark:bg-brand-red/10 text-brand-red text-xs font-mono font-semibold">
-            CENTRAL ADMISSIONS & CAMPUS DIRECTORY
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl font-normal text-neutral-900 dark:text-white leading-[1.08]">
-            Connect with our <em>counseling & academic team</em>.
-          </h1>
-
-          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Have questions about digital marketing courses, cohort schedules, or fee structures? Reach our national admissions desk, speak directly with campus counselors, or walk in for an in-person orientation.
-          </p>
-        </div>
-
-        {/* 3 Core Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Central Helpline */}
-          <div className="p-7 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-4 shadow-sm flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-brand-red text-white flex items-center justify-center">
-                <Phone className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="text-[10px] font-mono uppercase text-brand-red font-bold">
-                  Toll-Free Admissions Desk
-                </span>
-                <h3 className="text-xl font-bold text-neutral-900 dark:text-white mt-0.5">
-                  Direct Phone Calling
-                </h3>
-              </div>
-              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                Connect directly with a senior counselor for real-time batch timings, syllabus reviews, and seat reservations.
-              </p>
-              <div className="text-sm font-bold font-mono text-neutral-900 dark:text-white pt-1">
-                <a href={`tel:${SITE_BRAND.phoneClean}`} className="hover:text-brand-red transition">
-                  {SITE_BRAND.phone}
-                </a>
-              </div>
-            </div>
-            <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800 text-[11px] text-neutral-500 font-mono">
-              Mon–Fri 9am–9pm · Sat–Sun 9am–7pm
-            </div>
-          </div>
-
-          {/* WhatsApp Support */}
-          <div className="p-7 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-4 shadow-sm flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center">
-                <MessageCircle className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="text-[10px] font-mono uppercase text-emerald-600 dark:text-emerald-400 font-bold">
-                  Instant Messaging
-                </span>
-                <h3 className="text-xl font-bold text-neutral-900 dark:text-white mt-0.5">
-                  Official WhatsApp Desk
-                </h3>
-              </div>
-              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                Receive course brochures, PDF syllabi, and upcoming batch schedules directly on your WhatsApp.
-              </p>
-              <div className="pt-1">
-                <a
-                  href={SITE_BRAND.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary text-xs py-2 px-4 inline-flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 border-emerald-500/30"
-                >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>Start WhatsApp Chat</span>
-                </a>
-              </div>
-            </div>
-            <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800 text-[11px] text-neutral-500 font-mono">
-              Typical response time: Under 15 mins
-            </div>
-          </div>
-
-          {/* National Head Office */}
-          <div className="p-7 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-4 shadow-sm flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-neutral-900 text-white dark:bg-neutral-800 flex items-center justify-center">
-                <MapPin className="w-6 h-6 text-brand-red" />
-              </div>
-              <div>
-                <span className="text-[10px] font-mono uppercase text-neutral-400 font-bold">
-                  Institutional Headquarters
-                </span>
-                <h3 className="text-xl font-bold text-neutral-900 dark:text-white mt-0.5">
-                  Satya Niketan HO
-                </h3>
-              </div>
-              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                {SITE_BRAND.headOffice}
-              </p>
-              <div className="text-xs text-neutral-500 pt-1 space-y-0.5">
-                <div>Email: <a href={`mailto:${SITE_BRAND.email}`} className="text-brand-red hover:underline">{SITE_BRAND.email}</a></div>
-                <div>Metro: Durgabai Deshmukh South Campus (Pink Line)</div>
-              </div>
-            </div>
-            <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between text-[11px]">
-              <Link href="/centres/satya-niketan" className="text-brand-red font-semibold hover:underline">
-                View Campus Details →
-              </Link>
-            </div>
+          <div className="flex items-center gap-4 text-xs sm:text-sm">
+            <a
+              href="mailto:info@didm.in"
+              className="hidden sm:inline-flex items-center gap-1.5 text-neutral-600 hover:text-[#c0392b] transition"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#c0392b]" />
+              <span>info@didm.in</span>
+            </a>
+            <a
+              href="tel:+918800505151"
+              className="inline-flex items-center gap-1.5 text-neutral-700 hover:text-[#c0392b] font-bold transition"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#c0392b]" />
+              <span>+91 8800-505-151</span>
+            </a>
           </div>
         </div>
+      </section>
 
-        {/* 2-Column: Form & Campus Directory */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Left Column: Embedded Enquiry & Counseling Form */}
-          <div className="lg:col-span-6 space-y-4">
-            <div>
-              <span className="text-xs font-mono uppercase text-brand-red font-bold">
-                Online Message & Demo Reservation
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-normal text-neutral-900 dark:text-white mt-1">
-                Send an admission enquiry.
-              </h2>
-              <p className="text-xs sm:text-sm text-neutral-500 mt-1">
-                Fill out the form below. If database persistence is temporarily constrained, direct phone and WhatsApp routing options will be provided immediately.
-              </p>
-            </div>
+      {/* 2. AUTHENTIC HERO BANNER (Exact Replica of didm.in/contact-us) */}
+      <EditorialHero bannerRatio={3.3714285714285714} eyebrow="YOUR NEXT CHAPTER" title="Contact Delhi Institute of Digital Marketing" description="A new career, a skill to build or a course to explore. Speak with the DIDM team and find a learning path that works for you." image="/images/didm/contact/contact_banner.png" alt="DIDM Contact Us" caption="DIDM Contact Us" variant="admissions" href="#contact-enquiry" action="Request a callback" />
+      <details className="creative-source-art"><summary>Original DIDM contact artwork</summary>      <MotionSection as="section" preset="editorial" className="bg-white w-full overflow-hidden border-b border-neutral-200">
+        <div className="w-full">
+          <Image
+            src="/images/didm/contact/contact_banner.png"
+            alt="DIDM Contact Us - We are here to help you 24/7"
+            width={1888}
+            height={560}
+            priority
+            className="w-full h-auto object-cover"
+            sizes="100vw"
+          />
+        </div>
+      </MotionSection></details>
 
-            <Suspense fallback={<div className="p-8 text-center text-xs text-neutral-400">Loading enquiry form...</div>}>
-              <EnquiryForm />
-            </Suspense>
-          </div>
+      {/* 3. MORE SEGMENT (3 White Cards) */}
+      <MotionSection as="section" preset="stagger" className="py-10 sm:py-12 bg-[#f4f5f7] border-b border-neutral-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionHeading
+            title="More Segment"
+            align="center"
+            as="h2"
+            size="lg"
+            className="mb-8"
+          />
 
-          {/* Right Column: 14 Campus Locations Directory */}
-          <div className="lg:col-span-6 space-y-6">
-            <div>
-              <span className="text-xs font-mono uppercase text-brand-red font-bold">
-                All 14 Physical Campuses
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-normal text-neutral-900 dark:text-white mt-1">
-                Find your nearest branch.
-              </h2>
-              <p className="text-xs sm:text-sm text-neutral-500 mt-1">
-                All centres feature modern computer labs, fiber internet, and dedicated faculty desks.
-              </p>
-            </div>
+          <StaggeredCardGrid columns={3} stagger={0.1}>
+            {/* Card 1: Corporate Training */}
+            <Link
+              href="/corporate-training-program"
+              className="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm hover:shadow-md transition text-center space-y-3 group"
+            >
+              <div className="w-14 h-14 rounded-full bg-red-50 text-[#c0392b] flex items-center justify-center mx-auto group-hover:bg-[#c0392b] group-hover:text-white transition">
+                <Presentation className="w-7 h-7" />
+              </div>
+              <h3 className="font-bold text-sm sm:text-base text-[#c0392b] group-hover:underline">
+                Corporate Training
+              </h3>
+            </Link>
 
-            <div className="space-y-3 max-h-[640px] overflow-y-auto touch-scroll pr-1">
-              {centres.map((ctr) => (
-                <div
-                  key={ctr.id}
-                  className="p-5 rounded-2xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 hover:border-brand-red/40 transition space-y-3"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <div className="text-[10px] font-mono uppercase text-brand-red font-bold">
-                        {ctr.city} · {ctr.region}
-                      </div>
-                      <h3 className="text-base font-bold text-neutral-900 dark:text-white">
-                        <Link href={`/centres/${ctr.slug}`} className="hover:text-brand-red transition">
-                          {ctr.name}
-                        </Link>
-                      </h3>
-                    </div>
-                    {ctr.isHeadOffice && (
-                      <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded-full bg-brand-red text-white font-bold shrink-0">
-                        Head Office
-                      </span>
-                    )}
+            {/* Card 2: College | University */}
+            <Link
+              href="/colleges-and-university-session"
+              className="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm hover:shadow-md transition text-center space-y-3 group"
+            >
+              <div className="w-14 h-14 rounded-full bg-red-50 text-[#c0392b] flex items-center justify-center mx-auto group-hover:bg-[#c0392b] group-hover:text-white transition">
+                <GraduationCap className="w-7 h-7" />
+              </div>
+              <h3 className="font-bold text-sm sm:text-base text-[#c0392b] group-hover:underline">
+                College | University
+              </h3>
+            </Link>
+
+            {/* Card 3: 150+ Reasons to Choose DIDM */}
+            <Link
+              href="/why-choose-didm"
+              className="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm hover:shadow-md transition text-center space-y-3 group"
+            >
+              <div className="w-14 h-14 rounded-full bg-red-50 text-[#c0392b] flex items-center justify-center mx-auto group-hover:bg-[#c0392b] group-hover:text-white transition">
+                <Lightbulb className="w-7 h-7" />
+              </div>
+              <h3 className="font-bold text-sm sm:text-base text-[#c0392b] group-hover:underline">
+                150+ Reasons to Choose DIDM
+              </h3>
+            </Link>
+          </StaggeredCardGrid>
+        </div>
+      </MotionSection>
+
+      {/* 4. MAP YOUR CAREER WITH DIDM (Interactive Map & Lead Form) */}
+      <MotionSection as="section" preset="depth" className="py-12 sm:py-16 bg-white border-b border-neutral-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionHeading
+            eyebrow="Interactive Campus Locator"
+            title="Map your career with DIDM"
+            subtitle="Connect with academic specialists or walk into your nearest centre for direct admission guidance."
+            align="center"
+            as="h2"
+            size="lg"
+            className="mb-10"
+          />
+
+          <SplitContentReveal
+            layout="balanced"
+            left={
+              <div className="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm aspect-[4/3] lg:aspect-auto min-h-[380px] lg:h-full relative">
+                <iframe
+                  title="Delhi Institute of Digital Marketing - Satya Niketan Head Office"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4015178872896!2d77.16497941508162!3d28.587729082435455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d8f9e54e58d%3A0xc9085d1a82de1181!2sDelhi%20Institute%20of%20Digital%20Marketing!5e0!3m2!1sen!2sin!4v1614672356048!5m2!1sen!2sin"
+                  className="w-full h-full border-0 absolute inset-0"
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            }
+            right={
+              <div className="bg-[#b52828] text-white rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col justify-between">
+                <div className="text-center space-y-1 pb-4">
+                  <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
+                    Book Seat For Free Counselling
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-200">
+                    Speak To Our Specialist -{" "}
+                    <a href="tel:+918800505151" className="font-bold underline hover:text-white">
+                      +91 - 8800505151
+                    </a>
+                  </p>
+                </div>
+
+                {isSubmitted ? (
+                  <div className="bg-white/10 rounded-xl p-8 text-center space-y-3 backdrop-blur-sm">
+                    <CheckCircle2 className="w-12 h-12 text-green-300 mx-auto" />
+                    <h4 className="text-lg font-bold text-white">Request Submitted!</h4>
+                    <p className="text-xs text-neutral-200">
+                      Our senior counsellor will call you to discuss your enquiry to guide you on batches and admissions.
+                    </p>
                   </div>
+                ) : (
+                  <form id="contact-enquiry" onSubmit={handleSubmit} className="space-y-3.5">
+                    <div className="relative">
+                      <User className="w-4 h-4 text-neutral-400 absolute right-3 top-3 pointer-events-none" />
+                      <input aria-label="Full name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="Full Name *"
+                        className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-md bg-white text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white"
+                      />
+                    </div>
 
-                  <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-snug">
-                    {ctr.address}
+                    <div className="relative">
+                      <Phone className="w-4 h-4 text-neutral-400 absolute right-3 top-3 pointer-events-none" />
+                      <input aria-label="Phone number"
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="Phone *"
+                        className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-md bg-white text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white"
+                      />
+                    </div>
+
+                    <div className="relative">
+                      <Mail className="w-4 h-4 text-neutral-400 absolute right-3 top-3 pointer-events-none" />
+                      <input aria-label="Email address"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="Email *"
+                        className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-md bg-white text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white"
+                      />
+                    </div>
+
+                    <div>
+                      <select aria-label="Preferred training centre"
+                        value={formData.center}
+                        onChange={(e) => setFormData({ ...formData, center: e.target.value })}
+                        className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-md bg-white text-neutral-800 focus:outline-none focus:ring-2 focus:ring-white"
+                      >
+                        <option value="" disabled>Choose Center Near You...</option>
+                        {CAMPUSES.map((c) => (
+                          <option key={c.name} value={c.name}>
+                            {c.name} Campus
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className="flex items-start gap-2 pt-1 text-[11px] text-neutral-200">
+                      <input
+                        type="checkbox"
+                        id="agree"
+                        required
+                        checked={formData.agree}
+                        onChange={(e) => setFormData({ ...formData, agree: e.target.checked })}
+                        className="mt-0.5 rounded text-[#b52828] focus:ring-0"
+                      />
+                      <label htmlFor="agree">
+                        I agree to the DIDM{" "}
+                        <Link href="/terms" className="underline hover:text-white">
+                          Terms of Use
+                        </Link>{" "}
+                        and{" "}
+                        <Link href="/privacy" className="underline hover:text-white">
+                          Privacy Policy
+                        </Link>
+                        .
+                      </label>
+                    </div>
+
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-3 px-6 rounded-md bg-[#821414] hover:bg-[#6c1010] text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow hover:shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                            <span>Submitting...</span>
+                          </>
+                        ) : (
+                          <span>Submit Your Request</span>
+                        )}
+                      </button>
+                    </div>
+                  <EnquiryFeedback error={enquiry.error} pending={enquiry.pending} consent={false} />
+</form>
+                )}
+              </div>
+            }
+          />
+        </div>
+      </MotionSection>
+
+      {/* 5. CAMPUS DIRECTORY CARDS (All 14 Campuses Matching Exact Original!) */}
+      <MotionSection as="section" preset="stagger" className="py-12 sm:py-16 bg-[#fafbfc]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionHeading
+            eyebrow="Classroom Network"
+            title="All 14 Training Centres & Hubs"
+            subtitle="Visit your nearest branch for offline classroom demos, counseling, and batch registrations."
+            align="center"
+            as="h2"
+            size="lg"
+            className="mb-10"
+          />
+
+          <StaggeredCardGrid columns={4} stagger={0.05}>
+            {CAMPUSES.map((campus, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl p-5 border border-neutral-200 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4 group"
+              >
+                <div className="space-y-3">
+                  <h3 className="text-lg font-black text-[#c0392b]">
+                    {campus.name}
+                  </h3>
+
+                  <p className="text-xs text-neutral-600 leading-relaxed min-h-[54px]">
+                    {campus.address}
                   </p>
 
-                  <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-neutral-100 dark:border-neutral-800/80 text-xs">
-                    <div className="flex items-center gap-2">
-                      <Phone className="w-3.5 h-3.5 text-brand-red" />
-                      <a
-                        href={`tel:${(ctr.phones[0] || SITE_BRAND.phone).replace(/[^0-9]/g, "")}`}
-                        className="font-mono font-semibold text-neutral-800 dark:text-neutral-200 hover:text-brand-red"
-                      >
-                        {ctr.phones[0] || SITE_BRAND.phone}
+                  <div className="space-y-1 pt-2 border-t border-neutral-100 text-xs text-neutral-700">
+                    {campus.call && (
+                      <p>
+                        <strong className="text-neutral-900">Call @</strong>{" "}
+                        <a href={`tel:${campus.call.replace(/\s+/g, "")}`} className="hover:text-[#c0392b]">
+                          {campus.call}
+                        </a>
+                      </p>
+                    )}
+                    <p>
+                      <strong className="text-neutral-900">Helpline:</strong>{" "}
+                      <a href={`tel:${campus.helpline.replace(/[^0-9+]/g, "")}`} className="hover:text-[#c0392b]">
+                        {campus.helpline}
                       </a>
-                    </div>
-
-                    <Link
-                      href={`/centres/${ctr.slug}`}
-                      className="text-brand-red font-semibold hover:underline flex items-center gap-1 text-[11px]"
-                    >
-                      <span>Campus Details & Timings</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
+                    </p>
+                    <p>
+                      <strong className="text-neutral-900">Email:</strong>{" "}
+                      <a href={`mailto:${campus.email}`} className="hover:text-[#c0392b]">
+                        {campus.email}
+                      </a>
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
+
+                <div className="pt-2">
+                  <a
+                    href={campus.directionUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2 px-3 rounded bg-[#c0392b] hover:bg-[#a92323] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition text-center shadow-xs"
+                  >
+                    <span>Get Direction</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </StaggeredCardGrid>
         </div>
-      </div>
+      </MotionSection>
     </div>
   );
 }
-

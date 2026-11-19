@@ -47,7 +47,7 @@ export function HeroAIChatWindow({ primaryMedia }: HeroAIChatWindowProps) {
     {
       id: "hero-welcome",
       sender: "counsellor",
-      text: "Hello! I am your DIDM AI Course Counsellor. Ask me anything about our digital marketing courses, syllabus modules, tuition fees, or 14 Delhi NCR campus locations.",
+      text: "Hi! Main Ananya, DIDM ki AI admissions counsellor hoon 😊 Courses, fees, batches, centres ya career options—kis baare mein jaanna hai?",
       source: "verified_catalog",
       suggestions: QUICK_CHIPS,
     },
@@ -88,7 +88,13 @@ export function HeroAIChatWindow({ primaryMedia }: HeroAIChatWindowProps) {
       const res = await fetch("/api/counsellor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({
+          message: text,
+          history: messages.slice(-10).map((message) => ({
+            role: message.sender === "user" ? "user" : "assistant",
+            content: message.text,
+          })),
+        }),
       });
 
       const data = await res.json();
@@ -137,7 +143,7 @@ export function HeroAIChatWindow({ primaryMedia }: HeroAIChatWindowProps) {
       {
         id: "hero-welcome",
         sender: "counsellor",
-        text: "Conversation reset! What program or campus details would you like to explore?",
+        text: "Hi! Fresh start karte hain 😊 Courses, fees, batches, centres ya career options—kis baare mein jaanna hai?",
         source: "verified_catalog",
         suggestions: QUICK_CHIPS,
       },

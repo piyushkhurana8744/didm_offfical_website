@@ -1,0 +1,488 @@
+[
+  {
+    "name": "Aaushi Vasisth",
+    "image": "/images/didm/trainees/114.jpg",
+    "company": "AL Power Infotech",
+    "designation": "Digital Marketing Analyst",
+    "studentRating": "80%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Aastha Singh",
+    "image": "/images/didm/trainees/9.jpg",
+    "company": "Recenturesoft",
+    "designation": "SEO Executive",
+    "studentRating": "80%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Apoorv Garg",
+    "image": "/images/didm/trainees/24.jpg",
+    "company": "OMLogic Consulting Pvt. Ltd",
+    "designation": "SM Intern",
+    "studentRating": "75%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Preety",
+    "image": "/images/didm/trainees/3.jpg",
+    "company": "PetroPipe",
+    "designation": "Digital Media Executive",
+    "studentRating": "85%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Ajay Kumar",
+    "image": "/images/didm/trainees/Ajay_kumar_PLACED_STUDENT_Gratix_technologies_by_DIDM.jpg",
+    "company": "Gratix Technologies",
+    "designation": "SEO Executive",
+    "studentRating": "90%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Nameera Tyagi",
+    "image": "/images/didm/trainees/Nameera_Tyagi_placed_at_Gratix_technologies_pvt_ltd_by_DIDM.jpg",
+    "company": "Gratix Technologies",
+    "designation": "SEO Executive",
+    "studentRating": "96%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Pearl Mehra",
+    "image": "/images/didm/trainees/Pearl_Mehra_got_placed_at_CRSPL_by_DIDM.jpg",
+    "company": "CRSPL",
+    "designation": "SEO Executive",
+    "studentRating": "91%",
+    "performance": "96%",
+    "stars": 5
+  },
+  {
+    "name": "Sahil Tanwar",
+    "image": "/images/didm/trainees/Sahil_Tanwar_placed_by_DIDM_at_Kohinoor.jpg",
+    "company": "Kohinoor",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "89%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Rishika Rawal",
+    "image": "/images/didm/trainees/Rishika_Rawal_placed_at_BuzzBrix_studio_by_DIDM.jpg",
+    "company": "BuzzBrix Studio",
+    "designation": "Social Media Executive",
+    "studentRating": "90%",
+    "performance": "96%",
+    "stars": 5
+  },
+  {
+    "name": "Divya Panchal",
+    "image": "/images/didm/trainees/Divya_Panchal_placed_at_Growthify_Media_Pvt_Ltd_by_DIDM_.jpg",
+    "company": "Growthify Media",
+    "designation": "Facebook Ads Specialist",
+    "studentRating": "86%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Jaya Negi",
+    "image": "/images/didm/trainees/Jaya_Negi_placed_at_Gratix_technologies_pvt_ltd_by_DIDM.jpg",
+    "company": "Profinserv",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "85%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Mitali Sharma",
+    "image": "/images/didm/trainees/Mitali_Sharma_placed_at_Autus_Digital_by_DIDM.jpg",
+    "company": "Autus Digital",
+    "designation": "SEO Executive",
+    "studentRating": "90%",
+    "performance": "94%",
+    "stars": 5
+  },
+  {
+    "name": "Shruti Kapoor",
+    "image": "/images/didm/trainees/Shruti_Kapoor_placed_at_Sanchay_teck_by_DIDM.jpg",
+    "company": "Sanchay Tech",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "88%",
+    "performance": "94%",
+    "stars": 5
+  },
+  {
+    "name": "Vanita",
+    "image": "/images/didm/trainees/Vanita_Placed_at_vibes_communication_by_DIDM.jpg",
+    "company": "Vibes Communication",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "90%",
+    "performance": "94%",
+    "stars": 5
+  },
+  {
+    "name": "Shubhanshi Badone",
+    "image": "/images/didm/trainees/Shubhanshi_Badone_placed_at_BuzzBrix_Studio_by_DIDM.jpg",
+    "company": "BuzzBrix Studio",
+    "designation": "Social Media Executive",
+    "studentRating": "88%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Mayank Bisht",
+    "image": "/images/didm/trainees/Mayank_bisht_placed_at_vibes_communication_by_DIDM.jpg",
+    "company": "Vibes Communication",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "87%",
+    "performance": "94%",
+    "stars": 5
+  },
+  {
+    "name": "Sanya Samuel Lall",
+    "image": "/images/didm/trainees/Sanya_Samue_Lall_placed_atTravelScape_by_Versatile_Media_by_DIDM_.jpg",
+    "company": "TravelScape by Versatile Media",
+    "designation": "Social Media Executive",
+    "studentRating": "96%",
+    "performance": "96%",
+    "stars": 5
+  },
+  {
+    "name": "Reetika Khare",
+    "image": "/images/didm/trainees/Reetika_khare_placed_at_Zobox_Retails_Pvt_Ltd_by_DIDM.jpg",
+    "company": "Zobox Retails",
+    "designation": "Social Media Executive",
+    "studentRating": "88%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Sachin Negi",
+    "image": "/images/didm/trainees/Sachin_Negi_placed_at_Growthify_Media_Pvt_Ltd_by_DIDM.jpg",
+    "company": "Growthify Media",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "85%",
+    "performance": "94%",
+    "stars": 5
+  },
+  {
+    "name": "Vedgya Bhola",
+    "image": "/images/didm/trainees/Vedgya_Bhola_placed_at_VS_Astrologers_and_Healers_LLP_by_DIDM.jpg",
+    "company": "VS Astrologers and Healers",
+    "designation": "Social Media Executive",
+    "studentRating": "90%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Yashika Garg",
+    "image": "/images/didm/trainees/Yashika_Garg_placed_at_IMTS_by_DIDM.jpg",
+    "company": "IMTS",
+    "designation": "SEO Executive",
+    "studentRating": "85%",
+    "performance": "93%",
+    "stars": 5
+  },
+  {
+    "name": "Varshika Jain",
+    "image": "/images/didm/trainees/Varshika_jain_placed_at_VS_Astrologers_and_Healers_LLP_by_DIDM.jpg",
+    "company": "VS Astrologers and Healers",
+    "designation": "Social Media Executive",
+    "studentRating": "86%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Shubh Sharma",
+    "image": "/images/didm/trainees/Shubh_Sharma_placed_at_UK_international_by_DIDM.jpg",
+    "company": "UK International",
+    "designation": "SEO Executive",
+    "studentRating": "87%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Swati Thakur",
+    "image": "/images/didm/trainees/Swati_Thakur_placed_at_Arouse_Automative_by_DIDM.jpg",
+    "company": "Arouse Automative",
+    "designation": "Social Media Executive",
+    "studentRating": "95%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Vishal",
+    "image": "/images/didm/trainees/Vishal_placed_at_Volume9_by_DIDM.jpg",
+    "company": "Volume9",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "95%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Shubham Chand",
+    "image": "/images/didm/trainees/Shubham_Chand_placed_at_Volume9_by_DIDM.jpg",
+    "company": "Volume9",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "86%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Raghav Joshi",
+    "image": "/images/didm/trainees/Raghav_joshi_placed_at_BuzzBrix_by_DIDM.jpg",
+    "company": "BuzzBrix",
+    "designation": "SMO+ Content Writer",
+    "studentRating": "90%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Danish Mahajan",
+    "image": "/images/didm/trainees/Danish_Mahajan_placed_at_IMTS_by_DIDM.jpg",
+    "company": "IMTS",
+    "designation": "SEO Executive",
+    "studentRating": "88%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Aryan Singh",
+    "image": "/images/didm/trainees/Aryan_Singh_placed_at_TechMatrix_consulting_pvt_ltd_by_DIDM.jpg",
+    "company": "TechMatrix Consulting",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "85%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Hemant Singh",
+    "image": "/images/didm/trainees/Hemant_Singh_placed_at_Monstabolic_nutrition_pvt_ltd_by_DIDM.jpg",
+    "company": "Monstabolic Nutrition",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "86%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Shalini",
+    "image": "/images/didm/trainees/Shalini_placed_at_MEDMEN_pvt_ltd_by_DIDM.jpg",
+    "company": "MEDMEN",
+    "designation": "SMM Executive",
+    "studentRating": "90%",
+    "performance": "96%",
+    "stars": 5
+  },
+  {
+    "name": "Harshit Puri",
+    "image": "/images/didm/trainees/Harshit_puri_placed_at_Sanchay_tech_by_DIDM.jpg",
+    "company": "Sanchay Tech",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "86%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Shivani Gupta",
+    "image": "/images/didm/trainees/Shivani_Gupta_placed_at_HMaviation_by_DIDM.jpg",
+    "company": "HMaviation",
+    "designation": "SEO Executive",
+    "studentRating": "85%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Swati Rajput",
+    "image": "/images/didm/trainees/Swati_Rajput_placed_at_Tripovention_by_DIDM.jpg",
+    "company": "Tripovention",
+    "designation": "SEO Executive",
+    "studentRating": "92%",
+    "performance": "96%",
+    "stars": 5
+  },
+  {
+    "name": "Kashish Chandok",
+    "image": "/images/didm/trainees/Kashish_Chandok_placed_at_Sanchay_tech_by_DIDM.jpg",
+    "company": "Sanchay Tech",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "85%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Himanshu Gupta",
+    "image": "/images/didm/trainees/Himanshu_Gupta_placed_at_Real_advertising_by_DIDM.jpg",
+    "company": "Real Advertising",
+    "designation": "SEO Executive",
+    "studentRating": "89%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Simran Singh",
+    "image": "/images/didm/trainees/Simran_Singh_placed_at_Real_advertising_by_DIDM.jpg",
+    "company": "Real Advertising",
+    "designation": "SMO Executive",
+    "studentRating": "92%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Isha Verma",
+    "image": "/images/didm/trainees/Isha_verma_placed_at_Sanchay_tech_by_DIDM.jpg",
+    "company": "Sanchay Tech",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "89%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Inaaya Yusuf",
+    "image": "/images/didm/trainees/Inaaya_Yusuf_placed_at_Gravity_Bath_by_DIDM.jpg",
+    "company": "Gravity Bath",
+    "designation": "SEO Executive",
+    "studentRating": "90%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Shubham Jindal",
+    "image": "/images/didm/trainees/Shubham_Jindal_placed_at_Virtu_box_by_DIDM.jpg",
+    "company": "Virtu Box",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "86%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Monika Kumari",
+    "image": "/images/didm/trainees/Monika_Kumari_placed_at_Gratix_Tech_by_DIDM.jpg",
+    "company": "Gratix Tech",
+    "designation": "SEO Executive",
+    "studentRating": "87%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Sagar Arora",
+    "image": "/images/didm/trainees/Sagar_Arora_placed_at_Arouse_Automative_by_DIDM_.jpg",
+    "company": "Arouse Automative",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "92%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Md. Aslam",
+    "image": "/images/didm/trainees/Md_Aslam_placed_at_Online_Reputation_Management_by_DIDM_.jpg",
+    "company": "Online Reputation Management",
+    "designation": "SEO Executive",
+    "studentRating": "88%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Archana Karna",
+    "image": "/images/didm/trainees/Archana_Karna_placed_at_Gratix_Tech_by_DIDM.jpg",
+    "company": "Gratix Tech",
+    "designation": "SEO Executive",
+    "studentRating": "92%",
+    "performance": "95%",
+    "stars": 5
+  },
+  {
+    "name": "Sonia Kumari",
+    "image": "/images/didm/trainees/Sonia_kumari_placed_at_TaxManagers_by_DIDM_.jpg",
+    "company": "TaxManagers",
+    "designation": "SEO Executive",
+    "studentRating": "85%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Vanika Yadav",
+    "image": "/images/didm/trainees/Vanika_Yadav_placed_at_Vouge_Management_by_DIDM.jpg",
+    "company": "Vouge Management",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "86%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Viabhavi",
+    "image": "/images/didm/trainees/viabhavi_placed_at_TrueAsset_Consultancy_by_DIDM_.jpg",
+    "company": "TrueAsset Consultancy",
+    "designation": "SEO Executive",
+    "studentRating": "89%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Rajeev",
+    "image": "/images/didm/trainees/Rajeev_placed_at_Digital_Universe_Network_by_DIDM_.jpg",
+    "company": "Digital Universe Network",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "85%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Nisha sharma",
+    "image": "/images/didm/trainees/Nisha_Sharma_placed_at_Digital_Universe_Network_by_DIDM_.jpg",
+    "company": "Digital Universe Network",
+    "designation": "SEO Executive",
+    "studentRating": "89%",
+    "performance": "93%",
+    "stars": 5
+  },
+  {
+    "name": "Himanshu Upreti",
+    "image": "/images/didm/trainees/Himanshu_Upreti_placed_at_Tetrahedron_Manufacturing_Services_by_DIDM.jpg",
+    "company": "Tetrahedron Manufacturing Services",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "90%",
+    "performance": "93%",
+    "stars": 5
+  },
+  {
+    "name": "Aditi Ramola",
+    "image": "/images/didm/trainees/Aditi_Ramola_placed_at_Profinserv_by_DIDM.jpg",
+    "company": "Profinserv",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "88%",
+    "performance": "92%",
+    "stars": 5
+  },
+  {
+    "name": "Manish Kumar",
+    "image": "/images/didm/trainees/Manish_kumar_placed_at_DigiVersal_by_DIDM_.jpg",
+    "company": "DigiVersal",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "85%",
+    "performance": "90%",
+    "stars": 5
+  },
+  {
+    "name": "Anil",
+    "image": "/images/didm/trainees/Anil_placed_at_Growthify_Media_by_DIDM.jpg",
+    "company": "Growthify Media",
+    "designation": "Digital Marketing Executive",
+    "studentRating": "88%",
+    "performance": "93%",
+    "stars": 5
+  },
+  {
+    "name": "Shitanshu",
+    "image": "/images/didm/trainees/Shitanshu_placed_at_System_Controls_And_Switchgears_by_DIDM.jpg",
+    "company": "System Controls And Switchgears",
+    "designation": "Social Media Executive",
+    "studentRating": "86%",
+    "performance": "89%",
+    "stars": 5
+  }
+]

@@ -40,7 +40,7 @@ export function DIDMCourseCounsellor() {
     {
       id: "initial-greeting",
       sender: "counsellor",
-      text: "Hello! I am your DIDM Academic Course Counsellor. Ask me anything about our digital marketing programs, syllabus modules, tuition fees, 14 campus locations, or placement support.",
+      text: "Hi! Main Ananya, DIDM ki AI admissions counsellor hoon 😊 Courses, fees, batches, centres ya career options—kis baare mein jaanna hai?",
       source: "verified_catalog",
       suggestions: INITIAL_SUGGESTIONS,
       timestamp: "Just now",
@@ -94,7 +94,13 @@ export function DIDMCourseCounsellor() {
       const res = await fetch("/api/counsellor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({
+          message: text,
+          history: messages.slice(-10).map((message) => ({
+            role: message.sender === "user" ? "user" : "assistant",
+            content: message.text,
+          })),
+        }),
       });
 
       const data = await res.json();
@@ -147,7 +153,7 @@ export function DIDMCourseCounsellor() {
       {
         id: "initial-greeting",
         sender: "counsellor",
-        text: "Conversation reset. What program or campus details can I help you explore?",
+        text: "Hi! Fresh start karte hain 😊 Courses, fees, batches, centres ya career options—kis baare mein jaanna hai?",
         source: "verified_catalog",
         suggestions: INITIAL_SUGGESTIONS,
         timestamp: "Just now",
@@ -163,7 +169,7 @@ export function DIDMCourseCounsellor() {
           <button
             onClick={() => setIsOpen(true)}
             className="flex items-center gap-2.5 py-2.5 sm:py-3 px-3.5 sm:px-5 rounded-full bg-neutral-900 text-white shadow-2xl hover:bg-brand-red border border-neutral-700/80 transition-all duration-300 hover:scale-105 group backdrop-blur-md"
-            aria-label="Open DIDM Course Counsellor Chat"
+            aria-label="Ask Course Counsellor — open DIDM course guidance"
           >
             <div className="relative flex items-center justify-center">
               <Sparkles className="w-4 h-4 text-brand-red group-hover:text-white transition-colors" />

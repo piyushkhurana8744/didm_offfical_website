@@ -1,0 +1,25 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),Module=require('node:module');
+const ts=require('../apps/web/node_modules/typescript');
+function load(relative){const file=path.resolve(relative),mod=new Module(file,module);mod.filename=file;mod.paths=Module._nodeModulePaths(path.dirname(file));mod._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,file);return mod.exports;}
+const {DEFAULT_PROFILE,recommendCourses,simulateFunnel}=load('apps/web/src/lib/student/discovery.ts');
+const {BatchListSchema,upcomingBatches}=load('apps/web/src/lib/admissions/batch-schema.ts');
+const {enquiryAttribution}=load('apps/web/src/lib/admissions/attribution.ts');
+const courses=['midm','dmi','advanced','customized','online','gen-ai-knowledge-camp'].map(id=>({id,name:id,keyModules:['SEO','Ads','Content','AI'],summary:'Marketing'}));
+const batch={id:'midm-test',courseId:'midm',centreId:'dwarka',mode:'classroom',days:'weekday',startDate:'2027-01-10',timing:'10:00 AM – 12:00 PM',availability:'open',sourceUrl:'https://www.didm.in/upcoming-batches',verifiedOn:'2026-01-01'};
+test('career beginner gets a broad foundation with explained reasons',()=>{const result=recommendCourses(courses,DEFAULT_PROFILE);assert.equal(result[0].course.id,'midm');assert.ok(result[0].reasons.length>=2);assert.equal(result.length,3)});
+test('business goal prioritises customised learning',()=>assert.equal(recommendCourses(courses,{...DEFAULT_PROFILE,goal:'business'})[0].course.id,'customized'));
+test('online preference materially changes recommendations',()=>assert.equal(recommendCourses(courses,{...DEFAULT_PROFILE,mode:'online',experience:'practising'})[0].course.id,'online'));
+test('AI interest offers the dedicated AI option',()=>assert.equal(recommendCourses(courses,{...DEFAULT_PROFILE,goal:'specialise',interest:'ai',time:'focused',experience:'beginner'})[0].course.id,'gen-ai-knowledge-camp'));
+test('recommendations tolerate an empty catalog',()=>assert.deepEqual(recommendCourses([],DEFAULT_PROFILE),[]));
+test('campaign model produces the explained figures',()=>assert.deepEqual(simulateFunnel(10000,25,5),{visits:400,enquiries:20,costPerEnquiry:500}));
+test('zero conversions never produce infinity',()=>assert.equal(simulateFunnel(1000,100,1).costPerEnquiry,null));
+test('zero cost per click and negative budget remain finite',()=>{assert.equal(simulateFunnel(1000,0,5).visits,0);assert.equal(simulateFunnel(-100,10,5).visits,0)});
+test('batch publisher accepts an attributed, absolute schedule',()=>assert.equal(BatchListSchema.safeParse({batches:[batch]}).success,true));
+test('batch publisher rejects duplicate identities',()=>assert.equal(BatchListSchema.safeParse({batches:[batch,batch]}).success,false));
+test('batch publisher rejects impossible and relative dates',()=>{for(const startDate of ['Next Monday','2027-02-30'])assert.equal(BatchListSchema.safeParse({batches:[{...batch,startDate}]}).success,false)});
+test('batch publisher rejects unofficial and script source URLs',()=>{for(const sourceUrl of ['javascript:alert(1)','https://didm.in.evil.test/batches','http://www.didm.in/batches'])assert.equal(BatchListSchema.safeParse({batches:[{...batch,sourceUrl}]}).success,false)});
+test('upcoming records exclude past dates and sort chronologically',()=>assert.deepEqual(upcomingBatches([{...batch,id:'later',startDate:'2027-02-01'},{...batch,id:'past',startDate:'2026-01-01'},batch],'2026-11-17').map(b=>b.id),['midm-test','later']));
+test('attribution keeps approved UTMs, drops unrelated values, caps input',()=>{const r=enquiryAttribution('https://www.didm.in/enquire?utm_source=search&utm_campaign='+ 'x'.repeat(250)+'&email=private@example.com&form=course-finder');assert.deepEqual(Object.keys(r.utmParams).sort(),['utm_campaign','utm_source']);assert.equal(r.utmParams.utm_campaign.length,200);assert.equal(r.formType,'course-finder')});
+test('invalid form type uses a stable fallback',()=>assert.equal(enquiryAttribution('https://www.didm.in/?form=%3Cscript%3E','inline-enquiry').formType,'inline-enquiry'));

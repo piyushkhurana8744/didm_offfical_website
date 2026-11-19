@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Keep live development assets isolated from production builds and previews.
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   transpilePackages: [],
   images: {
     remotePatterns: [
@@ -25,6 +27,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...["master-in-digital-marketing-course", "digital-marketing-artificial-intelligence", "customized-digital-marketing-course", "gen-ai-knowledge-camp"].map(slug => ({ source: `/${slug}`, destination: `/programs/${slug}`, permanent: true })),
       {
         source: "/contact-us",
         destination: "/contact",
@@ -51,6 +54,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/advanced-digital-marketing-course",
+        destination: "/programs/advanced-digital-marketing-course",
+        permanent: true,
+      },
+      {
+        source: "/online-digital-marketing-course",
+        destination: "/programs/online-digital-marketing-course",
+        permanent: true,
+      },
+      {
         source: "/privacy-policy",
         destination: "/privacy",
         permanent: true,
@@ -67,6 +80,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/trainee-reviews",
+        destination: "/trainers#trainee-reviews",
+        permanent: true,
+      },
+      {
+        source: "/reviews",
         destination: "/stories",
         permanent: true,
       },
@@ -76,7 +94,17 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/placements",
+        destination: "/outcomes",
+        permanent: true,
+      },
+      {
         source: "/150-reasons-to-join-digital-marketing-course-didm",
+        destination: "/why-choose-didm",
+        permanent: true,
+      },
+      {
+        source: "/100-reasons-to-join-digital-marketing-course-didm",
         destination: "/why-choose-didm",
         permanent: true,
       },
@@ -91,16 +119,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/corporate-training-program",
-        destination: "/organisations",
-        permanent: true,
-      },
-      {
-        source: "/colleges-and-university-session",
-        destination: "/organisations",
-        permanent: true,
-      },
-      {
         source: "/didm-certifications",
         destination: "/certifications",
         permanent: true,
@@ -108,11 +126,6 @@ const nextConfig: NextConfig = {
       {
         source: "/didm-media-coverage",
         destination: "/media-coverage",
-        permanent: true,
-      },
-      {
-        source: "/digital-marketing-course-journal",
-        destination: "/learn",
         permanent: true,
       },
       // Campus redirects from legacy flat URLs

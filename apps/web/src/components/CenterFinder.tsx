@@ -7,6 +7,7 @@ import { Search, MapPin, Phone, Star, ArrowRight, Train, CheckCircle2 } from "lu
 import { getAllCentres } from "@/lib/content";
 import type { Centre } from "@/types/content";
 import { getCentreMedia } from "@/data/didm-media";
+import { StaggeredCardGrid } from "@/components/motion/StaggeredCardGrid";
 
 export function CenterFinder() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,7 +50,7 @@ export function CenterFinder() {
           {/* Live Search Input */}
           <div className="relative flex-1">
             <Search className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-            <input
+            <input aria-label="Search by area, landmark, or city (e.g. Dwarka, Noida, Kalkaji, Jaipur)..."
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -87,7 +88,7 @@ export function CenterFinder() {
       </div>
 
       {/* Centre Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <StaggeredCardGrid columns={3} stagger={0.04}>
         {filteredCentres.map((centre) => {
           const primaryPhone = centre.phones[0] || "918800505151";
           const cleanPhone = primaryPhone.replace(/[^0-9]/g, "");
@@ -194,7 +195,7 @@ export function CenterFinder() {
             </div>
           );
         })}
-      </div>
+      </StaggeredCardGrid>
 
       {filteredCentres.length === 0 && (
         <div className="text-center py-16 bg-white dark:bg-[#131319] rounded-3xl border border-dashed border-neutral-300 dark:border-neutral-800 p-8">

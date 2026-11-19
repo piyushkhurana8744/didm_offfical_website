@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useId } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   CheckCircle2,
@@ -16,10 +16,14 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { getAllCourses, getAllCentres, SITE_BRAND } from "@/lib/content";
+import { enquiryAttribution } from "@/lib/admissions/attribution";
+import Link from "next/link";
 import type { EnquiryResponse } from "@/types/backend";
 
 export function EnquiryForm() {
   const searchParams = useSearchParams();
+  const formId = useId();
+  const [website, setWebsite] = useState("");
   const courses = getAllCourses();
   const centres = getAllCentres();
 
@@ -31,8 +35,8 @@ export function EnquiryForm() {
   const [email, setEmail] = useState("");
   const [selectedProgram, setSelectedProgram] = useState(initialProgram);
   const [selectedCentre, setSelectedCentre] = useState(initialCentre);
-  const [preferredBatch, setPreferredBatch] = useState("Weekday Morning (10 AM - 1 PM)");
-  const [consent, setConsent] = useState(true);
+  const [preferredBatch, setPreferredBatch] = useState(searchParams.get("batch")?.slice(0, 120) || "Please advise me");
+  const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; phone?: string; consent?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionResult, setSubmissionResult] = useState<EnquiryResponse | null>(null);
@@ -70,9 +74,12 @@ export function EnquiryForm() {
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
+    setSubmissionResult(null);
     setIsSubmitting(true);
 
     const payload = {
+      ...enquiryAttribution(window.location.href),
+      website,
       name: name.trim(),
       phone: cleanPhone,
       email: email.trim() || undefined,
@@ -91,7 +98,7 @@ export function EnquiryForm() {
       });
 
       const data: EnquiryResponse = await res.json();
-      setSubmissionResult(data);
+      setSubmissionResult(res.ok && data.success && data.enquiryId ? data : { success: false, mode: "direct_assisted", message: data.message || "We could not confirm your request. Please contact admissions.", counselorContact: {phone: SITE_BRAND.phone, whatsappUrl: SITE_BRAND.whatsapp} });
     } catch (err) {
       setSubmissionResult({
         success: false,
@@ -110,7 +117,7 @@ export function EnquiryForm() {
   const selectedCourseObj = courses.find((c) => c.id === selectedProgram) || courses[0];
   const selectedCentreObj = centres.find((c) => c.id === selectedCentre) || centres[0];
 
-  if (submissionResult) {
+  if (submissionResult?.success && submissionResult.enquiryId) {
     const firstName = name.trim().split(" ")[0];
 
     return (
@@ -121,14 +128,14 @@ export function EnquiryForm() {
 
         <div className="space-y-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-mono text-xs font-semibold border border-emerald-200 dark:border-emerald-800">
-            <span>Reference ID: {submissionResult.enquiryId || "DIDM-ONLINE"}</span>
+            <span>Reference ID: {submissionResult.enquiryId}</span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white pt-1">
-            Demo Request Registered, {firstName}!
+            Enquiry received, {firstName}!
           </h3>
           <p className="text-sm text-neutral-600 dark:text-neutral-400 max-w-md mx-auto leading-relaxed">
             Your preference for <strong className="text-neutral-900 dark:text-white">{selectedCourseObj.name}</strong> at our{" "}
-            <strong className="text-neutral-900 dark:text-white">{selectedCentreObj.name}</strong> has been logged.
+            <strong className="text-neutral-900 dark:text-white">{selectedCentreObj.name}</strong> has been received. Admissions will confirm the session and availability with you.
           </p>
         </div>
 
@@ -139,7 +146,7 @@ export function EnquiryForm() {
             <span>Admissions Priority Hotline</span>
           </div>
           <p className="text-neutral-500 leading-relaxed">
-            For fastest slot confirmation, immediate seat reservation, or special fee waivers, connect directly with our senior counseling desk:
+            To discuss your request or confirm a session, connect directly with our counselling desk:
           </p>
           <div className="pt-2 flex flex-col sm:flex-row gap-2">
             <a
@@ -178,25 +185,34 @@ export function EnquiryForm() {
 
   return (
     <form
+      aria-busy={isSubmitting}
       onSubmit={handleSubmit}
       className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-xl space-y-5"
     >
       <div className="space-y-1">
         <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
-          Book Free 1-on-1 Demo & Career Guidance
+          Request Free Counselling & Demo Information
         </h3>
         <p className="text-xs text-neutral-500">
-          No charges. No spam. Experience live classroom sessions before you enroll.
+          Share your preferences. Admissions will confirm available sessions and course details.
         </p>
       </div>
 
+      {submissionResult && !submissionResult.success && <div role="alert" className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-900"><p className="font-semibold">Your request has not been confirmed.</p><p className="mt-2">{submissionResult.message}</p><div className="mt-3 flex flex-wrap gap-4"><a className="underline" href={`tel:${SITE_BRAND.phoneClean}`}>Call admissions</a><a className="underline" href={SITE_BRAND.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp admissions</a></div><p className="mt-2 text-xs">Your details are still here. You can try submitting again.</p></div>}
+      <div className="hidden" aria-hidden="true"><label htmlFor={`${formId}-website`}>Leave this field blank</label><input id={`${formId}-website`} value={website} onChange={e=>setWebsite(e.target.value)} tabIndex={-1} autoComplete="off" /></div>
       {/* Name Input */}
       <div className="space-y-1.5">
-        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
+        <label htmlFor={`${formId}-name`} className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
           Full Name <span className="text-brand-red">*</span>
         </label>
         <input
+          required
+          maxLength={120}
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? `${formId}-name-error` : undefined}
           type="text"
+          id={`${formId}-name`}
+          autoComplete="name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
@@ -206,7 +222,7 @@ export function EnquiryForm() {
           className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
         />
         {errors.name && (
-          <p className="text-xs text-brand-red flex items-center gap-1">
+          <p id={`${formId}-name-error`} role="alert" className="text-xs text-brand-red flex items-center gap-1">
             <AlertCircle className="w-3.5 h-3.5" />
             <span>{errors.name}</span>
           </p>
@@ -215,7 +231,7 @@ export function EnquiryForm() {
 
       {/* Phone Number Input */}
       <div className="space-y-1.5">
-        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
+        <label htmlFor={`${formId}-phone`} className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
           Mobile Number (WhatsApp) <span className="text-brand-red">*</span>
         </label>
         <div className="relative">
@@ -223,7 +239,12 @@ export function EnquiryForm() {
             +91
           </span>
           <input
+            required
+            aria-invalid={!!errors.phone}
+            aria-describedby={errors.phone ? `${formId}-phone-error` : undefined}
             type="tel"
+            id={`${formId}-phone`}
+            autoComplete="tel-national"
             maxLength={10}
             value={phone}
             onChange={(e) => {
@@ -235,7 +256,7 @@ export function EnquiryForm() {
           />
         </div>
         {errors.phone && (
-          <p className="text-xs text-brand-red flex items-center gap-1">
+          <p id={`${formId}-phone-error`} role="alert" className="text-xs text-brand-red flex items-center gap-1">
             <AlertCircle className="w-3.5 h-3.5" />
             <span>{errors.phone}</span>
           </p>
@@ -244,11 +265,13 @@ export function EnquiryForm() {
 
       {/* Email (Optional) */}
       <div className="space-y-1.5">
-        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
+        <label htmlFor={`${formId}-email`} className="text-xs font-bold text-neutral-800 dark:text-neutral-200">
           Email Address <span className="text-neutral-400 font-normal">(Optional for syllabus PDF)</span>
         </label>
         <input
           type="email"
+          id={`${formId}-email`}
+          autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="rahul@gmail.com"
@@ -258,11 +281,12 @@ export function EnquiryForm() {
 
       {/* Program Selector */}
       <div className="space-y-1.5">
-        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
+        <label htmlFor={`${formId}-program`} className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
           <GraduationCap className="w-3.5 h-3.5 text-brand-red" />
           <span>Select Program</span>
         </label>
         <select
+          id={`${formId}-program`}
           value={selectedProgram}
           onChange={(e) => setSelectedProgram(e.target.value)}
           className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
@@ -277,11 +301,12 @@ export function EnquiryForm() {
 
       {/* Centre Selector */}
       <div className="space-y-1.5">
-        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
+        <label htmlFor={`${formId}-centre`} className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
           <MapPin className="w-3.5 h-3.5 text-brand-red" />
           <span>Select Preferred Centre / Online</span>
         </label>
         <select
+          id={`${formId}-centre`}
           value={selectedCentre}
           onChange={(e) => setSelectedCentre(e.target.value)}
           className="w-full px-4 py-3 rounded-2xl bg-neutral-50 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm focus:outline-none focus:border-brand-red text-neutral-900 dark:text-white"
@@ -296,20 +321,21 @@ export function EnquiryForm() {
 
       {/* Preferred Batch Timing */}
       <div className="space-y-1.5">
-        <label className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
+        <div id={`${formId}-timing-label`} className="text-xs font-bold text-neutral-800 dark:text-neutral-200 flex items-center gap-1.5">
           <Calendar className="w-3.5 h-3.5 text-brand-red" />
-          <span>Preferred Batch Timing</span>
-        </label>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+          <span>Preferred timing (subject to availability)</span>
+        </div>
+        <div role="group" aria-labelledby={`${formId}-timing-label`} className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
           {[
-            "Weekday Morning (10 AM - 1 PM)",
-            "Weekday Evening (4 PM - 7 PM)",
+            "Weekday morning",
+            "Weekday evening",
             "Weekend Saturday & Sunday",
-            "Fast-Track 1-Month Boot",
+            "Please advise me",
           ].map((batch) => (
             <button
               type="button"
               key={batch}
+              aria-pressed={preferredBatch === batch}
               onClick={() => setPreferredBatch(batch)}
               className={`p-2.5 rounded-xl border text-left transition font-medium ${
                 preferredBatch === batch
@@ -327,6 +353,7 @@ export function EnquiryForm() {
       <div className="space-y-1 pt-1">
         <label className="flex items-start gap-2.5 text-[11px] text-neutral-600 dark:text-neutral-400 cursor-pointer">
           <input
+            required
             type="checkbox"
             checked={consent}
             onChange={(e) => {
@@ -336,7 +363,7 @@ export function EnquiryForm() {
             className="mt-0.5 rounded text-brand-red focus:ring-brand-red"
           />
           <span>
-            I authorize DIDM and its academic counselors to call, SMS, or WhatsApp me regarding course batches, fees, and syllabus details.
+            I agree to be contacted by DIDM about this enquiry by call, SMS or WhatsApp. Read the <Link className="underline" href="/privacy">Privacy Policy</Link> and <Link className="underline" href="/terms">Terms of Use</Link>.
           </span>
         </label>
         {errors.consent && (
@@ -356,11 +383,11 @@ export function EnquiryForm() {
         {isSubmitting ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin" />
-            <span>Registering Your Slot...</span>
+            <span>Sending your enquiry...</span>
           </>
         ) : (
           <>
-            <span>Reserve My Free Demo Seat</span>
+            <span>Request free counselling</span>
             <ArrowRight className="w-4 h-4" />
           </>
         )}

@@ -116,7 +116,7 @@ export default async function AwardDetailPage({ params }: PageProps) {
             </span>
             <span className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-semibold flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>Verified Institutional Record</span>
+              <span>Published institutional record</span>
             </span>
           </div>
 

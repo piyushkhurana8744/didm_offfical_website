@@ -1,0 +1,12 @@
+import { discoveryCatalog } from "@/lib/student/discovery";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { CourseFinder } from "@/components/student/CourseFinder";
+import { CareerExplorer, SkillQuiz, FunnelSimulator } from "@/components/student/LearningLab";
+import { MotionSection } from "@/components/motion/MotionSection";
+import { getAllCourses } from "@/lib/content";
+export const metadata: Metadata = { title:"Find Your Digital Marketing Course & Career Path | DIDM", description:"Explore DIDM programs with explained course matching, six career learning paths, a marketing skills quiz and an interactive campaign funnel.", alternates:{canonical:"/course-finder"} };
+export default function CourseFinderPage() {
+  const courses=discoveryCatalog(getAllCourses());
+  return <div className="student-page"><div className="student-shell"><header className="student-page-heading"><nav aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><span>Find your path</span></nav><p className="student-eyebrow">CURIOSITY IS A GREAT STARTING POINT</p><h1>Your ambition.<br/><em>Your next move.</em></h1><p>Explore a course, picture a career and try a little marketing for yourself. Let’s find a direction that feels like you.</p><div className="student-section-links"><a href="#finder">Find my course</a><a href="#careers">Explore careers</a><a href="#skill-check">Check my skills</a><a href="#campaign-lab">Try the campaign lab</a></div></header><CourseFinder courses={courses}/><MotionSection id="careers" className="student-section"><div className="student-section-heading"><p className="student-eyebrow">MORE THAN ONE WAY FORWARD</p><h2>Picture yourself in marketing.</h2><p>Explore the skills and practice behind six different career directions.</p></div><CareerExplorer courses={courses}/></MotionSection><MotionSection id="skill-check" className="student-section"><SkillQuiz/></MotionSection><MotionSection id="campaign-lab" className="student-section"><FunnelSimulator/></MotionSection><section className="student-human-handoff"><div><p className="student-eyebrow">LET’S MAKE IT PERSONAL</p><h2>A real conversation goes further.</h2><p>Talk through your goals, course options and the latest batch availability with DIDM admissions.</p></div><Link href="/enquire?form=course-finder" className="student-primary">Book free counselling ↗</Link></section></div></div>;
+}

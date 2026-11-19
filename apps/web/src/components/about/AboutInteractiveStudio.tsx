@@ -352,7 +352,7 @@ export function AboutFaqAccordion({ faqs }: AboutFaqProps) {
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
         <div className="relative flex-1 max-w-md">
           <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400" />
-          <input
+          <input aria-label="Search FAQs (missed classes, salary, backup...)"
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

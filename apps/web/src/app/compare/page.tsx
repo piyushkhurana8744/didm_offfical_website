@@ -4,6 +4,7 @@ import { SITE_DATA } from "@/data/site-data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.didm.in/compare" },
   title: "Compare All Digital Marketing Programs | Side-by-Side Matrix | DIDM",
   description:
     "Compare DIDM's courses side-by-side: MIDM vs DMI 1-Year Diploma vs Advanced vs Professional. Review hours, modules, fees, internship, and placement support.",
@@ -77,7 +78,7 @@ export default function ComparePage() {
   ];
 
   return (
-    <div className="py-12 md:py-20">
+    <div className="creative-page creative-directory py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Header */}
         <div className="max-w-3xl space-y-4">

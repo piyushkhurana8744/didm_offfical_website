@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { MapPin, Phone, Building2, Search } from "lucide-react";
 import { CenterFinder } from "@/components/CenterFinder";
-import { RevealOnScroll } from "@/components/motion/RevealOnScroll";
+import { MotionSection } from "@/components/motion/MotionSection";
+import { MotionHeading } from "@/components/motion/MotionHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.didm.in/centres" },
   title: "13+ Digital Marketing Centres in Delhi NCR & North India | DIDM",
   description:
     "Find your nearest DIDM branch in Dwarka, South Ex, Noida, Gurgaon, Pitampura, Kalkaji, Preet Vihar, Chandigarh, Dehradun or join live online.",
@@ -12,29 +14,29 @@ export const metadata: Metadata = {
 
 export default function CentresPage() {
   return (
-    <div className="py-12 md:py-20">
+    <div className="creative-page creative-directory py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
-        <RevealOnScroll direction="up">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red-soft dark:bg-brand-red/10 text-brand-red text-xs font-mono font-semibold">
-              CAMPUS NETWORK
-            </div>
-            <h1 className="text-3xl sm:text-5xl font-normal text-neutral-900 dark:text-white leading-[1.08]">
-              13+ physical centres and a <em>global interactive campus</em>.
-            </h1>
-            <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              All DIDM centres feature modern computer labs, high-speed fiber internet, smart interactive
-              screens, and dedicated doubt-clearing faculty desks. Walk in anytime to attend a live demo.
-            </p>
-          </div>
-        </RevealOnScroll>
+        <MotionSection as="div" preset="editorial">
+          <MotionHeading as="h1"
+            eyebrow="CAMPUS NETWORK"
+            title={
+              <>
+                13+ physical centres and a <span className="text-[#b52828]">global interactive campus</span>.
+              </>
+            }
+            description="All DIDM centres feature modern computer labs, high-speed fiber internet, smart interactive screens, and dedicated doubt-clearing faculty desks. Walk in anytime to attend a live demo."
+            align="left"
+          />
+        </MotionSection>
 
         {/* Live Search & Region Filter Component */}
-        <CenterFinder />
+        <MotionSection as="div" preset="stagger">
+          <CenterFinder />
+        </MotionSection>
 
         {/* Visit Guidelines */}
-        <RevealOnScroll direction="up" delayMs={100}>
+        <MotionSection as="div" preset="scale">
           <div className="p-8 rounded-3xl bg-neutral-100/70 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 space-y-4">
             <h3 className="text-lg font-bold text-neutral-900 dark:text-white">
               Centre Visiting Hours & Free Trial Protocol
@@ -49,7 +51,7 @@ export default function CentresPage() {
               </Link>
             </div>
           </div>
-        </RevealOnScroll>
+        </MotionSection>
       </div>
     </div>
   );

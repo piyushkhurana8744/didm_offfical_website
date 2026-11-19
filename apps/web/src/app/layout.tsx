@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
+import "@/styles/creative.css";
+import "@/styles/campaign.css";
+import "@/styles/editorial.css";
+import "@/styles/premium-restoration.css";
+import "@/styles/student-experience.css";
+import "@/styles/public-excellence.css";
+import { PublicExperience } from "@/components/public/PublicExperience";
 import { Navbar } from "@/components/Navbar";
 import { PlanBar } from "@/components/PlanBar";
 import { Footer } from "@/components/Footer";
@@ -18,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.didm.in"),
   title: "DIDM | Delhi Institute of Digital Marketing",
   description:
-    "India's premier AI-powered digital marketing institute. 50,000+ alumni, 650+ hiring partners, 13 physical centres & live online campus. Master MIDM, DMI Diploma & modern AI tools.",
+    "Explore digital marketing and AI learning at DIDM. Compare programs, discover training centres and speak with admissions about your learning goals.",
   keywords: [
     "digital marketing course",
     "digital marketing institute in delhi",
@@ -73,7 +80,8 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body suppressHydrationWarning className="min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
+      <body suppressHydrationWarning className="premium-ui-restored min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
+        <a className="skip-to-content" href="#main">Skip to content</a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
@@ -81,8 +89,8 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <PlanBar />
           <Navbar />
-          <main id="main" className="flex-1 pb-16 xl:pb-0">
-            {children}
+          <main id="main" tabIndex={-1} className="flex-1 pb-16 xl:pb-0">
+            <PublicExperience>{children}</PublicExperience>
           </main>
           <Footer />
           <StickyMobileBar />

@@ -86,10 +86,15 @@ export interface MediaAssetRecord {
   localPath?: string;
 }
 
-export const AWARDS: AwardRecord[] = awardsData as AwardRecord[];
+const LOCAL_PUBLISHED_MEDIA: Record<string, string> = {
+  "https://didm.in/assets/upload/images/DIDM%20Assocham%20Certificate.webp": "/images/didm/media/didm_assocham_certificate.webp",
+  "https://didm.in/assets/upload/images/new/Franchise%20Batao%20Award.webp": "/images/didm/media/franchise_batao_award.webp",
+};
+const localMedia = (url: string) => LOCAL_PUBLISHED_MEDIA[url] || url;
+export const AWARDS: AwardRecord[] = (awardsData as AwardRecord[]).map(award => ({ ...award, heroImage: localMedia(award.heroImage) }));
 export const PRESS_COVERAGE: PressCoverageRecord[] = pressData as PressCoverageRecord[];
 export const NEWS_ARTICLES: NewsArticleRecord[] = newsData as NewsArticleRecord[];
-export const AWARD_GALLERIES: AwardGalleryItem[] = galleriesData as AwardGalleryItem[];
+export const AWARD_GALLERIES: AwardGalleryItem[] = (galleriesData as AwardGalleryItem[]).map(item => ({...item,url:localMedia(item.url)}));
 export const CERTIFICATES: CertificateRecord[] = certificatesData as CertificateRecord[];
 export const MEDIA_ASSETS: MediaAssetRecord[] = mediaAssetsData as MediaAssetRecord[];
 export const SOURCE_PROVENANCE = provenanceData;

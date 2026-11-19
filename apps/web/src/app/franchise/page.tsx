@@ -15,6 +15,8 @@ import {
   MapPin,
 } from "lucide-react";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { MotionSection } from "@/components/motion/MotionSection";
+import { StaggeredCardGrid } from "@/components/motion/StaggeredCardGrid";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -61,10 +63,10 @@ const ADVANTAGES = [
 
 export default function FranchisePage() {
   return (
-    <div className="py-12 md:py-20">
+    <div className="creative-page creative-directory py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Header */}
-        <div className="max-w-3xl space-y-4">
+        <MotionSection preset="editorial" className="max-w-3xl space-y-4">
           <nav aria-label="Breadcrumb" className="text-xs font-mono text-neutral-500 flex items-center gap-2">
             <Link href="/" className="hover:text-brand-red transition-colors">Home</Link>
             <span>/</span>
@@ -83,10 +85,10 @@ export default function FranchisePage() {
           <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
             The demand for practical digital skills, AI tools, and performance marketing is skyrocketing across Tier 1, Tier 2, and Tier 3 cities. Start your own profitable digital marketing training center with turnkey operational support from DIDM.
           </p>
-        </div>
+        </MotionSection>
 
         {/* Advantages Grid */}
-        <div className="space-y-6">
+        <MotionSection preset="stagger" className="space-y-6">
           <div className="max-w-2xl space-y-1">
             <span className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
               Why Partner With DIDM
@@ -96,7 +98,7 @@ export default function FranchisePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggeredCardGrid columns={3} stagger={0.06}>
             {ADVANTAGES.map((adv, idx) => {
               const Icon = adv.icon;
               return (
@@ -114,11 +116,11 @@ export default function FranchisePage() {
                 </div>
               );
             })}
-          </div>
-        </div>
+          </StaggeredCardGrid>
+        </MotionSection>
 
         {/* Center Setup Requirements */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-100/70 dark:bg-[#14141B] border border-neutral-200 dark:border-neutral-800 space-y-8">
+        <MotionSection preset="depth" className="p-8 sm:p-12 rounded-3xl bg-neutral-100/70 dark:bg-[#14141B] border border-neutral-200 dark:border-neutral-800 space-y-8">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
               Infrastructure Specifications
@@ -153,10 +155,10 @@ export default function FranchisePage() {
               <p className="text-xs text-neutral-500">Dedicated student admission desk and comfortable visitor lounge.</p>
             </div>
           </div>
-        </div>
+        </MotionSection>
 
         {/* Real Enquiry Form for Franchise */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-50 dark:bg-[#15151D] border border-neutral-200 dark:border-neutral-800 shadow-xl space-y-6">
+        <MotionSection preset="scale" className="p-8 sm:p-12 rounded-3xl bg-neutral-50 dark:bg-[#15151D] border border-neutral-200 dark:border-neutral-800 shadow-xl space-y-6">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
               Franchise Expansion Desk
@@ -172,7 +174,7 @@ export default function FranchisePage() {
           <Suspense fallback={<div className="p-8 text-center text-xs text-neutral-400">Loading franchise inquiry form...</div>}>
             <EnquiryForm />
           </Suspense>
-        </div>
+        </MotionSection>
       </div>
     </div>
   );

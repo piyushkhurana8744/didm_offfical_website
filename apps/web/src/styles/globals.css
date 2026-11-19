@@ -1,44 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Raleway:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #FBFAF7;
+  --bg: #FFFFFF;
   --surface: #FFFFFF;
-  --surface-2: #F8F7F4;
-  --ink: #0E0E12;
-  --ink-2: #2B2B33;
-  --muted: #5A5A66;
-  --line: #E6E3DC;
-  --line-2: #D6D2C8;
-  --red: #C8102E;
-  --red-ink: #A50D26;
-  --red-soft: #FDF0F2;
-  --ai: #4F46E5;
-  --ai-ink: #4338CA;
-  --ai-soft: #EEF0FF;
+  --surface-2: #F8F9FA;
+  --ink: #222222;
+  --ink-2: #333333;
+  --muted: #666666;
+  --line: #E5E5E5;
+  --line-2: #D4D4D4;
+  --red: #b52828;
+  --red-ink: #8e1f1f;
+  --red-soft: #fdf2f2;
+  --ai: #b52828;
+  --ai-ink: #8e1f1f;
+  --ai-soft: #fdf2f2;
   --ok: #0F7B4B;
-  --radius: 14px;
-  --radius-sm: 10px;
+  --radius: 12px;
+  --radius-sm: 8px;
 }
 
 [data-theme="dark"] {
-  --bg: #0A0A0E;
-  --surface: #131319;
-  --surface-2: #1A1A22;
-  --ink: #F3F2EE;
-  --ink-2: #D9D8D3;
-  --muted: #A4A4B0;
-  --line: #26262F;
-  --line-2: #34343F;
-  --red: #FF4A65;
-  --red-ink: #FF6B82;
-  --red-soft: #2A1218;
-  --ai: #818CF8;
-  --ai-ink: #A5B4FC;
-  --ai-soft: #1B1C35;
+  --bg: #0C0D12;
+  --surface: #14151C;
+  --surface-2: #1B1C24;
+  --ink: #F5F5F5;
+  --ink-2: #DCDCDC;
+  --muted: #9E9EA8;
+  --line: #262732;
+  --line-2: #323340;
+  --red: #d93838;
+  --red-ink: #f04848;
+  --red-soft: #2D1417;
+  --ai: #d93838;
+  --ai-ink: #f04848;
+  --ai-soft: #2D1417;
   --ok: #4ADE80;
 }
 
@@ -51,7 +51,7 @@ html {
 body {
   background-color: var(--bg);
   color: var(--ink);
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -59,6 +59,13 @@ body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
 :focus-visible {
@@ -81,19 +88,19 @@ body {
 }
 
 .font-serif {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Space Grotesk', Georgia, serif;
 }
 
 .font-mono {
-  font-family: 'Geist Mono', monospace;
+  font-family: 'Manrope', monospace;
 }
 
-/* Red brand signature italic emphasis */
+/* Red brand signature emphasis */
 h1 em, h2 em, .serif-italic-red em {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-style: italic;
+  font-family: 'Space Grotesk', sans-serif;
+  font-style: normal;
   color: var(--red);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 /* Aurora Hero Glow effect - strictly constrained on mobile */
@@ -255,3 +262,7 @@ h1 em, h2 em, .serif-italic-red em {
     scroll-behavior: auto !important;
   }
 }
+
+/* Keep callback actions and the mobile menu within the header. */
+@media(max-width:639px){.nav-desktop-callback{display:none!important}.nav-mobile-callback{display:inline-flex;padding:10px 12px!important;font-size:11px}.nav-main-row{gap:8px}.nav-actions{gap:6px}a[aria-label="DIDM Official Website Home"] img{width:120px;height:auto}}
+@media(min-width:640px){.nav-mobile-callback{display:none!important}}

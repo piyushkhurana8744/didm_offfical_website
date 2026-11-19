@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { DIDM_MEDIA } from "@/data/didm-media";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/article" },
   title: "The 2026 Modern Performance Marketing Architecture | DIDM Guide",
   description:
     "Comprehensive technical guide on structuring Meta Conversions API (CAPI), Google Performance Max, and attribution modeling for high-scale e-commerce and lead generation.",

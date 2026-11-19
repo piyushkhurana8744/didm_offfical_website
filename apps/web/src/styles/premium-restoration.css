@@ -1,0 +1,372 @@
+/* Recovered November 12 DIDM presentation. Loaded after the Playground styles.
+   This layer deliberately does not change animation timelines or motion transforms,
+   clip paths, sticky geometry, scrub distances or reduced-motion behaviour. */
+.premium-ui-restored {
+  --creative-paper: #fff;
+  --creative-ink: #222;
+  --creative-red: #b52828;
+  --creative-line: #e5e5e5;
+  --restored-heading: "Poppins", system-ui, sans-serif;
+  --restored-body: "Open Sans", system-ui, sans-serif;
+  font-family: var(--restored-body);
+  background: #fff;
+}
+.premium-ui-restored :is(h1,h2,h3,h4,h5,h6),
+.premium-ui-restored .font-heading,
+.premium-ui-restored .font-serif {
+  font-family: var(--restored-heading);
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+.premium-ui-restored :is(h1,h2) em {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  color: #b52828;
+}
+.premium-ui-restored .font-body { font-family: var(--restored-body); }
+.premium-ui-restored .font-accent,
+.premium-ui-restored .nav-main-row nav { font-family: "Raleway", sans-serif; }
+.premium-ui-restored .creative-shell { width: min(1280px, calc(100% - 64px)); }
+.premium-ui-restored .creative-eyebrow {
+  font-family: var(--restored-heading);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .8px;
+  color: #b52828;
+}
+.premium-ui-restored .creative-button {
+  border-radius: 12px;
+  padding: 15px 23px;
+  font-size: 13px;
+  font-family: var(--restored-heading);
+  font-weight: 600;
+  box-shadow: 0 8px 18px #b5282826;
+}
+.premium-ui-restored .creative-text-link {
+  border: 1px solid #d4d4d4;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-family: var(--restored-heading);
+  font-size: 12px;
+  color: #222;
+}
+.premium-ui-restored .creative-page .rounded-3xl { border-radius: 24px; }
+.premium-ui-restored .creative-page .rounded-2xl { border-radius: 16px; }
+.premium-ui-restored .creative-home > section:not(.creative-hero):not(.campaign-journey):not(.creative-programs) :is(.rounded-3xl,.rounded-2xl) {
+  border-radius: 20px;
+}
+.premium-ui-restored .creative-home > section:not(.creative-hero):not(.campaign-journey):not(.creative-programs) { padding-block: 64px; }
+.premium-ui-restored .creative-home > section:nth-of-type(4n) { background-color: #fff; }
+.premium-ui-restored .creative-home > section h2 {
+  font-family: var(--restored-heading);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  font-size: clamp(27px, 2.7vw, 40px);
+}
+.premium-ui-restored .motion-eyebrow {
+  display: inline-flex;
+  background: #b5282810;
+  border: 1px solid #b5282822;
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 11px;
+  letter-spacing: .6px;
+}
+.premium-ui-restored .creative-directory { background: #fff; }
+.premium-ui-restored .creative-directory h1 {
+  font-size: clamp(32px, 3.6vw, 52px);
+  line-height: 1.16;
+  letter-spacing: -.03em;
+}
+.premium-ui-restored .creative-directory :is(.btn-primary,.btn-red,.btn-ghost) { border-radius: 12px; }
+.premium-ui-restored .creative-directory h2 { font-weight: 700; }
+
+/* Historical billboard remains full bleed; the approved studio still animates
+   in the following positioning area, using its exact existing DOM targets. */
+.restored-home-accreditation { background: #171717; color: #e5e5e5; }
+.restored-home-accreditation > div {
+  max-width: 1280px;
+  margin: auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 10px;
+}
+.restored-home-accreditation > div > span:first-child { font-weight: 700; }
+.restored-home-accreditation a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.restored-home-billboard,
+.restored-course-banner { width: 100%; background: #8f1b24; }
+.restored-home-billboard img,
+.restored-course-banner img { display: block; width: 100%; height: auto; }
+.premium-ui-restored .creative-hero { background: #fff; }
+.premium-ui-restored .hero-meta { font-size: 9px; padding-block: 15px; }
+.premium-ui-restored .hero-layout { padding-block: 40px; min-height: 590px; gap: 40px; }
+.premium-ui-restored .hero-copy h1 {
+  font: 800 clamp(31px, 3.3vw, 49px)/1.17 var(--restored-heading);
+  letter-spacing: -1.6px;
+}
+.premium-ui-restored .hero-copy .creative-eyebrow {
+  width: fit-content;
+  border: 1px solid #b5282824;
+  border-radius: 999px;
+  background: #b528280d;
+  padding: 8px 12px;
+  margin-bottom: 22px;
+  font-size: 9px;
+}
+.premium-ui-restored .hero-description { font-size: 14px; line-height: 1.8; color: #666; }
+.premium-ui-restored .hero-authenticity { border-color: #e5e5e5; }
+.premium-ui-restored .hero-authenticity strong { font-size: 11px; }
+.premium-ui-restored .hero-bottom { font-family: var(--restored-heading); font-size: 9px; }
+.premium-ui-restored .studio-controls button[aria-pressed=true] { border-radius: 8px; background: #f5f5f5; }
+.premium-ui-restored .studio-prompt,
+.premium-ui-restored .studio-social { border-radius: 12px; }
+
+/* Previous program artwork and rounded, bordered course cards. */
+.premium-ui-restored .creative-programs { background: #f8f9fa; padding: 64px 0; }
+.premium-ui-restored .creative-section-heading { margin-bottom: 36px; align-items: center; }
+.premium-ui-restored .creative-section-heading h2 {
+  font: 700 clamp(27px, 2.8vw, 40px)/1.2 var(--restored-heading);
+  letter-spacing: -.8px;
+}
+.premium-ui-restored .creative-section-heading > p { color: #666; font-size: 13px; line-height: 1.8; }
+.premium-ui-restored .creative-program-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; }
+.premium-ui-restored .creative-program {
+  padding: 0 20px 22px;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 3px 12px #00000008;
+  min-height: 550px;
+  overflow: hidden;
+}
+.premium-ui-restored .creative-program:hover { background: #fff; border-color: #b5282860; }
+.premium-ui-restored .creative-program.program-featured { border-color: #b52828; box-shadow: 0 0 0 2px #b5282818; }
+.restored-program-art { position: relative; aspect-ratio: 5/4; margin: 0 -20px 20px; background: #fff; }
+.restored-program-art img { object-fit: contain; }
+.premium-ui-restored .program-index { margin-bottom: 17px; color: #b52828; font-size: 10px; }
+.premium-ui-restored .program-category,
+.premium-ui-restored .program-featured .program-category { color: #b52828!important; font-weight: 600; }
+.premium-ui-restored .creative-program h3 { font-size: 19px; line-height: 1.35; font-weight: 700; letter-spacing: -.3px; }
+.premium-ui-restored .creative-program > p:not(.program-category),
+.premium-ui-restored .program-featured > p:not(.program-category) { color: #666; font-size: 12px; }
+.premium-ui-restored .program-specs span,
+.premium-ui-restored .program-featured .program-specs span { border-color: #e5e5e5; background: #f8f9fa; color: #555; }
+.premium-ui-restored .program-actions,
+.premium-ui-restored .program-featured .program-actions { border-color: #e5e5e5; flex-wrap: wrap; gap: 7px; }
+.premium-ui-restored .program-actions a:first-child { color: #b52828; font-weight: 700; }
+.premium-ui-restored .creative-program:nth-child(n+5) { grid-column: span 2; min-height: 0; }
+.premium-ui-restored .creative-program:nth-child(n+5) .restored-program-art { aspect-ratio: 3/1; }
+
+/* The entire scrub timeline and sticky stage geometry are preserved. */
+.premium-ui-restored .campaign-journey { background: #fff; color: #222; border-block: 1px solid #e5e5e5; }
+.premium-ui-restored .journey-topline,
+.premium-ui-restored .journey-footer { color: #777; border-color: #e5e5e5; }
+.premium-ui-restored .journey-copy .creative-eyebrow { color: #b52828; }
+.premium-ui-restored .journey-copy .eyebrow-rule { background: #b52828; }
+.premium-ui-restored .journey-kicker { color: #b52828; }
+.premium-ui-restored .journey-copy h2 { color: #222; font: 700 clamp(30px,3.1vw,45px)/1.2 var(--restored-heading); letter-spacing: -.8px; }
+.premium-ui-restored .journey-copy p:not(.creative-eyebrow) { color: #666; }
+.premium-ui-restored .journey-skill { color: #9e2424; }
+.premium-ui-restored .journey-numbers button { color: #666; border-color: #ddd; background: #f8f9fa; }
+.premium-ui-restored .journey-numbers button[aria-current] { color: #fff; background: #b52828; border-color: #b52828; }
+.premium-ui-restored .journey-link { color: #b52828; border-color: #b5282855; font-weight: 700; }
+.premium-ui-restored .journey-stage { border-radius: 20px; box-shadow: 0 14px 40px #00000012; }
+.premium-ui-restored .journey-prompt > p,
+.premium-ui-restored .journey-course h3 { font-family: var(--restored-heading); }
+.premium-ui-restored .journey-course { border-radius: 14px; }
+.premium-ui-restored .journey-course h3 { font-size: 37px; font-weight: 700; }
+.premium-ui-restored .journey-analytics h3 { font-family: var(--restored-heading); font-weight: 600; }
+
+/* Full-width recovered public-page banners, around the current reveal refs. */
+.premium-ui-restored .editorial-hero,
+.premium-ui-restored .program-editorial-hero { background: #fff; padding-bottom: 40px; border-color: #e5e5e5; }
+.premium-ui-restored .editorial-title { font: 800 clamp(32px,3.5vw,50px)/1.18 var(--restored-heading); letter-spacing: -1px; }
+.premium-ui-restored .editorial-copy > p:not(.creative-eyebrow) { color: #666; }
+.premium-ui-restored .editorial-hero.is-restored-banner > .creative-shell { width: 100%; max-width: none; }
+.premium-ui-restored .is-restored-banner .editorial-breadcrumb { max-width: 1280px; margin-inline: auto; padding-inline: 24px; }
+.premium-ui-restored .is-restored-banner .editorial-layout { display: flex; flex-direction: column; gap: 0; padding-top: 0; }
+.premium-ui-restored .is-restored-banner .editorial-layout > figure { order: -1; width: 100%; }
+.premium-ui-restored .is-restored-banner .editorial-photo { height: auto; width: 100%; border-radius: 0; background: #fff; }
+.premium-ui-restored .is-restored-banner .editorial-photo img { object-fit: contain; background: transparent; }
+.premium-ui-restored .is-restored-banner figcaption { max-width: 1280px; margin-inline: auto; padding: 10px 24px; font-size: 9px; }
+.premium-ui-restored .is-restored-banner .editorial-copy { width: min(100% - 40px,1000px); text-align: center; padding-top: 30px; }
+.premium-ui-restored .is-restored-banner .editorial-copy .creative-eyebrow { justify-content: center; margin-bottom: 16px; }
+.premium-ui-restored .is-restored-banner .editorial-copy > p:not(.creative-eyebrow) { max-width: 760px; margin: 18px auto 24px; }
+.premium-ui-restored .is-restored-banner .editorial-copy .creative-button { margin-inline: auto; }
+.premium-ui-restored .editorial-layout { gap: 40px; }
+.premium-ui-restored .editorial-photo { border-radius: 20px; }
+.premium-ui-restored .editorial-layout figcaption { border-color: #e5e5e5; }
+.premium-ui-restored .creative-source-art { background: #f8f9fa; color: #666; }
+.premium-ui-restored .institutional-timeline { background: #f8f9fa; }
+
+/* Retain all six current curriculum interactions in the previous card system. */
+.premium-ui-restored .program-hero-grid { gap: 40px; }
+.premium-ui-restored .program-hero-grid h1 { font: 800 clamp(32px,3.3vw,48px)/1.18 var(--restored-heading); letter-spacing: -1px; }
+.premium-ui-restored .program-hero-tagline { color: #444; }
+.premium-ui-restored .program-hero-description { color: #666; }
+.premium-ui-restored .program-hero-photo > div { border-radius: 24px; background: #f8f9fa; }
+.premium-ui-restored .program-hero-photo img { object-fit: contain; }
+.premium-ui-restored .program-hero-facts { border-color: #e5e5e5; gap: 16px; }
+.premium-ui-restored .program-hero-facts > div { border: 1px solid #e5e5e5; background: #fafafa; padding: 12px; border-radius: 12px; }
+.premium-ui-restored .program-hero-facts span { color: #777; }
+.premium-ui-restored .program-hero-facts strong { color: #222; }
+.premium-ui-restored .has-restored-course-banner .program-hero-grid { padding-top: 32px; }
+.premium-ui-restored .signature-experience { background: #f8f9fa; padding: 64px 0; }
+.premium-ui-restored .signature-workspace { border-radius: 24px; border-color: #e5e5e5; background: #fff; box-shadow: 0 5px 20px #00000006; }
+.premium-ui-restored .signature-module-list { background: #f5f5f5; }
+.premium-ui-restored .signature-module-list button { border-color: #e5e5e5; color: #555; }
+.premium-ui-restored .signature-module-list button[aria-pressed=true] { color: #fff; }
+.premium-ui-restored .signature-detail-top { border-color: #e5e5e5; color: #777; }
+.premium-ui-restored .signature-module-copy h3 { font: 700 26px/1.25 var(--restored-heading); letter-spacing: -.4px; }
+.premium-ui-restored .signature-module-copy > p:not(.signature-module-label):not(.signature-source-note) { color: #666; }
+.premium-ui-restored .signature-tool-list > span { background: #fafafa; border-color: #ddd; border-radius: 6px; }
+.premium-ui-restored .signature-source-note { color: #777; }
+.premium-ui-restored .signature-next { color: #b52828; border-color: #b5282855; }
+.premium-ui-restored .workspace-view-controls button { border-radius: 8px; }
+
+/* Restore the previous crimson student section while keeping the current
+   portrait selector, authentic quotations and quote-change animation. */
+.premium-ui-restored .student-voices { background: #b52828!important; color: #fff; }
+.premium-ui-restored .student-voices .creative-section-heading :is(h2,p,em,.creative-eyebrow) { color: #fff; }
+.premium-ui-restored .student-voices .eyebrow-rule { background: #fff; }
+.premium-ui-restored .voice-editorial { gap: 45px; background: #ffffff0d; border: 1px solid #ffffff35; border-radius: 24px; padding: 32px; }
+.premium-ui-restored .voice-quote blockquote { font-family: var(--restored-heading); font-size: clamp(19px,2vw,28px); font-weight: 500; letter-spacing: -.3px; }
+.premium-ui-restored .voice-quote-mark { color: #fff; }
+.premium-ui-restored .voice-portraits button { opacity: .85; }
+.premium-ui-restored .voice-portraits button[aria-pressed=true] img { outline-color: #fff; }
+.premium-ui-restored .voice-portraits img { border-radius: 12px; object-fit: contain; background: #ffffff18; }
+.premium-ui-restored .voice-portraits button > span,
+.premium-ui-restored .voice-author > span,
+.premium-ui-restored .voice-controls > span { color: #fff; }
+.premium-ui-restored .voice-controls { border-color: #ffffff40; }
+.premium-ui-restored .voice-controls button { border-color: #ffffff70; }
+.premium-ui-restored .creative-home #demo-enquiry { background: #f5f5f5; }
+.premium-ui-restored .creative-home #demo-enquiry h2 { font: 700 clamp(28px,2.8vw,40px)/1.2 var(--restored-heading); letter-spacing: -.6px; }
+.premium-ui-restored .centre-creative-page > section:nth-of-type(2) { background: linear-gradient(90deg,#800b0b,#a01616,#800b0b); }
+
+@media(max-width:1199px) {
+  .premium-ui-restored .creative-program-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .premium-ui-restored .creative-program:nth-child(n+5) { grid-column: auto; }
+  .premium-ui-restored .creative-program:nth-child(n+5) .restored-program-art { aspect-ratio: 5/4; }
+  .premium-ui-restored .hero-layout { gap: 25px; }
+  .premium-ui-restored .hero-copy h1 { font-size: clamp(29px,3.7vw,44px); }
+}
+@media(max-width:800px) {
+  .premium-ui-restored .creative-shell { width: calc(100% - 40px); }
+  .premium-ui-restored .hero-layout { padding-top: 30px; gap: 18px; }
+  .premium-ui-restored .hero-copy h1 { font-size: clamp(31px,5.7vw,46px); letter-spacing: -.8px; }
+  .premium-ui-restored .creative-button { font-size: 11px; padding: 14px 18px; }
+  .premium-ui-restored .creative-text-link { font-size: 10px; padding: 13px 16px; }
+  .premium-ui-restored .creative-eyebrow { font-size: 9px; }
+  .premium-ui-restored .creative-home > section:not(.creative-hero):not(.campaign-journey):not(.creative-programs) { padding-block: 48px; }
+  .premium-ui-restored .journey-copy h2 { font-size: 29px; line-height: 1.15; }
+  .premium-ui-restored .journey-course h3 { font-size: 27px; }
+  .premium-ui-restored .journey-analytics h3 { font-size: 25px; }
+  .premium-ui-restored .journey-copy p:not(.creative-eyebrow) { font-size: 11px; }
+  .premium-ui-restored .journey-stage { border-radius: 14px; }
+  .premium-ui-restored .editorial-title { font-size: clamp(28px,5.8vw,40px); }
+  .premium-ui-restored .is-restored-banner .editorial-copy { padding-top: 24px; }
+  .premium-ui-restored .is-restored-banner .editorial-copy > p:not(.creative-eyebrow) { font-size: 12px; }
+  .premium-ui-restored .voice-editorial { padding: 22px; gap: 28px; }
+  .premium-ui-restored .voice-quote blockquote { font-size: 21px; }
+  .premium-ui-restored .signature-workspace { border-radius: 16px; }
+  .premium-ui-restored .signature-module-copy h3 { font-size: 24px; }
+  .restored-home-accreditation > div { padding: 10px 20px; font-size: 8px; }
+  .restored-home-accreditation > div > span:last-child { display: none; }
+}
+@media(max-width:520px) {
+  .premium-ui-restored .hero-copy { display: contents; }
+  .premium-ui-restored .hero-copy h1 { font-size: clamp(26px,7.4vw,36px); line-height: 1.23; letter-spacing: -.7px; }
+  .premium-ui-restored .hero-description { font-size: 12px; }
+  .premium-ui-restored .creative-section-heading h2 { font-size: 28px; }
+  .premium-ui-restored .creative-program-grid { grid-template-columns: 1fr; gap: 20px; }
+  .premium-ui-restored .creative-program { min-height: 0; padding-bottom: 22px; }
+  .premium-ui-restored .creative-program h3 { font-size: 21px; }
+  .premium-ui-restored .restored-program-art { aspect-ratio: 5/4; }
+  .premium-ui-restored .journey-copy h2 { font-size: 25px; letter-spacing: -.5px; }
+  .premium-ui-restored .journey-course h3 { font-size: 24px; }
+  .premium-ui-restored .journey-course a { font-size: 8px; }
+  .premium-ui-restored .journey-prompt > p { font-size: 23px; }
+  .premium-ui-restored .program-hero-grid h1 { font-size: 32px; }
+  .premium-ui-restored .program-hero-facts { gap: 10px; }
+  .premium-ui-restored .program-hero-facts > div { padding: 10px; }
+  .premium-ui-restored .voice-editorial { padding: 18px; }
+  .premium-ui-restored .voice-portraits { gap: 9px; }
+  .premium-ui-restored .voice-portraits img { border-radius: 7px; }
+}
+@media(max-height:740px) and (max-width:800px) {
+  .premium-ui-restored .journey-copy h2 { font-size: 22px; }
+  .premium-ui-restored .journey-copy p:not(.creative-eyebrow) { font-size: 10px; }
+}
+[data-theme=dark] .premium-ui-restored {
+  --creative-paper: #0b0c10;
+  --creative-ink: #eaeaea;
+  --creative-line: #262732;
+  background: #0b0c10;
+}
+[data-theme=dark] .premium-ui-restored :is(.creative-hero,.creative-directory,.editorial-hero,.program-editorial-hero,.campaign-journey) { background: #0b0c10; }
+[data-theme=dark] .premium-ui-restored :is(.creative-programs,.signature-experience,.institutional-timeline) { background: #12131a; }
+[data-theme=dark] .premium-ui-restored .creative-home > section:nth-of-type(4n) { background-color: #0b0c10; }
+[data-theme=dark] .premium-ui-restored .creative-program,
+[data-theme=dark] .premium-ui-restored .signature-workspace { background: #151620; color: #eaeaea; border-color: #34343f; }
+[data-theme=dark] .premium-ui-restored :is(.hero-copy h1,.editorial-title,.program-hero-grid h1,.creative-section-heading h2,.journey-copy h2,.signature-module-copy h3) { color: #eaeaea; }
+[data-theme=dark] .premium-ui-restored .signature-module-list { background: #1b1c24; }
+[data-theme=dark] .premium-ui-restored .signature-module-list button { color: #ccc; border-color: #34343f; }
+[data-theme=dark] .premium-ui-restored .program-hero-facts > div { background: #151620; border-color: #34343f; }
+[data-theme=dark] .premium-ui-restored .program-hero-facts strong { color: #eaeaea; }
+[data-theme=dark] .premium-ui-restored :is(.hero-description,.editorial-copy > p:not(.creative-eyebrow),.program-hero-description,.creative-section-heading > p,.creative-program > p:not(.program-category),.journey-copy p:not(.creative-eyebrow)) { color: #b7b7bd; }
+[data-theme=dark] .premium-ui-restored .creative-home #demo-enquiry { background: #12131a; }
+
+@media(max-width:520px) {
+  .premium-ui-restored .hero-layout { gap: 12px; }
+  .premium-ui-restored .hero-copy .creative-eyebrow { margin-bottom: 4px; }
+  .premium-ui-restored .hero-description { margin-block: 12px; }
+  .premium-ui-restored .creative-hero .creative-actions { gap: 10px; }
+  .premium-ui-restored .creative-hero .creative-actions > a { padding-inline: 13px; font-size: 10px; }
+}
+
+.premium-ui-restored .font-mono { font-family: "Raleway", system-ui, sans-serif; }
+.premium-ui-restored :is(.lab-art>strong,.course-stage-mark,.voice-quote-mark) { font-family: var(--restored-heading); }
+.premium-ui-restored .has-restored-course-banner .program-hero-grid { grid-template-columns: 1fr; text-align: center; }
+.premium-ui-restored .has-restored-course-banner .program-hero-grid h1,
+.premium-ui-restored .has-restored-course-banner .program-hero-tagline,
+.premium-ui-restored .has-restored-course-banner .program-hero-description { margin-inline: auto; max-width: 960px; }
+.premium-ui-restored .has-restored-course-banner .creative-eyebrow,
+.premium-ui-restored .has-restored-course-banner .creative-actions { justify-content: center; }
+.premium-ui-restored .has-restored-course-banner .program-hero-facts { grid-template-columns: repeat(4,minmax(0,1fr)); max-width: 1000px; margin-inline: auto; text-align: left; }
+@media(max-width:600px) { .premium-ui-restored .has-restored-course-banner .program-hero-facts { grid-template-columns: 1fr 1fr; } }
+
+/* The Playground's static 2-degree photo tilt is presentation, not a GSAP
+   animation. Recovered full-bleed banners must sit square to the viewport. */
+.premium-ui-restored .is-restored-banner .editorial-photo { transform: none; }
+
+/* Recovered homepage composition: full-bleed billboard, centred positioning
+   and admission actions. The approved studio remains the next visible stage. */
+.premium-ui-restored .hero-meta { display: none; }
+.premium-ui-restored .hero-layout { display: flex; flex-direction: column; align-items: center; gap: 22px; padding-top: 40px; }
+.premium-ui-restored .hero-copy { max-width: 1000px; width: 100%; text-align: center; padding-bottom: 0; }
+.premium-ui-restored .hero-copy .creative-eyebrow { margin-inline: auto; }
+.premium-ui-restored .hero-copy h1 { max-width: 1000px; margin-inline: auto; }
+.premium-ui-restored .hero-line { display: inline-block; vertical-align: top; }
+.premium-ui-restored .hero-line:not(:last-child) { margin-right: .2em; }
+.premium-ui-restored .hero-line>span { display: block; }
+.premium-ui-restored .hero-description { max-width: 760px; margin-inline: auto; text-align: center; }
+.premium-ui-restored .creative-hero .creative-actions { width: 100%; justify-content: center; }
+.premium-ui-restored .hero-authenticity { margin-inline: auto; text-align: left; }
+.premium-ui-restored .hero-studio { width: min(640px,100%); margin: 20px auto 0; }
+@media(max-width:520px) {
+ .premium-ui-restored .hero-layout { padding-top: 28px; gap: 12px; }
+ .premium-ui-restored .hero-copy { display: contents; }
+ .premium-ui-restored .hero-copy h1 { width: 100%; text-align: center; }
+ .premium-ui-restored .hero-line { display: block; }
+ .premium-ui-restored .hero-line:not(:last-child) { margin-right: 0; }
+ .premium-ui-restored .hero-description { text-align: center; }
+ .premium-ui-restored .hero-authenticity { width: 100%; }
+ .premium-ui-restored .hero-studio { margin-top: 20px; }
+}

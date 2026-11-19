@@ -5,6 +5,16 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const message = body?.message;
+    const history = Array.isArray(body?.history)
+      ? body.history
+          .filter((turn: unknown) => {
+            if (!turn || typeof turn !== "object") return false;
+            const candidate = turn as { role?: unknown; content?: unknown };
+            return (candidate.role === "user" || candidate.role === "assistant") && typeof candidate.content === "string";
+          })
+          .slice(-10)
+          .map((turn: { role: "user" | "assistant"; content: string }) => ({ role: turn.role, content: turn.content.slice(0, 500) }))
+      : [];
 
     if (!message || typeof message !== "string") {
       return NextResponse.json(
@@ -30,7 +40,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Retrieve grounded response from the trusted DIDM knowledge base
-    const response = queryCourseCounsellor(cleanMessage);
+    const response = queryCourseCounsellor(cleanMessage, history);
 
     return NextResponse.json({
       ok: true,

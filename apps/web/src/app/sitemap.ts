@@ -1,3 +1,4 @@
+import { PUBLISHED_STUDENT_REFLECTIONS } from "@/lib/public/student-stories";
 import { MetadataRoute } from "next";
 import { getAllCourses, getAllCentres } from "@/lib/content";
 import { getAllNewsArticles } from "@/lib/news-events";
@@ -182,6 +183,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
+  staticRoutes.push({url:`${baseUrl}/course-finder`,changeFrequency:"monthly",priority:0.8});
+  staticRoutes.push(...PUBLISHED_STUDENT_REFLECTIONS.map(story=>({url:`${baseUrl}/stories/${story.slug}`,changeFrequency:"monthly" as const,priority:0.6})));
   return [...staticRoutes, ...courseRoutes, ...centreRoutes, ...newsRoutes];
 }
 

@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "briefChoices": true,
+      "reducedMotion": true,
+      "noOverflow": true,
+      "chapterNavigation": true,
+      "axeViolations": 0
+    },
+    {
+      "width": 768,
+      "briefChoices": true,
+      "reducedMotion": true,
+      "noOverflow": true,
+      "chapterNavigation": true,
+      "axeViolations": 0
+    },
+    {
+      "width": 390,
+      "briefChoices": true,
+      "reducedMotion": true,
+      "noOverflow": true,
+      "chapterNavigation": true,
+      "axeViolations": 0
+    },
+    {
+      "normalMotion": true,
+      "liveReducedMotion": true
+    }
+  ],
+  "errors": []
+}

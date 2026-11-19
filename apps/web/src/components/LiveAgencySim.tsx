@@ -248,7 +248,7 @@ export function LiveAgencySim() {
                 <div className="space-y-4 animate-in zoom-in-95">
                   <div className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col sm:flex-row gap-4 items-center">
                     <div className="relative w-full sm:w-44 aspect-square rounded-xl overflow-hidden bg-neutral-800 shrink-0">
-                      <Image
+                      <Image sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                         src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop"
                         alt="Meta Instagram Feed Creative"
                         fill

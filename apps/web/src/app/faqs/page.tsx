@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import faqsData from "@/data/website/about-faqs.json";
 import { SITE_BRAND } from "@/lib/content";
+import { MotionSection } from "@/components/motion/MotionSection";
 
 export default function FAQsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -59,7 +60,7 @@ export default function FAQsPage() {
   };
 
   return (
-    <div className="py-12 md:py-20">
+    <div className="creative-page creative-directory py-12 md:py-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -67,7 +68,7 @@ export default function FAQsPage() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
         {/* Breadcrumb & Header */}
-        <div className="max-w-3xl space-y-4">
+        <MotionSection preset="editorial" className="max-w-3xl space-y-4">
           <nav aria-label="Breadcrumb" className="text-xs font-mono text-neutral-500 flex items-center gap-2">
             <Link href="/" className="hover:text-brand-red">Home</Link>
             <span>/</span>
@@ -85,14 +86,14 @@ export default function FAQsPage() {
           <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
             Find clear, transparent answers about backup classes, doubt sessions, placement cell commitments, LMS access, and schedule flexibility across all DIDM branches.
           </p>
-        </div>
+        </MotionSection>
 
         {/* Search & Category Filter */}
-        <div className="p-6 rounded-3xl bg-neutral-100/70 dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-4">
+        <MotionSection preset="fadeUp" className="p-6 rounded-3xl bg-neutral-100/70 dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-4">
           <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
             <div className="relative w-full sm:w-80">
               <Search className="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
+              <input aria-label="Search queries or policies..."
                 type="text"
                 placeholder="Search queries or policies..."
                 value={searchQuery}
@@ -134,10 +135,10 @@ export default function FAQsPage() {
               </button>
             </div>
           </div>
-        </div>
+        </MotionSection>
 
         {/* Accordions */}
-        <div className="space-y-4">
+        <MotionSection preset="depth" className="space-y-4">
           {filteredFaqs.map((faq) => {
             const isOpen = !!openItems[faq.id];
             return (
@@ -176,10 +177,10 @@ export default function FAQsPage() {
               </div>
             );
           })}
-        </div>
+        </MotionSection>
 
         {/* AI Counsellor Cross-Link Banner */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-neutral-900 text-white space-y-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <MotionSection preset="scale" className="p-8 sm:p-10 rounded-3xl bg-neutral-900 text-white space-y-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-xl">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase text-brand-red font-bold">
               <Sparkles className="w-4 h-4" />
@@ -208,7 +209,7 @@ export default function FAQsPage() {
               Call 88005 05151
             </a>
           </div>
-        </div>
+        </MotionSection>
       </div>
     </div>
   );

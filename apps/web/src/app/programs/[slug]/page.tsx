@@ -18,10 +18,14 @@ import {
 } from "lucide-react";
 import { getAllCourses, getCourseBySlug, getAllCentres, SITE_BRAND } from "@/lib/content";
 import { COURSE_DETAIL_MEDIA } from "@/data/didm-media";
+import { ProgramSignature } from "@/components/creative/ProgramSignature";
 import { CourseHero } from "@/components/course/CourseHero";
 import { CourseLearningStudio } from "@/components/course/CourseLearningStudio";
 import { SyllabusAccordion } from "@/components/SyllabusAccordion";
 import { FAQSection } from "@/components/FAQSection";
+import { MotionSection } from "@/components/motion/MotionSection";
+import { MotionHeading } from "@/components/motion/MotionHeading";
+import { StaggeredCardGrid } from "@/components/motion/StaggeredCardGrid";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -113,7 +117,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
   const allTools = Array.from(new Set(course.syllabus.flatMap((s) => s.toolsUsed))).slice(0, 16);
 
   return (
-    <div className="space-y-12 sm:space-y-16 pb-16">
+    <div className="creative-page space-y-12 sm:space-y-16 pb-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
@@ -121,26 +125,23 @@ export default async function CourseDetailPage({ params }: PageProps) {
 
       {/* PHASE 2: Compact, Cohesive Course Hero */}
       <CourseHero course={course} courseMedia={courseMedia} />
+      <div id="program-explorer"><ProgramSignature course={course}/></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         {/* PHASE 3 & 4: Signature Single-View Learning Studio */}
         <CourseLearningStudio course={course} />
 
         {/* Practical Pedagogy: The 3 DIDM Learning Pillars */}
-        <div className="space-y-6">
-          <div className="max-w-2xl">
-            <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-              Practical Methodology
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mt-1">
-              How learning is structured at DIDM
-            </h2>
-            <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1">
-              Every course is built on real budgets, agency desk workflows, and verified portfolio output.
-            </p>
-          </div>
+        <MotionSection preset="stagger" className="space-y-6">
+          <MotionHeading
+            eyebrow="Practical Methodology"
+            title="How learning is structured at DIDM"
+            subtitle="Every course is built on real budgets, agency desk workflows, and verified portfolio output."
+            as="h2"
+            size="lg"
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggeredCardGrid columns={3} stagger={0.12}>
             <div className="p-6 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-2 shadow-sm">
               <div className="text-xs font-mono uppercase text-brand-red font-bold">Pillar 01</div>
               <h3 className="text-base font-bold text-neutral-900 dark:text-white">Live Ad Budget Execution</h3>
@@ -162,23 +163,19 @@ export default async function CourseDetailPage({ params }: PageProps) {
                 Resume optimization, technical mock interviews, and continuous recruitment drives across our 650+ corporate partner network.
               </p>
             </div>
-          </div>
-        </div>
+          </StaggeredCardGrid>
+        </MotionSection>
 
         {/* Detailed Curriculum Reference: Dynamic Syllabus Accordion */}
-        <div id="syllabus" className="space-y-6 sm:space-y-8 pt-4">
+        <MotionSection id="syllabus" preset="editorial" className="space-y-6 sm:space-y-8 pt-4">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-200 dark:border-neutral-800 pb-4">
-            <div className="max-w-2xl">
-              <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-                Full Curriculum Reference
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mt-1">
-                Comprehensive Syllabus for {course.shortName}
-              </h2>
-              <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1">
-                Explore each module in detail, including learning objectives, tools used, and capstone deliverables.
-              </p>
-            </div>
+            <MotionHeading
+              eyebrow="Full Curriculum Reference"
+              title={`Comprehensive Syllabus for ${course.shortName}`}
+              subtitle="Explore each module in detail, including learning objectives, tools used, and capstone deliverables."
+              as="h2"
+              size="lg"
+            />
 
             <Link
               href={`/enquire?p=${course.id}`}
@@ -189,22 +186,18 @@ export default async function CourseDetailPage({ params }: PageProps) {
           </div>
 
           <SyllabusAccordion modules={formattedModules} />
-        </div>
+        </MotionSection>
 
         {/* Software & Tools Showcase */}
         {allTools.length > 0 && (
-          <div className="p-6 sm:p-8 rounded-3xl bg-neutral-100/70 dark:bg-[#14141C] border border-neutral-200 dark:border-neutral-800 space-y-5">
-            <div>
-              <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-                Industry Stacks Mastered
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mt-1">
-                Software & Platforms Mastered in {course.shortName}
-              </h2>
-              <p className="text-xs sm:text-sm text-neutral-500 mt-1">
-                Get hands-on training with 40+ licensed marketing tools used by digital agencies and high-growth startups.
-              </p>
-            </div>
+          <MotionSection preset="scale" className="p-6 sm:p-8 rounded-3xl bg-neutral-100/70 dark:bg-[#14141C] border border-neutral-200 dark:border-neutral-800 space-y-5">
+            <MotionHeading
+              eyebrow="Industry Stacks Mastered"
+              title={`Software & Platforms Mastered in ${course.shortName}`}
+              subtitle="Get hands-on training with 40+ licensed marketing tools used by digital agencies and high-growth startups."
+              as="h2"
+              size="lg"
+            />
             <div className="flex flex-wrap gap-2.5">
               {allTools.map((tool, idx) => (
                 <span
@@ -215,21 +208,19 @@ export default async function CourseDetailPage({ params }: PageProps) {
                 </span>
               ))}
             </div>
-          </div>
+          </MotionSection>
         )}
 
         {/* Profile Alignment & Target Audience */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-5 shadow-sm">
-          <div>
-            <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-              Profile Alignment
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mt-1">
-              Who is this program designed for?
-            </h2>
-          </div>
+        <MotionSection preset="fadeUp" className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-5 shadow-sm">
+          <MotionHeading
+            eyebrow="Profile Alignment"
+            title="Who is this program designed for?"
+            as="h2"
+            size="lg"
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <StaggeredCardGrid columns={3} stagger={0.08}>
             {course.idealFor.map((item, i) => (
               <div
                 key={i}
@@ -241,11 +232,11 @@ export default async function CourseDetailPage({ params }: PageProps) {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
+          </StaggeredCardGrid>
+        </MotionSection>
 
         {/* Campus Network Availability */}
-        <div className="space-y-4 pt-2">
+        <MotionSection preset="editorial" className="space-y-4 pt-2">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <div className="text-xs font-mono uppercase text-brand-red font-bold">
@@ -280,36 +271,33 @@ export default async function CourseDetailPage({ params }: PageProps) {
               </Link>
             ))}
           </div>
-        </div>
+        </MotionSection>
 
         {/* Course-Specific FAQs */}
         {course.faqs.length > 0 && (
-          <div className="max-w-3xl mx-auto space-y-6 pt-4">
-            <div className="text-center space-y-1">
-              <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-                Admissions & FAQs
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white">
-                Frequently Asked Questions About {course.shortName}
-              </h2>
-            </div>
+          <MotionSection preset="editorial" className="max-w-3xl mx-auto space-y-6 pt-4">
+            <MotionHeading
+              eyebrow="Admissions & FAQs"
+              title={`Frequently Asked Questions About ${course.shortName}`}
+              align="center"
+              as="h2"
+              size="lg"
+            />
 
             <FAQSection faqs={course.faqs} />
-          </div>
+          </MotionSection>
         )}
 
         {/* Related Programs Section */}
-        <div className="space-y-6 pt-4 border-t border-neutral-200 dark:border-neutral-800">
-          <div>
-            <div className="text-xs font-mono uppercase text-brand-red font-bold">
-              Alternative Pathways
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mt-1">
-              Explore Related Programs
-            </h2>
-          </div>
+        <MotionSection preset="stagger" className="space-y-6 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+          <MotionHeading
+            eyebrow="Alternative Pathways"
+            title="Explore Related Programs"
+            as="h2"
+            size="lg"
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggeredCardGrid columns={3} stagger={0.1}>
             {relatedCourses.map((rel) => (
               <div
                 key={rel.id}
@@ -344,11 +332,11 @@ export default async function CourseDetailPage({ params }: PageProps) {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
+          </StaggeredCardGrid>
+        </MotionSection>
 
         {/* Final Admissions CTA Banner */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900 text-white text-center space-y-4 border border-neutral-800 shadow-2xl">
+        <MotionSection preset="scale" className="p-8 sm:p-12 rounded-3xl bg-neutral-900 text-white text-center space-y-4 border border-neutral-800 shadow-2xl">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
             Ready to Enroll in {course.shortName}?
           </h2>
@@ -369,7 +357,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
               Compare with Other Programs
             </Link>
           </div>
-        </div>
+        </MotionSection>
       </div>
     </div>
   );

@@ -9,7 +9,11 @@ export interface EnquiryPayload {
   preferredBatch: string;
   consent: boolean;
   sourceUrl?: string;
+  message?: string;
+  organization?: string;
   utmParams?: Record<string, string>;
+  formType?: string;
+  website?: string;
   createdAt?: string;
 }
 

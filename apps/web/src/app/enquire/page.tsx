@@ -6,6 +6,7 @@ import { SITE_DATA } from "@/data/site-data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.didm.in/enquire" },
   title: "Book Free Counseling & Demo Class | DIDM Official",
   description:
     "Schedule a free 1-on-1 counseling session and live classroom demo at any of our 13 physical centres or live online campus. Toll-free: 88005 05151.",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function EnquirePage() {
   return (
-    <div className="py-12 md:py-20">
+    <div className="creative-page creative-directory py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="max-w-3xl space-y-4">

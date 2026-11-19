@@ -1,6 +1,7 @@
 import { getAllCentres, getAllCourses } from "@/lib/content";
 import { getBrochureModules52, getCourseComparison, getFaqKnowledge, getInstituteInformation, getToolsAndCertifications } from "@/lib/brochure";
 import { getAboutTeam, getAboutFaqs, getAboutAchievements, getAboutUsData } from "@/lib/website";
+import { queryTrainedCounsellor, type CounsellorTurn } from "./trained-counsellor";
 
 export interface CounsellorResponse {
   answer: string;
@@ -13,9 +14,12 @@ export interface CounsellorResponse {
 const norm = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 
 /** Deterministic structured-data retrieval. This is not presented as generative AI. */
-export function queryCourseCounsellor(query: string): CounsellorResponse {
+export function queryCourseCounsellor(query: string, history: CounsellorTurn[] = []): CounsellorResponse {
   const q = norm(query);
   const qTokens = new Set(q.split(/\s+/));
+
+  const trainedResponse = queryTrainedCounsellor(query, history);
+  if (trainedResponse) return trainedResponse;
 
   // 1. Careers & Job Openings (check early to capture employment intent)
   if (["job", "jobs", "hiring", "vacancy", "openings", "work at didm", "career openings"].some((term) => q.includes(term))) {

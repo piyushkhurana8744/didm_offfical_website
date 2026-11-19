@@ -7,60 +7,32 @@ import { BookOpen, Sparkles, FileText, ArrowRight, Download, CheckCircle2, Mail,
 import { DIDM_MEDIA } from "@/data/didm-media";
 
 export default function LearnPage() {
+  const [copyStatus, setCopyStatus] = useState("");
+  const promptBlueprints = ["Act as a marketing writing partner. Ask me for the audience, offer, channel and brand voice. Suggest five distinct campaign hooks. Mark assumptions and do not invent customer reviews or results. Include a human fact-checking checklist.", "Help me plan a technical SEO audit. Ask for a non-sensitive crawl summary. Group issues by crawling, indexing, page structure and performance. Explain how to validate each finding without promising rankings.", "Help me outline a marketing reporting dashboard. Ask for the business objective, metric definitions and date range. Separate observations from hypotheses and list tracking limitations. Do not infer causation from correlation."];
+  const copyPrompt = async (index: number) => { try { await navigator.clipboard.writeText(promptBlueprints[index]); setCopyStatus(`Prompt ${index + 1} copied. Review it before using it with an AI tool.`); } catch { setCopyStatus("Clipboard access is unavailable. Expand the prompt text below and copy it manually."); } };
   const [activeTab, setActiveTab] = useState<"guides" | "prompts" | "lessons">("guides");
 
   const guides = [
-    {
-      title: "The 2026 Full-Stack Performance Marketing Architecture",
-      readTime: "12 Min Read",
-      summary: "How modern high-growth direct-to-consumer brands structure Meta CAPI, Google PMax, and attribution models to scale without losing margin.",
-      tag: "Deep Guide",
-      slug: "/article",
-    },
-    {
-      title: "Technical SEO Checklist for AI Search (GEO) in 2026",
-      readTime: "8 Min Read",
-      summary: "How to optimize websites for Google's AI Overviews, Perplexity citations, and ChatGPT Search results using structured schema and entity mapping.",
-      tag: "Search Engineering",
-      slug: "/article",
-    },
-    {
-      title: "How to Build a High-Converting Landing Page with Zero Coding",
-      readTime: "10 Min Read",
-      summary: "Step-by-step wireframe, typography rules, mobile conversion anchors, and Google Tag Manager tracking protocols.",
-      tag: "Conversion Rate CRO",
-      slug: "/article",
-    },
+    { title: "The 2026 Performance Marketing Architecture", readTime: "Guide", summary: "Explore an introduction to performance marketing systems, conversion tracking and reporting.", tag: "Marketing guide", slug: "/article" },
+    { title: "Explore the digital marketing curriculum", readTime: "Curriculum", summary: "Follow the Master course roadmap and explore the topics behind a broad marketing skill set.", tag: "Learning roadmap", slug: "/programs/master-in-digital-marketing-course#course-roadmap" },
+    { title: "Find a course around your goals", readTime: "Interactive", summary: "Answer five short questions and explore explained course matches, career paths and skills exercises.", tag: "Course discovery", slug: "/course-finder" },
   ];
-
   const prompts = [
-    {
-      title: "Meta Ad Creative Hook & Script Generator",
-      tools: "Claude 3.5 Sonnet / GPT-4o",
-      summary: "System prompt that generates 10 high-converting video hook angles (curiosity, pain-point, social proof) for TikTok and Reels.",
-    },
-    {
-      title: "Local Business Google Maps Semantic Review Responder",
-      tools: "ChatGPT-4o",
-      summary: "Automatically craft personalized, keyword-rich review replies that improve local map pack rankings for Google Business Profiles.",
-    },
-    {
-      title: "Screaming Frog Crawl Log Anomaly Extractor",
-      tools: "Claude / Code Interpreter",
-      summary: "Feed raw 50,000-row crawl files to immediately isolate broken canonicals, redirect loops, and orphaned indexable URLs.",
-    },
+    {title:"Campaign hook brainstorming",tools:"AI writing exercise",summary:"Explore campaign ideas from an audience, offer and brand brief, with a human fact-checking step."},
+    {title:"Technical SEO audit planning",tools:"AI planning exercise",summary:"Organise a non-sensitive crawl summary into issues, priorities and checks. Verify findings yourself."},
+    {title:"Marketing measurement planning",tools:"AI reporting exercise",summary:"Define objectives and metrics, separate observations from hypotheses and document tracking limitations."},
   ];
 
   const lessons = [
     {
-      title: "Setting up Meta Conversions API (CAPI) with Stape & Cloudflare",
-      duration: "18 Min Video + Code Snippets",
-      summary: "Bypass browser cookie blockers and restore 95%+ server-side conversion event accuracy.",
+      title: "Explore how clicks become enquiries",
+      duration: "Interactive exercise",
+      summary: "Change a campaign budget, click cost and conversion rate to explore an illustrative marketing funnel.",
     },
     {
-      title: "Building an Autonomous AI Social Media Scheduler with Make.com",
-      duration: "24 Min Video + JSON Blueprint",
-      summary: "Create a webhook that accepts blog posts, summarizes them via GPT-4o, renders graphics in Bannerbear, and posts to LinkedIn.",
+      title: "Check your marketing fundamentals",
+      duration: "Interactive exercise",
+      summary: "Answer four questions about SEO, paid media, content and analytics, then explore explanations and next steps.",
     },
   ];
 
@@ -73,11 +45,10 @@ export default function LearnPage() {
             FREE KNOWLEDGE REPOSITORY
           </div>
           <h1 className="text-3xl sm:text-5xl font-normal text-neutral-900 dark:text-white leading-[1.08]">
-            Practical marketing playbooks & <em>AI automation templates</em>.
+            Explore marketing. <em>Put your curiosity to work.</em>
           </h1>
           <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Free high-utility resources authored by DIDM senior mentors. No generic fluff — genuine
-            agency workflows, prompt engineering systems, and campaign blueprints.
+            Explore marketing concepts, try prompt-writing exercises and put your thinking to work in the interactive learning lab.
           </p>
         </div>
 
@@ -120,15 +91,16 @@ export default function LearnPage() {
 
         {/* Tabs Filter */}
         <div className="space-y-8">
-          <div className="flex items-center gap-3 border-b border-neutral-200 dark:border-neutral-800 pb-3">
+          <div className="flex flex-wrap items-center gap-3 border-b border-neutral-200 dark:border-neutral-800 pb-3">
             {[
-              { id: "guides", label: "In-Depth Guides" },
+              { id: "guides", label: "Guides & Learning Paths" },
               { id: "prompts", label: "AI Prompt Templates" },
-              { id: "lessons", label: "Free Micro-Lessons" },
+              { id: "lessons", label: "Interactive Exercises" },
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                aria-pressed={activeTab === tab.id}
+                onClick={() => setActiveTab(tab.id as "guides" | "prompts" | "lessons")}
                 className={`px-4 py-2 rounded-full text-xs font-semibold transition ${
                   activeTab === tab.id
                     ? "bg-brand-red text-white"
@@ -140,7 +112,7 @@ export default function LearnPage() {
             ))}
           </div>
 
-          {/* Tab 1: In-Depth Guides */}
+          {/* Tab 1: Guides & Learning Paths */}
           {activeTab === "guides" && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in">
               {guides.map((g, i) => (
@@ -163,7 +135,7 @@ export default function LearnPage() {
                       href={g.slug}
                       className="text-xs font-semibold text-brand-red hover:underline flex items-center gap-1"
                     >
-                      <span>Read Guide</span>
+                      <span>Explore resource</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -174,7 +146,7 @@ export default function LearnPage() {
 
           {/* Tab 2: AI Prompt Templates */}
           {activeTab === "prompts" && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in">
+            <div><p role="status" className="mb-4 text-sm">{copyStatus}</p><div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in">
               {prompts.map((p, i) => (
                 <div
                   key={i}
@@ -190,20 +162,15 @@ export default function LearnPage() {
                     </p>
                   </div>
                   <div className="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800">
-                    <Link
-                      href="/article"
-                      className="text-xs font-semibold text-ai dark:text-ai-dark hover:underline flex items-center gap-1"
-                    >
-                      <span>Copy Prompt Blueprint</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                    <button type="button" onClick={() => copyPrompt(i)} className="text-xs font-semibold text-ai dark:text-ai-dark hover:underline flex items-center gap-1">Copy prompt blueprint <ArrowRight className="w-3.5 h-3.5" /></button>
+                    <details className="mt-3 text-xs leading-relaxed text-neutral-600 dark:text-neutral-400"><summary className="cursor-pointer">View prompt text</summary><p className="mt-3 select-text">{promptBlueprints[i]}</p></details>
                   </div>
                 </div>
               ))}
-            </div>
+            </div></div>
           )}
 
-          {/* Tab 3: Free Micro-Lessons */}
+          {/* Tab 3: Interactive Exercises */}
           {activeTab === "lessons" && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in">
               {lessons.map((l, i) => (
@@ -222,10 +189,10 @@ export default function LearnPage() {
                   </div>
                   <div className="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800">
                     <Link
-                      href="/enquire"
+                      href={i === 0 ? "/course-finder#campaign-lab" : "/course-finder#skill-check"}
                       className="btn-ghost text-xs py-2 px-4 block text-center font-semibold"
                     >
-                      Watch Free Lesson
+                      Try free exercise
                     </Link>
                   </div>
                 </div>
@@ -240,13 +207,13 @@ export default function LearnPage() {
             <Mail className="w-5 h-5" />
           </div>
           <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
-            Get Weekly Marketing & AI Playbooks in Your Inbox
+            Explore your next learning step
           </h3>
           <p className="text-xs text-neutral-500">
-            Newsletter registration is not currently connected. Browse the published resources above or contact DIDM for learning updates.
+            Explore course recommendations, career pathways and practical learning exercises. No sign-up needed.
           </p>
 
-          <Link href="/enquire" className="btn-ghost text-xs py-2.5 px-4 font-bold">Request learning updates</Link>
+          <Link href="/course-finder" className="btn-ghost text-xs py-2.5 px-4 font-bold">Open the learning lab</Link>
         </div>
       </div>
     </div>

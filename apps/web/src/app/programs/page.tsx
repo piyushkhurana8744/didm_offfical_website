@@ -1,3 +1,4 @@
+import { discoveryCatalog } from "@/lib/student/discovery";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2, Sparkles, BookOpen, Clock, Award, Layers, ShieldCheck, Compass } from "lucide-react";
@@ -5,6 +6,7 @@ import { getAllCourses, SITE_BRAND } from "@/lib/content";
 import type { Metadata } from "next";
 import { COURSE_CARD_MEDIA, DIDM_MEDIA } from "@/data/didm-media";
 import { RevealOnScroll } from "@/components/motion/RevealOnScroll";
+import { CourseFinder } from "@/components/student/CourseFinder";
 
 export const metadata: Metadata = {
   title: "All Digital Marketing Courses & Certifications | DIDM",
@@ -32,7 +34,7 @@ export default function ProgramsPage() {
   };
 
   return (
-    <div className="py-12 md:py-20">
+    <div className="creative-page creative-directory py-12 md:py-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
@@ -42,7 +44,7 @@ export default function ProgramsPage() {
         {/* Header */}
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red-soft dark:bg-brand-red/10 text-brand-red text-xs font-mono font-semibold">
-            ACCREDITED PROGRAM DIRECTORY
+            EXPLORE YOUR LEARNING OPTIONS
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-normal text-neutral-900 dark:text-white leading-[1.1] break-words">
             Career programs engineered for <em>practical digital mastery</em>.
@@ -188,6 +190,8 @@ export default function ProgramsPage() {
             ))}
           </div>
         </div>
+
+        <div className="student-page rounded-3xl"><CourseFinder courses={discoveryCatalog(courses)} /></div>
 
         {/* Decision Guide Banner */}
         <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900 text-white space-y-8">

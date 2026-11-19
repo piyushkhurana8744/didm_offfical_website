@@ -1,0 +1,26 @@
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowRight, Check, RotateCcw } from "lucide-react";
+import { CAREER_PATHS, SKILL_QUESTIONS, simulateFunnel } from "@/lib/student/discovery";
+import type { DiscoveryCourse } from "@/lib/student/discovery";
+
+export function CareerExplorer({courses}:{courses:DiscoveryCourse[]}) {
+  const [selected,setSelected]=useState<string>(CAREER_PATHS[0].id);
+  const path=CAREER_PATHS.find(p=>p.id===selected)!;
+  const course=courses.find(c=>c.id===path.courseId);
+  return <div className="career-explorer"><div className="career-choices" role="group" aria-label="Explore a career path">{CAREER_PATHS.map(p=><button key={p.id} aria-pressed={selected===p.id} onClick={()=>setSelected(p.id)}>{p.title}<ArrowRight size={16}/></button>)}</div><div className="career-detail" aria-live="polite"><p className="student-eyebrow">A SUGGESTED LEARNING PATH</p><h3>{path.title}</h3><p>A practical progression to explore, with projects you can use to demonstrate your thinking.</p><ol>{path.skills.map((skill,i)=><li key={skill}><span>0{i+1}</span><div><strong>{skill}</strong><p>{path.projects[i]}</p></div></li>)}</ol>{course&&<Link className="student-inline-link" href={`/programs/${course.slug}`}>Explore {course.shortName} curriculum <ArrowRight size={16}/></Link>}<small>Illustrative career guidance. Projects are suggestions, not verified student work or a job guarantee.</small></div></div>;
+}
+
+export function SkillQuiz() {
+  const [answers,setAnswers]=useState<Record<number,number>>({});
+  const [submitted,setSubmitted]=useState(false);
+  const score=SKILL_QUESTIONS.reduce((total,q,i)=>total+(answers[i]===q.correct?1:0),0);
+  return <div className="skill-quiz"><div className="quiz-intro"><p className="student-eyebrow">A QUICK SELF-CHECK</p><h3>Know your starting point.</h3><p>Four questions. A little insight into how you think about marketing.</p>{submitted&&<div className="quiz-score" role="status"><strong>{score}<span> / {SKILL_QUESTIONS.length}</span></strong><p>{score===4?"A strong start. Put those concepts into practice.":"Every skill starts somewhere. Use the explanations to plan what to learn next."}</p></div>}</div><form onSubmit={e=>{e.preventDefault();setSubmitted(true);}}><div className="quiz-questions">{SKILL_QUESTIONS.map((q,i)=><fieldset key={q.skill}><legend><span>0{i+1} / {q.skill}</span>{q.question}</legend>{q.options.map((o,j)=><label key={o}><input required type="radio" name={`question-${i}`} checked={answers[i]===j} disabled={submitted} onChange={()=>setAnswers({...answers,[i]:j})}/>{o}</label>)}{submitted&&<p className={`quiz-explanation ${answers[i]===q.correct?"is-correct":""}`}><Check size={16}/><span><strong>{answers[i]===q.correct?"Correct. ":"Keep learning. "}</strong>{q.why}</span></p>}</fieldset>)}</div>{!submitted?<button className="student-primary" disabled={Object.keys(answers).length<SKILL_QUESTIONS.length}>See my skill breakdown <ArrowRight size={16}/></button>:<div className="student-actions"><button type="button" className="student-text-button" onClick={()=>{setAnswers({});setSubmitted(false);}}><RotateCcw size={15}/> Try again</button><a href="#finder">Find a learning path <ArrowRight size={16}/></a></div>}<p className="finder-method">A learning exercise, not an accredited assessment. Answers are not stored or submitted.</p></form></div>;
+}
+
+export function FunnelSimulator() {
+  const [budget,setBudget]=useState(10000),[cpc,setCpc]=useState(25),[rate,setRate]=useState(5);
+  const result=simulateFunnel(budget,cpc,rate);
+  return <div className="funnel-lab"><div><p className="student-eyebrow">LEARNING BY DOING</p><h3>See the story<br/>behind a campaign.</h3><p>Move the sliders. See how ad costs and your landing page influence the same budget.</p><label htmlFor="lab-budget">Campaign budget <output htmlFor="lab-budget">₹{budget.toLocaleString("en-IN")}</output></label><input id="lab-budget" type="range" min="1000" max="50000" step="1000" value={budget} onChange={e=>setBudget(+e.target.value)}/><label htmlFor="lab-cpc">Cost per click <output htmlFor="lab-cpc">₹{cpc}</output></label><input id="lab-cpc" type="range" min="5" max="100" step="5" value={cpc} onChange={e=>setCpc(+e.target.value)}/><label htmlFor="lab-rate">Enquiry conversion rate <output htmlFor="lab-rate">{rate}%</output></label><input id="lab-rate" type="range" min="1" max="20" value={rate} onChange={e=>setRate(+e.target.value)}/></div><div className="funnel-output" aria-live="polite" aria-atomic="true"><span className="student-eyebrow">YOUR ILLUSTRATIVE FUNNEL</span><div className="funnel-stage"><span>01 / Clicks to your page</span><strong>{result.visits.toLocaleString("en-IN")}</strong><div style={{width:"100%"}}/></div><div className="funnel-stage"><span>02 / Estimated enquiries</span><strong>{result.enquiries}</strong><div style={{width:`${Math.max(rate,3)}%`}}/></div><div className="funnel-cost"><span>Estimated cost per enquiry</span><strong>{result.costPerEnquiry===null?"—":`₹${Math.round(result.costPerEnquiry).toLocaleString("en-IN")}`}</strong></div><p>Budget ÷ cost per click = visits.<br/>Visits × conversion rate = enquiries.</p><small>Illustration only. Real campaigns vary. Excludes fees, taxes and other costs; this is not an earnings forecast.</small></div></div>;
+}

@@ -1,0 +1,3215 @@
+[
+  {
+    "path": "apps/web/next-env.d.ts",
+    "lines": 6,
+    "bytes": 266,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/tailwind.config.ts",
+    "lines": 70,
+    "bytes": 1884,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/package.json",
+    "lines": 43,
+    "bytes": 1400,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/tsconfig.json",
+    "lines": 41,
+    "bytes": 701,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/postcss.config.js",
+    "lines": 7,
+    "bytes": 84,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/next.config.ts",
+    "lines": 205,
+    "bytes": 5249,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "NODE_ENV"
+    ]
+  },
+  {
+    "path": "apps/web/src/types/content.ts",
+    "lines": 85,
+    "bytes": 1823,
+    "exports": [
+      "SyllabusTopic",
+      "Course",
+      "Centre",
+      "ReviewStory",
+      "FAQItem",
+      "RedirectRule"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/types/node-sqlite.d.ts",
+    "lines": 13,
+    "bytes": 434,
+    "exports": [
+      "StatementSync",
+      "DatabaseSync"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/types/backend.ts",
+    "lines": 50,
+    "bytes": 1212,
+    "exports": [
+      "EnquiryPayload",
+      "EnquiryResponse",
+      "CourseRepository",
+      "CentreRepository",
+      "EnquiryService",
+      "RedirectService"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/robots.ts",
+    "lines": 13,
+    "bytes": 261,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/sitemap.ts",
+    "lines": 187,
+    "bytes": 4516,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/layout.tsx",
+    "lines": 99,
+    "bytes": 3661,
+    "exports": [
+      "viewport",
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/page.tsx",
+    "lines": 102,
+    "bytes": 4909,
+    "exports": [
+      "dynamic",
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/not-found.tsx",
+    "lines": 88,
+    "bytes": 3811,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/config/site-navigation.ts",
+    "lines": 536,
+    "bytes": 21078,
+    "exports": [
+      "NavItemStatus",
+      "NavVisibility",
+      "NavItem",
+      "MegaMenuColumn",
+      "MegaMenuConfig",
+      "UTILITY_NAVIGATION",
+      "TRAINING_MEGA_MENU",
+      "CENTRES_MEGA_MENU",
+      "ABOUT_DROPDOWN",
+      "RESOURCES_MEGA_MENU",
+      "FOOTER_COLUMNS"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/styles/campaign.css",
+    "lines": 29,
+    "bytes": 15353,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/styles/premium-restoration.css",
+    "lines": 372,
+    "bytes": 23378,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/styles/editorial.css",
+    "lines": 31,
+    "bytes": 17769,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/styles/globals.css",
+    "lines": 268,
+    "bytes": 6035,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/styles/creative.css",
+    "lines": 81,
+    "bytes": 12621,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/Navbar.tsx",
+    "lines": 1065,
+    "bytes": 52664,
+    "exports": [
+      "Navbar"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/EnquiryForm.tsx",
+    "lines": 375,
+    "bytes": 15126,
+    "exports": [
+      "EnquiryForm"
+    ],
+    "fetches": [
+      "/api/enquire"
+    ],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/HomepageEnquiry.tsx",
+    "lines": 2,
+    "bytes": 1292,
+    "exports": [
+      "HomepageEnquiry"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/SyllabusAccordion.tsx",
+    "lines": 110,
+    "bytes": 4441,
+    "exports": [
+      "SyllabusModule",
+      "SyllabusAccordion"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/CenterFinder.tsx",
+    "lines": 224,
+    "bytes": 9775,
+    "exports": [
+      "CenterFinder"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/CinematicHero.tsx",
+    "lines": 181,
+    "bytes": 8662,
+    "exports": [
+      "CinematicHero"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/StoriesFilter.tsx",
+    "lines": 94,
+    "bytes": 3885,
+    "exports": [
+      "StoriesFilter"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/CareerTabs.tsx",
+    "lines": 155,
+    "bytes": 6741,
+    "exports": [
+      "CareerTabs"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/Advisor.tsx",
+    "lines": 351,
+    "bytes": 16016,
+    "exports": [
+      "Advisor"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/HeroVisual.tsx",
+    "lines": 204,
+    "bytes": 9688,
+    "exports": [
+      "HeroVisual"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/HomepageStory.tsx",
+    "lines": 3,
+    "bytes": 3483,
+    "exports": [
+      "HomepageStory"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/FAQSection.tsx",
+    "lines": 51,
+    "bytes": 1813,
+    "exports": [
+      "FAQSection"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/CampusGallery.tsx",
+    "lines": 127,
+    "bytes": 5188,
+    "exports": [
+      "CampusGallery"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/LearningJourneyStory.tsx",
+    "lines": 262,
+    "bytes": 12554,
+    "exports": [
+      "LearningJourneyStory"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/Footer.tsx",
+    "lines": 279,
+    "bytes": 11790,
+    "exports": [
+      "Footer"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/PlacementPartnersMarquee.tsx",
+    "lines": 129,
+    "bytes": 6858,
+    "exports": [
+      "PlacementPartnersMarquee"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/StickyMobileBar.tsx",
+    "lines": 39,
+    "bytes": 1894,
+    "exports": [
+      "StickyMobileBar"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/ToolsMarquee.tsx",
+    "lines": 153,
+    "bytes": 10012,
+    "exports": [
+      "ToolsMarquee"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/ThemeToggle.tsx",
+    "lines": 58,
+    "bytes": 1804,
+    "exports": [
+      "ThemeToggle"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/BrandIcons.tsx",
+    "lines": 430,
+    "bytes": 20634,
+    "exports": [
+      "GoogleAdsIcon",
+      "MetaIcon",
+      "LinkedInIcon",
+      "GoogleAnalyticsIcon",
+      "GoogleSearchConsoleIcon",
+      "GoogleTagManagerIcon",
+      "SemrushIcon",
+      "AhrefsIcon",
+      "ScreamingFrogIcon",
+      "ChatGPTIcon",
+      "ClaudeIcon",
+      "MidjourneyIcon",
+      "ZapierIcon",
+      "HubSpotIcon",
+      "HotjarIcon",
+      "CanvaIcon",
+      "ShopifyIcon",
+      "WordPressIcon",
+      "MailchimpIcon",
+      "GenericToolIcon",
+      "AmazonLogo",
+      "ZomatoLogo",
+      "SwiggyLogo",
+      "PaytmLogo",
+      "MakeMyTripLogo",
+      "NykaaLogo",
+      "PolicyBazaarLogo",
+      "LenskartLogo",
+      "CarDekhoLogo",
+      "OgilvyLogo",
+      "DentsuLogo",
+      "GroupMLogo",
+      "getToolIconComponent",
+      "getRecruiterLogoComponent"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/HomepageCentres.tsx",
+    "lines": 2,
+    "bytes": 1498,
+    "exports": [
+      "HomepageCentres"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/CertificationShowcase.tsx",
+    "lines": 128,
+    "bytes": 5993,
+    "exports": [
+      "CertificationShowcase"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/LiveAgencySim.tsx",
+    "lines": 360,
+    "bytes": 20604,
+    "exports": [
+      "LiveAgencySim"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/HeroAIChatWindow.tsx",
+    "lines": 370,
+    "bytes": 14211,
+    "exports": [
+      "HeroAIChatWindow"
+    ],
+    "fetches": [
+      "/api/counsellor"
+    ],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/PlanBar.tsx",
+    "lines": 85,
+    "bytes": 2759,
+    "exports": [
+      "PlanBar"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/InteractiveCourseDiscovery.tsx",
+    "lines": 281,
+    "bytes": 14144,
+    "exports": [
+      "InteractiveCourseDiscovery"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/news-events.ts",
+    "lines": 115,
+    "bytes": 3264,
+    "exports": [
+      "NewsContentBlock",
+      "NewsMediaItem",
+      "NewsArticle",
+      "getAllNewsArticles",
+      "getFeaturedNewsArticle",
+      "getLatestNewsArticles",
+      "getNewsArticleById",
+      "getNewsArticleBySlug",
+      "getNewsArticlesByCategory",
+      "getNewsCategories",
+      "getRelatedNewsArticles"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/media-coverage.ts",
+    "lines": 136,
+    "bytes": 3916,
+    "exports": [
+      "AwardRecord",
+      "PressCoverageRecord",
+      "NewsArticleRecord",
+      "AwardGalleryItem",
+      "CertificateRecord",
+      "MediaAssetRecord",
+      "AWARDS",
+      "PRESS_COVERAGE",
+      "NEWS_ARTICLES",
+      "AWARD_GALLERIES",
+      "CERTIFICATES",
+      "MEDIA_ASSETS",
+      "SOURCE_PROVENANCE",
+      "getAllAwards",
+      "getAwardBySlug",
+      "getFeaturedAwards",
+      "getAllPressCoverage",
+      "getAllNewsArticles",
+      "getNewsArticleBySlug",
+      "getAwardGallery",
+      "getAllCertificates",
+      "getAllMediaAssets"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/trainees-data.json",
+    "lines": 488,
+    "bytes": 14622,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/didm-college-sessions.json",
+    "lines": 423,
+    "bytes": 32503,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/didm-trainees.ts",
+    "lines": 785,
+    "bytes": 24310,
+    "exports": [
+      "TraineePlacement",
+      "TrainerFaculty",
+      "TestimonialQuote",
+      "DIDM_FACULTY",
+      "TESTIMONIAL_CAROUSEL",
+      "ALL_54_TRAINEES"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/creative-student-voices.json",
+    "lines": 27,
+    "bytes": 1127,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/didm-batches-manifest.json",
+    "lines": 518,
+    "bytes": 25412,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/didm-campuses-contact.json",
+    "lines": 114,
+    "bytes": 4388,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/news-and-events-discovered.json",
+    "lines": 5032,
+    "bytes": 401336,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/creative-college-photos.json",
+    "lines": 171,
+    "bytes": 22084,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/didm-news-events.json",
+    "lines": 164,
+    "bytes": 12808,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/didm-batches-galleries.json",
+    "lines": 126,
+    "bytes": 12177,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/didm-150-reasons.json",
+    "lines": 908,
+    "bytes": 63276,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/didm-media.ts",
+    "lines": 183,
+    "bytes": 8326,
+    "exports": [
+      "VerifiedDidmMedia",
+      "DIDM_MEDIA",
+      "VERIFIED_DIDM_MEDIA",
+      "getVerifiedDidmMedia",
+      "COURSE_CARD_MEDIA",
+      "COURSE_DETAIL_MEDIA",
+      "CENTRE_MEDIA",
+      "getCentreMedia"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/creative-centre-photos.json",
+    "lines": 265,
+    "bytes": 7261,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/site-data.ts",
+    "lines": 569,
+    "bytes": 23956,
+    "exports": [
+      "Program",
+      "Centre",
+      "ReviewStory",
+      "FAQItem",
+      "SITE_DATA"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/news-and-events/article-media.json",
+    "lines": 1026,
+    "bytes": 36235,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/news-and-events/source-provenance.json",
+    "lines": 362,
+    "bytes": 11238,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/news-and-events/articles.json",
+    "lines": 17523,
+    "bytes": 933843,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/brochure/master-52-modules.json",
+    "lines": 574,
+    "bytes": 28625,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/brochure/institute-information.json",
+    "lines": 323,
+    "bytes": 8946,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/brochure/course-comparison.json",
+    "lines": 151,
+    "bytes": 4691,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/brochure/tools-and-certifications.json",
+    "lines": 223,
+    "bytes": 6365,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/brochure/faq-knowledge.json",
+    "lines": 94,
+    "bytes": 4529,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/brochure/didm-brochure.json",
+    "lines": 33,
+    "bytes": 1857,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/website/about-team.json",
+    "lines": 214,
+    "bytes": 10326,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/website/about-faqs.json",
+    "lines": 149,
+    "bytes": 10038,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/website/about-us.json",
+    "lines": 172,
+    "bytes": 8710,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/website/news-events.json",
+    "lines": 5034,
+    "bytes": 398412,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/website/about-source-provenance.json",
+    "lines": 23,
+    "bytes": 851,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/website/about-media.json",
+    "lines": 112,
+    "bytes": 4418,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/website/about-achievements.json",
+    "lines": 190,
+    "bytes": 10313,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/media-coverage/media-assets.json",
+    "lines": 134,
+    "bytes": 5404,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/media-coverage/news-articles.json",
+    "lines": 109,
+    "bytes": 9202,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/media-coverage/certificates.json",
+    "lines": 43,
+    "bytes": 2378,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/media-coverage/award-galleries.json",
+    "lines": 227,
+    "bytes": 9469,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/media-coverage/press-coverage.json",
+    "lines": 143,
+    "bytes": 8354,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/media-coverage/awards.json",
+    "lines": 179,
+    "bytes": 9365,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/data/media-coverage/source-provenance.json",
+    "lines": 72,
+    "bytes": 5358,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/brochure/index.ts",
+    "lines": 208,
+    "bytes": 5002,
+    "exports": [
+      "BrochureModule",
+      "ComparisonFeature",
+      "CourseComparison",
+      "PracticalTool",
+      "VeblikaTool",
+      "CertificationCategory",
+      "ToolsAndCertifications",
+      "InstituteMilestone",
+      "InstituteAward",
+      "CampusLocation",
+      "InstituteInformation",
+      "FaqRecord",
+      "getBrochureModules52",
+      "getBrochureModuleBySequence",
+      "getBrochureModulesByChapters",
+      "getCourseComparison",
+      "getToolsAndCertifications",
+      "getInstituteInformation",
+      "getFaqKnowledge",
+      "getBrochureMaster"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/website/about.ts",
+    "lines": 254,
+    "bytes": 5995,
+    "exports": [
+      "VerificationStatus",
+      "FactualRecordMetadata",
+      "TeamMember",
+      "TeamMemberRecord",
+      "AboutFaq",
+      "AboutFaqRecord",
+      "InstitutionalAward",
+      "CorporateBrand",
+      "AchievementRecord",
+      "AboutAchievements",
+      "TimelineMilestone",
+      "AboutUsData",
+      "AboutMediaCatalog",
+      "AboutSourceProvenance",
+      "getAboutUsData",
+      "getAboutTeamRecords",
+      "getAboutTeam",
+      "getAboutFaqRecords",
+      "getAboutFaqs",
+      "getAboutAchievements",
+      "getAboutMedia",
+      "getAboutProvenance"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/website/index.ts",
+    "lines": 2,
+    "bytes": 26,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/content/index.ts",
+    "lines": 1007,
+    "bytes": 48703,
+    "exports": [
+      "SITE_BRAND",
+      "COURSES",
+      "CENTRES",
+      "REDIRECTS",
+      "getAllCourses",
+      "getCourseBySlug",
+      "getAllCentres",
+      "getCentreBySlug",
+      "findRedirect"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/mongodb/repositories.ts",
+    "lines": 8,
+    "bytes": 1932,
+    "exports": [
+      "newId",
+      "audit",
+      "createWebsiteLead",
+      "countRecentWebsiteLeads"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/mongodb/pages.ts",
+    "lines": 91,
+    "bytes": 5088,
+    "exports": [
+      "DEFAULT_HOME_HEADING",
+      "HomepageContent",
+      "getHomepage",
+      "saveHomepageDraft",
+      "publishHomepage",
+      "restoreHomepage",
+      "homepageRevisions"
+    ],
+    "fetches": [],
+    "envKeys": [
+      "MONGODB_URI"
+    ]
+  },
+  {
+    "path": "apps/web/src/lib/mongodb/connection.ts",
+    "lines": 26,
+    "bytes": 1724,
+    "exports": [
+      "connectMongo"
+    ],
+    "fetches": [],
+    "envKeys": [
+      "CMS_USE_TEST_DATABASE",
+      "MONGODB_DB_NAME",
+      "MONGODB_URI",
+      "TEST_MONGODB_DB_NAME",
+      "TEST_MONGODB_URI"
+    ]
+  },
+  {
+    "path": "apps/web/src/lib/mongodb/models.ts",
+    "lines": 41,
+    "bytes": 8744,
+    "exports": [
+      "RoleDoc",
+      "Permission",
+      "Role",
+      "UserDoc",
+      "User",
+      "SessionDoc",
+      "Session",
+      "LoginAttempt",
+      "AuditLog",
+      "Page",
+      "PageRevision",
+      "PageSection",
+      "Course",
+      "NavigationItem",
+      "SiteSetting",
+      "RedirectRule",
+      "SeoMetadata",
+      "MediaAsset",
+      "MediaUsage",
+      "Form",
+      "FormVersion",
+      "FormSubmission",
+      "Lead",
+      "LeadActivity",
+      "LeadAssignment",
+      "CMS_MODELS",
+      "ensureCmsIndexes"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/counsellor/trained-counsellor.ts",
+    "lines": 205,
+    "bytes": 26594,
+    "exports": [
+      "CounsellorTurn",
+      "queryTrainedCounsellor"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/counsellor/knowledge-base.ts",
+    "lines": 282,
+    "bytes": 24187,
+    "exports": [
+      "CounsellorResponse",
+      "queryCourseCounsellor"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/cms/schema.sql",
+    "lines": 214,
+    "bytes": 7247,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/cms/permissions.ts",
+    "lines": 29,
+    "bytes": 1139,
+    "exports": [
+      "ROLE_PERMISSIONS",
+      "RoleId",
+      "hasPermission"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/lib/cms/db.ts",
+    "lines": 76,
+    "bytes": 2689,
+    "exports": [
+      "getDb",
+      "nowIso",
+      "newId",
+      "parseJson",
+      "transaction",
+      "audit"
+    ],
+    "fetches": [],
+    "envKeys": [
+      "CMS_DATABASE_PATH"
+    ]
+  },
+  {
+    "path": "apps/web/src/lib/cms/auth.ts",
+    "lines": 14,
+    "bytes": 4142,
+    "exports": [
+      "SESSION_COOKIE",
+      "AdminUser",
+      "hashPassword",
+      "verifyPassword",
+      "currentAdmin",
+      "requireAdmin",
+      "requireApiPermission",
+      "createSession",
+      "destroySession",
+      "requestIp",
+      "assertSafeOrigin",
+      "loginAllowed",
+      "recordLoginFailure",
+      "clearLoginFailures"
+    ],
+    "fetches": [],
+    "envKeys": [
+      "NEXT_PUBLIC_SITE_URL",
+      "NODE_ENV"
+    ]
+  },
+  {
+    "path": "apps/web/src/components/3d/SceneFallback.tsx",
+    "lines": 14,
+    "bytes": 395,
+    "exports": [
+      "SceneFallback"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/DIDMLearningUniverse.tsx",
+    "lines": 83,
+    "bytes": 3086,
+    "exports": [
+      "DIDMLearningUniverse"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/ProgramWorld.tsx",
+    "lines": 179,
+    "bytes": 5094,
+    "exports": [
+      "ProgramWorld",
+      "CourseStagesWorld"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/scene-data.ts",
+    "lines": 130,
+    "bytes": 3750,
+    "exports": [
+      "WorldKind",
+      "SceneStop",
+      "CAMPUS_LABS",
+      "WORKSPACE_STOPS",
+      "pathPoint"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/AccessibleSceneNavigation.tsx",
+    "lines": 18,
+    "bytes": 430,
+    "exports": [
+      "AccessibleSceneNavigation"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/ImmersiveScene.tsx",
+    "lines": 187,
+    "bytes": 5943,
+    "exports": [
+      "ImmersiveScene"
+    ],
+    "fetches": [],
+    "envKeys": [
+      "NODE_ENV"
+    ]
+  },
+  {
+    "path": "apps/web/src/components/3d/CampusEnvironment.tsx",
+    "lines": 27,
+    "bytes": 756,
+    "exports": [
+      "LAB_DESTINATIONS",
+      "LabDestination",
+      "CampusEnvironment"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/LearningUniverseCanvas.tsx",
+    "lines": 117,
+    "bytes": 3301,
+    "exports": [
+      "LearningUniverseCanvas"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/CameraDirector.tsx",
+    "lines": 17,
+    "bytes": 386,
+    "exports": [
+      "CameraDirector"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/ProgramWorldScene.tsx",
+    "lines": 227,
+    "bytes": 6277,
+    "exports": [
+      "ProgramWorldScene"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/StudentExplorer.tsx",
+    "lines": 23,
+    "bytes": 499,
+    "exports": [
+      "StudentExplorer"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/LearningCampusScene.tsx",
+    "lines": 258,
+    "bytes": 7945,
+    "exports": [
+      "InteractiveLearningLab",
+      "LearningCampusScene"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/index.ts",
+    "lines": 7,
+    "bytes": 431,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/Accessible3DNavigation.tsx",
+    "lines": 68,
+    "bytes": 1792,
+    "exports": [
+      "Accessible3DNavigation"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/SceneErrorBoundary.tsx",
+    "lines": 21,
+    "bytes": 511,
+    "exports": [
+      "SceneErrorBoundary"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/ScenePrimitives.tsx",
+    "lines": 341,
+    "bytes": 10520,
+    "exports": [
+      "Block",
+      "Sign",
+      "Tree",
+      "Screen",
+      "AnimatedStudent"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/3d/SceneRuntime.tsx",
+    "lines": 141,
+    "bytes": 4317,
+    "exports": [
+      "SceneVisibilityMonitor",
+      "CinematicCamera",
+      "SceneQualityController"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/course/CourseLearningStudio.tsx",
+    "lines": 769,
+    "bytes": 32790,
+    "exports": [
+      "CourseLearningStudio"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/course/CourseHero.tsx",
+    "lines": 16,
+    "bytes": 2986,
+    "exports": [
+      "CourseHero"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalTestimonialsSection.tsx",
+    "lines": 11,
+    "bytes": 1933,
+    "exports": [
+      "OriginalTestimonialsSection"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalCareerClarity.tsx",
+    "lines": 56,
+    "bytes": 2835,
+    "exports": [
+      "OriginalCareerClarity"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalMasterMentors.tsx",
+    "lines": 112,
+    "bytes": 4939,
+    "exports": [
+      "OriginalMasterMentors"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalCampusGallery.tsx",
+    "lines": 106,
+    "bytes": 4681,
+    "exports": [
+      "OriginalCampusGallery"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/RealStudentExperience.tsx",
+    "lines": 141,
+    "bytes": 6775,
+    "exports": [
+      "RealStudentExperience"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalInstitutionalPrograms.tsx",
+    "lines": 101,
+    "bytes": 4564,
+    "exports": [
+      "OriginalInstitutionalPrograms"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalTrainingBenefits.tsx",
+    "lines": 117,
+    "bytes": 5153,
+    "exports": [
+      "OriginalTrainingBenefits"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalTrainingHighlightsAndForm.tsx",
+    "lines": 297,
+    "bytes": 14212,
+    "exports": [
+      "OriginalTrainingHighlightsAndForm"
+    ],
+    "fetches": [
+      "/api/enquire"
+    ],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalAwardsRecognition.tsx",
+    "lines": 115,
+    "bytes": 5208,
+    "exports": [
+      "OriginalAwardsRecognition"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/HomepageCentresDirectory.tsx",
+    "lines": 146,
+    "bytes": 6481,
+    "exports": [
+      "HomepageCentresDirectory"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalUpskillCareer.tsx",
+    "lines": 69,
+    "bytes": 2981,
+    "exports": [
+      "OriginalUpskillCareer"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalHeroBanner.tsx",
+    "lines": 155,
+    "bytes": 8697,
+    "exports": [
+      "OriginalHeroBanner"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/HomepageNewsEvents.tsx",
+    "lines": 91,
+    "bytes": 4185,
+    "exports": [
+      "HomepageNewsEvents"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalHiringPartners.tsx",
+    "lines": 66,
+    "bytes": 3108,
+    "exports": [
+      "OriginalHiringPartners"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/homepage/OriginalCoursePrograms.tsx",
+    "lines": 218,
+    "bytes": 10121,
+    "exports": [
+      "OriginalCoursePrograms"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/roadmap/RoadmapCheckpoint.tsx",
+    "lines": 90,
+    "bytes": 2879,
+    "exports": [
+      "RoadmapCheckpoint"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/roadmap/InteractiveCourseRoadmap.tsx",
+    "lines": 165,
+    "bytes": 6407,
+    "exports": [
+      "InteractiveCourseRoadmap"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/roadmap/StudentJourneyAvatar.tsx",
+    "lines": 191,
+    "bytes": 6538,
+    "exports": [
+      "StudentJourneyAvatar"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/roadmap/RoadmapPath.tsx",
+    "lines": 133,
+    "bytes": 4403,
+    "exports": [
+      "RoadmapPath"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/roadmap/index.ts",
+    "lines": 6,
+    "bytes": 394,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/roadmap/RoadmapModulePanel.tsx",
+    "lines": 157,
+    "bytes": 5815,
+    "exports": [
+      "RoadmapModulePanel"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/useReducedMotionSafe.ts",
+    "lines": 39,
+    "bytes": 1119,
+    "exports": [
+      "useReducedMotionSafe"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/MotionHeading.tsx",
+    "lines": 12,
+    "bytes": 1419,
+    "exports": [
+      "MotionHeading"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/SmoothScrollProvider.tsx",
+    "lines": 6,
+    "bytes": 245,
+    "exports": [
+      "SmoothScrollProvider"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/MagneticButton.tsx",
+    "lines": 74,
+    "bytes": 2011,
+    "exports": [
+      "MagneticButton"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/MotionSection.tsx",
+    "lines": 33,
+    "bytes": 2370,
+    "exports": [
+      "MotionPreset",
+      "MotionSection"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/ProgressiveTimeline.tsx",
+    "lines": 130,
+    "bytes": 4666,
+    "exports": [
+      "ProgressiveTimeline"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/TextReveal.tsx",
+    "lines": 64,
+    "bytes": 1843,
+    "exports": [
+      "TextReveal"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/AnimatedCounter.tsx",
+    "lines": 74,
+    "bytes": 1906,
+    "exports": [
+      "AnimatedCounter"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/StaggeredCardGrid.tsx",
+    "lines": 19,
+    "bytes": 1723,
+    "exports": [
+      "StaggeredCardGrid"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/RevealOnScroll.tsx",
+    "lines": 91,
+    "bytes": 2424,
+    "exports": [
+      "RevealOnScroll"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/ParallaxLayer.tsx",
+    "lines": 74,
+    "bytes": 1970,
+    "exports": [
+      "ParallaxLayer"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/TiltCard.tsx",
+    "lines": 101,
+    "bytes": 2905,
+    "exports": [
+      "TiltCard"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/AnimatedGradient.tsx",
+    "lines": 50,
+    "bytes": 1931,
+    "exports": [
+      "AnimatedGradient"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/MotionAccordion.tsx",
+    "lines": 93,
+    "bytes": 3215,
+    "exports": [
+      "MotionAccordion"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/MaskedImageReveal.tsx",
+    "lines": 95,
+    "bytes": 2514,
+    "exports": [
+      "MaskedImageReveal"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/SplitContentReveal.tsx",
+    "lines": 9,
+    "bytes": 949,
+    "exports": [
+      "SplitContentReveal"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/index.ts",
+    "lines": 18,
+    "bytes": 954,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/motion/motion-tokens.ts",
+    "lines": 53,
+    "bytes": 1309,
+    "exports": [
+      "MOTION_TOKENS",
+      "MotionDuration",
+      "MotionEasing"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/about/AboutInteractiveStudio.tsx",
+    "lines": 434,
+    "bytes": 18621,
+    "exports": [
+      "TimelineJourneyViewer",
+      "PillarsTabViewer",
+      "TeamGallery",
+      "AboutFaqAccordion"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/common/SafeImage.tsx",
+    "lines": 83,
+    "bytes": 2623,
+    "exports": [
+      "ImageDisplayMode",
+      "SafeImage"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/common/FullBleedSection.tsx",
+    "lines": 52,
+    "bytes": 1312,
+    "exports": [
+      "FullBleedSection"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/counsellor/DIDMCourseCounsellor.tsx",
+    "lines": 346,
+    "bytes": 13403,
+    "exports": [
+      "DIDMCourseCounsellor"
+    ],
+    "fetches": [
+      "/api/counsellor"
+    ],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/counsellor/index.ts",
+    "lines": 2,
+    "bytes": 64,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/CinematicBookCanvas.tsx",
+    "lines": 90,
+    "bytes": 2602,
+    "exports": [
+      "CinematicBookCanvas"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/AdmissionFolder3D.tsx",
+    "lines": 122,
+    "bytes": 4365,
+    "exports": [
+      "AdmissionFolder3D"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/CinematicLaptopSection.tsx",
+    "lines": 194,
+    "bytes": 8800,
+    "exports": [
+      "CinematicLaptopSection"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/CinematicFolderSection.tsx",
+    "lines": 144,
+    "bytes": 7185,
+    "exports": [
+      "CinematicFolderSection"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/HardcoverBook3D.tsx",
+    "lines": 318,
+    "bytes": 9962,
+    "exports": [
+      "HardcoverBook3D"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/BookAccessibleOverlay.tsx",
+    "lines": 184,
+    "bytes": 7946,
+    "exports": [
+      "BookAccessibleOverlay"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/book-texture-generator.ts",
+    "lines": 651,
+    "bytes": 20043,
+    "exports": [
+      "createCoverTexture",
+      "createInsideCoverTexture",
+      "createSpread1Texture",
+      "createSpread2Texture",
+      "createSpread3Texture",
+      "createPageEdgeTexture"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/LaptopWorkstation3D.tsx",
+    "lines": 119,
+    "bytes": 4116,
+    "exports": [
+      "LaptopWorkstation3D"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/BookPageMesh.tsx",
+    "lines": 149,
+    "bytes": 4638,
+    "exports": [
+      "BookPageMesh"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/index.ts",
+    "lines": 4,
+    "bytes": 262,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/CinematicBookSection.tsx",
+    "lines": 196,
+    "bytes": 7473,
+    "exports": [
+      "CinematicBookSection"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/admission-texture-generator.ts",
+    "lines": 137,
+    "bytes": 3977,
+    "exports": [
+      "createFolderCoverTexture",
+      "createApplicationSheetTexture"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/CinematicBookFallback.tsx",
+    "lines": 110,
+    "bytes": 4938,
+    "exports": [
+      "CinematicBookFallback"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/cinematic/laptop-texture-generator.ts",
+    "lines": 238,
+    "bytes": 6970,
+    "exports": [
+      "createLaptopScreenTexture",
+      "createLaptopKeyboardTexture"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/news/NewsCard.tsx",
+    "lines": 110,
+    "bytes": 5183,
+    "exports": [
+      "NewsCard"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/news/NewsArchiveClient.tsx",
+    "lines": 310,
+    "bytes": 12895,
+    "exports": [
+      "NewsArchiveClient"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/news/NewsGalleryLightbox.tsx",
+    "lines": 147,
+    "bytes": 6310,
+    "exports": [
+      "NewsGalleryLightbox"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/creative/ProgramSignature.tsx",
+    "lines": 54,
+    "bytes": 6606,
+    "exports": [
+      "ProgramSignature"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/creative/CampaignJourney.tsx",
+    "lines": 102,
+    "bytes": 10185,
+    "exports": [
+      "CampaignJourney"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/creative/EditorialHero.tsx",
+    "lines": 25,
+    "bytes": 2444,
+    "exports": [
+      "EditorialHero"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/creative/CreativePrograms.tsx",
+    "lines": 20,
+    "bytes": 2962,
+    "exports": [
+      "CreativePrograms"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/creative/EnquirySubmission.tsx",
+    "lines": 36,
+    "bytes": 2271,
+    "exports": [
+      "useEnquirySubmission",
+      "EnquiryFeedback"
+    ],
+    "fetches": [
+      "/api/enquire"
+    ],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/creative/CreativeStudioHero.tsx",
+    "lines": 84,
+    "bytes": 8365,
+    "exports": [
+      "CampaignArtwork",
+      "CreativeStudioHero"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/media/MediaLightboxGallery.tsx",
+    "lines": 179,
+    "bytes": 7089,
+    "exports": [
+      "MediaLightboxGallery"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/components/media/AwardsTimeline.tsx",
+    "lines": 118,
+    "bytes": 5253,
+    "exports": [
+      "AwardsTimeline"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/life-at-didm/layout.tsx",
+    "lines": 3,
+    "bytes": 351,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/life-at-didm/page.tsx",
+    "lines": 447,
+    "bytes": 25284,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/contact/layout.tsx",
+    "lines": 27,
+    "bytes": 940,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/contact/page.tsx",
+    "lines": 365,
+    "bytes": 17367,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/news-and-events/layout.tsx",
+    "lines": 26,
+    "bytes": 770,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/news-and-events/page.tsx",
+    "lines": 191,
+    "bytes": 7358,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/learn/page.tsx",
+    "lines": 255,
+    "bytes": 11796,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/centres/page.tsx",
+    "lines": 59,
+    "bytes": 2734,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/privacy/page.tsx",
+    "lines": 143,
+    "bytes": 8632,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/gallery/layout.tsx",
+    "lines": 3,
+    "bytes": 353,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/gallery/page.tsx",
+    "lines": 463,
+    "bytes": 19071,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/terms/page.tsx",
+    "lines": 144,
+    "bytes": 8577,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/AdminLogout.tsx",
+    "lines": 3,
+    "bytes": 326,
+    "exports": [
+      "AdminLogout"
+    ],
+    "fetches": [
+      "/api/admin/auth/logout"
+    ],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/layout.tsx",
+    "lines": 9,
+    "bytes": 1680,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/page.tsx",
+    "lines": 4,
+    "bytes": 1254,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/about/layout.tsx",
+    "lines": 3,
+    "bytes": 354,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/about/page.tsx",
+    "lines": 813,
+    "bytes": 45411,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/franchise/page.tsx",
+    "lines": 182,
+    "bytes": 9028,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/trainers/layout.tsx",
+    "lines": 3,
+    "bytes": 344,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/trainers/page.tsx",
+    "lines": 664,
+    "bytes": 34718,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/careers/layout.tsx",
+    "lines": 26,
+    "bytes": 838,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/careers/page.tsx",
+    "lines": 372,
+    "bytes": 18115,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/faqs/layout.tsx",
+    "lines": 3,
+    "bytes": 356,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/faqs/page.tsx",
+    "lines": 217,
+    "bytes": 9389,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/why-choose-didm/layout.tsx",
+    "lines": 3,
+    "bytes": 335,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/why-choose-didm/page.tsx",
+    "lines": 796,
+    "bytes": 39811,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/outcomes/layout.tsx",
+    "lines": 3,
+    "bytes": 378,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/outcomes/page.tsx",
+    "lines": 892,
+    "bytes": 49315,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/programs/page.tsx",
+    "lines": 245,
+    "bytes": 12638,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/stories/page.tsx",
+    "lines": 111,
+    "bytes": 6598,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/organisations/page.tsx",
+    "lines": 330,
+    "bytes": 16907,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/colleges-and-university-session/layout.tsx",
+    "lines": 27,
+    "bytes": 883,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/colleges-and-university-session/page.tsx",
+    "lines": 710,
+    "bytes": 34882,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/media-coverage/layout.tsx",
+    "lines": 26,
+    "bytes": 1028,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/media-coverage/page.tsx",
+    "lines": 681,
+    "bytes": 34924,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/corporate-training-program/layout.tsx",
+    "lines": 27,
+    "bytes": 888,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/corporate-training-program/page.tsx",
+    "lines": 851,
+    "bytes": 45960,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/compare/page.tsx",
+    "lines": 246,
+    "bytes": 10775,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/program/page.tsx",
+    "lines": 17,
+    "bytes": 428,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/certifications/layout.tsx",
+    "lines": 27,
+    "bytes": 927,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/certifications/page.tsx",
+    "lines": 477,
+    "bytes": 20523,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/article/page.tsx",
+    "lines": 155,
+    "bytes": 7707,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/upcoming-batches/page.tsx",
+    "lines": 269,
+    "bytes": 12189,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/enquire/page.tsx",
+    "lines": 111,
+    "bytes": 5717,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/refund/page.tsx",
+    "lines": 152,
+    "bytes": 8840,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/digital-marketing-course-journal/layout.tsx",
+    "lines": 27,
+    "bytes": 926,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/digital-marketing-course-journal/page.tsx",
+    "lines": 725,
+    "bytes": 32805,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/api/counsellor/route.ts",
+    "lines": 60,
+    "bytes": 1974,
+    "exports": [
+      "POST"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/api/enquire/route.ts",
+    "lines": 21,
+    "bytes": 2721,
+    "exports": [
+      "POST"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/api/admin/pages/homepage/route.ts",
+    "lines": 3,
+    "bytes": 765,
+    "exports": [
+      "PUT"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/api/admin/pages/homepage/publish/route.ts",
+    "lines": 2,
+    "bytes": 547,
+    "exports": [
+      "POST"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/api/admin/pages/homepage/restore/route.ts",
+    "lines": 2,
+    "bytes": 687,
+    "exports": [
+      "POST"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/api/admin/auth/logout/route.ts",
+    "lines": 12,
+    "bytes": 607,
+    "exports": [
+      "POST"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/api/admin/auth/login/route.ts",
+    "lines": 34,
+    "bytes": 1772,
+    "exports": [
+      "POST"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/media-coverage/[slug]/page.tsx",
+    "lines": 319,
+    "bytes": 12959,
+    "exports": [
+      "generateStaticParams",
+      "generateMetadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/programs/online-digital-marketing-course/layout.tsx",
+    "lines": 3,
+    "bytes": 413,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/programs/online-digital-marketing-course/page.tsx",
+    "lines": 977,
+    "bytes": 51572,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/programs/advanced-digital-marketing-course/layout.tsx",
+    "lines": 3,
+    "bytes": 419,
+    "exports": [
+      "metadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/programs/advanced-digital-marketing-course/page.tsx",
+    "lines": 1480,
+    "bytes": 81214,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/programs/[slug]/page.tsx",
+    "lines": 364,
+    "bytes": 15352,
+    "exports": [
+      "generateStaticParams",
+      "generateMetadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/centre/dwarka/page.tsx",
+    "lines": 5,
+    "bytes": 123,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/leads/page.tsx",
+    "lines": 2,
+    "bytes": 1458,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/[module]/page.tsx",
+    "lines": 3,
+    "bytes": 2541,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/pages/page.tsx",
+    "lines": 2,
+    "bytes": 806,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/login/LoginForm.tsx",
+    "lines": 20,
+    "bytes": 1576,
+    "exports": [
+      "LoginForm"
+    ],
+    "fetches": [
+      "/api/admin/auth/login"
+    ],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/login/page.tsx",
+    "lines": 7,
+    "bytes": 705,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/media/page.tsx",
+    "lines": 2,
+    "bytes": 1714,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "CLOUDINARY_API_KEY",
+      "CLOUDINARY_API_SECRET",
+      "CLOUDINARY_CLOUD_NAME"
+    ]
+  },
+  {
+    "path": "apps/web/src/app/admin/pages/[id]/edit/HomepageEditor.tsx",
+    "lines": 3,
+    "bytes": 3677,
+    "exports": [
+      "HomepageEditor"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/pages/[id]/edit/page.tsx",
+    "lines": 2,
+    "bytes": 1043,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/preview/homepage/page.tsx",
+    "lines": 2,
+    "bytes": 940,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/admin/leads/[id]/page.tsx",
+    "lines": 2,
+    "bytes": 1479,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/centres/[slug]/CentreDetailView.tsx",
+    "lines": 1533,
+    "bytes": 83875,
+    "exports": [
+      "CentreDetailView"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/centres/[slug]/page.tsx",
+    "lines": 81,
+    "bytes": 2306,
+    "exports": [
+      "generateStaticParams",
+      "generateMetadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "apps/web/src/app/news-and-events/[slug]/page.tsx",
+    "lines": 399,
+    "bytes": 16530,
+    "exports": [
+      "generateStaticParams",
+      "generateMetadata"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/dump_award_blocks.py",
+    "lines": 17,
+    "bytes": 679,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/run-visual-audit.mjs",
+    "lines": 295,
+    "bytes": 12474,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/extract_media_sections.py",
+    "lines": 78,
+    "bytes": 3038,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/extract_all_image_urls.py",
+    "lines": 12,
+    "bytes": 403,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/inspect_media_details.py",
+    "lines": 36,
+    "bytes": 1519,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/verify-navbar-megamenu.mjs",
+    "lines": 170,
+    "bytes": 6342,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/cdp-browser.mjs",
+    "lines": 210,
+    "bytes": 6573,
+    "exports": [
+      "CDPBrowser"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/verify-about-page.mjs",
+    "lines": 112,
+    "bytes": 3974,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/parse_media_page.py",
+    "lines": 41,
+    "bytes": 1396,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-cms/verify-atlas-connections.mjs",
+    "lines": 13,
+    "bytes": 5132,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "MONGODB_DB_NAME",
+      "MONGODB_URI",
+      "TEST_MONGODB_DB_NAME",
+      "TEST_MONGODB_URI"
+    ]
+  },
+  {
+    "path": "tools/didm-cms/prepare-test-database.mjs",
+    "lines": 5,
+    "bytes": 3073,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "MONGODB_DB_NAME",
+      "TEST_MONGODB_DB_NAME",
+      "TEST_MONGODB_URI"
+    ]
+  },
+  {
+    "path": "tools/didm-cms/env-loader.mjs",
+    "lines": 2,
+    "bytes": 702,
+    "exports": [
+      "loadProjectEnv"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-cms/bootstrap-admin.mjs",
+    "lines": 30,
+    "bytes": 1921,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "CMS_BOOTSTRAP_ADMIN_EMAIL",
+      "CMS_BOOTSTRAP_ADMIN_NAME",
+      "CMS_BOOTSTRAP_ADMIN_PASSWORD",
+      "CMS_DATABASE_PATH"
+    ]
+  },
+  {
+    "path": "tools/didm-cms/index-manifest.mjs",
+    "lines": 6,
+    "bytes": 1017,
+    "exports": [
+      "indexManifest",
+      "indexSignature"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-cms/bootstrap-mongodb-admin.mjs",
+    "lines": 7,
+    "bytes": 1893,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "CMS_BOOTSTRAP_ADMIN_EMAIL",
+      "CMS_BOOTSTRAP_ADMIN_NAME",
+      "CMS_BOOTSTRAP_ADMIN_PASSWORD",
+      "MONGODB_DB_NAME",
+      "MONGODB_URI"
+    ]
+  },
+  {
+    "path": "tools/didm-cms/migrate-sqlite-to-mongodb.mjs",
+    "lines": 59,
+    "bytes": 6582,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "MONGODB_DB_NAME",
+      "MONGODB_URI",
+      "SQLITE_SOURCE_PATH"
+    ]
+  },
+  {
+    "path": "tools/didm-cms/migration-core.mjs",
+    "lines": 31,
+    "bytes": 8167,
+    "exports": [
+      "contracts",
+      "mapAndValidate"
+    ],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-cms/migration-core.test.mjs",
+    "lines": 7,
+    "bytes": 1680,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-media-import/test_media_import.py",
+    "lines": 281,
+    "bytes": 13789,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-media-import/dry-run-summary.json",
+    "lines": 24,
+    "bytes": 651,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-media-import/last-run-report.json",
+    "lines": 126,
+    "bytes": 6963,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-media-import/staged-import-plan.json",
+    "lines": 102,
+    "bytes": 5777,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-media-import/media_import.py",
+    "lines": 775,
+    "bytes": 36120,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-crawler/crawler.py",
+    "lines": 1785,
+    "bytes": 93381,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "tools/didm-crawler/tests/test_crawler.py",
+    "lines": 532,
+    "bytes": 27997,
+    "exports": [],
+    "fetches": [
+      "https://www.didm.in/start",
+      "https://www.didm.in/start",
+      "https://www.didm.in/busy"
+    ],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/verify-3d.cjs",
+    "lines": 372,
+    "bytes": 13924,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "BASE_URL",
+      "BLOCK_WEBGL",
+      "PLAYWRIGHT_MODULE",
+      "QA_MODE",
+      "QA_ROUTES"
+    ]
+  },
+  {
+    "path": "scripts/write-3d-reports.py",
+    "lines": 135,
+    "bytes": 16038,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/ui-restoration-baseline.cjs",
+    "lines": 21,
+    "bytes": 1479,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/verify-all-animations.cjs",
+    "lines": 151,
+    "bytes": 6326,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/inspect-3d.cjs",
+    "lines": 2,
+    "bytes": 1147,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/verify-world-interactions.cjs",
+    "lines": 3,
+    "bytes": 2609,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "BASE_URL"
+    ]
+  },
+  {
+    "path": "scripts/verify-3d-usability.cjs",
+    "lines": 148,
+    "bytes": 5025,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "BASE_URL",
+      "PLAYWRIGHT_MODULE",
+      "QA_MODE"
+    ]
+  },
+  {
+    "path": "scripts/creative-performance-qa.cjs",
+    "lines": 30,
+    "bytes": 4413,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/final-visual-check.cjs",
+    "lines": 2,
+    "bytes": 1523,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/ui-restoration-visual-qa.cjs",
+    "lines": 52,
+    "bytes": 8924,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/ui-restoration-motion-qa.cjs",
+    "lines": 37,
+    "bytes": 4303,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/check-campus.cjs",
+    "lines": 2,
+    "bytes": 1864,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/import-creative-college-photos.py",
+    "lines": 46,
+    "bytes": 2308,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/check-resume.cjs",
+    "lines": 1,
+    "bytes": 803,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/ui-restoration-site-qa.cjs",
+    "lines": 54,
+    "bytes": 7919,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "DIDM_QA_RESUME"
+    ]
+  },
+  {
+    "path": "scripts/ui-restoration-preview.cjs",
+    "lines": 21,
+    "bytes": 1475,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/creative-final-check.cjs",
+    "lines": 18,
+    "bytes": 4013,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/creative-site-qa.cjs",
+    "lines": 54,
+    "bytes": 7928,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "DIDM_QA_RESUME"
+    ]
+  },
+  {
+    "path": "scripts/creative-preview.cjs",
+    "lines": 14,
+    "bytes": 858,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/verify-pipeline.cjs",
+    "lines": 2,
+    "bytes": 1093,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/creative-story-qa.cjs",
+    "lines": 36,
+    "bytes": 4251,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/capture_homepage_viewports.py",
+    "lines": 49,
+    "bytes": 1966,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/capture_cinematic_storytelling.js",
+    "lines": 163,
+    "bytes": 6571,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/compare-3d-frames.py",
+    "lines": 19,
+    "bytes": 1201,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/probe-3d.cjs",
+    "lines": 2,
+    "bytes": 950,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "URL"
+    ]
+  },
+  {
+    "path": "scripts/record-3d-tour.cjs",
+    "lines": 7,
+    "bytes": 2977,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "BASE_URL"
+    ]
+  },
+  {
+    "path": "scripts/playwright-runtime.cjs",
+    "lines": 18,
+    "bytes": 804,
+    "exports": [],
+    "fetches": [],
+    "envKeys": [
+      "PLAYWRIGHT_MODULE",
+      "PLAYWRIGHT_PATH"
+    ]
+  },
+  {
+    "path": "scripts/creative-baseline.cjs",
+    "lines": 20,
+    "bytes": 1456,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  },
+  {
+    "path": "scripts/ui-restoration-performance-qa.cjs",
+    "lines": 31,
+    "bytes": 4450,
+    "exports": [],
+    "fetches": [],
+    "envKeys": []
+  }
+]

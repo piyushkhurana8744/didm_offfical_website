@@ -84,3 +84,9 @@ pnpm start
 ```
 
 # didm_offfical_website
+
+## November 2026 assessment and implementation increment
+
+See [the implementation index](docs/DIDM_IMPLEMENTATION_SUMMARY.md) for current verified changes, the live reference comparison, evidence, tests and outstanding launch blockers. Earlier descriptions in this README are historical and do not establish factual approval or end-to-end production readiness.
+
+New student tools are at `/course-finder`; the source-backed batch directory is at `/upcoming-batches`, with its draft/publish editor inside the existing CMS at `/admin/batches`. The configured database currently denies CMS page reads, so real content publishing and lead persistence still require an isolated integration check with appropriate grants. No production deployment was performed.

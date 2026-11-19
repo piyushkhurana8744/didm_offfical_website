@@ -1,7 +1,9 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 import Link from "next/link";
 import { currentAdmin } from "@/lib/cms/auth";
 import { AdminLogout } from "./AdminLogout";
-const links=[["Overview","/admin"],["Pages","/admin/pages"],["Website builder","/admin/website-builder"],["Media","/admin/media"],["Courses","/admin/courses"],["Centres","/admin/centres"],["Forms","/admin/forms"],["Leads","/admin/leads"],["Blog","/admin/blog"],["Testimonials","/admin/testimonials"],["SEO","/admin/seo"],["Navigation","/admin/navigation"],["Redirects","/admin/redirects"],["Users","/admin/users"],["Roles","/admin/roles"],["Settings","/admin/settings"],["Audit logs","/admin/audit-logs"]];
+const links=[["Overview","/admin"],["Pages","/admin/pages"],["Website builder","/admin/website-builder"],["Media","/admin/media"],["Courses","/admin/courses"],["Batches","/admin/batches"],["Centres","/admin/centres"],["Forms","/admin/forms"],["Leads","/admin/leads"],["Blog","/admin/blog"],["Testimonials","/admin/testimonials"],["SEO","/admin/seo"],["Navigation","/admin/navigation"],["Redirects","/admin/redirects"],["Users","/admin/users"],["Roles","/admin/roles"],["Settings","/admin/settings"],["Audit logs","/admin/audit-logs"]];
 export default async function AdminLayout({children}:{children:React.ReactNode}) {
   const user=await currentAdmin();
   if(!user) return <>{children}</>;

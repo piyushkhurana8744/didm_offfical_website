@@ -10,4 +10,28 @@ __pycache__/
 .env*.local
 .data/
 
-node_modules
+# Isolated Next.js development output
+.next-dev
+
+# Automated QA recordings, videos, and heavy audit screenshots
+*.webm
+*.mp4
+*.tar.gz
+docs/audit_screenshots/
+docs/ui-restoration/
+docs/phase-2/
+docs/recordings/
+docs/next-generation/
+docs/original_*.png
+docs/reconstructed_*.png
+docs/preview_*.png
+docs/current_*.png
+docs/new_*.png
+docs/verified_*.png
+docs/why_choose_didm_*.png
+docs/trainers_*.png
+docs/stories_*.png
+docs/outcomes_*.png
+docs/about_*.png
+docs/*_preview.png
+docs/uploaded_page_top.png

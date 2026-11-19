@@ -34,6 +34,8 @@ export function InteractiveCourseRoadmap({
   // Keyboard navigation support (Arrow keys)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target instanceof HTMLElement ? e.target : null;
+      if (!target?.closest("#course-roadmap") || target.closest("input, textarea, select, [contenteditable=true]")) return;
       if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         setActiveIndex((prev) => (prev < syllabus.length - 1 ? prev + 1 : prev));
       } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {

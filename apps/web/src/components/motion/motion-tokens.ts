@@ -9,7 +9,7 @@ export const MOTION_TOKENS = {
     // Primary cinematic ease - smooth acceleration, long luxurious deceleration
     cinematic: "cubic-bezier(0.16, 1, 0.3, 1)",
     // Fluid ease for navigation and hover micro-interactions
-    fluid: "cubic-bezier(0.25, 0.1, 0.25, 1)",
+    fluid: "cubic-bezier(0.25, 0.1, 0.25, 1)",  
     // Magnetic snap ease for interactive buttons
     magnetic: "cubic-bezier(0.2, 0.9, 0.3, 1)",
     // Gentle spring for badges and counter reveals

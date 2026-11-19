@@ -1,0 +1,5 @@
+const fs=require('node:fs');
+(async()=>{const inventory=JSON.parse(fs.readFileSync('docs/phase-2/page-inventory.json','utf8')),routes=[...new Set(inventory.flatMap(row=>row.variants))],queue=[...routes],results=[];
+ await Promise.all(Array.from({length:6},async()=>{while(queue.length){const route=queue.shift();try{const response=await fetch('http://127.0.0.1:3001'+route,{signal:AbortSignal.timeout(20000)});const body=await response.text();results.push({route,status:response.status,actualUrl:response.url,h1Count:(body.match(/<h1(?:\s|>)/g)||[]).length,canonical:body.match(/<link rel="canonical" href="([^"]+)"/)?.[1]||null});}catch(error){results.push({route,error:error.message})}}}));
+ const failures=results.filter(r=>r.status!==200||r.h1Count!==1);fs.writeFileSync('docs/phase-2/public-route-check.json',JSON.stringify({count:results.length,failures,results},null,2));console.log(JSON.stringify({count:results.length,failures}));if(failures.length)process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(1)});

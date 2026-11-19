@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { SITE_BRAND } from "@/lib/content";
 import { DIDM_MEDIA } from "@/data/didm-media";
+import { MotionSection } from "@/components/motion/MotionSection";
+import { StaggeredCardGrid } from "@/components/motion/StaggeredCardGrid";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -79,10 +81,10 @@ export default function OrganisationsPage() {
   ];
 
   return (
-    <div className="py-12 md:py-20">
+    <div className="creative-page creative-directory py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
         {/* Header */}
-        <div className="max-w-3xl space-y-4">
+        <MotionSection preset="editorial" className="max-w-3xl space-y-4">
           <nav aria-label="Breadcrumb" className="text-xs font-mono text-neutral-500 flex items-center gap-2">
             <Link href="/" className="hover:text-brand-red">Home</Link>
             <span>/</span>
@@ -100,10 +102,10 @@ export default function OrganisationsPage() {
           <p className="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
             DIDM designs bespoke corporate workshops, enterprise marketing transformation bootcamps, and university digital literacy partnerships backed by a decade of practical training pedagogy.
           </p>
-        </div>
+        </MotionSection>
 
         {/* SECTION 1: Corporate Training */}
-        <section className="space-y-10">
+        <MotionSection preset="depth" className="space-y-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 space-y-4">
               <span className="text-xs font-mono uppercase text-brand-red font-bold">
@@ -146,7 +148,7 @@ export default function OrganisationsPage() {
           </div>
 
           {/* Corporate Curricula Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <StaggeredCardGrid columns={4} stagger={0.05}>
             {corporateCurricula.map((item, idx) => (
               <div
                 key={idx}
@@ -168,11 +170,11 @@ export default function OrganisationsPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
+          </StaggeredCardGrid>
+        </MotionSection>
 
         {/* SECTION 2: College & University Training */}
-        <section className="space-y-10 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+        <MotionSection preset="stagger" className="space-y-10 pt-8 border-t border-neutral-200 dark:border-neutral-800">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 order-2 lg:order-1">
               <div className="relative aspect-[3/2] overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-xl dark:border-neutral-800 dark:bg-neutral-900">
@@ -214,7 +216,7 @@ export default function OrganisationsPage() {
           </div>
 
           {/* College Offerings Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggeredCardGrid columns={3} stagger={0.06}>
             {collegeOfferings.map((offering, idx) => (
               <div
                 key={idx}
@@ -241,11 +243,11 @@ export default function OrganisationsPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
+          </StaggeredCardGrid>
+        </MotionSection>
 
         {/* SECTION 3: Training Delivery Formats */}
-        <section className="p-8 sm:p-12 rounded-3xl bg-neutral-100/70 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 space-y-8">
+        <MotionSection preset="depth" className="p-8 sm:p-12 rounded-3xl bg-neutral-100/70 dark:bg-[#1A1A22] border border-neutral-200 dark:border-neutral-800 space-y-8">
           <div className="max-w-2xl space-y-2">
             <div className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
               Implementation Flexibility
@@ -258,7 +260,7 @@ export default function OrganisationsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggeredCardGrid columns={3} stagger={0.06}>
             <div className="p-6 rounded-2xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-3">
               <div className="font-mono text-xs font-bold text-brand-red uppercase">Format 01</div>
               <h3 className="text-base font-bold text-neutral-900 dark:text-white">On-Premise Corporate Campus</h3>
@@ -282,11 +284,11 @@ export default function OrganisationsPage() {
                 Reserve dedicated computer lab stations and conference rooms at any of our 14 physical branches for exclusive cohort training.
               </p>
             </div>
-          </div>
-        </section>
+          </StaggeredCardGrid>
+        </MotionSection>
 
         {/* SECTION 4: Custom Training Enquiry CTA */}
-        <section className="p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white space-y-6">
+        <MotionSection preset="scale" className="p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white space-y-6">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
               DIRECT INSTITUTIONAL DESK
@@ -321,7 +323,7 @@ export default function OrganisationsPage() {
               Or visit our Satya Niketan Head Office →
             </Link>
           </div>
-        </section>
+        </MotionSection>
       </div>
     </div>
   );

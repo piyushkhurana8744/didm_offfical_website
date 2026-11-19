@@ -1,214 +1,477 @@
+"use client";
+
+import { EditorialHero } from "@/components/creative/EditorialHero";
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
-  Award,
-  ShieldCheck,
-  CheckCircle2,
-  ExternalLink,
-  Sparkles,
+  ChevronDown,
+  ChevronUp,
   Download,
-  GraduationCap,
+  Play,
+  ArrowRight,
+  Phone,
+  ChevronRight,
+  CheckCircle2,
+  Sparkles,
+  BookOpen,
+  Award,
   Layers,
+  X,
 } from "lucide-react";
-import type { Metadata } from "next";
+import { EnquiryForm } from "@/components/EnquiryForm";
+import { MotionSection } from "@/components/motion/MotionSection";
+import { MotionHeading } from "@/components/motion/MotionHeading";
+import { StaggeredCardGrid } from "@/components/motion/StaggeredCardGrid";
 
-export const metadata: Metadata = {
-  title: "30+ Globally Recognized Certifications | DIDM",
-  description:
-    "Earn 30+ globally recognized digital marketing credentials from Google, Meta, HubSpot, SEMrush, and the prestigious DIDM Industry Diploma.",
-  alternates: {
-    canonical: "https://www.didm.in/didm-certifications",
-  },
-};
+interface CertificationItem {
+  name: string;
+}
 
-const CERTIFICATION_GROUPS = [
+interface CertificationGroup {
+  id: string;
+  title: string;
+  logo: string;
+  logoAlt: string;
+  logoWidth: number;
+  logoHeight: number;
+  items: CertificationItem[];
+}
+
+const CERTIFICATION_GROUPS: CertificationGroup[] = [
   {
-    category: "Google Professional Certifications",
-    provider: "Google Skillshop & Google Cloud",
-    count: "8 Certifications",
-    description: "Industry-standard validations for Google's search, display, video, analytics, and retail ad ecosystem.",
+    id: "didm-cert",
+    title: "DIDM Certification (As per Course)",
+    logo: "/images/didm/certifications/didm_logo.png",
+    logoAlt: "DIDM Certifications",
+    logoWidth: 90,
+    logoHeight: 30,
     items: [
-      { name: "Google Ads Search Certification", code: "G-SEARCH", verified: true },
-      { name: "Google Ads Display Certification", code: "G-DISPLAY", verified: true },
-      { name: "Google Ads Video (YouTube) Certification", code: "G-VIDEO", verified: true },
-      { name: "Google Ads Measurement Certification", code: "G-MEASURE", verified: true },
-      { name: "Google Ads Apps Certification", code: "G-APPS", verified: true },
-      { name: "Shopping Ads Certification", code: "G-SHOP", verified: true },
-      { name: "Google Analytics 4 (GA4) Certification", code: "GA4-PRO", verified: true },
-      { name: "Google Digital Garage Fundamentals", code: "G-GARAGE", verified: true },
+      { name: "1. Professional Course" },
+      { name: "2. Advanced Course" },
+      { name: "3. Master Course" },
     ],
   },
   {
-    category: "Meta & Social Media Certifications",
-    provider: "Meta Blueprint & LinkedIn",
-    count: "6 Certifications",
-    description: "Rigorous competency credentials covering paid acquisition, custom audiences, and social analytics.",
+    id: "google-cert",
+    title: "09 Google Certification",
+    logo: "/images/didm/certifications/google_certificate.png",
+    logoAlt: "Google Certifications",
+    logoWidth: 80,
+    logoHeight: 30,
     items: [
-      { name: "Meta Certified Digital Marketing Associate", code: "META-100-101", verified: true },
-      { name: "Meta Certified Community Manager", code: "META-CM", verified: true },
-      { name: "Meta Ads Manager & Pixel Architecture", code: "META-ADS", verified: true },
-      { name: "LinkedIn Marketing Strategy Certification", code: "LI-STRAT", verified: true },
-      { name: "Twitter / X Ads Campaign Certification", code: "X-ADS", verified: true },
-      { name: "YouTube Creator & Channel Growth", code: "YT-GROWTH", verified: true },
+      { name: "1. Google Ads Measurement Certification" },
+      { name: "2. AI-Powered Performance Ads Certification" },
+      { name: "3. Google Ads Creative Certification" },
+      { name: "4. Google Ads Search Certification" },
+      { name: "5. Google Ads Display Certification" },
+      { name: "6. AI-Powered Shopping Ads Certification" },
+      { name: "7. Google Ads Video Certification" },
+      { name: "8. Google Ads Apps Certification" },
+      { name: "9. Google Analytics Certification" },
     ],
   },
   {
-    category: "SEO, Inbound & Analytical Toolstacks",
-    provider: "HubSpot Academy & SEMrush",
-    count: "8 Certifications",
-    description: "Inbound methodology, CRM marketing, conversion funnels, and organic competitive intelligence.",
+    id: "semrush-cert",
+    title: "04SEMrush Certification",
+    logo: "/images/didm/certifications/semrush_logo.png",
+    logoAlt: "Semrush Certification",
+    logoWidth: 80,
+    logoHeight: 30,
     items: [
-      { name: "HubSpot Inbound Marketing Certification", code: "HUBSPOT-INB", verified: true },
-      { name: "HubSpot Content Marketing Certification", code: "HUBSPOT-CONT", verified: true },
-      { name: "HubSpot Email Marketing Certification", code: "HUBSPOT-EMAIL", verified: true },
-      { name: "HubSpot Contextual Marketing", code: "HUBSPOT-CTX", verified: true },
-      { name: "SEMrush SEO Fundamentals Certification", code: "SEMRUSH-SEO", verified: true },
-      { name: "SEMrush Technical SEO Toolkit Exam", code: "SEMRUSH-TECH", verified: true },
-      { name: "SEMrush Competitive Analysis Exam", code: "SEMRUSH-COMP", verified: true },
-      { name: "Microsoft Advertising Certified Professional", code: "MACP", verified: true },
+      { name: "1. SEMrush SEO Fundamental" },
+      { name: "2. SEMrush Local SEO" },
+      { name: "3. SEMrush Mobile SEO" },
+      { name: "4. SEMrush On-Page & Technical SEO" },
     ],
   },
   {
-    category: "Institutional Industry Diplomas",
-    provider: "Delhi Institute of Digital Marketing (DIDM)",
-    count: "4 Credentials",
-    description: "Evaluated by senior agency directors at Online Strikers upon live campaign defense.",
+    id: "hubspot-cert",
+    title: "11 Hubspot Certification",
+    logo: "/images/didm/certifications/hubspot_logo.png",
+    logoAlt: "Hubspot Certification",
+    logoWidth: 80,
+    logoHeight: 30,
     items: [
-      { name: "Master in Digital Marketing (MIDM) Diploma", code: "DIDM-MIDM-52", verified: true },
-      { name: "Digital Marketing Intelligence (DMI) Dual Diploma", code: "DIDM-DMI", verified: true },
-      { name: "Advanced Digital Marketing Specialist (AIDM)", code: "DIDM-AIDM", verified: true },
-      { name: "Agency Project Onboarding Certificate", code: "ONLINE-STRIKERS", verified: true },
+      { name: "1. Hubspot SMO" },
+      { name: "2. Hubspot SEO II" },
+      { name: "3. Hubspot SEO" },
+      { name: "4. Hubspot Digital Advertising" },
+      { name: "5. Hubspot Ads" },
+      { name: "6. Hubspot Email Marketing" },
+      { name: "7. Hubspot Content Marketing" },
+      { name: "8. Hubspot Inbound Marketing" },
+      { name: "9. Hubspot Social Media Marketing" },
+      { name: "10. Hubspot Digital Marketing" },
+      { name: "11. Hubspot Social Media Marketing II" },
+    ],
+  },
+  {
+    id: "other-cert",
+    title: "02 Other Certification",
+    logo: "/images/didm/certifications/other_certification_logo.png",
+    logoAlt: "Other Certification",
+    logoWidth: 70,
+    logoHeight: 25,
+    items: [
+      { name: "1. Google Digital Unlocked" },
+      { name: "2. Digital Garage" },
+    ],
+  },
+  {
+    id: "master-cert",
+    title: "03 Additional Certificates with Master Course",
+    logo: "/images/didm/certifications/other_certification_logo.png",
+    logoAlt: "Additional Master Certification",
+    logoWidth: 70,
+    logoHeight: 25,
+    items: [
+      { name: "1. Experience Certificate - Online Strikers" },
+      { name: "2. Creative Content Writing" },
+      { name: "3. Graphic Designing" },
     ],
   },
 ];
 
 export default function CertificationsPage() {
+  // Default all groups open as displayed in official HTML
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({
+    "didm-cert": true,
+    "google-cert": true,
+    "semrush-cert": true,
+    "hubspot-cert": true,
+    "other-cert": true,
+    "master-cert": true,
+  });
+
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("Get Instant Career Clarity");
+
+  const toggleGroup = (id: string) => {
+    setOpenGroups((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  const expandAll = () => {
+    const allOpen: Record<string, boolean> = {};
+    CERTIFICATION_GROUPS.forEach((g) => {
+      allOpen[g.id] = true;
+    });
+    setOpenGroups(allOpen);
+  };
+
+  const collapseAll = () => {
+    setOpenGroups({});
+  };
+
+  const openEnquiry = (title: string) => {
+    setModalTitle(title);
+    setIsEnquiryModalOpen(true);
+  };
+
   return (
-    <div className="py-12 md:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* Header */}
-        <div className="max-w-3xl space-y-4">
-          <nav aria-label="Breadcrumb" className="text-xs font-mono text-neutral-500 flex items-center gap-2">
-            <Link href="/" className="hover:text-brand-red transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/programs" className="hover:text-brand-red transition-colors">Programs</Link>
-            <span>/</span>
-            <span className="text-neutral-900 dark:text-white font-semibold">Certifications</span>
+    <div className="creative-page min-h-screen bg-[#f8f9fa] text-[#222222]">
+      <EditorialHero bannerRatio={3.75} eyebrow="LEARNING & CREDENTIALS" title="Digital Marketing Certifications — DIDM" description="Discover the certifications listed by DIDM, with course-specific learning and industry certification pathways." image="/images/didm/certifications/certification_banner.gif" alt="DIDM certification pathways" caption="DIDM certification pathways" variant="recognition" href="#certification-pathways" action="Explore certifications" />
+      <div id="certification-pathways" />
+      {/* 1. TOP BREADCRUMB BAR */}
+      <section className="bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm">
+          <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-neutral-500">
+            <Link href="/" className="hover:text-[#c0392b] transition">
+              Home
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-neutral-400" />
+            <Link href="/learn" className="hover:text-[#c0392b] transition">
+              Resources
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-neutral-400" />
+            <span className="font-semibold text-[#c0392b]">30+ Certifications</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 text-brand-red text-xs font-mono font-semibold">
-            <Award className="w-3.5 h-3.5" />
-            <span>GLOBAL CREDENTIALS · VERIFIED PRACTICAL EXAMS</span>
-          </div>
+          <a
+            href="tel:+918800505151"
+            className="inline-flex items-center gap-1.5 text-neutral-700 hover:text-[#c0392b] font-bold transition text-xs sm:text-sm"
+          >
+            <Phone className="w-3.5 h-3.5 text-[#c0392b]" />
+            <span>+91 8800-505-151</span>
+          </a>
+        </div>
+      </section>
 
-          <h1 className="text-3xl sm:text-5xl font-normal text-neutral-900 dark:text-white leading-[1.1]">
-            30+ Globally recognized digital marketing certifications.
-          </h1>
+      {/* 2. AUTHENTIC TOP BANNER (GIF) */}
+      <details className="creative-source-art"><summary>Original DIDM certification artwork</summary>      <section className="bg-[#b52828] w-full overflow-hidden">
+        <div className="w-full">
+          <Image
+            src="/images/didm/certifications/certification_banner.gif"
+            alt="DIDM Provide 30 Plus Certifications"
+            width={1500}
+            height={400}
+            priority
+            className="w-full h-auto object-cover"
+            sizes="100vw"
+          />
+        </div>
+      </section></details>
 
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            DIDM trainees earn globally valid certifications accepted by top multinational corporations, government organizations, and high-growth digital marketing agencies worldwide.
+      {/* 3. PAGE TITLE */}
+      <MotionSection preset="editorial" className="pt-10 pb-6 bg-white border-b border-neutral-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+            <span className="text-[#c0392b]">30+ </span>
+            <span className="text-[#222222]">Digital Marketing Certification - </span>
+            <span className="text-[#c0392b]">DIDM</span>
+          </h2>
+          <p className="text-xs sm:text-sm text-neutral-600 max-w-2xl mx-auto">
+            Earn globally recognized credentials from Google, Meta, SEMrush, HubSpot, and the DIDM Master Diploma to accelerate your digital career.
           </p>
-        </div>
-
-        {/* Highlight Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-2">
-            <div className="text-2xl font-bold text-brand-red">30+</div>
-            <h3 className="font-bold text-sm text-neutral-900 dark:text-white">Total Certifications</h3>
-            <p className="text-xs text-neutral-500">Google, Meta, HubSpot, SEMrush, Microsoft, and DIDM Diploma.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-2">
-            <div className="text-2xl font-bold text-neutral-900 dark:text-white">100%</div>
-            <h3 className="font-bold text-sm text-neutral-900 dark:text-white">Exam Guidance</h3>
-            <p className="text-xs text-neutral-500">Dedicated mock drills, question banks, and live exam vouchers.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-2">
-            <div className="text-2xl font-bold text-neutral-900 dark:text-white">ISO 9001</div>
-            <h3 className="font-bold text-sm text-neutral-900 dark:text-white">Certified Institute</h3>
-            <p className="text-xs text-neutral-500">Quality Management System certification in training operations.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 space-y-2">
-            <div className="text-2xl font-bold text-brand-red">ASSOCHAM</div>
-            <h3 className="font-bold text-sm text-neutral-900 dark:text-white">Apex Body Award</h3>
-            <p className="text-xs text-neutral-500">Most Promising Brand in Digital Marketing Education honor.</p>
-          </div>
-        </div>
-
-        {/* Certifications Groups */}
-        <div className="space-y-12">
-          {CERTIFICATION_GROUPS.map((group, gIdx) => (
-            <div
-              key={gIdx}
-              className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#131319] border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-6"
+          <div className="pt-2 flex justify-center gap-3 text-xs">
+            <button
+              onClick={expandAll}
+              className="text-[#c0392b] font-bold hover:underline cursor-pointer"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-neutral-100 dark:border-neutral-800">
-                <div>
-                  <span className="text-xs font-mono uppercase text-brand-red font-bold tracking-wider">
-                    {group.provider}
-                  </span>
-                  <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white mt-0.5">
-                    {group.category}
-                  </h2>
-                  <p className="text-xs sm:text-sm text-neutral-500 mt-1 max-w-2xl">{group.description}</p>
-                </div>
-                <span className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-xs font-mono font-semibold text-neutral-700 dark:text-neutral-300 self-start sm:self-auto">
-                  {group.count}
-                </span>
-              </div>
+              Expand All
+            </button>
+            <span className="text-neutral-300">|</span>
+            <button
+              onClick={collapseAll}
+              className="text-neutral-500 font-bold hover:underline cursor-pointer"
+            >
+              Collapse All
+            </button>
+          </div>
+        </div>
+      </MotionSection>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {group.items.map((cert, cIdx) => (
-                  <div
-                    key={cIdx}
-                    className="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200/80 dark:border-neutral-800/80 space-y-2 hover:border-brand-red/30 transition-colors"
+      {/* 4. MAIN ACCORDION / CERTIFICATION TABLE */}
+      <MotionSection preset="depth" className="py-8 sm:py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-lg border border-neutral-300 shadow-sm overflow-hidden divide-y divide-neutral-200">
+            {CERTIFICATION_GROUPS.map((group) => {
+              const isOpen = !!openGroups[group.id];
+              return (
+                <div key={group.id} className="transition-colors">
+                  {/* Accordion Header */}
+                  <button
+                    onClick={() => toggleGroup(group.id)}
+                    aria-expanded={isOpen}
+                    className="w-full px-5 py-4 flex items-center justify-between text-left bg-[#f8f9fa] hover:bg-[#f1f3f5] transition cursor-pointer select-none"
                   >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono text-neutral-400 font-semibold">{cert.code}</span>
-                      <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                    <div className="flex items-center gap-4">
+                      <div className="w-24 h-8 flex items-center justify-start flex-shrink-0">
+                        <Image
+                          src={group.logo}
+                          alt={group.logoAlt}
+                          width={group.logoWidth}
+                          height={group.logoHeight}
+                          className="max-h-8 w-auto object-contain"
+                        />
+                      </div>
+                      <span className="text-sm sm:text-base font-bold text-neutral-800">
+                        {group.title}
+                      </span>
                     </div>
-                    <h3 className="font-bold text-xs sm:text-sm text-neutral-900 dark:text-white line-clamp-2">
-                      {cert.name}
-                    </h3>
-                    <div className="text-[11px] font-mono text-brand-red flex items-center gap-1 pt-1">
-                      <span>Live Exam Included</span>
+
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-red-50 text-[#c0392b] border border-red-200">
+                        {group.items.length} {group.items.length === 1 ? "Cert" : "Certs"}
+                      </span>
+                      {isOpen ? (
+                        <ChevronUp className="w-5 h-5 text-neutral-500" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-neutral-500" />
+                      )}
                     </div>
-                  </div>
-                ))}
+                  </button>
+
+                  {/* Accordion Body */}
+                  {isOpen && (
+                    <div className="bg-white divide-y divide-neutral-100 px-5 sm:px-8 py-2">
+                      {group.items.map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="py-3 flex items-center justify-between gap-3 text-xs sm:text-sm text-neutral-700 hover:text-neutral-900"
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <CheckCircle2 className="w-4 h-4 text-[#c0392b] flex-shrink-0" />
+                            <span className="font-medium">{item.name}</span>
+                          </div>
+                          <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-wider">
+                            Verified
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </MotionSection>
+
+      {/* 5. STILL CONFUSED...... ?? GET INSTANT CAREER CLARITY */}
+      <MotionSection preset="scale" className="py-12 sm:py-16 bg-white border-t border-neutral-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl p-6 sm:p-10 border border-neutral-200 bg-gradient-to-br from-neutral-50 via-white to-red-50/30 shadow-md">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Title */}
+              <div className="lg:col-span-7 space-y-1 text-center lg:text-left">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#c0392b] tracking-tight leading-none">
+                  Still Confused...... ??
+                </h2>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-neutral-900 tracking-tight pt-1">
+                  GET INSTANT CAREER CLARITY
+                </h3>
+                <p className="text-xs sm:text-sm text-neutral-600 pt-2 max-w-md">
+                  Not sure which digital marketing certification best aligns with your background? Talk with our senior advisors for 1-on-1 guidance.
+                </p>
+              </div>
+
+              {/* Right Action Buttons */}
+              <div className="lg:col-span-5 space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {/* Download Brochure Button */}
+                  <button
+                    onClick={() => openEnquiry("Download Official Course Brochure")}
+                    className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-lg bg-white border border-neutral-200 text-[#b52828] font-bold text-xs sm:text-sm shadow-sm hover:shadow-md hover:scale-[1.02] transition cursor-pointer"
+                  >
+                    <span>Download Brochure</span>
+                    <Download className="w-4 h-4 text-[#b52828]" />
+                  </button>
+
+                  {/* Start With Demo Button */}
+                  <button
+                    onClick={() => openEnquiry("Book Free Live Demo Session")}
+                    className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-lg bg-white border border-neutral-200 text-[#b52828] font-bold text-xs sm:text-sm shadow-sm hover:shadow-md hover:scale-[1.02] transition cursor-pointer"
+                  >
+                    <span>Start With Demo</span>
+                    <Play className="w-4 h-4 text-[#b52828] fill-current" />
+                  </button>
+                </div>
+
+                {/* Training Details Button */}
+                <Link
+                  href="/programs/master-in-digital-marketing-course"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-lg bg-white border-2 border-[#b52828] text-[#b52828] hover:bg-[#b52828] hover:text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-sm hover:shadow-md transition text-center"
+                >
+                  <span>TRAINING DETAILS</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
-          ))}
+          </div>
         </div>
+      </MotionSection>
 
-        {/* CTA Banner */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-900 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
-            <div className="text-xs font-mono uppercase text-brand-red-light font-bold">
-              Institutional Credential
+      {/* 6. #TRENDING BLOG SECTION */}
+      <MotionSection preset="editorial" className="py-12 bg-neutral-50 border-t border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-black text-neutral-900">
+              #Trending <span className="text-[#c0392b]">Blog</span>
+            </h2>
+            <div className="w-16 h-1 bg-[#c0392b] mx-auto mt-2"></div>
+          </div>
+
+          <StaggeredCardGrid columns={3} stagger={0.06}>
+            <Link
+              href="/news-and-events"
+              className="group p-5 rounded-lg border border-neutral-200 hover:border-[#c0392b] shadow-sm hover:shadow transition bg-white space-y-3"
+            >
+              <span className="text-[11px] font-bold text-[#c0392b] uppercase tracking-wider">
+                Certifications Guide
+              </span>
+              <h3 className="font-bold text-neutral-900 group-hover:text-[#c0392b] transition text-sm sm:text-base leading-snug">
+                Why Google Ads & GA4 Certifications Are Essential for High-Paying Agency Roles
+              </h3>
+              <p className="text-xs text-neutral-600 line-clamp-3 leading-relaxed">
+                Discover why Fortune 500 agencies and top e-commerce brands prioritize candidates with hands-on Google Skillshop credentials.
+              </p>
+              <div className="text-xs font-bold text-[#c0392b] flex items-center gap-1 pt-1">
+                <span>Read More</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition" />
+              </div>
+            </Link>
+
+            <Link
+              href="/news-and-events"
+              className="group p-5 rounded-lg border border-neutral-200 hover:border-[#c0392b] shadow-sm hover:shadow transition bg-white space-y-3"
+            >
+              <span className="text-[11px] font-bold text-[#c0392b] uppercase tracking-wider">
+                Industry Insights
+              </span>
+              <h3 className="font-bold text-neutral-900 group-hover:text-[#c0392b] transition text-sm sm:text-base leading-snug">
+                HubSpot Inbound & Social Media Certifications: Building B2B Authority in 2026
+              </h3>
+              <p className="text-xs text-neutral-600 line-clamp-3 leading-relaxed">
+                How HubSpot&apos;s inbound methodology empowers marketers to generate qualified leads and design automated email drip workflows.
+              </p>
+              <div className="text-xs font-bold text-[#c0392b] flex items-center gap-1 pt-1">
+                <span>Read More</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition" />
+              </div>
+            </Link>
+
+            <Link
+              href="/news-and-events"
+              className="group p-5 rounded-lg border border-neutral-200 hover:border-[#c0392b] shadow-sm hover:shadow transition bg-white space-y-3"
+            >
+              <span className="text-[11px] font-bold text-[#c0392b] uppercase tracking-wider">
+                SEO Credentials
+              </span>
+              <h3 className="font-bold text-neutral-900 group-hover:text-[#c0392b] transition text-sm sm:text-base leading-snug">
+                SEMrush Technical & Local SEO Certifications: Mastering Modern Search Rankings
+              </h3>
+              <p className="text-xs text-neutral-600 line-clamp-3 leading-relaxed">
+                Master keyword gap analysis, backlink auditing, and on-page technical optimization with SEMrush certification frameworks.
+              </p>
+              <div className="text-xs font-bold text-[#c0392b] flex items-center gap-1 pt-1">
+                <span>Read More</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition" />
+              </div>
+            </Link>
+          </StaggeredCardGrid>
+        </div>
+      </MotionSection>
+
+      {/* 7. ENQUIRY MODAL POPUP */}
+      {isEnquiryModalOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 bg-neutral-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+          onClick={() => setIsEnquiryModalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative border border-neutral-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsEnquiryModalOpen(false)}
+              className="absolute top-4 right-4 p-1.5 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-600 transition"
+              title="Close Dialog"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="text-center mb-6 space-y-1">
+              <span className="text-[10px] font-black uppercase tracking-wider text-[#c0392b] bg-red-50 px-2.5 py-0.5 rounded-full">
+                DIDM Admissions Helpline
+              </span>
+              <h3 className="text-xl font-black text-neutral-900">
+                {modalTitle}
+              </h3>
+              <p className="text-xs text-neutral-600">
+                Enter your contact info below. Our senior counsellor will connect with you within 15 minutes.
+              </p>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold">
-              Ready to earn industry-validated credentials?
-            </h3>
-            <p className="text-xs sm:text-sm text-neutral-300">
-              Join the Master in Digital Marketing (MIDM) program to complete hands-on practical exams with dedicated trainer assistance.
-            </p>
-          </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              href="/programs/master-in-digital-marketing-course"
-              className="btn-red text-xs py-3 px-5 font-bold"
-            >
-              Explore Master Course
-            </Link>
-            <Link
-              href="/enquire"
-              className="btn-ghost text-xs py-3 px-5 font-semibold text-white border-neutral-700 hover:bg-neutral-800"
-            >
-              Book Demo Class
-            </Link>
+            <EnquiryForm />
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
-

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Star, Building2, MapPin, Quote, ArrowRight, ExternalLink } from "lucide-react";
 import { SITE_DATA, ReviewStory } from "@/data/site-data";
+import { StaggeredCardGrid } from "@/components/motion/StaggeredCardGrid";
 
 export function StoriesFilter() {
   const [filter, setFilter] = useState<string>("All");
@@ -37,7 +38,7 @@ export function StoriesFilter() {
       </div>
 
       {/* Stories Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <StaggeredCardGrid columns={2} stagger={0.06}>
         {filtered.map((story) => (
           <div
             key={story.id}
@@ -86,7 +87,7 @@ export function StoriesFilter() {
             </div>
           </div>
         ))}
-      </div>
+      </StaggeredCardGrid>
     </div>
   );
 }
