@@ -490,9 +490,9 @@ export function CentresLocationManager({ initialCentres, canWrite, canPublish }:
                     <iframe
                       src={
                         centre.mapEmbedUrl ||
-                        `https://maps.google.com/maps?q=${encodeURIComponent(
+                        `https://maps.google.com/maps?q=Delhi+Institute+of+Digital+Marketing,+${encodeURIComponent(
                           centre.address
-                        )}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+                        )}&t=&z=15&ie=UTF8&output=embed`
                       }
                       width="100%"
                       height="100%"
