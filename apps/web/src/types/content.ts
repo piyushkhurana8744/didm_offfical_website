@@ -43,6 +43,7 @@ export interface Centre {
   name: string;
   city: string;
   state: string;
+  postalCode?: string;
   region: "Delhi" | "Noida/UP" | "Gurgaon/Haryana" | "Punjab" | "Uttarakhand" | "Maharashtra" | "Rajasthan" | "Online";
   address: string;
   landmark: string;
@@ -55,6 +56,25 @@ export interface Centre {
   isHeadOffice?: boolean;
   facilities: string[];
   verifiedSourceUrl?: string;
+  // Canonical Location & Maps Verification Fields
+  directionsUrl?: string;
+  mapEmbedUrl?: string;
+  googlePlaceId?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
+  centerStatus?: "active" | "review_needed" | "virtual";
+  verificationStatus?:
+    | "matches_official_and_maps_listing"
+    | "needs_pin_code_confirmation"
+    | "conflicting_historical_location"
+    | "conflicting_historical_floor"
+    | "website_pin_typo_corrected"
+    | "pin_mismatch_review"
+    | "needs_pin_and_active_center_confirmation"
+    | "unresolved_needs_confirmation"
+    | "virtual_campus";
+  reviewNotes?: string[];
+  lastVerifiedDate?: string;
 }
 
 export interface ReviewStory {

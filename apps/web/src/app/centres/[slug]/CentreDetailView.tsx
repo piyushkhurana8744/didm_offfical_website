@@ -1269,7 +1269,10 @@ export function CentreDetailView({ centre, allCentres }: CentreDetailViewProps) 
               {/* Google Map Embed */}
               <div className="relative aspect-[16/9] w-full rounded-md overflow-hidden border border-neutral-300 mt-4">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14005.329491151047!2d77.1241351!3d28.6497651!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b0c1142a52bab9e!2sDelhi%20Institute%20of%20Digital%20Marketing!5e0!3m2!1sen!2sin!4v1663825371746!5m2!1sen!2sin"
+                  src={
+                    centre.mapEmbedUrl ||
+                    `https://maps.google.com/maps?q=${encodeURIComponent(centre.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+                  }
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -1280,16 +1283,25 @@ export function CentreDetailView({ centre, allCentres }: CentreDetailViewProps) 
                 ></iframe>
               </div>
 
-              <div className="pt-2 text-center sm:text-left">
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-center sm:text-left">
                 <a
-                  href="https://maps.google.com"
+                  href={
+                    centre.directionsUrl ||
+                    `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(centre.address)}`
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-neutral-800 hover:bg-neutral-900 text-white font-bold px-4 py-2 rounded text-xs uppercase"
+                  className="inline-flex items-center gap-1.5 bg-neutral-800 hover:bg-neutral-900 text-white font-bold px-4 py-2 rounded text-xs uppercase transition shadow-xs"
                 >
                   <MapPin className="w-3.5 h-3.5 text-red-400" />
                   <span>Get Directions on Map</span>
                 </a>
+
+                {centre.lastVerifiedDate && (
+                  <span className="text-[11px] text-neutral-500 font-medium">
+                    Verified Location · {centre.lastVerifiedDate}
+                  </span>
+                )}
               </div>
             </div>
 

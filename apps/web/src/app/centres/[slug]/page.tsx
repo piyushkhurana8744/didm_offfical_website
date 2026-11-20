@@ -59,13 +59,25 @@ export default async function CentreDetailPage({ params }: PageProps) {
     description: `Best Digital Marketing Institute in ${centre.name} with 100% Placement Support`,
     telephone: centre.phones[0] || SITE_BRAND.phone,
     email: centre.email || SITE_BRAND.email,
+    url: `https://www.didm.in/centres/${centre.slug}`,
+    ...(centre.directionsUrl ? { hasMap: centre.directionsUrl } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: centre.address,
       addressLocality: centre.city,
       addressRegion: centre.state,
+      ...(centre.postalCode ? { postalCode: centre.postalCode } : {}),
       addressCountry: "IN",
     },
+    ...(centre.latitude && centre.longitude
+      ? {
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: centre.latitude,
+            longitude: centre.longitude,
+          },
+        }
+      : {}),
     openingHours: "Mo-Fr 09:00-21:00, Sa-Su 09:00-19:00",
   };
 
