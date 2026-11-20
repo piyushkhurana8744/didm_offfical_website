@@ -55,7 +55,7 @@ export const DIDM_FACULTY: TrainerFaculty[] = [
     id: "shoaib-ali",
     name: "Shoaib Ali",
     role: "Digital Marketing Trainer",
-    branch: "Noida Campus (Sector 62)",
+    branch: "Noida Campus (Sector 18)",
     image: "/images/didm/trainers/Shoaib_Digital_Marketing_Trainer_in_DIDM.jpg",
     experience: "8+ Years",
     specialization: "Meta Ads, Social Funnels & E-Commerce Scaling",

@@ -18,7 +18,7 @@ This document details the test results for the **DIDM AI-First Adaptive Homepage
 |---|------------------------|-------------------|---------------|--------|
 | **1** | Course Tool Accuracy | `getCourseDetails("midm")` retrieves Master in Digital Marketing | Returns MIDM with 52 brochure modules, ₹68,661 tuition, 30+ certs | **PASSED** |
 | **2** | FAQ Tool Grounding | `getApprovedFaqAnswers("placement")` returns verified FAQs | Matches verified institutional placement FAQs | **PASSED** |
-| **3** | Campus Tool Grounding | `getTrainingCenters("noida")` returns Sector 62 campus | Returns Sector 62, Noida Centre details | **PASSED** |
+| **3** | Campus Tool Grounding | `getTrainingCenters("noida")` returns Sector 18 campus | Returns Sector 18, Noida Centre details | **PASSED** |
 | **4** | Student Story Retrieval | `getVerifiedStudentStories()` returns published reflections | Returns Soumya Jay, Nancy Sharma, Sonam Aggarwal | **PASSED** |
 | **5** | Career Roadmap Generation | `getCareerRoadmap("student")` returns 5 milestones | Generates 5 structured milestones with practical outputs | **PASSED** |
 | **6** | Student Persona Adaptation | Query: "College student seeking practical skills & job" | Adapts to MIDM, 52-Module Roadmap, placement drives | **PASSED** |

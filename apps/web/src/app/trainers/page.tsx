@@ -68,7 +68,7 @@ export default function TrainersPage() {
   const branches = [
     { label: "All Campuses (11 Leads)", value: "all" },
     { label: "Satya Niketan HQ", value: "satya niketan" },
-    { label: "Noida Sector 62", value: "noida" },
+    { label: "Noida Sector 18", value: "noida" },
     { label: "Pitampura (NSP)", value: "pitampura" },
     { label: "Kalkaji (South Delhi)", value: "kalkaji" },
     { label: "Dwarka", value: "dwarka" },

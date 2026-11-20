@@ -403,7 +403,7 @@ export default function OutcomesPlacementPage() {
                       className="w-full px-3 py-2.5 rounded-md border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white focus:outline-none focus:border-[#b52828]"
                     >
                       <option value="Satya Niketan">Satya Niketan HQ</option>
-                      <option value="Noida">Noida Sector 62</option>
+                      <option value="Noida">Noida Sector 18</option>
                       <option value="Dwarka">Dwarka Sector 7</option>
                       <option value="Kalkaji">Kalkaji</option>
                       <option value="Pitampura">Pitampura NSP</option>
@@ -599,7 +599,7 @@ export default function OutcomesPlacementPage() {
                       className="w-full px-3 py-2.5 rounded-md bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     >
                       <option value="Satya Niketan">Satya Niketan HQ</option>
-                      <option value="Noida">Noida Sector 62</option>
+                      <option value="Noida">Noida Sector 18</option>
                       <option value="Dwarka">Dwarka Sector 7</option>
                       <option value="Kalkaji">Kalkaji</option>
                       <option value="Pitampura">Pitampura NSP</option>
@@ -797,7 +797,7 @@ export default function OutcomesPlacementPage() {
           <div className="flex flex-wrap justify-center items-center gap-2 text-xs font-heading">
             {[
               { name: "Satya Niketan HQ", href: "/centres/satya-niketan" },
-              { name: "Noida Sector 62", href: "/centres/noida" },
+              { name: "Noida Sector 18", href: "/centres/noida" },
               { name: "Dwarka Sector 7", href: "/centres/dwarka" },
               { name: "Kalkaji", href: "/centres/kalkaji" },
               { name: "Pitampura (NSP)", href: "/centres/pitampura" },

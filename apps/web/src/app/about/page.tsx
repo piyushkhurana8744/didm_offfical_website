@@ -759,7 +759,7 @@ export default function AboutUsPage() {
                           className="w-full px-3 py-2.5 rounded-md border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-gray-900 dark:text-white focus:outline-none focus:border-[#b52828]"
                         >
                           <option value="Satya Niketan">Satya Niketan (South Campus HQ)</option>
-                          <option value="Noida">Noida Sector 62</option>
+                          <option value="Noida">Noida Sector 18</option>
                           <option value="Dwarka">Dwarka Sector 7</option>
                           <option value="Kalkaji">Kalkaji / Nehru Place</option>
                           <option value="Gurgaon">Gurgaon Sector 14</option>
