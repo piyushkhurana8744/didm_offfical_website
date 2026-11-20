@@ -22,7 +22,6 @@ import Link from "next/link";
 import { getHomepage } from "@/lib/mongodb/pages";
 import { getVerifiedDidmMedia } from "@/data/didm-media";
 import { AdaptiveHomepageProvider } from "@/context/AdaptiveHomepageContext";
-import { AdaptiveHeroGuide } from "@/components/homepage/AdaptiveHeroGuide";
 import { AdaptiveCourseDiscovery } from "@/components/homepage/AdaptiveCourseDiscovery";
 import { AdaptiveCareerRoadmap } from "@/components/homepage/AdaptiveCareerRoadmap";
 import { AdaptiveCounsellingHandoff } from "@/components/homepage/AdaptiveCounsellingHandoff";
@@ -45,11 +44,8 @@ export default async function HomePage() {
   return (
     <AdaptiveHomepageProvider>
       <div className="creative-home bg-white dark:bg-[#0B0C10] text-[#222222] dark:text-[#EAEAEA] font-body selection:bg-[#b52828] selection:text-white">
-        {/* 1. Hero Full-Bleed Billboard, Eyebrow & Primary H1 Area */}
+        {/* 1. Hero Full-Bleed Billboard with Embedded AI Course & Career Guide */}
         <CreativeStudioHero heading={published ? homepage.content.heroHeading : undefined} media={heroMedia ? { path: heroMedia.path, alt: heroMedia.alt } : undefined} />
-        
-        {/* 2. Embedded AI Course & Career Guide */}
-        <AdaptiveHeroGuide />
 
         <MotionSection className="student-entry"><div className="student-shell student-entry-inner"><div><p className="student-eyebrow">A GOOD PLACE TO BEGIN</p><h2>Big possibilities. Find your direction.</h2><p>Explore what fits your goals, your interests and your schedule.</p></div><div className="student-entry-choices"><Link href="/course-finder">Find my course ↗</Link><Link href="/upcoming-batches">Explore batches ↗</Link></div></div></MotionSection>
 
