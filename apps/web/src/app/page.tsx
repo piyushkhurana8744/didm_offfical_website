@@ -21,6 +21,11 @@ import { SITE_DATA } from "@/data/site-data";
 import Link from "next/link";
 import { getHomepage } from "@/lib/mongodb/pages";
 import { getVerifiedDidmMedia } from "@/data/didm-media";
+import { AdaptiveHomepageProvider } from "@/context/AdaptiveHomepageContext";
+import { AdaptiveHeroGuide } from "@/components/homepage/AdaptiveHeroGuide";
+import { AdaptiveCourseDiscovery } from "@/components/homepage/AdaptiveCourseDiscovery";
+import { AdaptiveCareerRoadmap } from "@/components/homepage/AdaptiveCareerRoadmap";
+import { AdaptiveCounsellingHandoff } from "@/components/homepage/AdaptiveCounsellingHandoff";
 
 export const dynamic = "force-dynamic";
 
@@ -38,72 +43,83 @@ export default async function HomePage() {
   const published = homepage.status !== "static-fallback" && homepage.revision > 0;
   const heroMedia = published ? getVerifiedDidmMedia(homepage.content.heroMediaId) : undefined;
   return (
-    <div className="creative-home bg-white dark:bg-[#0B0C10] text-[#222222] dark:text-[#EAEAEA] font-body selection:bg-[#b52828] selection:text-white">
-      {/* 1. Hero Full-Bleed Billboard, Eyebrow & Primary H1 Area */}
-      <CreativeStudioHero heading={published ? homepage.content.heroHeading : undefined} media={heroMedia ? { path: heroMedia.path, alt: heroMedia.alt } : undefined} />
-      <MotionSection className="student-entry"><div className="student-shell student-entry-inner"><div><p className="student-eyebrow">A GOOD PLACE TO BEGIN</p><h2>Big possibilities. Find your direction.</h2><p>Explore what fits your goals, your interests and your schedule.</p></div><div className="student-entry-choices"><Link href="/course-finder">Find my course ↗</Link><Link href="/upcoming-batches">Explore batches ↗</Link></div></div></MotionSection>
+    <AdaptiveHomepageProvider>
+      <div className="creative-home bg-white dark:bg-[#0B0C10] text-[#222222] dark:text-[#EAEAEA] font-body selection:bg-[#b52828] selection:text-white">
+        {/* 1. Hero Full-Bleed Billboard, Eyebrow & Primary H1 Area */}
+        <CreativeStudioHero heading={published ? homepage.content.heroHeading : undefined} media={heroMedia ? { path: heroMedia.path, alt: heroMedia.alt } : undefined} />
+        
+        {/* 2. Embedded AI Course & Career Guide */}
+        <AdaptiveHeroGuide />
 
-      {/* Approved campaign storytelling follows the restored program directory. */}
+        <MotionSection className="student-entry"><div className="student-shell student-entry-inner"><div><p className="student-eyebrow">A GOOD PLACE TO BEGIN</p><h2>Big possibilities. Find your direction.</h2><p>Explore what fits your goals, your interests and your schedule.</p></div><div className="student-entry-choices"><Link href="/course-finder">Find my course ↗</Link><Link href="/upcoming-batches">Explore batches ↗</Link></div></div></MotionSection>
 
-      {/* 3. Choose the Certification Course for Your Career (4 Flagship Programs) */}
-      <CreativePrograms />
-      <CampaignJourney />
+        {/* 3. AI-Adaptive Course Discovery Layer */}
+        <AdaptiveCourseDiscovery />
 
-      {/* 4. Flagship 3D Digital Workspace: Laptop Agency Floor Console */}
+        {/* 4. Choose the Certification Course for Your Career (Editorial Full Catalog) */}
+        <CreativePrograms />
 
-      {/* 5. Real Student Experience: Live Ad Budgets & Agency Floor */}
-      <RealStudentExperience />
+        {/* 5. 5-Step Practical Mastery Roadmap (Tailored to Goal) */}
+        <AdaptiveCareerRoadmap />
 
-      {/* 5. Value Pillars: 12 Benefits Grid */}
-      <OriginalTrainingBenefits />
+        {/* 6. Campaign Journey */}
+        <CampaignJourney />
 
-      {/* 6. Course Training Highlights & 'Take a free session today!!' Inline Form */}
-      <OriginalTrainingHighlightsAndForm />
+        {/* 7. Real Student Experience: Live Ad Budgets & Agency Floor */}
+        <RealStudentExperience />
 
-      {/* 7. Over 35000+ Careers Transformed (Alumni Testimonials Banner) */}
-      <OriginalTestimonialsSection />
+        {/* 8. Value Pillars: 12 Benefits Grid */}
+        <OriginalTrainingBenefits />
 
-      {/* 8. Upskill Your Career with Digital Marketing Course (4 Value Columns) */}
-      <OriginalUpskillCareer />
+        {/* 9. Course Training Highlights & 'Take a free session today!!' Inline Form */}
+        <OriginalTrainingHighlightsAndForm />
 
-      {/* 9. Meet Our Master Mentors (Google Senior Strategists) */}
-      <OriginalMasterMentors />
+        {/* 10. Over 35000+ Careers Transformed (Alumni Testimonials Banner) */}
+        <OriginalTestimonialsSection />
 
-      {/* 10. Delhi Institute of Digital Marketing - Awards & Media Recognition */}
-      <OriginalAwardsRecognition />
+        {/* 11. Upskill Your Career with Digital Marketing Course (4 Value Columns) */}
+        <OriginalUpskillCareer />
 
-      {/* 11. Smiling Faces, Successful Futures: Campus Life & Batch Closing Gallery */}
-      <OriginalCampusGallery />
+        {/* 12. Meet Our Master Mentors (Google Senior Strategists) */}
+        <OriginalMasterMentors />
 
-      {/* 12. Find Your Nearest DIDM Training Campus (14 Physical Branches Directory) */}
-      <HomepageCentresDirectory />
+        {/* 13. Delhi Institute of Digital Marketing - Awards & Media Recognition */}
+        <OriginalAwardsRecognition />
 
-      {/* 13. Latest News & Events at DIDM */}
-      <HomepageNewsEvents />
+        {/* 14. Smiling Faces, Successful Futures: Campus Life & Batch Closing Gallery */}
+        <OriginalCampusGallery />
 
-      {/* 14. Hiring Partners: Companies That Love Our Students */}
-      <OriginalHiringPartners />
+        {/* 15. Find Your Nearest DIDM Training Campus (14 Physical Branches Directory) */}
+        <HomepageCentresDirectory />
 
-      {/* 15. Institutional & Corporate Training Solutions */}
-      <OriginalInstitutionalPrograms />
+        {/* 16. Latest News & Events at DIDM */}
+        <HomepageNewsEvents />
 
-      {/* 16. Flagship 3D Admission Dossier & Interactive Application Form */}
+        {/* 17. Hiring Partners: Companies That Love Our Students */}
+        <OriginalHiringPartners />
 
-      {/* 17. Pre-Admission FAQs with Masked Reveal */}
-      <MotionSection preset="editorial" className="py-14 sm:py-20 bg-gray-50 dark:bg-[#12131A] border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <MotionHeading
-            eyebrow="Frequently Asked Questions"
-            title="Everything You Need to Know Before Joining DIDM"
-            description="Clear answers to curriculum, practical live projects, 100% placement support, and EMI options."
-            align="center"
-          />
-          <FAQSection faqs={SITE_DATA.faqs} />
-        </div>
-      </MotionSection>
+        {/* 18. Institutional & Corporate Training Solutions */}
+        <OriginalInstitutionalPrograms />
 
-      {/* 17. Still Confused...... ?? GET INSTANT CAREER CLARITY */}
-      <OriginalCareerClarity />
-    </div>
+        {/* 19. Pre-Admission FAQs with Masked Reveal */}
+        <MotionSection preset="editorial" className="py-14 sm:py-20 bg-gray-50 dark:bg-[#12131A] border-t border-gray-200 dark:border-gray-800">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <MotionHeading
+              eyebrow="Frequently Asked Questions"
+              title="Everything You Need to Know Before Joining DIDM"
+              description="Clear answers to curriculum, practical live projects, 100% placement support, and EMI options."
+              align="center"
+            />
+            <FAQSection faqs={SITE_DATA.faqs} />
+          </div>
+        </MotionSection>
+
+        {/* 20. Still Confused...... ?? GET INSTANT CAREER CLARITY */}
+        <OriginalCareerClarity />
+
+        {/* 21. Consent-Based Admissions Counselling Modal */}
+        <AdaptiveCounsellingHandoff />
+      </div>
+    </AdaptiveHomepageProvider>
   );
 }
