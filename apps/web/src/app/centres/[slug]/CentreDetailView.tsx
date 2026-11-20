@@ -1267,60 +1267,8 @@ export function CentreDetailView({ centre, allCentres }: CentreDetailViewProps) 
                 </p>
               </div>
 
-              {/* Google Map Embed with Place Overlay Card */}
+              {/* Google Map Embed */}
               <div className="relative aspect-[16/9] min-h-[340px] w-full rounded-lg overflow-hidden border border-neutral-300 mt-4 shadow-sm bg-neutral-100">
-                {/* Floating Google Place Info Card (matches official Google Maps Place card) */}
-                <div className="absolute top-3 left-3 z-10 max-w-[270px] sm:max-w-[320px] bg-white/95 backdrop-blur-xs rounded-lg p-3 sm:p-3.5 shadow-lg border border-neutral-200/90 text-left pointer-events-auto">
-                  <div className="font-bold text-neutral-900 text-xs sm:text-sm leading-tight tracking-tight">
-                    Delhi Institute of Digital Marketing
-                  </div>
-                  <div className="text-[11px] text-neutral-600 truncate mt-1 leading-snug" title={centre.address}>
-                    {centre.address}
-                  </div>
-                  <div className="flex items-center gap-1.5 mt-1.5 text-xs">
-                    <span className="font-bold text-neutral-800">{centre.rating || "4.8"}</span>
-                    <span className="text-amber-500 text-xs leading-none">★</span>
-                    <a
-                      href={
-                        centre.directionsUrl ||
-                        `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Delhi Institute of Digital Marketing " + centre.address)}`
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline text-[11px] font-medium"
-                    >
-                      ({centre.reviewsCount || "500+"})
-                    </a>
-                    <span className="text-neutral-400 text-[10px] ml-0.5" title="Google Verified Place">ⓘ</span>
-                  </div>
-                  <div className="flex items-center gap-2 mt-2.5">
-                    <a
-                      href={
-                        centre.directionsUrl ||
-                        `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent("Delhi Institute of Digital Marketing " + centre.address)}`
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 bg-[#1a73e8] hover:bg-[#1557b0] text-white text-[11px] font-medium px-3.5 py-1.5 rounded-full transition shadow-xs"
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                      <span>Open in Maps</span>
-                    </a>
-                    <a
-                      href={
-                        centre.directionsUrl ||
-                        `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent("Delhi Institute of Digital Marketing " + centre.address)}`
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-7 h-7 rounded-full bg-[#1a73e8] hover:bg-[#1557b0] text-white flex items-center justify-center transition shadow-xs shrink-0"
-                      title="Get Directions"
-                    >
-                      <Navigation className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </div>
-
                 <iframe
                   src={
                     centre.mapEmbedUrl ||

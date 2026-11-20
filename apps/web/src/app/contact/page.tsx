@@ -161,49 +161,6 @@ export default function ContactUsPage() {
             layout="balanced"
             left={
               <div className="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm aspect-[4/3] lg:aspect-auto min-h-[380px] lg:h-full relative bg-neutral-100">
-                {/* Floating Google Place Info Card */}
-                <div className="absolute top-3 left-3 z-10 max-w-[270px] sm:max-w-[320px] bg-white/95 backdrop-blur-xs rounded-lg p-3 sm:p-3.5 shadow-lg border border-neutral-200/90 text-left pointer-events-auto">
-                  <div className="font-bold text-neutral-900 text-xs sm:text-sm leading-tight tracking-tight">
-                    Delhi Institute of Digital Marketing
-                  </div>
-                  <div className="text-[11px] text-neutral-600 truncate mt-1 leading-snug">
-                    Plot No-12, 3rd Floor, Satya Niketan, South Delhi - 110021
-                  </div>
-                  <div className="flex items-center gap-1.5 mt-1.5 text-xs">
-                    <span className="font-bold text-neutral-800">4.9</span>
-                    <span className="text-amber-500 text-xs leading-none">★</span>
-                    <a
-                      href="https://goo.gl/maps/dqDC8hAmCRYM72xq7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline text-[11px] font-medium"
-                    >
-                      (1,250+)
-                    </a>
-                    <span className="text-neutral-400 text-[10px] ml-0.5">ⓘ</span>
-                  </div>
-                  <div className="flex items-center gap-2 mt-2.5">
-                    <a
-                      href="https://goo.gl/maps/dqDC8hAmCRYM72xq7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 bg-[#1a73e8] hover:bg-[#1557b0] text-white text-[11px] font-medium px-3.5 py-1.5 rounded-full transition shadow-xs"
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                      <span>Open in Maps</span>
-                    </a>
-                    <a
-                      href="https://goo.gl/maps/dqDC8hAmCRYM72xq7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-7 h-7 rounded-full bg-[#1a73e8] hover:bg-[#1557b0] text-white flex items-center justify-center transition shadow-xs shrink-0"
-                      title="Get Directions"
-                    >
-                      <Navigation className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </div>
-
                 <iframe
                   title="Delhi Institute of Digital Marketing - Satya Niketan Head Office"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4015178872896!2d77.16497941508162!3d28.587729082435455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d8f9e54e58d%3A0xc9085d1a82de1181!2sDelhi%20Institute%20of%20Digital%20Marketing!5e0!3m2!1sen!2sin!4v1614672356048!5m2!1sen!2sin"
